@@ -1,0 +1,90 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: "Ubuntu";
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background: url(../img/bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.inner{
+    max-width: 1200px;
+    padding: 0 40px;
+    margin: auto;
+}
+
+/* Main content */
+.head{
+    font-size: 5rem;
+    text-align: center;
+}
+.desc{
+    font-size: 1rem;
+    margin-top: 10px;
+}
+.outer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 91vh;
+    margin-top: 20px;
+}
+.flex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 80px;
+    border-radius: 10px;
+    background-color: rgba(128, 128, 128, 0.438);
+    box-shadow: 0 0 50px black;
+}
+.error{
+    margin-top: 80px;
+    color: red;
+}
+input{
+    padding: 20px;
+    color: black;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+}
+#username{
+    margin: 10px 0 30px;
+}
+#password{
+    margin-bottom: 30px;
+}
+#check{
+    margin-bottom: 50px;
+    padding: 10px;
+}
+#checkin{
+    cursor: pointer;
+    margin-left: 5px;
+}
+#sub-btn{
+    background-color: black;
+    padding: 13px 30px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.2s linear;
+    color: #d3d3d3;
+}
+#sub-btn:hover{
+    background-color: rgb(41, 41, 41);
+    color: white;
+}
+.signup{
+    text-align: center;
+}

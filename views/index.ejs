@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sketchmarks</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+    <link rel="stylesheet" href="/css/home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alata&family=Alice&family=Eczar:wght@600&display=swap&family=Pacifico&display=swap&family=Dancing+Script:wght@700&display=swap&family=Ubuntu:wght@500&display=swap&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <style>
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            max-width: 300px;
+            height: 300px;
+        }
+    
+        .swiper-container {
+            width: 80%;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            margin-left: 0px;
+        }
+    
+        @media screen and (max-width: 600px) {
+            .swiper-slide {
+                max-width: 200px;
+                max-height: 200px;
+            }
+    
+            .swiper-container {
+                margin-left: 10px;
+                width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="inner">
+            <ul>
+                <a id="brand">Sketchmarks</a>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Contributors</a></li>
+                <li><a href="/posts">Posts</a></li>
+                <li  style="display: <%=loginDisplay%>;"><a href="/login" class="login">Log In</a></li>
+                <li id="signup-li" style="display: <%=signupDisplay%>;"><a href="/signup" class="signup">Sign Up</a></li>
+                <li style="display: <%=profileDisplay%>;"><a href="/profile/<%=username%>">Profile</a></li>
+                <li id="logout-li" style="display: <%=logoutDisplay%>;"><a href="/logout" class="logout">Log Out</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section class="landing">
+        <div class="inner">
+            <div class="land-main">
+                <h1 id="land-name" >Sketchmarks</h1>
+                <h2 id="land-desc">art that leaves marks</h2>
+                <div id="land-login">
+                    <a href="/login" class="land-log-btn" style="display: <%=loginDisplay%>;">Log In</a>
+                    <a href="/signup" class="land-sign-btn" style="display: <%=signupDisplay%>;">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contributors">
+           <div class="inner">
+               <h1 class="section-head" id="tpartist">Top Artists</h1>
+               <!-- <img src="../img/unnamed.png" alt=""  width="100%" class="br"> -->
+               <div>
+                 <div class="artists">
+                    <div class="usernm">
+                        <img src="img/pfp.jpg" class="pfpp" alt="" srcset="">
+                        <div>Arijit</div>
+                    </div>
+                   <!-- Swiper -->
+                <div class="swiper-container">
+                  <div class="swiper-wrapper">
+                      <div class="swiper-slide" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMBhY6hfEmasPgrdPeG1hZ_ELagZ9a-i6Jkw&usqp=CAU)"></div>
+                      <div class="swiper-slide" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMBhY6hfEmasPgrdPeG1hZ_ELagZ9a-i6Jkw&usqp=CAU)"></div>
+                      <div class="swiper-slide" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMBhY6hfEmasPgrdPeG1hZ_ELagZ9a-i6Jkw&usqp=CAU)"></div>
+                      <div class="swiper-slide" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMBhY6hfEmasPgrdPeG1hZ_ELagZ9a-i6Jkw&usqp=CAU)"></div>
+                      <div class="swiper-slide" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMBhY6hfEmasPgrdPeG1hZ_ELagZ9a-i6Jkw&usqp=CAU)"></div>
+                      <div class="swiper-slide" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMBhY6hfEmasPgrdPeG1hZ_ELagZ9a-i6Jkw&usqp=CAU)"></div>
+                   </div>
+                   <!-- Add Pagination -->
+                   <div class="swiper-pagination"  style="visibility: hidden;"></div>
+                 </div>
+               </div>
+               <div class="artists">
+                <div class="usernm">
+                    <img src="img/pfp.jpg" class="pfpp" alt="" srcset="">
+                    <div>Arijit</div>
+                </div>
+                 <!-- Swiper -->
+              <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMBhY6hfEmasPgrdPeG1hZ_ELagZ9a-i6Jkw&usqp=CAU)"></div>
+                    <div class="swiper-slide" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMBhY6hfEmasPgrdPeG1hZ_ELagZ9a-i6Jkw&usqp=CAU)"></div>
+                    <div class="swiper-slide" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMBhY6hfEmasPgrdPeG1hZ_ELagZ9a-i6Jkw&usqp=CAU)"></div>
+                    <div class="swiper-slide" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMBhY6hfEmasPgrdPeG1hZ_ELagZ9a-i6Jkw&usqp=CAU)"></div>
+                    <div class="swiper-slide" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMBhY6hfEmasPgrdPeG1hZ_ELagZ9a-i6Jkw&usqp=CAU)"></div>
+                    <div class="swiper-slide" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMBhY6hfEmasPgrdPeG1hZ_ELagZ9a-i6Jkw&usqp=CAU)"></div>
+                 </div>
+                 <!-- Add Pagination -->
+                 <div class="swiper-pagination" style="visibility: hidden;"></div>
+               </div>
+             </div>
+             <div class="artists">
+                <div class="usernm">
+                    <img src="img/pfp.jpg" class="pfpp" alt="" srcset="">
+                    <div>Arijit</div>
+                </div>
+               <!-- Swiper -->
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                  <div class="swiper-slide" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMBhY6hfEmasPgrdPeG1hZ_ELagZ9a-i6Jkw&usqp=CAU)"></div>
+                  <div class="swiper-slide" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMBhY6hfEmasPgrdPeG1hZ_ELagZ9a-i6Jkw&usqp=CAU)"></div>
+                  <div class="swiper-slide" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMBhY6hfEmasPgrdPeG1hZ_ELagZ9a-i6Jkw&usqp=CAU)"></div>
+                  <div class="swiper-slide" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMBhY6hfEmasPgrdPeG1hZ_ELagZ9a-i6Jkw&usqp=CAU)"></div>
+                  <div class="swiper-slide" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMBhY6hfEmasPgrdPeG1hZ_ELagZ9a-i6Jkw&usqp=CAU)"></div>
+                  <div class="swiper-slide" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMBhY6hfEmasPgrdPeG1hZ_ELagZ9a-i6Jkw&usqp=CAU)"></div>
+               </div>
+               <!-- Add Pagination -->
+               <div class="swiper-pagination" style="visibility: hidden;"></div>
+             </div>
+           </div>
+
+
+               </div>
+           </div>
+       </section>
+
+    <section class="posts">
+        <div class="inner">
+
+            <h1 class="section-head">Posts</h1>
+            <!-- <img src="../img/unnamed.png" alt=""  width="100%" class="br"> -->
+            <div class="click-div">
+                <img src="" alt="" id="click-div-img">
+                <span id="click-div-close">&#10060;</span>
+                <div id="click-div-user"></div>
+                <div class="click-div-likes">
+                    <span class="like-btn">&#9757;</span>
+                    <span class="likes-number"></span>
+                </div>
+                <div class="click-div-comments"></div>
+                <textarea id="" cols="30" rows="2" class="post-comment" placeholder="Add your comment here"></textarea>
+                <button class="post-submit">Submit</button>
+            </div>
+            <!-- Header -->
+            <!-- <div class="header" id="myHeader">
+                <h3 class="ncolumns">Columns :</h3>
+                <button class="btn" onclick="two()">2</button>
+                <button class="btn active" onclick="four()">4</button>
+            </div> -->
+
+            <!-- Photo Grid -->
+            <div class="row">
+                <% if(recentPosts.length>11){ %>
+                    <div class="column">
+                        <% for(let i=0; i<3; i++){ %>
+                            <img src="data:image/<%=recentPosts[i].img.contentType%>;base64, 
+                            <%=recentPosts[i].img.data.toString('base64')%>" style="width:100%" id="<%=recentPosts[i]._id%>" class="click-img">
+                        <% } %>
+                    </div>
+                    <div class="column">
+                        <% for(let i=3; i<6; i++){ %>
+                            <img src="data:image/<%=recentPosts[i].img.contentType%>;base64, 
+                            <%=recentPosts[i].img.data.toString('base64')%>" style="width:100%" id="<%=recentPosts[i]._id%>" class="click-img">
+                        <% } %>
+                    </div>
+                    <div class="column">
+                        <% for(let i=6; i<9; i++){ %>
+                            <img src="data:image/<%=recentPosts[i].img.contentType%>;base64, 
+                            <%=recentPosts[i].img.data.toString('base64')%>" style="width:100%" id="<%=recentPosts[i]._id%>" class="click-img">
+                        <% } %>
+                    </div>
+                    <div class="column">
+                        <% for(let i=9; i<12; i++){ %>
+                            <img src="data:image/<%=recentPosts[i].img.contentType%>;base64, 
+                            <%=recentPosts[i].img.data.toString('base64')%>" style="width:100%" id="<%=recentPosts[i]._id%>" class="click-img">
+                        <% } %>
+                    </div>
+                <% }else{ %>
+                    <% recentPosts.forEach((post)=>{ %>
+                        <div class="column">
+                                <img src="data:image/<%=post.img.contentType%>;base64, 
+                                <%=post.img.data.toString('base64')%>" style="width:100%" id="<%=post._id%>" class="click-img">
+                        </div>
+                    <% }) %>
+                <% } %>
+                <!-- <div class="column">
+                        style="width:100%" class="click-img">
+                    <img src="https://images.adsttc.com/media/images/5b74/3c09/f197/cc47/f600/006c/newsletter/NORM-LI_180812_4_AERIAL_F_04.jpg?1534344187"
+                        style="width:100%" class="click-img">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhPM4CTCdlaD6CXS0Bqk1SR__1P-E1S6YKskZMrfo-euo6YyE&s"
+                        style="width:100%" class="click-img">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFCrcJ2jRcfyydpdqSR1CMKAFNlyKaNEcUX5_eVhz8ibiJzCcp&s"
+                        style="width:100%" class="click-img">
+                </div>
+                <div class="column">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSEZAbH2MIA7EoWrEHTb_nsgPLHc2OmJWDf-Uos_sJN42FgtUn&s"
+                        style="width:100%" class="click-img">
+                    <img src="https://www.evolo.us/wp-content/uploads/2019/04/0516-0.jpg" style="width:100%"
+                        class="click-img">
+                    <img src="https://thecustomizewindows.com/wp-content/uploads/2013/05/Horizontal-Lines-in-Composition.jpg"
+                        style="width:100%" class="click-img">
+                    <img src="https://images.unsplash.com/photo-1526512340740-9217d0159da9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
+                        style="width:100%" class="click-img">
+                </div>
+                <div class="column">
+                    <img src="https://thumbs.dreamstime.com/z/black-white-vertical-new-york-flatiron-building-stands-right-heart-manhattan-intersection-two-famous-nyc-landmarks-45486075.jpg"
+                        style="width:100%" class="click-img">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDh-bXWweyAn8cNAqpc6EAjpQrEZk9wILEwpwW9RG1ltjRi1cm&s"
+                        style="width:100%" class="click-img">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8d22dI4UU3OxIyTQkjVve0hZb4f_k6FnN7r-K9EyrntFp5ww&s"
+                        style="width:100%" class="click-img">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-SWQFMDvrjgK18CxneKvQVOS7abY9SIuaKc9RPS6GBwBsN6o&s"
+                        style="width:100%" class="click-img">
+                </div>
+                <div class="column">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWxpohRoS0LkKy3fI3dYx2EGnrt8xK1aoh3ZDZ9TyjKr0TRns&s"
+                        style="width:100%" class="click-img">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGSuikWgQRgaE4OU4Zs3_je7ELKTzHrtdmnjIu_9fqKlNCBbME&s"
+                        style="width:100%" class="click-img">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c8/Untersberg_Mountain_Salzburg_Austria_Landscape_Photography_%28256594075%29.jpeg"
+                        style="width:100%" class="click-img">
+                    <img src="https://www.wsp.com/-/media/Project/Global/Image/Petronas-towers-exterior-view-facades.jpg?h=750&la=en-CN&w=530&hash=DB2452BC971DB24487D0487F514D62B18E8B2970"
+                        style="width:100%" class="click-img">
+                </div> -->
+            </div>
+
+        </div>
+    </section>
+    <section class="submit">
+        <div class="inner">
+            <h1 class="section-head" id="posting">Post your work</h1>
+            <div class="submit-main">
+                <form action="/submit" method="post" enctype=multipart/form-data id="submit-form">
+                    <input type="text" placeholder="Describe your work" id="sub-desc" name="desc" required>
+                    <label for="post-img" id="post-label"><i class="fa fa-cloud-upload"></i> Upload your work</label>
+                    <input type='file' id="post-img" name="work" accept="image/*" required>
+                    <img id="preview" src="#" alt="Your image will appear here">
+                    <button type="submit" class="sub-btn">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="inner">
+            <hr>
+            <div class="foot-text">
+                &copy;Sketchmarks
+            </div>
+            <div class="icons">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-facebook"></i>
+                
+
+            </div>
+        </div>
+
+    </footer>
+
+    <script src="https://kit.fontawesome.com/67a49e1ba0.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/home.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+    var swiper = new Swiper('.swiper-container', {
+      effect: 'coverflow',
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+      },
+    });
+  </script>
+</body>
+</html>

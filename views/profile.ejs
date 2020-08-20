@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alata&family=Alice&family=Eczar:wght@600&display=swap&family=Pacifico&display=swap&family=Dancing+Script:wght@700&display=swap&family=Ubuntu:wght@500&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/css/profile.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="inner-width">
+            <a class="brand">Sketchmarks</a>
+            <button class="menu-toggler">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="navbar-menu">
+                <a href="/">Home</a>
+                <a href="/">About</a>
+                <a href="/">Contributors</a>
+                <a href="/">Posts</a>
+                
+            </div>
+        </div>
+    </nav>
+    <div class="grid-container">
+        <div class="profile">
+
+
+            <!-- <img src="./images/bg.jpg" class="pfp" alt="Profile Pic"> -->
+            <h1><%= username %></h1>
+            <h2><%= about %> </h2>
+            <h2><%= contact %> </h2>
+            <div class="submit-main">
+                <form action="/submit" method="post" enctype=multipart/form-data id="submit-form">
+                    <input type="text" placeholder="Describe your work" id="sub-desc" name="desc" required>
+                    <label for="post-img" id="post-label">Upload your work</label>
+                    <input type='file' id="post-img" name="work" accept="image/*" required>
+                    <img id="preview" src="#" alt="&lt;your image will appear here&gt;">
+                    <button type="submit" class="sub-btn">Submit</button>
+                </form>
+            </div>
+
+        </div>
+        <div class="content">
+
+            <div class="title">Gallery</div>
+            <div class="gallery">
+
+                <% if(works.length>0){ %>
+                <% works.forEach((work)=>{ %>
+                <img src="data:image/<%=work.img.contentType%>;base64, 
+                        <%=work.img.data.toString('base64')%>" class="gal-img" alt="">
+                <% }) %>
+                <% }else{ %>
+                <div>You have not uploaded anything</div>
+                <% } %>
+                
+
+            </div>
+        </div>
+    </div>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <script src="../js/profile.js"></script>
+</body>
+
+</html>

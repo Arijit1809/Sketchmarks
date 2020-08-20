@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/signup.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+    <title>Sign Up</title>
+</head>
+
+<body>
+    <div class="inner">
+        <form action="/signup" method="POST" id="signupForm">
+            <div class="outer">
+                <div class="flex">
+                    <h1 class="head">Sign Up</h1>
+                    <h2 class="desc">to SketchMarks</h2>
+                    <div class="user-error">&nbsp;</div>
+                    <input type="text" placeholder="Username" name="username" class="form-box" autocomplete="off" id="username" required autofocus>
+                    <input type="password" placeholder="Password" name="password" class="form-box" required>
+                    <input type="text" placeholder="Something about you" name="about" class="form-box" autocomplete="off" required>
+                    <input type="text" placeholder="Contact" name="contact" class="form-box" required autocomplete="off">
+                    <button id="sub-btn" type="submit">Sign Up</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/signup.js"></script>
+</body>
+
+</html>

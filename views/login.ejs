@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <link rel="stylesheet" href="/css/login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <div class="inner">
+        <form action="/login" method="POST">
+            <div class="outer">
+                <div class="flex">
+                    <h1 class="head">Log In</h1>
+                    <h2 class="desc">to SketchMarks</h2>
+                    <h5 class="error" style="visibility: <%=errorVisi%>;">Username or password is incorrect.</h6>
+                    <input type="text" placeholder="Username" name="username" id="username" autocomplete="off" required autofocus>
+                    <input type="password" placeholder="Password" name="password" id="password" autocomplete="off" required>
+                    <div><input type="checkbox" name="remember" id="check"> <label for="check" id="checkin">Remember Me</label></div>
+                    <button type="submit" id="sub-btn">Log In</button>
+                </div>
+            </div>
+        </form>
+        <div class="signup">Don't have an account? <a href="/signup">Sign Up</a> here.</div>
+    </div>
+</body>
+</html>
