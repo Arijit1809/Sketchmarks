@@ -429,17 +429,29 @@ body {
 
 /* Submit */
 .submit {
-    background: #1a2a6c;
+    /* background: #1a2a6c; */
     /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c);
+    /* background: -webkit-linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c); */
     /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c);
+    /* background: linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c); */
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     text-align: center;
+    background-image: url(../img/collage.jpg);
 }
 
 #posting {
     background-image: unset;
+    font-family: 'Special Elite', cursive;
+    text-align: center;
+    padding: 50px 150px 60px;
+    font-size: 5rem;
+    color: white;
+    margin: 0;
+    background-image: url(../img/name_bg.png);
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+
 }
 
 #submit-form {
@@ -463,20 +475,21 @@ body {
     font-family: "Alice";
     font-size: 1.2rem;
 }
-
-#post-label {
-    font-family: "Dancing Script";
-    border: 2px solid black;
+#post-label{
+    font-family: "Ubuntu";
+    border: none;
     padding: 20px 30px;
     cursor: pointer;
     border-radius: 10px;
     font-size: 1.5rem;
     margin-bottom: 40px;
     transition: 0.1s linear;
+    background-color: grey;
 }
 
 #post-label:hover {
     background-color: black;
+
 }
 
 #post-img {

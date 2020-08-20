@@ -17,20 +17,20 @@
             max-width: 300px;
             height: 300px;
         }
-    
+
         .swiper-container {
             width: 80%;
             padding-top: 10px;
             padding-bottom: 10px;
             margin-left: 0px;
         }
-    
+
         @media screen and (max-width: 600px) {
             .swiper-slide {
                 max-width: 200px;
                 max-height: 200px;
             }
-    
+
             .swiper-container {
                 margin-left: 10px;
                 width: 300px;
@@ -162,32 +162,32 @@
                 <% if(recentPosts.length>11){ %>
                     <div class="column">
                         <% for(let i=0; i<3; i++){ %>
-                            <img src="data:image/<%=recentPosts[i].img.contentType%>;base64, 
+                            <img src="data:image/<%=recentPosts[i].img.contentType%>;base64,
                             <%=recentPosts[i].img.data.toString('base64')%>" style="width:100%" id="<%=recentPosts[i]._id%>" class="click-img">
                         <% } %>
                     </div>
                     <div class="column">
                         <% for(let i=3; i<6; i++){ %>
-                            <img src="data:image/<%=recentPosts[i].img.contentType%>;base64, 
+                            <img src="data:image/<%=recentPosts[i].img.contentType%>;base64,
                             <%=recentPosts[i].img.data.toString('base64')%>" style="width:100%" id="<%=recentPosts[i]._id%>" class="click-img">
                         <% } %>
                     </div>
                     <div class="column">
                         <% for(let i=6; i<9; i++){ %>
-                            <img src="data:image/<%=recentPosts[i].img.contentType%>;base64, 
+                            <img src="data:image/<%=recentPosts[i].img.contentType%>;base64,
                             <%=recentPosts[i].img.data.toString('base64')%>" style="width:100%" id="<%=recentPosts[i]._id%>" class="click-img">
                         <% } %>
                     </div>
                     <div class="column">
                         <% for(let i=9; i<12; i++){ %>
-                            <img src="data:image/<%=recentPosts[i].img.contentType%>;base64, 
+                            <img src="data:image/<%=recentPosts[i].img.contentType%>;base64,
                             <%=recentPosts[i].img.data.toString('base64')%>" style="width:100%" id="<%=recentPosts[i]._id%>" class="click-img">
                         <% } %>
                     </div>
                 <% }else{ %>
                     <% recentPosts.forEach((post)=>{ %>
                         <div class="column">
-                                <img src="data:image/<%=post.img.contentType%>;base64, 
+                                <img src="data:image/<%=post.img.contentType%>;base64,
                                 <%=post.img.data.toString('base64')%>" style="width:100%" id="<%=post._id%>" class="click-img">
                         </div>
                     <% }) %>
@@ -237,16 +237,16 @@
     </section>
     <section class="submit">
         <div class="inner">
-            <h1 class="section-head" id="posting">Post your work</h1>
-            <div class="submit-main">
-                <form action="/submit" method="post" enctype=multipart/form-data id="submit-form">
-                    <input type="text" placeholder="Describe your work" id="sub-desc" name="desc" required>
-                    <label for="post-img" id="post-label"><i class="fa fa-cloud-upload"></i> Upload your work</label>
-                    <input type='file' id="post-img" name="work" accept="image/*" required>
-                    <img id="preview" src="#" alt="Your image will appear here">
-                    <button type="submit" class="sub-btn">Submit</button>
-                </form>
-            </div>
+          <h1  id="posting">Upload Art</h1>
+          <div class="submit-main">
+              <form action="/submit" method="post" enctype=multipart/form-data id="submit-form">
+                  <label for="post-img" id="post-label"><i class="fa fa-cloud-upload"></i> Select Image</label>
+                  <input type='file' id="post-img" name="work" accept="image/*" required>
+                  <img id="preview" src="#" alt="">
+                  <input type="text" placeholder="Describe your work" id="sub-desc" name="desc" required>
+                  <button type="submit" class="sub-btn">Submit</button>
+              </form>
+          </div>
         </div>
     </section>
     <footer>
@@ -259,7 +259,7 @@
                 <i class="fab fa-facebook"></i>
                 <i class="fab fa-facebook"></i>
                 <i class="fab fa-facebook"></i>
-                
+
 
             </div>
         </div>
