@@ -172,6 +172,18 @@ app.get("/posts",function(req,res){
     res.render("posts");
 })
 
+app.get("/likepost/:postId",(req,res)=>{
+    if(req.isAuthenticated()){
+        Post.findByIdAndUpdate(req.params.postId,{$inc : {'likes' : 1}},{new: true},(err,result)=>{
+            if(err) console.log(err)
+            else{
+                res.send(`${result.likes}`)
+            }
+        })
+    }
+    else res.send(false)
+})
+
 app.get("/thread/:postId",(req,res)=>{
     Post.findById(req.params.postId,(err,result)=>{
         if(err) console.log(err)
@@ -249,15 +261,6 @@ app.post("/submit",upload.single("work"),(req,res)=>{
 //     })
 // })
 
-app.post("/likepost",(req,res)=>{
-    Post.findByIdAndUpdate(req.body.id,{$inc : {'likes' : 1}},{new: true},(err,result)=>{
-        if(err) console.log(err)
-        else{
-            console.log(result.likes)
-            res.send(`${result.likes}`)
-        }
-    })
-})
 
 app.post("/checkusername",(req,res)=>{
 

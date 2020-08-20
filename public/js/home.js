@@ -48,8 +48,9 @@ $(document).ready(()=>{
   })
 
   $(".like-btn").click(function(){
-    $.post("/likepost",{id: $(this).attr("id")},function(result,status){
-      $(".likes-number").html(result)
+    $.get("/likepost/"+$(this).attr("id"),function(result,status){
+      if(result) $(".likes-number").html(result)
+      else alert("Log In to continue")
     })
   })
 
