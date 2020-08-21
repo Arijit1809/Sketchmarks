@@ -153,7 +153,7 @@ app.get("/profile/:username_url", (req, res)=>{
                 const about=result.about
                 const contact=result.contact
                 
-                Post.find({name: username},(err,results)=>{
+                Post.find({name: username}).sort({$natural: -1}).exec((err,results)=>{
                     if(err) console.log(err)
                     else {
                         res.render("profile",{
