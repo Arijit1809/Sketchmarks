@@ -161,7 +161,7 @@ body {
 .row {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 200px;
+    margin-top: 20px;
     padding: 0 4px;
     padding-bottom: 10px;
 }
@@ -213,16 +213,16 @@ body {
     padding-top: 90px;
     margin-bottom: 30px;
     align-content: center;
-    font-family: 'Baloo Tamma 2',
+    font-family: 'Alata',
         cursive;
     /* transform: translateX(-50%); */
-    font-size: 60px;
+    font-size:3rem;
     z-index: 2;
     color: white;
     text-align: center;
+    text-transform: uppercase;
 
 }
-
 .gallery {
     display: grid;
     /* grid-column-gap: 10px; */
@@ -231,6 +231,18 @@ body {
     margin: auto;
     padding: 20px;
 }
+
+.empty{
+    margin: 20vh 0;
+    font-family: 'Alata';
+    text-align: center;
+    font-size: 1.5rem;
+
+}
+.empty h2{
+    margin-bottom: 20px;
+}
+
 .click-div {
     background-color: rgba(0, 0, 0, 0.842);
     /* filter: blur(4px); */
@@ -441,10 +453,12 @@ body {
 }
 
 @media screen and (max-width: 980px) {
+    .navbar{
+        padding: 20px 20px;
+    }
     .menu-toggler {
         display: block;
     }
-
     .navbar-menu {
         position: fixed;
         height: 100vh;
@@ -513,7 +527,9 @@ body {
         margin: auto;
         padding: 20px;
     }
-
+    .column {
+        flex: 50%;
+    }
     .gal-img {
         height: auto;
         max-width: 95%;
@@ -523,17 +539,14 @@ body {
         border: 5px solid #ddd;
 
     }
-
     .profile h1 {
         padding-top: 120px;
     }
-
     .profile,
     .content {
         background-image: unset;
         background-color: transparent;
     }
-
     body {
         background-image: linear-gradient(rgb(4, 24, 88), rgb(0, 110, 255));
     }
@@ -543,12 +556,10 @@ body {
     .grid-container {
         display: unset;
     }
-
     .profile {
         width: 100vw;
         position: relative;
     }
-
     .gallery {
         display: grid;
         /* grid-column-gap: 10px; */
@@ -557,7 +568,6 @@ body {
         margin: auto;
         padding: 20px;
     }
-
     .gal-img {
         height: auto;
         max-width: 95%;
@@ -567,17 +577,14 @@ body {
         border: 5px solid #ddd;
 
     }
-
     .profile h1 {
         padding-top: 120px;
     }
-
     .profile,
     .content {
         background-image: unset;
         background-color: transparent;
     }
-
     body {
         background-image: linear-gradient(rgb(4, 24, 88), rgb(0, 110, 255));
     }
@@ -589,17 +596,14 @@ body {
         margin: 5px 0px;
         overflow: auto;
     }
-
     #click-div-img {
         max-width: 95vw;
         max-height: 50vh;
         margin: 5px;
     }
-
     .imgajax {
         margin: 0;
     }
-
     .likecomm {
         max-width: 95vw;
         margin-top: 10px;
@@ -608,12 +612,10 @@ body {
         padding: 10px;
         margin-bottom: 0px;
     }
-
     #click-div-user {
         font-size: 2rem;
         margin-bottom: 10px;
     }
-
     #click-div-close {
         position: absolute;
         right: 20px;
@@ -629,14 +631,27 @@ body {
         opacity: 1;
         padding-top: 2px;
     }
-
     .click-div-comments {
         overflow: auto;
     }
-
     .like-btn,
     .likes-number {
         font-size: 1rem;
     }
+}
 
+@media screen and (max-width: 500px) {
+    .title{
+        font-size: 2rem;
+    }
+    .empty {
+        margin: 20vh 0 40vh 0;
+        font-size: 1rem;
+    }
+    .empty h2 {
+        margin-bottom: 30px;
+    }
+    .column{
+        flex:100%;
+    }
 }

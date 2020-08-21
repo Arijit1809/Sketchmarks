@@ -79,9 +79,9 @@
 
                 <span id="click-div-close">&#10060;</span>
             </div>
-            <div class="title">Gallery</div>
-            <div class="row">
-                <% if(works.length>0){ %>
+            <div class="title"><%= username %>'s art gallery</div>
+            <% if(works.length>0){ %>
+                <div class="row">               
                     <div class="column">
                         <% for(let i=0; i<Math.floor(works.length/3); i++){ %>
                             <img src="data:image/<%=works[i].img.contentType%>;base64,<%=works[i].img.data.toString('base64')%>" style="width: 100%;" class="click-img" id="<%=works[i]._id%>" alt="">
@@ -97,10 +97,13 @@
                             <img src="data:image/<%=works[i].img.contentType%>;base64,<%=works[i].img.data.toString('base64')%>" style="width: 100%;" class="click-img" id="<%=works[i]._id%>" alt="">
                         <% } %>
                     </div>
+                </div>
                 <% }else{ %>
-                    <div>User gallery empty.</div>
+                    <div class="empty"><h2>Your gallery is empty :(</h2>
+                        <h3>Share your artistic ideas with the world now!</h3>
+                    </div>
                 <% } %>
-            </div>
+            
             
         </div>
     </div>
