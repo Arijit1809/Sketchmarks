@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+::selection {
+    background-color: black;
+    color: #d3d3d3;
+    text-shadow: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+body{
+    background-color: black;
+    color: white;
+}
+
+.main{
+    display: flex;
+    align-items: center;
+}
+
+/* Tile section */
+.tile-div{
+    margin: 100px 50px;
+    width: 50vw;
+}
+
+.tile-img{
+    width: 100%;
+    border: 3px solid purple;
+}
+
+/* Tile section end */
+
+/* Comments section */
+.comments{
+    border: 2px solid white;
+    max-height: 90vh;
+}

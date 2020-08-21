@@ -233,6 +233,10 @@ app.get("/deletepost/:postId",(req,res)=>{
 
 })
 
+app.get("/tile",(req,res)=>{
+    res.render("tile")
+})
+
 // app.get("/loginfail",(req,res)=>{
 //     res.render("login", {errorVisi: "visible"})
 // })
