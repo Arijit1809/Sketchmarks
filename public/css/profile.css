@@ -21,9 +21,9 @@ body {
 }
 
 .inner-width {
-    max-width: 87.5vw;
+    max-width: 89vw;
     margin: auto;
-    padding: 0 40px;
+    /* padding: 0 40px; */
 }
 
 .navbar .inner-width {
@@ -35,7 +35,7 @@ body {
 .brand {
     color: white;
     text-transform: uppercase;
-    font-size: 1rem;
+    font-size: 1.5rem;
 }
 
 .menu-toggler {
@@ -60,7 +60,7 @@ body {
 
 .navbar-menu a {
     color: rgb(255, 255, 255);
-    font-size: 15px;
+    font-size: 1.2rem;
     font-weight: 500;
     margin-left: 30px;
     transition: .2s linear;
@@ -109,27 +109,40 @@ body {
     justify-content: center;
 }
 
-
-
-.pfp {
-    height: 150px;
-    width: 150px;
-    position: relative;
-    border-radius: 50%;
-    top: 45px;
+.profile-inner{
+    margin: 0;
+    position: absolute;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
 
+.profile h1 {
+    font-family: 'Baloo Tamma 2',
+        cursive;
+    /* font-size: 40px; */
+    margin-bottom: 50px;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 40px;
+}
+
+.profile h2 {
+    font-family: 'Baloo Tamma 2',
+        cursive;
+    /* font-size: 40px; */
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 0px;
+    margin-bottom: 30px;
 }
 
 .content {
-
     /* background-repeat: no-repeat; */
     /* The image used */
-
-
-
-
     /* Full height */
     height: 100%;
 
@@ -360,41 +373,10 @@ body {
 
 }
 
-.profile h1 {
-    font-family: 'Baloo Tamma 2',
-        cursive;
-    /* font-size: 40px; */
-    margin-top: 50px;
-    margin-bottom: 30px;
-    color: white;
-    text-align: center;
-    text-transform: uppercase;
-    padding-top: 40px;
-}
-
-.profile h2 {
-    font-family: 'Baloo Tamma 2',
-        cursive;
-    /* font-size: 40px; */
-
-
-    color: white;
-    text-align: center;
-    text-transform: uppercase;
-    padding-top: 0px;
-    margin-bottom: 10px;
-}
-
-.profile h3 {
-    font-family: 'Baloo Tamma 2',
-        cursive;
-    font-size: 17px;
-    margin: 10px;
-    color: white;
-    text-align: center;
-    text-transform: uppercase;
-    padding-top: 0px;
-    margin-bottom: 10px;
+.submit-main{
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.582);
+    border-radius: 10px;
 }
 
 #submit-form{
@@ -409,27 +391,28 @@ body {
     color: black;
     font-family: "Alice";
     font-size: 1.2rem;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 #sub-desc::placeholder{
     color: black;
-    font-family: "Alice";
+    font-family: "Alata";
     font-size: 1.2rem;
     text-align: center;
 }
 #post-label{
-    font-family: "Dancing Script";
-    border: 2px solid black;
+    font-family: 'Alata';
+    border: 2px solid white;
     padding: 7px 10px;
     cursor: pointer;
     border-radius: 10px;
-    font-size: 1.5rem;
-    margin-bottom: 40px;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
     transition: 0.1s linear;
     color: white;
 }
 #post-label:hover{
     background-color: black;
+    color: white;
 }
 #post-img{
     display: none;
@@ -439,17 +422,17 @@ body {
     max-height: 200px;
     margin-bottom: 40px;
     border-radius: 10px;
-    font-family: "Alice";
-    color: red;
+    font-family: "Alata";
+    color: white;
 }
 .sub-btn{
     border: none;
     background-color: grey;
-    font-family: "Alice";
+    font-family: "Alata";
     font-size: 1.2rem;
     padding: 10px 20px;
     border-radius: 10px;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
     transition: 0.1s linear;
 }
 .sub-btn:hover{
