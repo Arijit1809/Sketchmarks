@@ -64,7 +64,10 @@ const postSchema=new mongoose.Schema({
         data: Buffer,
         contentType: String
     },
-    likes: Number,
+    likes: {
+        likesNum: Number,
+        likers: [String]
+    },
     comments: [Object] 
 })
 
@@ -174,10 +177,20 @@ app.get("/posts",function(req,res){
 
 app.get("/likepost/:postId",(req,res)=>{
     if(req.isAuthenticated()){
-        Post.findByIdAndUpdate(req.params.postId,{$inc : {'likes' : 1}},{new: true},(err,result)=>{
+        Post.findById(req.params.postId,(err,result)=>{
             if(err) console.log(err)
             else{
-                res.send(`${result.likes}`)
+                let ind=result.likes.likers.indexOf(req.user.username)
+                if(ind>-1){
+                    result.likes.likesNum--
+                    result.likes.likers.splice(ind,1)
+                }
+                else{
+                    result.likes.likesNum++
+                    result.likes.likers.push(req.user.username)
+                }
+                result.save()
+                res.send(`${result.likes.likesNum}`)
             }
         })
     }
@@ -240,7 +253,10 @@ app.post("/submit",upload.single("work"),(req,res)=>{
                 data: fs.readFileSync(path.join(__dirname + '/uploads/' + req.file.filename)),
                 contentType: 'image/png'
             },
-            likes: 0,
+            likes:{
+                likesNum: 0,
+                likers: []
+            },
             comments: []
         }
         Post.create(imgObj,(err,result)=>{

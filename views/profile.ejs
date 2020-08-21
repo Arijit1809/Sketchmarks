@@ -52,6 +52,18 @@
 
         </div>
         <div class="content">
+            <div class="click-div">
+                <img src="" alt="" id="click-div-img">
+                <span id="click-div-close">&#10060;</span>
+                <div id="click-div-user"></div>
+                <div class="click-div-likes">
+                    <span class="like-btn">&#9757;</span>
+                    <span class="likes-number"></span>
+                </div>
+                <div class="click-div-comments"></div>
+                <textarea id="" cols="30" rows="2" class="post-comment" placeholder="Add your comment here"></textarea>
+                <button class="post-submit">Submit</button>
+            </div>
 
             <div class="title">Gallery</div>
             <div class="gallery">
@@ -59,7 +71,7 @@
                 <% if(works.length>0){ %>
                 <% works.forEach((work)=>{ %>
                 <img src="data:image/<%=work.img.contentType%>;base64, 
-                        <%=work.img.data.toString('base64')%>" class="gal-img" alt="">
+                        <%=work.img.data.toString('base64')%>" class="gal-img" id="<%=work._id%>" alt="">
                 <% }) %>
                 <% }else{ %>
                 <div>You have not uploaded anything</div>

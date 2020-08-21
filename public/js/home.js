@@ -30,7 +30,7 @@ $(document).ready(()=>{
       $("#click-div-img").attr("src",src)
       $("#click-div-user").html("By "+ result.name)
       $(".like-btn").attr("id",result._id)
-      $(".likes-number").html(result.likes)
+      $(".likes-number").html(result.likes.likesNum)
       let commentsString=""
       result.comments.forEach(function(comment){
         commentsString+=`<div>${comment.name} says ${comment.comment}</div>\n`
