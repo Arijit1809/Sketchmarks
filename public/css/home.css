@@ -731,4 +731,18 @@ footer {
         min-width: 30vw;
         height: auto;
     }
+
+    .click-div {
+        flex-direction: column;
+    }
+
+    #click-div-img {
+        max-width: 90vw;
+        margin: 5px;
+    }
+
+    .likecomm {
+        max-width: 90vw;
+        margin-top: 20px;
+    }
 }
