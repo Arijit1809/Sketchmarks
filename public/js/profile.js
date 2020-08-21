@@ -30,13 +30,13 @@ $(document).ready(function () {
         readURL(this)
     }) 
     
-    $(".gal-img").click(function(){
+    $(".click-img").click(function(){
         $(".click-div").css("display","flex")
         let src=$(this).attr("src")
         let id=$(this).attr("id")
         $.get("/thread/"+id,function(result,status){
             $("#click-div-img").attr("src",src)
-            $("#click-div-user").html("By "+ result.name)
+            $("#click-div-user").html(`By <a href="/profile/${result.name}">${result.name}</a>`)
             $(".like-btn").attr("id",result._id)
             $(".likes-number").html(result.likes.likesNum)
             let commentsString=""
