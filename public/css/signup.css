@@ -94,3 +94,22 @@ input {
     background-color: rgb(41, 41, 41);
     color: white;
 }
+
+@media screen and (max-width: 425px) {
+    .inner {
+        padding: 0 10px;
+    }
+    .flex {
+        padding: 60px 50px;
+    }
+    .head {
+        font-size: 3rem;
+    }
+    .user-error {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .form-box{
+        margin: 10px auto;
+    }
+}
