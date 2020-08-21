@@ -21,9 +21,9 @@ body {
 }
 
 .inner-width {
-    max-width: 87.5vw;
+    max-width: 89vw;
     margin: auto;
-    padding: 0 40px;
+    /* padding: 0 40px; */
 }
 
 .navbar .inner-width {
@@ -35,7 +35,7 @@ body {
 .brand {
     color: white;
     text-transform: uppercase;
-    font-size: 1rem;
+    font-size: 1.5rem;
 }
 
 .menu-toggler {
@@ -60,7 +60,7 @@ body {
 
 .navbar-menu a {
     color: rgb(255, 255, 255);
-    font-size: 15px;
+    font-size: 1.2rem;
     font-weight: 500;
     margin-left: 30px;
     transition: .2s linear;
@@ -109,27 +109,40 @@ body {
     justify-content: center;
 }
 
-
-
-.pfp {
-    height: 150px;
-    width: 150px;
-    position: relative;
-    border-radius: 50%;
-    top: 45px;
+.profile-inner{
+    margin: 0;
+    position: absolute;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
 
+.profile h1 {
+    font-family: 'Baloo Tamma 2',
+        cursive;
+    /* font-size: 40px; */
+    margin-bottom: 50px;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 40px;
+}
+
+.profile h2 {
+    font-family: 'Baloo Tamma 2',
+        cursive;
+    /* font-size: 40px; */
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    padding-top: 0px;
+    margin-bottom: 30px;
 }
 
 .content {
-
     /* background-repeat: no-repeat; */
     /* The image used */
-
-
-
-
     /* Full height */
     height: 100%;
 
@@ -145,7 +158,54 @@ body {
     /* margin: 10px; */
 
 }
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    padding: 0 4px;
+    padding-bottom: 10px;
+}
 
+.column {
+    flex: 25%;
+    padding: 0 4px;
+}
+
+.column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    border-radius: 5px;
+}
+
+.btn {
+    border: none;
+    outline: none;
+    padding: 10px 16px;
+    background-color: grey;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 7px;
+}
+
+.btn:hover {
+    background-color: #ddd;
+}
+
+.btn.active {
+    background-color: red;
+    color: white;
+}
+
+.ncolumns {
+    color: grey;
+    margin-bottom: 20px;
+    font-family: "Ubuntu"
+}
+
+.column img:hover {
+    box-shadow: 0 0 40px #d3d3d3;
+    cursor: pointer;
+}
 
 
 
@@ -153,16 +213,16 @@ body {
     padding-top: 90px;
     margin-bottom: 30px;
     align-content: center;
-    font-family: 'Baloo Tamma 2',
+    font-family: 'Alata',
         cursive;
     /* transform: translateX(-50%); */
-    font-size: 60px;
+    font-size:3rem;
     z-index: 2;
     color: white;
     text-align: center;
+    text-transform: uppercase;
 
 }
-
 .gallery {
     display: grid;
     /* grid-column-gap: 10px; */
@@ -172,8 +232,20 @@ body {
     padding: 20px;
 }
 
+.empty{
+    margin: 20vh 0;
+    font-family: 'Alata';
+    text-align: center;
+    font-size: 1.5rem;
+
+}
+.empty h2{
+    margin-bottom: 20px;
+}
+
 .click-div {
     background-color: rgba(0, 0, 0, 0.842);
+    /* filter: blur(4px); */
     position: fixed;
     top: 0;
     right: 0;
@@ -182,22 +254,72 @@ body {
     color: black;
     z-index: 10;
     display: none;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    color: white;
 }
 
 #click-div-img {
-    margin: 30px 30px 10px;
+    /* margin: 30px 30px 10px; */
+    margin: 10px;
+    max-width: 50vw;
+    max-height: 90vh;
+    /* border: solid 5px white; */
+    border-radius: 10px;
+    height: auto;
+}
+
+.imgajax {
+    background: #1a2a6c;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.likecomm {
+    /* background-color: rgba(255, 255, 255, 0.671); */
+    background: #1a2a6c;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    padding: 20px;
+    /* margin-left: 100px; */
+    margin-top: 10%;
+    margin-bottom: 10%;
+    /* margin-right: 10vw; */
+    max-width: 30vw;
+    border-radius: 10px;
+    /* height: auto; */
+    max-height: 80%;
 }
 
 #click-div-user {
-    color: white;
+    color: black;
     text-align: center;
+    margin-bottom: 20px;
+    font-size: 3rem;
+    font-family: 'Alata';
+}
+
+.click-div-likes {
+    margin-top: 10px;
     margin-bottom: 10px;
-    font-size: 2rem;
-    font-family: "Ubuntu";
+    text-align: center;
+}
+
+.like-btn,
+.likes-number {
+    font-size: 1.5rem;
+    margin-right: 5px;
+
+    font-family: 'Alata';
 }
 
 #click-div-close {
@@ -212,16 +334,47 @@ body {
     cursor: pointer;
     opacity: 1;
 }
-.click-div-comments{
+
+.click-div-comments {
     color: black;
-}
-.post-comment{
-    color: black;
-}
-.post-submit{
-    background-color: grey;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.52);
+    font-family: 'Alata';
+    margin-top: 20px;
+    overflow: auto;
+    border-radius: 10px;
+    font-size: 1rem;
 }
 
+.comsub {
+    display: flex;
+    flex-direction: row;
+}
+
+.post-comment {
+    background-color: rgba(255, 255, 255, 0.671);
+    color: black;
+    font-family: 'Alata';
+    padding: 10px;
+    margin-top: 20px;
+    width: 100%;
+    border-radius: 10px;
+
+    border: 0px;
+}
+
+.post-submit {
+    background-color: rgb(0, 0, 0);
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: 'Alata';
+    /* width: 15%; */
+    margin-top: 20px;
+    margin-left: 5px;
+    border-radius: 10px;
+    font-size: 1rem;
+    border: 0px;
+}
 .gal-img {
     height: 300px;
     width: auto;
@@ -232,41 +385,10 @@ body {
 
 }
 
-.profile h1 {
-    font-family: 'Baloo Tamma 2',
-        cursive;
-    /* font-size: 40px; */
-    margin-top: 50px;
-    margin-bottom: 30px;
-    color: white;
-    text-align: center;
-    text-transform: uppercase;
-    padding-top: 40px;
-}
-
-.profile h2 {
-    font-family: 'Baloo Tamma 2',
-        cursive;
-    /* font-size: 40px; */
-
-
-    color: white;
-    text-align: center;
-    text-transform: uppercase;
-    padding-top: 0px;
-    margin-bottom: 10px;
-}
-
-.profile h3 {
-    font-family: 'Baloo Tamma 2',
-        cursive;
-    font-size: 17px;
-    margin: 10px;
-    color: white;
-    text-align: center;
-    text-transform: uppercase;
-    padding-top: 0px;
-    margin-bottom: 10px;
+.submit-main{
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.582);
+    border-radius: 10px;
 }
 
 #submit-form{
@@ -281,27 +403,28 @@ body {
     color: black;
     font-family: "Alice";
     font-size: 1.2rem;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 #sub-desc::placeholder{
     color: black;
-    font-family: "Alice";
+    font-family: "Alata";
     font-size: 1.2rem;
     text-align: center;
 }
 #post-label{
-    font-family: "Dancing Script";
-    border: 2px solid black;
+    font-family: 'Alata';
+    border: 2px solid white;
     padding: 7px 10px;
     cursor: pointer;
     border-radius: 10px;
-    font-size: 1.5rem;
-    margin-bottom: 40px;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
     transition: 0.1s linear;
     color: white;
 }
 #post-label:hover{
     background-color: black;
+    color: white;
 }
 #post-img{
     display: none;
@@ -311,17 +434,17 @@ body {
     max-height: 200px;
     margin-bottom: 40px;
     border-radius: 10px;
-    font-family: "Alice";
-    color: red;
+    font-family: "Alata";
+    color: white;
 }
 .sub-btn{
     border: none;
     background-color: grey;
-    font-family: "Alice";
+    font-family: "Alata";
     font-size: 1.2rem;
     padding: 10px 20px;
     border-radius: 10px;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
     transition: 0.1s linear;
 }
 .sub-btn:hover{
@@ -330,10 +453,12 @@ body {
 }
 
 @media screen and (max-width: 980px) {
+    .navbar{
+        padding: 20px 20px;
+    }
     .menu-toggler {
         display: block;
     }
-
     .navbar-menu {
         position: fixed;
         height: 100vh;
@@ -402,7 +527,9 @@ body {
         margin: auto;
         padding: 20px;
     }
-
+    .column {
+        flex: 50%;
+    }
     .gal-img {
         height: auto;
         max-width: 95%;
@@ -412,17 +539,14 @@ body {
         border: 5px solid #ddd;
 
     }
-
     .profile h1 {
         padding-top: 120px;
     }
-
     .profile,
     .content {
         background-image: unset;
         background-color: transparent;
     }
-
     body {
         background-image: linear-gradient(rgb(4, 24, 88), rgb(0, 110, 255));
     }
@@ -432,12 +556,10 @@ body {
     .grid-container {
         display: unset;
     }
-
     .profile {
         width: 100vw;
         position: relative;
     }
-
     .gallery {
         display: grid;
         /* grid-column-gap: 10px; */
@@ -446,7 +568,6 @@ body {
         margin: auto;
         padding: 20px;
     }
-
     .gal-img {
         height: auto;
         max-width: 95%;
@@ -456,18 +577,81 @@ body {
         border: 5px solid #ddd;
 
     }
-
     .profile h1 {
         padding-top: 120px;
     }
-
     .profile,
     .content {
         background-image: unset;
         background-color: transparent;
     }
-
     body {
         background-image: linear-gradient(rgb(4, 24, 88), rgb(0, 110, 255));
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .click-div {
+        flex-direction: column;
+        margin: 5px 0px;
+        overflow: auto;
+    }
+    #click-div-img {
+        max-width: 95vw;
+        max-height: 50vh;
+        margin: 5px;
+    }
+    .imgajax {
+        margin: 0;
+    }
+    .likecomm {
+        max-width: 95vw;
+        margin-top: 10px;
+        /* max-height: 50vh; */
+        overflow: auto;
+        padding: 10px;
+        margin-bottom: 0px;
+    }
+    #click-div-user {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+    #click-div-close {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        font-size: 1rem;
+        width: 30px;
+        height: 30px;
+        background-color: white;
+        border-radius: 50%;
+        text-align: center;
+        align-content: center;
+        justify-content: center;
+        opacity: 1;
+        padding-top: 2px;
+    }
+    .click-div-comments {
+        overflow: auto;
+    }
+    .like-btn,
+    .likes-number {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .title{
+        font-size: 2rem;
+    }
+    .empty {
+        margin: 20vh 0 40vh 0;
+        font-size: 1rem;
+    }
+    .empty h2 {
+        margin-bottom: 30px;
+    }
+    .column{
+        flex:100%;
     }
 }

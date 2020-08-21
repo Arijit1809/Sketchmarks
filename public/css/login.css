@@ -74,7 +74,7 @@ input{
 #sub-btn{
     background-color: black;
     padding: 13px 30px;
-    border-radius: 30px;
+    border-radius: 10px;
     border: none;
     cursor: pointer;
     font-size: 1rem;
@@ -87,4 +87,27 @@ input{
 }
 .signup{
     text-align: center;
+}
+
+@media screen and (max-width: 425px) {
+    .inner{
+        padding: 0 10px;
+    }
+    .flex {
+        padding: 60px 50px;
+    }
+    .head{
+        font-size: 3rem;
+    }
+    .error{
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    #username{
+        margin-bottom: 20px;
+    }
+    #check{
+        margin-bottom: 20px;
+    }
+
 }

@@ -28,13 +28,13 @@ $(document).ready(()=>{
     let id=$(this).attr("id")
     $.get("/thread/"+id,function(result,status){
       $("#click-div-img").attr("src",src)
-      $("#click-div-user").html("By "+ result.name)
+      $("#click-div-user").html(`By <a href="/profile/${result.name}">${result.name}</a>`)
       $(".like-btn").attr("id",result._id)
       $(".likes-number").html(result.likes.likesNum)
       let commentsString=""
       result.comments.forEach(function(comment){
-        commentsString+=`<div>${comment.name} says ${comment.comment}</div>\n`
-      })
+        commentsString+=`<div><a href="/profile/${comment.name}">${comment.name}</a> says ${comment.comment}</div>\n`
+    })
       $(".click-div-comments").html(commentsString)
     })
   })
@@ -62,7 +62,7 @@ $(document).ready(()=>{
       if(result){
         let commentsString=""
         result.forEach(function(comment){
-          commentsString+=`<div>${comment.name} says ${comment.comment}</div>\n`
+          commentsString+=`<div><a href="/profile/${comment.name}">${comment.name}</a> says ${comment.comment}</div>\n`
         })
         $(".click-div-comments").html(commentsString)
       }

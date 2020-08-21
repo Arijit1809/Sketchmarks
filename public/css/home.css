@@ -353,13 +353,11 @@ body {
     justify-content: center;
 }
 
-
-
 #click-div-img {
     /* margin: 30px 30px 10px; */
     margin: 10px;
     max-width: 50vw;
-    max-height: 90vh;
+    max-height: 85.5vh;
     /* border: solid 5px white; */
     border-radius: 10px;
     height: auto;
@@ -374,6 +372,7 @@ body {
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     border-radius: 10px;
     margin: 20px;
+    max-height: 95vh;
 }
 
 .likecomm {
@@ -394,12 +393,13 @@ body {
     border-radius: 10px;
     /* height: auto; */
     max-height: 80%;
+    overflow: auto;
 }
 
 #click-div-user {
     color: black;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-size: 3rem;
     font-family: 'Alata';
 }
@@ -592,13 +592,16 @@ footer {
 }
 
 /* Footer-end */
-
+/* @media screen and (max-width: 800px) {
+    .likecom {
+        
+        max-height: 95%;
+    }
+}
 @media screen and (max-width: 600px) {
     #land-name {
         font-size: 4.5rem;
-        /* font-weight: 1000;
-        position:absolute;
-        top: 40%; */
+        
     }
 
     .landing {
@@ -618,8 +621,7 @@ footer {
         font-family: 'Alata';
         color: #dfd3c3;
         letter-spacing: 3px;
-        /* position:absolute;
-        top: 50%; */
+        /
     }
 
     #land-login {
@@ -639,8 +641,7 @@ footer {
     .section-head {
         font-size: 3.1rem;
         padding: 60px 150px 60px;
-        /* font-family: 'Pacifico',
-        cursive; */
+        
         background-size: 100%;
     }
 
@@ -651,6 +652,148 @@ footer {
         padding: 0 5px;
     }
 
+    .artists {
+        display: flex;
+        border: solid;
+        border-radius: 10px;
+        border-color: black;
+        margin: 10px;
+        background-color: rgb(0, 0, 0);
+    }
+
+    .usernm {
+        text-align: center;
+        margin-left: 30px;
+        color: rgb(255, 255, 255);
+        width: 28%;
+        font-family: 'Alata';
+        font-size: 2rem;
+        /
+
+    }
+
+    .pfpp {
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        
+    }
+
+    .swiper-slide {
+        max-width: 200px;
+        max-height: 200px;
+    }
+
+    .swiper-container {
+        margin-left: 10px;
+        width: 300px;
+    }
+
+
+    #posting {
+        background-image: unset;
+        font-size: 4rem;
+        background-size: 100%;
+        padding: 60px 10px 60px;
+    }
+
+    
+
+    .sub-btn {
+        background-color: black;
+        font-family: "Alata";
+        border-radius: 15px;
+        transition: linear 0.2s;
+    }
+
+    .sub-btn:hover {
+        background-color: white;
+        color: black;
+    }
+
+    #sub-desc {
+        border-radius: 10px;
+        font-family: 'Alata';
+    }
+
+    #post-label {
+        font-family: 'Alata';
+        font-size: 1.2rem;
+    }
+
+    #preview {
+        color: white;
+        max-width: 90vw;
+        min-width: 30vw;
+        height: auto;
+    }
+
+    .click-div {
+        flex-direction: column;
+    }
+
+    #click-div-img {
+        max-width: 90vw;
+        margin: 5px;
+    }
+
+    .likecomm {
+        max-width: 90vw;
+        margin-top: 20px;
+    }
+} */
+
+@media screen and (max-width: 768px) {
+    #land-name {
+        font-size: 3rem;
+        /* font-weight: 1000;
+        position:absolute;
+        top: 40%; */
+    }
+    .landing {
+        height: 100vh;
+    }
+    .land-main {
+        height: 100vh;
+    }
+    .navbar-menu {
+        display: none;
+    }
+    #land-desc {
+        font-family: 'Alata';
+        color: #dfd3c3;
+        letter-spacing: 2px;
+        font-size: 1rem;
+        /* position:absolute;
+        top: 50%; */
+    }
+    #land-login {
+        margin: 20px 0;
+    }
+    .land-log-btn,
+    .land-sign-btn {
+        text-decoration: none;
+        margin: 0 5px;
+        padding: 10px 10px;
+        font-size: 1rem;
+        font-family: "Ubuntu";
+        border-radius: 10px;
+    }
+    .section-head {
+        font-size: 3.1rem;
+        padding: 60px 150px 60px;
+        /* font-family: 'Pacifico',
+        cursive; */
+        background-size: 100%;
+    }
+    #tpartist {
+        font-size: 3rem;
+        padding: 60px 0px;
+    }
+    .column {
+        flex: 100%;
+        padding: 10px;
+    }
     .artists {
         display: flex;
         border: solid;
@@ -696,16 +839,6 @@ footer {
         padding: 60px 10px 60px;
     }
 
-    .submit {
-        background: #1a2a6c;
-        /* fallback for old browsers */
-        background: -webkit-linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c);
-        /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c);
-        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-    }
-
     .sub-btn {
         background-color: black;
         font-family: "Alata";
@@ -737,15 +870,58 @@ footer {
 
     .click-div {
         flex-direction: column;
+        margin: 5px 0px;
+        overflow: auto;
     }
 
     #click-div-img {
-        max-width: 90vw;
+        max-width: 95vw;
+        max-height: 50vh;
         margin: 5px;
     }
 
-    .likecomm {
-        max-width: 90vw;
-        margin-top: 20px;
+    .imgajax{
+        margin: 0;
     }
+
+    .likecomm {
+        max-width: 95vw;
+        margin-top: 10px;
+        /* max-height: 50vh; */
+        overflow: auto;
+        padding: 10px;
+        margin-bottom: 0px;
+    }
+
+    #click-div-user{
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+
+    #click-div-close {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        font-size: 1rem;
+        width:30px;
+        height: 30px;
+        background-color: white;
+        border-radius: 50%;
+        text-align: center;
+        align-content: center;
+        justify-content: center;
+        opacity: 1;
+        padding-top: 2px;
+    }
+
+    .click-div-comments{
+        overflow: auto;
+    }
+
+    .like-btn,
+    .likes-number {
+        font-size: 1rem;
+    }
+
+    
 }

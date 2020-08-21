@@ -35,54 +35,80 @@
     <div class="grid-container">
         <div class="profile">
 
-
-            <!-- <img src="./images/bg.jpg" class="pfp" alt="Profile Pic"> -->
-            <h1><%= username %></h1>
-            <h2><%= about %> </h2>
-            <h2><%= contact %> </h2>
-            <div class="submit-main">
-                <form action="/submit" method="post" enctype=multipart/form-data id="submit-form">
-                    <input type="text" placeholder="Describe your work" id="sub-desc" name="desc" required>
-                    <label for="post-img" id="post-label">Upload your work</label>
-                    <input type='file' id="post-img" name="work" accept="image/*" required>
-                    <img id="preview" src="#" alt="&lt;your image will appear here&gt;">
-                    <button type="submit" class="sub-btn">Submit</button>
-                </form>
+            <div class="profile-inner">
+                <!-- <img src="./images/bg.jpg" class="pfp" alt="Profile Pic"> -->
+                <h1><%= username %></h1>
+                <h2><%= about %> </h2>
+                <h2><%= contact %> </h2>
+                <% if(sameUser){ %>
+                    <div class="submit-main">
+                        <form action="/submit" method="post" enctype=multipart/form-data id="submit-form">
+                            <input type="text" placeholder="Describe your work" id="sub-desc" name="desc" required>
+                            <label for="post-img" id="post-label">Upload your work</label>
+                            <input type='file' id="post-img" name="work" accept="image/*" required>
+                            <img id="preview" src="#" alt="Your image will appear here">
+                            <button type="submit" class="sub-btn">Submit</button>
+                        </form>
+                    </div>
+                <% } %>
             </div>
 
         </div>
         <div class="content">
+            
             <div class="click-div">
-                <img src="" alt="" id="click-div-img">
-                <span id="click-div-close">&#10060;</span>
-                <div id="click-div-user"></div>
-                <div class="click-div-likes">
-                    <span class="like-btn">&#9757;</span>
-                    <span class="likes-number"></span>
+                <div class="imgajax">
+                    <img src="" alt="" id="click-div-img">
                 </div>
-                <div class="click-div-comments"></div>
-                <textarea id="" cols="30" rows="2" class="post-comment" placeholder="Add your comment here"></textarea>
-                <button class="post-submit">Submit</button>
+                <div class="likecomm">
+                    <div id="click-div-user"></div>
+                    <% if(sameUser){ %>
+                    <div id="click-div-delete">DELETE</div>
+                    <% } %>
+                    <div class="click-div-likes">
+                        <span class="like-btn"><i class="fas fa-heart" id="heart"></i></span>
+                        <span class="likes-number"></span>
+                    </div>
+                    <div class="click-div-comments"></div>
+                    <div class="comsub">
+                        <textarea id="" cols="30" rows="2" class="post-comment"
+                            placeholder="Add your comment here"></textarea>
+                        <button class="post-submit">Submit</button>
+                    </div>
+                </div>
+
+                <span id="click-div-close">&#10060;</span>
             </div>
-
-            <div class="title">Gallery</div>
-            <div class="gallery">
-
-                <% if(works.length>0){ %>
-                <% works.forEach((work)=>{ %>
-                <img src="data:image/<%=work.img.contentType%>;base64, 
-                        <%=work.img.data.toString('base64')%>" class="gal-img" id="<%=work._id%>" alt="">
-                <% }) %>
+            <div class="title"><%= username %>'s art gallery</div>
+            <% if(works.length>0){ %>
+                <div class="row">               
+                    <div class="column">
+                        <% for(let i=0; i<Math.floor(works.length/3); i++){ %>
+                            <img src="data:image/<%=works[i].img.contentType%>;base64,<%=works[i].img.data.toString('base64')%>" style="width: 100%;" class="click-img" id="<%=works[i]._id%>" alt="">
+                        <% } %>
+                    </div>
+                    <div class="column">
+                        <% for(let i=Math.floor(works.length/3); i<Math.floor(works.length/3*2); i++){ %>
+                            <img src="data:image/<%=works[i].img.contentType%>;base64,<%=works[i].img.data.toString('base64')%>" style="width: 100%;" class="click-img" id="<%=works[i]._id%>" alt="">
+                            <% } %>
+                        </div>
+                        <div class="column">
+                        <% for(let i=Math.floor(works.length/3*2); i<works.length; i++){ %>
+                            <img src="data:image/<%=works[i].img.contentType%>;base64,<%=works[i].img.data.toString('base64')%>" style="width: 100%;" class="click-img" id="<%=works[i]._id%>" alt="">
+                        <% } %>
+                    </div>
+                </div>
                 <% }else{ %>
-                <div>You have not uploaded anything</div>
+                    <div class="empty"><h2>Your gallery is empty :(</h2>
+                        <h3>Share your artistic ideas with the world now!</h3>
+                    </div>
                 <% } %>
-                
-
-            </div>
+            
+            
         </div>
     </div>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
-    <script src="../js/profile.js"></script>
+    <script src="/js/profile.js"></script>
 </body>
 
 </html>
