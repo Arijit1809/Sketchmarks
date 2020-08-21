@@ -33,8 +33,8 @@ $(document).ready(()=>{
       $(".likes-number").html(result.likes.likesNum)
       let commentsString=""
       result.comments.forEach(function(comment){
-        commentsString+=`<div>${comment.name} says ${comment.comment}</div>\n`
-      })
+        commentsString+=`<div><a href="/profile/${comment.name}">${comment.name}</a> says ${comment.comment}</div>\n`
+    })
       $(".click-div-comments").html(commentsString)
     })
   })
@@ -62,7 +62,7 @@ $(document).ready(()=>{
       if(result){
         let commentsString=""
         result.forEach(function(comment){
-          commentsString+=`<div>${comment.name} says ${comment.comment}</div>\n`
+          commentsString+=`<div><a href="/profile/${comment.name}">${comment.name}</a> says ${comment.comment}</div>\n`
         })
         $(".click-div-comments").html(commentsString)
       }
