@@ -208,6 +208,10 @@ body {
     opacity: 0.5;
 }
 
+/* #click-div-delete{
+
+} */
+
 #click-div-close:hover {
     cursor: pointer;
     opacity: 1;

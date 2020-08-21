@@ -60,6 +60,7 @@ const User = new mongoose.model("User", userSchema);
 const postSchema=new mongoose.Schema({
     name: String,
     desc: String,
+    filename: String,
     img:{
         data: Buffer,
         contentType: String
@@ -156,12 +157,22 @@ app.get("/profile/:username_url", (req, res)=>{
                 Post.find({name: username}).sort({$natural: -1}).exec((err,results)=>{
                     if(err) console.log(err)
                     else {
-                        res.render("profile",{
-                            username: username,
-                            about: about,
-                            contact: contact,
-                            works: results
-                        })
+                        if(req.isAuthenticated() && req.user.username==username)
+                            res.render("profile",{
+                                username: username,
+                                about: about,
+                                contact: contact,
+                                works: results,
+                                sameUser: true 
+                            })
+                        else
+                            res.render("profile",{
+                                username: username,
+                                about: about,
+                                contact: contact,
+                                works: results,
+                                sameUser: false 
+                            })
                     }
                 })
             }
@@ -202,6 +213,24 @@ app.get("/thread/:postId",(req,res)=>{
         if(err) console.log(err)
         else res.send(result)
     })
+})
+
+app.get("/deletepost/:postId",(req,res)=>{
+    Post.findById(req.params.postId,(err,result)=>{
+        if(err) console.log(err)
+        else{
+            if(req.isAuthenticated() && req.user.username==result.name){
+                fs.unlink("uploads/"+result.filename,(err)=>{if(err)console.log(err)})
+                Post.deleteOne({_id: req.params.postId},(err,result)=>{
+                    if(err) console.log(err)
+                    else res.send(true)
+                })
+            }
+            else res.send("You are not authorised to perform this action.")
+        }
+    })
+
+
 })
 
 // app.get("/loginfail",(req,res)=>{
@@ -249,6 +278,7 @@ app.post("/submit",upload.single("work"),(req,res)=>{
         let imgObj={
             name: req.user.username,
             desc: req.body.desc,
+            filename: req.file.filename,
             img:{
                 data: fs.readFileSync(path.join(__dirname + '/uploads/' + req.file.filename)),
                 contentType: 'image/png'
