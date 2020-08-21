@@ -145,7 +145,54 @@ body {
     /* margin: 10px; */
 
 }
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 200px;
+    padding: 0 4px;
+    padding-bottom: 10px;
+}
 
+.column {
+    flex: 25%;
+    padding: 0 4px;
+}
+
+.column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    border-radius: 5px;
+}
+
+.btn {
+    border: none;
+    outline: none;
+    padding: 10px 16px;
+    background-color: grey;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 7px;
+}
+
+.btn:hover {
+    background-color: #ddd;
+}
+
+.btn.active {
+    background-color: red;
+    color: white;
+}
+
+.ncolumns {
+    color: grey;
+    margin-bottom: 20px;
+    font-family: "Ubuntu"
+}
+
+.column img:hover {
+    box-shadow: 0 0 40px #d3d3d3;
+    cursor: pointer;
+}
 
 
 
@@ -171,9 +218,9 @@ body {
     margin: auto;
     padding: 20px;
 }
-
 .click-div {
     background-color: rgba(0, 0, 0, 0.842);
+    /* filter: blur(4px); */
     position: fixed;
     top: 0;
     right: 0;
@@ -182,22 +229,72 @@ body {
     color: black;
     z-index: 10;
     display: none;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    color: white;
 }
 
 #click-div-img {
-    margin: 30px 30px 10px;
+    /* margin: 30px 30px 10px; */
+    margin: 10px;
+    max-width: 50vw;
+    max-height: 90vh;
+    /* border: solid 5px white; */
+    border-radius: 10px;
+    height: auto;
+}
+
+.imgajax {
+    background: #1a2a6c;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.likecomm {
+    /* background-color: rgba(255, 255, 255, 0.671); */
+    background: #1a2a6c;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    padding: 20px;
+    /* margin-left: 100px; */
+    margin-top: 10%;
+    margin-bottom: 10%;
+    /* margin-right: 10vw; */
+    max-width: 30vw;
+    border-radius: 10px;
+    /* height: auto; */
+    max-height: 80%;
 }
 
 #click-div-user {
-    color: white;
+    color: black;
     text-align: center;
+    margin-bottom: 20px;
+    font-size: 3rem;
+    font-family: 'Alata';
+}
+
+.click-div-likes {
+    margin-top: 10px;
     margin-bottom: 10px;
-    font-size: 2rem;
-    font-family: "Ubuntu";
+    text-align: center;
+}
+
+.like-btn,
+.likes-number {
+    font-size: 1.5rem;
+    margin-right: 5px;
+
+    font-family: 'Alata';
 }
 
 #click-div-close {
@@ -208,24 +305,51 @@ body {
     opacity: 0.5;
 }
 
-/* #click-div-delete{
-
-} */
-
 #click-div-close:hover {
     cursor: pointer;
     opacity: 1;
 }
-.click-div-comments{
+
+.click-div-comments {
     color: black;
-}
-.post-comment{
-    color: black;
-}
-.post-submit{
-    background-color: grey;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.52);
+    font-family: 'Alata';
+    margin-top: 20px;
+    overflow: auto;
+    border-radius: 10px;
+    font-size: 1rem;
 }
 
+.comsub {
+    display: flex;
+    flex-direction: row;
+}
+
+.post-comment {
+    background-color: rgba(255, 255, 255, 0.671);
+    color: black;
+    font-family: 'Alata';
+    padding: 10px;
+    margin-top: 20px;
+    width: 100%;
+    border-radius: 10px;
+
+    border: 0px;
+}
+
+.post-submit {
+    background-color: rgb(0, 0, 0);
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: 'Alata';
+    /* width: 15%; */
+    margin-top: 20px;
+    margin-left: 5px;
+    border-radius: 10px;
+    font-size: 1rem;
+    border: 0px;
+}
 .gal-img {
     height: 300px;
     width: auto;
