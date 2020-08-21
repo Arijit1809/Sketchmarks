@@ -35,22 +35,23 @@
     <div class="grid-container">
         <div class="profile">
 
-
-            <!-- <img src="./images/bg.jpg" class="pfp" alt="Profile Pic"> -->
-            <h1><%= username %></h1>
-            <h2><%= about %> </h2>
-            <h2><%= contact %> </h2>
-            <% if(sameUser){ %>
-                <div class="submit-main">
-                    <form action="/submit" method="post" enctype=multipart/form-data id="submit-form">
-                        <input type="text" placeholder="Describe your work" id="sub-desc" name="desc" required>
-                        <label for="post-img" id="post-label">Upload your work</label>
-                        <input type='file' id="post-img" name="work" accept="image/*" required>
-                        <img id="preview" src="#" alt="&lt;your image will appear here&gt;">
-                        <button type="submit" class="sub-btn">Submit</button>
-                    </form>
-                </div>
-            <% } %>
+            <div class="profile-inner">
+                <!-- <img src="./images/bg.jpg" class="pfp" alt="Profile Pic"> -->
+                <h1><%= username %></h1>
+                <h2><%= about %> </h2>
+                <h2><%= contact %> </h2>
+                <% if(sameUser){ %>
+                    <div class="submit-main">
+                        <form action="/submit" method="post" enctype=multipart/form-data id="submit-form">
+                            <input type="text" placeholder="Describe your work" id="sub-desc" name="desc" required>
+                            <label for="post-img" id="post-label">Upload your work</label>
+                            <input type='file' id="post-img" name="work" accept="image/*" required>
+                            <img id="preview" src="#" alt="Your image will appear here">
+                            <button type="submit" class="sub-btn">Submit</button>
+                        </form>
+                    </div>
+                <% } %>
+            </div>
 
         </div>
         <div class="content">
