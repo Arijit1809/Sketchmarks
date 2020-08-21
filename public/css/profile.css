@@ -599,3 +599,61 @@ body {
         background-image: linear-gradient(rgb(4, 24, 88), rgb(0, 110, 255));
     }
 }
+
+@media screen and (max-width: 768px) {
+    .click-div {
+        flex-direction: column;
+        margin: 5px 0px;
+        overflow: auto;
+    }
+
+    #click-div-img {
+        max-width: 95vw;
+        max-height: 50vh;
+        margin: 5px;
+    }
+
+    .imgajax {
+        margin: 0;
+    }
+
+    .likecomm {
+        max-width: 95vw;
+        margin-top: 10px;
+        /* max-height: 50vh; */
+        overflow: auto;
+        padding: 10px;
+        margin-bottom: 0px;
+    }
+
+    #click-div-user {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+
+    #click-div-close {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        font-size: 1rem;
+        width: 30px;
+        height: 30px;
+        background-color: white;
+        border-radius: 50%;
+        text-align: center;
+        align-content: center;
+        justify-content: center;
+        opacity: 1;
+        padding-top: 2px;
+    }
+
+    .click-div-comments {
+        overflow: auto;
+    }
+
+    .like-btn,
+    .likes-number {
+        font-size: 1rem;
+    }
+
+}
