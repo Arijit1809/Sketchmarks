@@ -354,7 +354,7 @@ body {
     /* margin: 30px 30px 10px; */
     margin: 10px;
     max-width: 50vw;
-    max-height: 90vh;
+    max-height: 85.5vh;
     /* border: solid 5px white; */
     border-radius: 10px;
     height: auto;
@@ -369,6 +369,7 @@ body {
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     border-radius: 10px;
     margin: 20px;
+    max-height: 95vh;
 }
 
 .likecomm {
@@ -389,12 +390,13 @@ body {
     border-radius: 10px;
     /* height: auto; */
     max-height: 80%;
+    overflow: auto;
 }
 
 #click-div-user {
     color: black;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-size: 3rem;
     font-family: 'Alata';
 }
@@ -587,13 +589,16 @@ footer {
 }
 
 /* Footer-end */
-
+/* @media screen and (max-width: 800px) {
+    .likecom {
+        
+        max-height: 95%;
+    }
+}
 @media screen and (max-width: 600px) {
     #land-name {
         font-size: 4.5rem;
-        /* font-weight: 1000;
-        position:absolute;
-        top: 40%; */
+        
     }
 
     .landing {
@@ -613,8 +618,7 @@ footer {
         font-family: 'Alata';
         color: #dfd3c3;
         letter-spacing: 3px;
-        /* position:absolute;
-        top: 50%; */
+        /
     }
 
     #land-login {
@@ -634,8 +638,7 @@ footer {
     .section-head {
         font-size: 3.1rem;
         padding: 60px 150px 60px;
-        /* font-family: 'Pacifico',
-        cursive; */
+        
         background-size: 100%;
     }
 
@@ -662,7 +665,7 @@ footer {
         width: 28%;
         font-family: 'Alata';
         font-size: 2rem;
-        /* padding-top: 70px; */
+        /
 
     }
 
@@ -670,7 +673,7 @@ footer {
         height: 100px;
         width: 100px;
         border-radius: 50%;
-        /* margin-top: 25%; */
+        
     }
 
     .swiper-slide {
@@ -691,15 +694,7 @@ footer {
         padding: 60px 10px 60px;
     }
 
-    .submit {
-        background: #1a2a6c;
-        /* fallback for old browsers */
-        background: -webkit-linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c);
-        /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c);
-        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-    }
+    
 
     .sub-btn {
         background-color: black;
@@ -743,9 +738,9 @@ footer {
         max-width: 90vw;
         margin-top: 20px;
     }
-}
+} */
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 768px) {
     #land-name {
         font-size: 3rem;
         /* font-weight: 1000;
@@ -841,16 +836,6 @@ footer {
         padding: 60px 10px 60px;
     }
 
-    .submit {
-        background: #1a2a6c;
-        /* fallback for old browsers */
-        background: -webkit-linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c);
-        /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c);
-        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-    }
-
     .sub-btn {
         background-color: black;
         font-family: "Alata";
@@ -882,16 +867,57 @@ footer {
 
     .click-div {
         flex-direction: column;
+        margin: 5px 0px;
+        overflow: auto;
     }
 
     #click-div-img {
-        max-width: 90vw;
+        max-width: 95vw;
+        max-height: 50vh;
         margin: 5px;
     }
 
+    .imgajax{
+        margin: 0;
+    }
+
     .likecomm {
-        max-width: 90vw;
-        margin-top: 20px;
+        max-width: 95vw;
+        margin-top: 10px;
+        /* max-height: 50vh; */
+        overflow: auto;
+        padding: 10px;
+        margin-bottom: 0px;
+    }
+
+    #click-div-user{
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+
+    #click-div-close {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        font-size: 1rem;
+        width:30px;
+        height: 30px;
+        background-color: white;
+        border-radius: 50%;
+        text-align: center;
+        align-content: center;
+        justify-content: center;
+        opacity: 1;
+        padding-top: 2px;
+    }
+
+    .click-div-comments{
+        overflow: auto;
+    }
+
+    .like-btn,
+    .likes-number {
+        font-size: 1rem;
     }
 
     
