@@ -1,10 +1,16 @@
 $(document).ready(()=>{
   $(window).scroll(()=>{
     if(this.scrollY>20)
-    $(".navbar").addClass("change")
+    $(".navbar").addClass("sticky")
     else
-    $(".navbar").removeClass("change")
+    $(".navbar").removeClass("sticky")
   })
+
+  $('.menu-toggler').click(function () {
+    $(this).toggleClass("active");
+    $(".navbar-menu").toggleClass("active");
+  });
+
 
   function readURL(input){
     if (input.files && input.files[0]){

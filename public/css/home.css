@@ -39,6 +39,128 @@ body {
 /* Navbar */
 .navbar {
     position: fixed;
+    background-color: transparent;
+    width: 100%;
+    padding: 30px 0;
+    top: 0;
+    z-index: 2;
+    transition: .3s linear;
+    font-family: 'Alata';
+}
+
+/* .inner-width { */
+    /* max-width: 89vw; */
+    /* margin: auto; */
+    /* padding: 0 40px; */
+/* } */
+
+.navbar .inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .login {
+    border: 2px solid brown;
+    padding: 5px 20px;
+    border-radius: 10px;
+    background-color: brown;
+    color: #d3d3d3;
+    font-family: "Ubuntu";
+    transition: 0.1s linear;
+}
+
+.navbar .login:hover {
+    background-color: red;
+    color: #d3d3d3;
+}
+
+.navbar .signup {
+    border: 2px solid purple;
+    padding: 5px 20px;
+    border-radius: 10px;
+    font-family: "Ubuntu";
+    transition: 0.1s linear;
+
+}
+
+.navbar .signup:hover {
+    background-color: purple;
+    color: #d3d3d3;
+}
+
+.navbar .logout {
+    border: 2px solid brown;
+    color: #d3d3d3;
+    padding: 5px 20px;
+    border-radius: 10px;
+    font-family: "Ubuntu";
+    transition: 0.1s linear;
+}
+
+.navbar .logout:hover {
+    color: white;
+    background-color: brown;
+} 
+
+
+.brand {
+    color: white;
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+
+.menu-toggler {
+    background: none;
+    width: 30px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    outline: none;
+    z-index: 999;
+    display: none;
+}
+
+.menu-toggler span {
+    display: block;
+    height: 3px;
+    background-color: rgb(255, 255, 255);
+    margin: 6px 0;
+    position: relative;
+    transition: .3s linear;
+}
+
+.navbar-menu a {
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+    font-weight: 500;
+    margin-left: 30px;
+    transition: .2s linear;
+    text-decoration: none;
+}
+
+.navbar-menu a:hover {
+    color: #ffffff !important;
+}
+
+.sticky {
+    background-color: black;
+    padding: 18px 0;
+}
+
+.sticky .logo {
+    background-image: url(../images/black-logo.png);
+}
+
+.sticky .navbar-menu a {
+    color: white;
+}
+
+.sticky .menu-toggler span {
+    background-color: white;
+}
+/* .navbar {
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -130,7 +252,7 @@ body {
 .navbar .logout:hover {
     color: white;
     background-color: brown;
-}
+} */
 
 /* Navbar end */
 
@@ -590,7 +712,66 @@ footer {
     font-size: 2rem;
     padding: 0 10px;
 }
+@media screen and (max-width: 980px) {
+    .navbar {
+        padding: 20px 20px;
+    }
 
+    .menu-toggler {
+        display: block;
+    }
+
+    .navbar-menu {
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        background-color: black;
+        top: 0;
+        right: -100%;
+        /* max-width: 400px; */
+        text-align: center;
+        padding: 80px 50px;
+        transition: .3s linear;
+    }
+
+    .navbar-menu a {
+        display: block;
+        font-size: 30px;
+        margin: 30px 0;
+        text-decoration: white;
+        color: white;
+    }
+
+    .sticky .navbar-menu {
+        background-color: black;
+    }
+
+    .sticky .navbar-menu a {
+        color: white;
+    }
+
+    .navbar-menu.active {
+        right: 0;
+    }
+
+    .menu-toggler.active span:nth-child(1) {
+        transform: rotate(-45deg);
+        top: 4px;
+    }
+
+    .menu-toggler.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggler.active span:nth-child(3) {
+        transform: rotate(45deg);
+        bottom: 14px;
+    }
+
+    .inner-width {
+        max-width: 800px;
+    }
+}
 /* Footer-end */
 /* @media screen and (max-width: 800px) {
     .likecom {
@@ -756,9 +937,7 @@ footer {
     .land-main {
         height: 100vh;
     }
-    .navbar-menu {
-        display: none;
-    }
+    
     #land-desc {
         font-family: 'Alata';
         color: #dfd3c3;
