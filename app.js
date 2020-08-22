@@ -192,7 +192,29 @@ app.get("/profile/:username_url", (req, res)=>{
 });
 
 app.get("/posts",function(req,res){
-    res.render("posts");
+    Post.find({}).sort({$natural: -1}).exec((err,results)=>{
+        if(err) console.log(err)
+        else{
+            if (req.user)
+                res.render("posts",{
+                    loginDisplay: "none",
+                    signupDisplay: "none",
+                    logoutDisplay: "inline-block",
+                    profileDisplay: "inline-block",
+                    username: req.user.username,
+                    recentPosts: results
+                })
+            else
+                res.render("posts",{
+                    loginDisplay: "inline-block",
+                    signupDisplay: "inline-block",
+                    logoutDisplay: "none",
+                    profileDisplay: "none",
+                    username: "NA",
+                    recentPosts: results
+                })
+        }
+    })
 })
 
 app.get("/likepost/:postId",(req,res)=>{
