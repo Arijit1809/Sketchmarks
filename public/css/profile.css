@@ -6,10 +6,8 @@
 
 body {
     background-color: black;
-    
     background-image: url(../img/black.jpg);
     background-size: auto;
-    /* background-attachment: fixed; */
 }
 
 .navbar {
@@ -26,7 +24,6 @@ body {
 .inner-width {
     max-width: 89vw;
     margin: auto;
-    /* padding: 0 40px; */
 }
 
 .navbar .inner-width {
@@ -161,7 +158,7 @@ body {
 .profile h1 {
     font-family: 'Baloo Tamma 2',
         cursive;
-    /* font-size: 40px; */
+
     margin-bottom: 50px;
     color: rgb(0, 0, 0);
     text-align: center;
@@ -172,7 +169,7 @@ body {
 .profile h2 {
     font-family: 'Baloo Tamma 2',
         cursive;
-    /* font-size: 40px; */
+
     color: rgb(0, 0, 0);
     text-align: center;
     text-transform: uppercase;
@@ -181,22 +178,16 @@ body {
 }
 
 .content {
-    /* background-repeat: no-repeat; */
-    /* The image used */
-    /* Full height */
+
     height: 100%;
 
-    /* Center and scale the image nicely */
+
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     grid-column-start: 2;
     grid-column-end: 3;
-    
-    /* background-image: linear-gradient(rgb(0, 60, 255), rgb(0, 255, 242)); */
-    /* background-color: transparent; */
-    /* border-radius: 20px; */
-    /* margin: 10px; */
+ 
 
 }
 .row {
@@ -252,11 +243,11 @@ body {
 
 .title {
     padding-top: 90px;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
     align-content: center;
     font-family: 'Alata',
         cursive;
-    /* transform: translateX(-50%); */
+
     font-size:3rem;
     z-index: 2;
     color: rgb(255, 255, 255);
@@ -266,7 +257,7 @@ body {
 }
 .gallery {
     display: grid;
-    /* grid-column-gap: 10px; */
+
     grid-row-gap: 30px;
     grid-template-columns: auto auto;
     margin: auto;
@@ -285,8 +276,7 @@ body {
 }
 
 .click-div {
-    background-color: rgba(0, 0, 0, 0.842);
-    /* filter: blur(4px); */
+
     position: fixed;
     top: 0;
     right: 0;
@@ -301,11 +291,11 @@ body {
 }
 
 #click-div-img {
-    /* margin: 30px 30px 10px; */
+
     margin: 10px;
     max-width: 50vw;
     max-height: 90vh;
-    /* border: solid 5px white; */
+
     border-radius: 10px;
     height: auto;
 }
@@ -414,7 +404,7 @@ body {
     padding-left: 10px;
     padding-right: 10px;
     font-family: 'Alata';
-    /* width: 15%; */
+
     margin-top: 20px;
     margin-left: 5px;
     border-radius: 10px;
@@ -425,7 +415,7 @@ body {
     height: 300px;
     width: auto;
     border-radius: 10px;
-    /* padding: 10px; */
+
     margin: auto;
     border: 5px solid #ddd;
 
@@ -580,21 +570,14 @@ body {
         height: auto;
         max-width: 95%;
         border-radius: 10px;
-        /* padding: 10px; */
         margin: auto;
         border: 5px solid #ddd;
-
     }
     .profile h1 {
         padding-top: 120px;
     }
-    .profile,
     .content {
-        background-image: unset;
         background-color: transparent;
-    }
-    body {
-        background-image: linear-gradient(rgb(4, 24, 88), rgb(0, 110, 255));
     }
 }
 
@@ -625,14 +608,6 @@ body {
     }
     .profile h1 {
         padding-top: 120px;
-    }
-    .profile,
-    .content {
-        background-image: unset;
-        background-color: transparent;
-    }
-    body {
-        background-image: linear-gradient(rgb(4, 24, 88), rgb(0, 110, 255));
     }
 }
 
