@@ -11,18 +11,39 @@
     <link rel="stylesheet" href="/css/home.css">
 </head>
 <body>
-    <nav class="navbar">
+    <!-- <nav class="navbar">
         <div class="inner">
             <ul>
                 <a id="brand">Sketchmarks</a>
                 <li><a href="#">Home</a></li>
-                <li><a href="#">Contributors</a></li>
+                <li><a href="#">Artists</a></li>
                 <li><a href="/posts">Posts</a></li>
-                <li  style="display: <%=loginDisplay%>;"><a href="/login" class="login">Log In</a></li>
-                <li id="signup-li" style="display: <%=signupDisplay%>;"><a href="/signup" class="signup">Sign Up</a></li>
-                <li style="display: <%=profileDisplay%>;"><a href="/profile/<%=username%>">Profile</a></li>
-                <li id="logout-li" style="display: <%=logoutDisplay%>;"><a href="/logout" class="logout">Log Out</a></li>
+                <li  style="display: <%=//loginDisplay%>;"><a href="/login" class="login">Log In</a></li>
+                <li id="signup-li" style="display: <%=//signupDisplay%>;"><a href="/signup" class="signup">Sign Up</a></li>
+                <li style="display: <%=//profileDisplay%>;"><a href="/profile/<%=//username%>">Profile</a></li>
+                <li id="logout-li" style="display: <%=//logoutDisplay%>;"><a href="/logout" class="logout">Log Out</a></li>
             </ul>
+        </div>
+    </nav> -->
+    <nav class="navbar">
+        <div class="inner">
+            <a class="brand">Sketchmarks</a>
+            <button class="menu-toggler">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="navbar-menu">
+                <a href="/">Home</a>
+                <a href="/">About</a>
+                <a href="/">Artists</a>
+                <a href="/">Posts</a>
+                <a href="/login" class="login" style="display: <%=loginDisplay%>;">Log In</a>
+                <a href="/signup" class="signup" style="display: <%=signupDisplay%>;">Sign Up</a>
+                <a href="/profile/<%=username%>" style="display: <%=profileDisplay%>;">Profile</a>
+                <a href="/logout" class="logout" style="display: <%=logoutDisplay%>;">Log Out</a>
+
+            </div>
         </div>
     </nav>
     <section class="landing">

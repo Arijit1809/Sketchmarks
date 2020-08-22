@@ -26,8 +26,12 @@
             <div class="navbar-menu">
                 <a href="/">Home</a>
                 <a href="/">About</a>
-                <a href="/">Contributors</a>
+                <a href="/">Artists</a>
                 <a href="/">Posts</a>
+                <a href="/login" class="login" style="display: <%=loginDisplay%>;">Log In</a>
+                <a href="/signup" class="signup" style="display: <%=signupDisplay%>;">Sign Up</a>
+                <a href="/profile/<%=username%>" style="display: <%=profileDisplay%>;">Profile</a>
+                <a href="/logout" class="logout" style="display: <%=logoutDisplay%>;">Log Out</a>
                 
             </div>
         </div>
@@ -108,6 +112,7 @@
         </div>
     </div>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <script src="https://kit.fontawesome.com/67a49e1ba0.js" crossorigin="anonymous"></script>
     <script src="/js/profile.js"></script>
 </body>
 

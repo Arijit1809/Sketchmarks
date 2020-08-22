@@ -163,6 +163,10 @@ app.get("/profile/:username_url", (req, res)=>{
                                 about: about,
                                 contact: contact,
                                 works: results,
+                                loginDisplay: "none",
+                                signupDisplay: "none",
+                                logoutDisplay: "inline-block",
+                                profileDisplay: "none",
                                 sameUser: true 
                             })
                         else
@@ -171,6 +175,10 @@ app.get("/profile/:username_url", (req, res)=>{
                                 about: about,
                                 contact: contact,
                                 works: results,
+                                loginDisplay: "inline-block",
+                                signupDisplay: "inline-block",
+                                logoutDisplay: "none",
+                                profileDisplay: "none",
                                 sameUser: false 
                             })
                     }

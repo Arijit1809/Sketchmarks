@@ -32,10 +32,53 @@ body {
     justify-content: space-between;
 }
 
+.navbar .login {
+    border: 2px solid rgb(255, 255, 255);
+    padding: 5px 20px;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+    font-family: "Alata";
+    transition: 0.1s linear;
+}
+
+.navbar .login:hover {
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+}
+
+.navbar .signup {
+    border: 2px solid rgb(255, 255, 255);
+    padding: 5px 20px;
+    border-radius: 10px;
+    font-family: "Alata";
+    transition: 0.1s linear;
+
+}
+
+.navbar .signup:hover {
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+}
+
+.navbar .logout {
+    border: 2px solid rgb(255, 255, 255);
+    color: #ffffff;
+    padding: 5px 20px;
+    border-radius: 10px;
+    font-family: "Alata";
+    transition: 0.1s linear;
+}
+
+.navbar .logout:hover {
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+}
+
 .brand {
     color: white;
     text-transform: uppercase;
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 .menu-toggler {
@@ -60,7 +103,7 @@ body {
 
 .navbar-menu a {
     color: rgb(255, 255, 255);
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 500;
     margin-left: 30px;
     transition: .2s linear;
@@ -68,7 +111,7 @@ body {
 }
 
 .navbar-menu a:hover {
-    color: #48dbfb !important;
+    color: #000000 !important;
 }
 
 .sticky {
