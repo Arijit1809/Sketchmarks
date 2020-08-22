@@ -6,13 +6,13 @@ $(document).ready(()=>{
         if (newComment){
             $.post("/comment/"+id,{comment: newComment}, function(result,status){
                 if(result){
-                    commentString=""
+                    let commentString=""
                     result.forEach(comment => {
                         commentString+=`<div class="comment">
                         <a href="/profile/${comment.name}" class="commenter">${comment.name}</a> says <span>${comment.comment}</span>
                         </div>`
                     });
-                    $(".img-comments").html(commentString)
+                    $(".click-div-comments").html(commentString)
                 }
                 else location="/login"
             })

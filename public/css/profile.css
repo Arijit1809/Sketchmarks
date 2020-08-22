@@ -552,7 +552,7 @@ body {
     }
 }
 
-@media screen and (max-width: 600px) {
+@media (max-width: 600px) {
     .grid-container {
         display: unset;
     }
@@ -590,7 +590,7 @@ body {
     }
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
     .click-div {
         flex-direction: column;
         margin: 5px 0px;

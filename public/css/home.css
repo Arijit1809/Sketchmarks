@@ -743,7 +743,7 @@ footer {
     }
 } */
 
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
     #land-name {
         font-size: 3rem;
         /* font-weight: 1000;

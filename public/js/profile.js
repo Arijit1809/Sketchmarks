@@ -30,22 +30,29 @@ $(document).ready(function () {
         readURL(this)
     }) 
     
+    let media=matchMedia("(max-width: 768px)")
+
     $(".click-img").click(function(){
-        $(".click-div").css("display","flex")
         let src=$(this).attr("src")
         let id=$(this).attr("id")
-        $.get("/thread/"+id,function(result,status){
-            $("#click-div-img").attr("src",src)
-            $("#click-div-user").html(`By <a href="/profile/${result.name}">${result.name}</a>`)
-            $(".click-div-desc").html(result.desc)
-            $(".like-btn").attr("id",result._id)
-            $(".likes-number").html(result.likes.likesNum)
-            let commentsString=""
-            result.comments.forEach(function(comment){
-                commentsString+=`<div><a href="/profile/${comment.name}">${comment.name}</a> says ${comment.comment}</div>\n`
+        if(media.matches){
+            location="/tile/"+id
+        }
+        else{
+            $(".click-div").css("display","flex")
+            $.get("/thread/"+id,function(result,status){
+                $("#click-div-img").attr("src",src)
+                $("#click-div-user").html(`By <a href="/profile/${result.name}">${result.name}</a>`)
+                $(".click-div-desc").html(result.desc)
+                $(".like-btn").attr("id",result._id)
+                $(".likes-number").html(result.likes.likesNum)
+                let commentsString=""
+                result.comments.forEach(function(comment){
+                    commentsString+=`<div><a href="/profile/${comment.name}">${comment.name}</a> says ${comment.comment}</div>\n`
+                })
+                $(".click-div-comments").html(commentsString)
             })
-            $(".click-div-comments").html(commentsString)
-        })
+        }
     })
     
     $("#click-div-close").click(function(){
