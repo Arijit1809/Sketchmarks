@@ -38,7 +38,6 @@ $(document).ready(()=>{
       $(".click-div").css("display","flex")
       $.get("/thread/"+id,function(result,status){
         $("#click-div-img").attr("src",src)
-        $(".secondary-img").attr("src",src)
         $("#click-div-user").html(`By <a href="/profile/${result.data.name}">${result.data.name}</a>`)
         $(".click-div-desc").html(result.data.desc)
         $(".click-div-share").attr("data-clipboard-text","/tile/"+id)
