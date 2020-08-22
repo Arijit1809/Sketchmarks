@@ -620,7 +620,8 @@ body {
 
 #posting {
     background-image: unset;
-    font-family: 'Special Elite', cursive;
+    font-family: "Dancing Script",
+    cursive;
     text-align: center;
     padding: 50px 150px 60px;
     font-size: 5rem;
@@ -1038,6 +1039,11 @@ footer {
     .sub-btn:hover {
         background-color: white;
         color: black;
+    }
+
+    .submit{
+        background-attachment: fixed;
+        background-position-x: center;
     }
 
     #sub-desc {
