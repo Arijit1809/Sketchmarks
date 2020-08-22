@@ -42,13 +42,15 @@ $(document).ready(function () {
             $(".click-div").css("display","flex")
             $.get("/thread/"+id,function(result,status){
                 $("#click-div-img").attr("src",src)
-                $("#click-div-user").html(`By <a href="/profile/${result.name}">${result.name}</a>`)
-                $(".click-div-desc").html(result.desc)
+                $("#click-div-user").html(`By <a href="/profile/${result.data.name}">${result.data.name}</a>`)
+                $(".click-div-desc").html(result.data.desc)
                 $(".click-div-share").attr("data-clipboard-text","/tile/"+id)
-                $(".like-btn").attr("id",result._id)
-                $(".likes-number").html(result.likes.likesNum)
+                $(".like-btn").attr("id",result.data._id)
+                $(".likes-number").html(result.data.likes.likesNum)
+                if (result.colour) $("#heart").css("color","red")
+                else $("#heart").css("color","black")
                 let commentsString=""
-                result.comments.forEach(function(comment){
+                result.data.comments.forEach(function(comment){
                     commentsString+=`<div><a href="/profile/${comment.name}">${comment.name}</a> says ${comment.comment}</div>\n`
                 })
                 $(".click-div-comments").html(commentsString)
@@ -62,13 +64,20 @@ $(document).ready(function () {
         $(".click-div-share").attr("data-clipboard-text","")
         $("#click-div-img").attr("src","")
         $("#click-div-user").html("")
+        $("#heart").css("color","black")
         $(".like-btn").attr("id","")
         $(".likes-number").html("")
     })
     
     $(".like-btn").click(function(){
         $.get("/likepost/"+$(this).attr("id"),function(result,status){
-            if(result) $(".likes-number").html(result)
+            if(result){
+                if(result.colour)
+                    $("#heart").css("color","red")
+                else
+                    $("#heart").css("color","grey")
+                $(".likes-number").html(result.likes)
+            } 
             else location="/login"
         })
     })

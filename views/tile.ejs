@@ -24,9 +24,18 @@
             <div class="comment-div">
                 <h2 class="desc"><%=tile.desc%></h2>
                 <div class="click-div-likes">
-                    <span class="like-btn"><i class="fas fa-heart" id="heart"></i></span>
+                    <span class="like-btn"><i class="fas fa-heart" id="heart"
+                    <% if(colour){ %>
+                        style="color: red;"
+                    <% }else{ %>
+                        style="color: grey;"
+                    <% } %>
+                    ></i></span>
                     <span class="likes-number"><%=tile.likes.likesNum%></span>
                     <span class="click-div-share" data-clipboard-action="copy" data-clipboard-text="/tile/<%=tile._id%>"><i class="fas fa-share-square"></i></span>
+                    <% if(sameUser){ %>
+                        <span id="click-div-delete"><i class="fas fa-trash-alt" id="dustbin"></i></span>
+                    <% } %>
                 </div>
                 <div class="click-div-comments">
                     <% tile.comments.forEach((comment)=>{ %>
