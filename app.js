@@ -37,6 +37,7 @@ app.use(passport.session());
 mongoose.connect("mongodb://localhost:27017/userDB", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
+  useFindAndModify: false
 });
 mongoose.set("useCreateIndex", true);
 /****************************Mongo Server end****************************/
@@ -241,8 +242,18 @@ app.get("/deletepost/:postId",(req,res)=>{
 
 })
 
-app.get("/tile",(req,res)=>{
-    res.render("tile")
+app.get("/tile/:postId",(req,res)=>{
+    Post.findById(req.params.postId,(err,result)=>{
+        if(err) res.send("404: Tile not found")
+        else{
+            if(result)
+                res.render("tile",{
+                    tile: result
+                })
+            else
+                res.send("404: Tile not found")
+        }
+    })
 })
 
 // app.get("/loginfail",(req,res)=>{

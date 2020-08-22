@@ -15,11 +15,9 @@ $(document).ready(()=>{
   function readURL(input){
     if (input.files && input.files[0]){
       let reader = new FileReader()
-
       reader.onload=(e)=>{
         $('#preview').attr('src', e.target.result)
       }
-
       reader.readAsDataURL(input.files[0])
     }
   }
@@ -28,25 +26,34 @@ $(document).ready(()=>{
     readURL(this)
   })
 
+  let media=matchMedia("(max-width: 768px)")
+
   $(".click-img").click(function(){
-    $(".click-div").css("display","flex")
     let src=$(this).attr("src")
     let id=$(this).attr("id")
-    $.get("/thread/"+id,function(result,status){
-      $("#click-div-img").attr("src",src)
-      $("#click-div-user").html(`By <a href="/profile/${result.name}">${result.name}</a>`)
-      $(".like-btn").attr("id",result._id)
-      $(".likes-number").html(result.likes.likesNum)
-      let commentsString=""
-      result.comments.forEach(function(comment){
-        commentsString+=`<div><a href="/profile/${comment.name}">${comment.name}</a> says ${comment.comment}</div>\n`
-    })
-      $(".click-div-comments").html(commentsString)
-    })
+    if(media.matches){
+      location="/tile/"+id
+    }
+    else{
+      $(".click-div").css("display","flex")
+      $.get("/thread/"+id,function(result,status){
+        $("#click-div-img").attr("src",src)
+        $("#click-div-user").html(`By <a href="/profile/${result.name}">${result.name}</a>`)
+        $(".click-div-desc").html(result.desc)
+        $(".like-btn").attr("id",result._id)
+        $(".likes-number").html(result.likes.likesNum)
+        let commentsString=""
+        result.comments.forEach(function(comment){
+          commentsString+=`<div><a href="/profile/${comment.name}">${comment.name}</a> says ${comment.comment}</div>\n`
+        })
+        $(".click-div-comments").html(commentsString)
+      })
+    }
   })
 
   $("#click-div-close").click(function(){
     $(".click-div").css("display","none")
+    $(".click-div-desc").html("")
     $("#click-div-img").attr("src","")
     $("#click-div-user").html("")
     $(".like-btn").attr("id","")
@@ -56,7 +63,7 @@ $(document).ready(()=>{
   $(".like-btn").click(function(){
     $.get("/likepost/"+$(this).attr("id"),function(result,status){
       if(result) $(".likes-number").html(result)
-      else alert("Log In to continue")
+      else location="/login"
     })
   })
 
@@ -64,19 +71,18 @@ $(document).ready(()=>{
     let id=$(".like-btn").attr("id")
     let newComment=$(".post-comment").val()
     $(".post-comment").val("")
-    $.post("/comment/"+id,{comment: newComment},function(result,status){
-      if(result){
-        let commentsString=""
-        result.forEach(function(comment){
-          commentsString+=`<div><a href="/profile/${comment.name}">${comment.name}</a> says ${comment.comment}</div>\n`
-        })
-        $(".click-div-comments").html(commentsString)
-      }
-      else{
-        $(".post-comment").val("You must be logged in to continue")
-      }
-    })
-
+    if(newComment){
+      $.post("/comment/"+id,{comment: newComment},function(result,status){
+        if(result){
+          let commentsString=""
+          result.forEach(function(comment){
+            commentsString+=`<div><a href="/profile/${comment.name}">${comment.name}</a> says ${comment.comment}</div>\n`
+          })
+          $(".click-div-comments").html(commentsString)
+        }
+        else location="/login"
+      })
+    }
   })
 })
 

@@ -1,0 +1,116 @@
+/*Navbar*/
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: 0.3s linear;
+    z-index: 9;
+}
+
+
+
+.change {
+    background-color: black;
+}
+
+#brand {
+    margin: 10px;
+    margin-right: auto;
+    font-size: 1.3rem;
+    color: #eeeeee;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.navbar ul li {
+    margin: 20px 20px;
+}
+
+#signup-li {
+    margin: 0 10px;
+}
+
+#logout-li {
+    margin: 0 10px;
+}
+
+.navbar a {
+    text-decoration: none;
+    font-family: 'Alata';
+    color: #c7b198;
+    font-size: 1rem;
+}
+
+.navbar a:hover {
+    color: #97846e;
+}
+
+.navbar .login {
+    border: 2px solid brown;
+    padding: 5px 20px;
+    border-radius: 10px;
+    background-color: brown;
+    color: #d3d3d3;
+    font-family: "Ubuntu";
+    transition: 0.1s linear;
+}
+
+.navbar .login:hover {
+    background-color: red;
+    color: #d3d3d3;
+}
+
+.navbar .signup {
+    border: 2px solid purple;
+    padding: 5px 20px;
+    border-radius: 10px;
+    font-family: "Ubuntu";
+    transition: 0.1s linear;
+
+}
+
+.navbar .signup:hover {
+    background-color: purple;
+    color: #d3d3d3;
+}
+
+.navbar .logout {
+    border: 2px solid brown;
+    color: #d3d3d3;
+    padding: 5px 20px;
+    border-radius: 10px;
+    font-family: "Ubuntu";
+    transition: 0.1s linear;
+}
+
+.navbar .logout:hover {
+    color: white;
+    background-color: brown;
+}
+/*Navbar End*/
+/*Footer*/
+footer {
+    margin: 0px 0 50px;
+}
+
+.foot-text {
+    text-align: center;
+    margin: 40px 0;
+    font-size: 1.5rem;
+    font-family: "Alice";
+}
+
+.icons {
+    text-align: center;
+}
+
+.icons i {
+    font-size: 2rem;
+    padding: 0 10px;
+}

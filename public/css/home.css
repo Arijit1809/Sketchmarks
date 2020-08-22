@@ -327,12 +327,13 @@ body {
 .contributors {
     background-color: white;
     background-image: linear-gradient(#0099ff, rgb(0, 4, 255));
+
     padding-bottom: 50px;
 }
 
 .section-head {
     text-align: center;
-    padding: 100px 150px 100px;
+    padding: 70px 150px 100px;
     font-size: 5rem;
     color: white;
     margin: 0;
@@ -385,7 +386,7 @@ body {
     background-position: center;
     background-size: cover;
     max-width: 300px;
-    height: 300px;
+    max-height: 300px;
 }
 
 .swiper-container {
@@ -399,8 +400,10 @@ body {
 
 /* Posts  */
 .posts {
-    padding: 50px 0;
+    padding: 0;
     background-color: black;
+    background-image: url(../img/black.jpg);
+    background-size: auto;
 }
 
 .header {
@@ -921,7 +924,7 @@ footer {
     }
 } */
 
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
     #land-name {
         font-size: 3rem;
         /* font-weight: 1000;
