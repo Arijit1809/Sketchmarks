@@ -540,6 +540,11 @@ body {
     font-family: 'Alata';
 }
 
+.click-div-share i:hover{
+    cursor: pointer;
+    color: grey;
+}
+
 #click-div-close {
     position: absolute;
     right: 70px;

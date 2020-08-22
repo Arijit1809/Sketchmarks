@@ -53,6 +53,7 @@ a{
     max-height: 90vh;
     width: 95vw;
     overflow: auto;
+
     margin: 10px;
     margin-bottom: 70px;
     padding: 10px;
@@ -94,10 +95,19 @@ a{
     margin-left: 5px;
     background-color: transparent;
     border: 0px;
-    
 }
 #comment-icon{
     font-size: 2rem;
     color: rgb(64, 64, 255);
+}
+
+}
+
+.click-div-share i{
+    color: white;
+}
+.click-div-share i:hover{
+    cursor: pointer;
+    color: grey;
 }
 

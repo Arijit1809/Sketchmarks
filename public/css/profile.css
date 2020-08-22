@@ -363,6 +363,11 @@ body {
     text-align: center;
 }
 
+.click-div-share i:hover{
+    cursor: pointer;
+    color: grey;
+}
+
 .like-btn,
 .likes-number {
     font-size: 1.5rem;
