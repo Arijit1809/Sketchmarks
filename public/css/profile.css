@@ -6,7 +6,10 @@
 
 body {
     background-color: black;
-    background-attachment: fixed;
+    
+    background-image: url(../img/black.jpg);
+    background-size: auto;
+    /* background-attachment: fixed; */
 }
 
 .navbar {
@@ -139,14 +142,7 @@ body {
 }
 
 .profile {
-    /* background: #ED213A; */
-    /* fallback for old browsers */
-    /* background: -webkit-linear-gradient(to left, #93291E, #ED213A); */
-    /* Chrome 10-25, Safari 5.1-6 */
-    /* background: linear-gradient(to left, #93291E, #ED213A); */
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background-image: linear-gradient(rgb(2, 7, 23), rgb(2, 21, 45));
-    
+    background-image: linear-gradient(rgba(218, 218, 218, 0.575), rgba(102, 102, 102, 0.582));
     position: fixed;
     height: 100vh;
     width: 22vw;
@@ -167,7 +163,7 @@ body {
         cursive;
     /* font-size: 40px; */
     margin-bottom: 50px;
-    color: white;
+    color: rgb(0, 0, 0);
     text-align: center;
     text-transform: uppercase;
     padding-top: 40px;
@@ -177,7 +173,7 @@ body {
     font-family: 'Baloo Tamma 2',
         cursive;
     /* font-size: 40px; */
-    color: white;
+    color: rgb(0, 0, 0);
     text-align: center;
     text-transform: uppercase;
     padding-top: 0px;
@@ -196,7 +192,8 @@ body {
     background-size: cover;
     grid-column-start: 2;
     grid-column-end: 3;
-    background-image: linear-gradient(rgb(0, 60, 255), rgb(0, 255, 242));
+    
+    /* background-image: linear-gradient(rgb(0, 60, 255), rgb(0, 255, 242)); */
     /* background-color: transparent; */
     /* border-radius: 20px; */
     /* margin: 10px; */
@@ -262,7 +259,7 @@ body {
     /* transform: translateX(-50%); */
     font-size:3rem;
     z-index: 2;
-    color: white;
+    color: rgb(255, 255, 255);
     text-align: center;
     text-transform: uppercase;
 
