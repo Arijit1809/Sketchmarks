@@ -44,7 +44,7 @@ $(document).ready(()=>{
         $(".like-btn").attr("id",result.data._id)
         $(".likes-number").html(result.data.likes.likesNum)
         if (result.colour) $("#heart").css("color","red")
-        else $("#heart").css("color","black")
+        else $("#heart").css("color","white")
         let commentsString=""
         result.data.comments.forEach(function(comment){
           commentsString+=`<div><a href="/profile/${comment.name}">${comment.name}</a> says ${comment.comment}</div>\n`
