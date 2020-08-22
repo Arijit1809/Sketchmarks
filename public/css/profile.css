@@ -145,7 +145,13 @@ body {
     /* Chrome 10-25, Safari 5.1-6 */
     /* background: linear-gradient(to left, #93291E, #ED213A); */
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background-image: linear-gradient(rgb(4, 24, 88), rgb(0, 110, 255));
+    /* background-image: linear-gradient(rgb(4, 24, 88), rgb(0, 110, 255)); */
+    background: #1a2a6c;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     position: fixed;
     height: 100vh;
     width: 22vw;

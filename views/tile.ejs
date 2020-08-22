@@ -4,19 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tile</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alata&family=Alice&family=Eczar:wght@600&display=swap&family=Pacifico&display=swap&family=Dancing+Script:wght@700&display=swap&family=Ubuntu:wght@500&display=swap&family=Great+Vibes&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="/css/tile.css">
 </head>
 <body>
     <div class="main">
+        <a href="/profile/<%=tile.name%>" class="author">By <%=tile.name%></a>
         <div class="tile">
+            
             <div class="tile-div">
+
                 <img src="data:image/<%=tile.img.contentType%>;base64,<%=tile.img.data.toString('base64')%>" id="<%=tile._id%>" class="tile-img">
     
             </div>
         </div>
         <div class="comments-section">
             <div class="comment-div">
-                <a href="/profile/<%=tile.name%>" class="author">By <%=tile.name%></a>
                 <h2 class="desc"><%=tile.desc%></h2>
                 <div class="click-div-likes">
                     <span class="like-btn"><i class="fas fa-heart" id="heart"></i></span>
@@ -30,14 +35,17 @@
                         </div>
                     <% }) %>
                 </div>
-                <textarea class="comment-area" cols="30" rows="3" placeholder="Add your comment here"></textarea>
-                <button class="sub-btn">Submit</button>
+                
             </div>
         </div>
     </div>
+    <div class="submit">
+        <textarea class="comment-area" cols="100" rows="1" placeholder="Add your comment here"></textarea>
+        <button class="sub-btn"><i class="fas fa-comment" id="comment-icon"></i></button>
+    </div>
 
 
-
+     <script src="https://kit.fontawesome.com/67a49e1ba0.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
     <script src="https://kit.fontawesome.com/67a49e1ba0.js" crossorigin="anonymous"></script>
