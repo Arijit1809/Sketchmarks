@@ -24,19 +24,22 @@ body{
 
 /* Tile section */
 .tile-div{
-    margin: 100px 50px;
+    margin: 50px 50px 0;
     width: 50vw;
 }
 
 .tile-img{
     width: 100%;
     border: 3px solid purple;
+    max-width: 90vh;
 }
 
 /* Tile section end */
 
 /* Comments section */
-.comments{
+.comments-section{
     border: 2px solid white;
     max-height: 90vh;
+    max-width: 40vw;
+    overflow: auto;
 }

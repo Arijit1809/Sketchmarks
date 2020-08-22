@@ -10,19 +10,23 @@
     <div class="main">
         <div class="tile">
             <div class="tile-div">
-                <img src="/img/bg.jpg" alt="" class="tile-img">
+                <img src="data:image/<%=tile.img.contentType%>;base64,<%=tile.img.data.toString('base64')%>" id="<%=tile._id%>" class="tile-img">
     
             </div>
         </div>
-        <div class="comments">
+        <div class="comments-section">
             <div class="comment-div">
-                <h1 class="author">By bur14</h1>
-                <h2 class="desc">Image description</h2>
+                <a href="/profile/<%=tile.name%>" class="author">By <%=tile.name%></a>
+                <h2 class="desc"><%=tile.desc%></h2>
                 <div class="img-comments">
-                    Ajax stuff here
+                    <% tile.comments.forEach((comment)=>{ %>
+                        <div class="comment">
+                            <a href="/profile/<%=comment.name%>" class="commenter"><%=comment.name%></a> says <span><%=comment.comment%></span>
+                        </div>
+                    <% }) %>
                 </div>
-                <textarea cols="30" rows="3" placeholder="Add your comment here"></textarea>
-                <button>Submit</button>
+                <textarea class="comment-area" cols="30" rows="3" placeholder="Add your comment here"></textarea>
+                <button class="sub-btn">Submit</button>
             </div>
         </div>
     </div>
