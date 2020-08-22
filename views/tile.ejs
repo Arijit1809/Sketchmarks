@@ -19,7 +19,7 @@
             <div class="comment-div">
                 <h2 class="desc"><%=tile.desc%></h2>
                 <div class="click-div-likes">
-                    <span class="like-btn"><i class="fas fa-heart" id="heart"
+                    <span class="like-btn"><i class="far fa-heart" id="heart"
                     <% if(colour){ %>
                         style="color: red;"
                     <% }else{ %>
@@ -27,9 +27,9 @@
                     <% } %>
                     ></i></span>
                     <span class="likes-number"><%=tile.likes.likesNum%></span>
-                    <span class="click-div-share" data-clipboard-action="copy" data-clipboard-text="/tile/<%=tile._id%>"><i class="fas fa-share-square"></i></span>
+                    <span class="click-div-share" data-clipboard-action="copy" data-clipboard-text="/tile/<%=tile._id%>"><i class="far fa-share-square"></i></span>
                     <% if(sameUser){ %>
-                        <span id="click-div-delete"><i class="fas fa-trash-alt" id="dustbin"></i></span>
+                        <span id="click-div-delete"><i class="far fa-trash-alt" id="dustbin"></i></span>
                     <% } %>
                 </div>
                 <div class="click-div-comments">
@@ -45,7 +45,7 @@
     </div>
     <div class="submit">
         <textarea class="comment-area" cols="100" rows="1" placeholder="Add your comment here"></textarea>
-        <button class="sub-btn"><i class="fas fa-comment" id="comment-icon"></i></button>
+        <button class="sub-btn"><i class="far fa-comment" id="comment-icon"></i></button>
     </div>
 
 

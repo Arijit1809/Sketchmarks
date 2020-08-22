@@ -94,6 +94,12 @@ a{
 .click-div-comments{
     overflow: auto;
 }
+.click-div-share{
+    margin-right: 10px;
+}
+#click-div-delete{
+    color: red;
+}
 .comment-area{
     color: rgb(255, 255, 255);
     font-family: 'Alata';
