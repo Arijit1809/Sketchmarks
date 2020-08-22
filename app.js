@@ -201,6 +201,7 @@ app.get("/likepost/:postId",(req,res)=>{
             if(err) console.log(err)
             else{
                 let ind=result.likes.likers.indexOf(req.user.username)
+                let btncolour=false
                 if(ind>-1){
                     result.likes.likesNum--
                     result.likes.likers.splice(ind,1)
@@ -208,9 +209,10 @@ app.get("/likepost/:postId",(req,res)=>{
                 else{
                     result.likes.likesNum++
                     result.likes.likers.push(req.user.username)
+                    btncolour=true
                 }
                 result.save()
-                res.send(`${result.likes.likesNum}`)
+                res.send({likes: result.likes.likesNum, colour:btncolour})
             }
         })
     }
@@ -220,7 +222,14 @@ app.get("/likepost/:postId",(req,res)=>{
 app.get("/thread/:postId",(req,res)=>{
     Post.findById(req.params.postId,(err,result)=>{
         if(err) console.log(err)
-        else res.send(result)
+        else{
+            let btncolour=false
+            if(req.isAuthenticated()){
+                let ind=result.likes.likers.indexOf(req.user.username)
+                if(ind>-1) btncolour=true
+            }
+            res.send({data: result, colour: btncolour})
+        } 
     })
 })
 
@@ -232,7 +241,7 @@ app.get("/deletepost/:postId",(req,res)=>{
                 fs.unlink("uploads/"+result.filename,(err)=>{if(err)console.log(err)})
                 Post.deleteOne({_id: req.params.postId},(err,result)=>{
                     if(err) console.log(err)
-                    else res.send(true)
+                    else res.send(req.user.username)
                 })
             }
             else res.send("You are not authorised to perform this action.")
@@ -246,10 +255,33 @@ app.get("/tile/:postId",(req,res)=>{
     Post.findById(req.params.postId,(err,result)=>{
         if(err) res.send("404: Tile not found")
         else{
-            if(result)
-                res.render("tile",{
-                    tile: result
+            if(result){
+                let btncolour=false
+                if(req.isAuthenticated()){
+                    let ind=result.likes.likers.indexOf(req.user.username)
+                    if(ind>-1) btncolour=true
+                    if(req.user.username==result.name){
+                        res.render("tile",{
+                            tile: result,
+                            sameUser: true,
+                            colour: btncolour
+                        })
+                    }
+                    else
+                        res.render("tile",{
+                            tile: result,
+                            sameUser: false,
+                            colour: btncolour
+                        })
+                }
+                else
+                    res.render("tile",{
+                        tile: result,
+                        sameUser: false,
+                        colour: btncolour
                 })
+                    
+            }
             else
                 res.send("404: Tile not found")
         }
