@@ -18,6 +18,11 @@
             <div class="comment-div">
                 <a href="/profile/<%=tile.name%>" class="author">By <%=tile.name%></a>
                 <h2 class="desc"><%=tile.desc%></h2>
+                <div class="click-div-likes">
+                    <span class="like-btn"><i class="fas fa-heart" id="heart"></i></span>
+                    <span class="likes-number"><%=tile.likes.likesNum%></span>
+                    <span class="click-div-share" data-clipboard-action="copy" data-clipboard-text="/tile/<%=tile._id%>"><i class="fas fa-share-square"></i></span>
+                </div>
                 <div class="click-div-comments">
                     <% tile.comments.forEach((comment)=>{ %>
                         <div class="comment">
@@ -34,6 +39,8 @@
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
+    <script src="https://kit.fontawesome.com/67a49e1ba0.js" crossorigin="anonymous"></script>
     <script src="/js/tile.js"></script>
 </body>
 </html>

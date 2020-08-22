@@ -44,6 +44,7 @@ $(document).ready(function () {
                 $("#click-div-img").attr("src",src)
                 $("#click-div-user").html(`By <a href="/profile/${result.name}">${result.name}</a>`)
                 $(".click-div-desc").html(result.desc)
+                $(".click-div-share").attr("data-clipboard-text","/tile/"+id)
                 $(".like-btn").attr("id",result._id)
                 $(".likes-number").html(result.likes.likesNum)
                 let commentsString=""
@@ -58,6 +59,7 @@ $(document).ready(function () {
     $("#click-div-close").click(function(){
         $(".click-div").css("display","none")
         $(".click-div-desc").html("")
+        $(".click-div-share").attr("data-clipboard-text","")
         $("#click-div-img").attr("src","")
         $("#click-div-user").html("")
         $(".like-btn").attr("id","")
@@ -100,3 +102,4 @@ $(document).ready(function () {
         }
     })
 });
+new ClipboardJS(".click-div-share")

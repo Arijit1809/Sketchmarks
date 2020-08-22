@@ -1,8 +1,8 @@
 $(document).ready(()=>{
+    let id=$(".tile-img").attr("id")
     $(".sub-btn").click(function(){
         let newComment=$(".comment-area").val()
         $(".comment-area").val("")
-        let id=$(".tile-img").attr("id")
         if (newComment){
             $.post("/comment/"+id,{comment: newComment}, function(result,status){
                 if(result){
@@ -18,4 +18,11 @@ $(document).ready(()=>{
             })
         }
     })
+    $(".like-btn").click(function(){
+        $.get("/likepost/"+id,function(result,status){
+            if(result) $(".likes-number").html(result)
+            else location="/login"
+        })
+    })
 })
+new ClipboardJS(".click-div-share")

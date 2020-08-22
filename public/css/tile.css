@@ -43,3 +43,11 @@ body{
     max-width: 40vw;
     overflow: auto;
 }
+
+.click-div-share i{
+    color: white;
+}
+.click-div-share i:hover{
+    cursor: pointer;
+    color: grey;
+}
