@@ -42,13 +42,14 @@ $(document).ready(function () {
             $(".click-div").css("display","flex")
             $.get("/thread/"+id,function(result,status){
                 $("#click-div-img").attr("src",src)
+                $(".secondary-img").attr("src",src)
                 $("#click-div-user").html(`By <a href="/profile/${result.data.name}">${result.data.name}</a>`)
                 $(".click-div-desc").html(result.data.desc)
                 $(".click-div-share").attr("data-clipboard-text","/tile/"+id)
                 $(".like-btn").attr("id",result.data._id)
                 $(".likes-number").html(result.data.likes.likesNum)
                 if (result.colour) $("#heart").css("color","red")
-                else $("#heart").css("color","black")
+                else $("#heart").css("color","white")
                 let commentsString=""
                 result.data.comments.forEach(function(comment){
                     commentsString+=`<div><a href="/profile/${comment.name}">${comment.name}</a> says ${comment.comment}</div>\n`
@@ -63,6 +64,7 @@ $(document).ready(function () {
         $(".click-div-desc").html("")
         $(".click-div-share").attr("data-clipboard-text","")
         $("#click-div-img").attr("src","")
+        $(".secondary-img").attr("src","")
         $("#click-div-user").html("")
         $("#heart").css("color","black")
         $(".like-btn").attr("id","")
