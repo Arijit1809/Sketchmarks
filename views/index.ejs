@@ -6,7 +6,6 @@
     <title>Sketchmarks</title>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Alata&family=Alice&family=Eczar:wght@600&display=swap&family=Pacifico&display=swap&family=Dancing+Script:wght@700&display=swap&family=Ubuntu:wght@500&display=swap&family=Great+Vibes&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="/css/home.css">
 </head>
 <body>
@@ -130,71 +129,23 @@
 
         </div>
     </section>
-    <section class="contributors">
+    <section class="top-posts">
            <div class="inner">
-               <h1 class="section-head" id="tpartist">Top Artists</h1>
-               <div>
-                 <div class="artists">
-                    <div class="usernm">
-                        <img src="img/pfp.jpg" class="pfpp" alt="" srcset="">
-                        <div>Arijit</div>
+            <h1 class="section-head">Top Tiles</h1>
+                <% topPosts.forEach((post)=>{ %>
+                    <div class="top-post">
+                        <div class="artist">By <a href="/profile/<%=post.name%>"><%=post.name%></a></div>
+                        <div class="top-post-desc"><%=post.desc%></div>
+                        <img src="data:image/<%=post.img.contentType%>;base64,<%=post.img.data.toString('base64')%>" id="<%=post._id%>" class="top-post-img">
+                        <div class="top-post-comments">
+                            <span class="top-post-likes"><%=post.likes.likesNum%></span>
+                            <% post.comments.forEach((comment)=>{ %>
+                                <div><%=comment.name%> says <%=comment.comment%></div>
+                            <% }) %>
+                        </div>
                     </div>
-                   <!-- Swiper -->
-                <div class="swiper-container">
-                  <div class="swiper-wrapper">
-                      <div class="swiper-slide" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMBhY6hfEmasPgrdPeG1hZ_ELagZ9a-i6Jkw&usqp=CAU)"></div>
-                      <div class="swiper-slide" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMBhY6hfEmasPgrdPeG1hZ_ELagZ9a-i6Jkw&usqp=CAU)"></div>
-                      <div class="swiper-slide" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMBhY6hfEmasPgrdPeG1hZ_ELagZ9a-i6Jkw&usqp=CAU)"></div>
-                      <div class="swiper-slide" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMBhY6hfEmasPgrdPeG1hZ_ELagZ9a-i6Jkw&usqp=CAU)"></div>
-                      <div class="swiper-slide" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMBhY6hfEmasPgrdPeG1hZ_ELagZ9a-i6Jkw&usqp=CAU)"></div>
-                      <div class="swiper-slide" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMBhY6hfEmasPgrdPeG1hZ_ELagZ9a-i6Jkw&usqp=CAU)"></div>
-                   </div>
-                   <!-- Add Pagination -->
-                   <div class="swiper-pagination"  style="visibility: hidden;"></div>
-                 </div>
-               </div>
-               <div class="artists">
-                <div class="usernm">
-                    <img src="img/pfp.jpg" class="pfpp" alt="" srcset="">
-                    <div>Arijit</div>
-                </div>
-                 <!-- Swiper -->
-              <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMBhY6hfEmasPgrdPeG1hZ_ELagZ9a-i6Jkw&usqp=CAU)"></div>
-                    <div class="swiper-slide" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMBhY6hfEmasPgrdPeG1hZ_ELagZ9a-i6Jkw&usqp=CAU)"></div>
-                    <div class="swiper-slide" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMBhY6hfEmasPgrdPeG1hZ_ELagZ9a-i6Jkw&usqp=CAU)"></div>
-                    <div class="swiper-slide" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMBhY6hfEmasPgrdPeG1hZ_ELagZ9a-i6Jkw&usqp=CAU)"></div>
-                    <div class="swiper-slide" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMBhY6hfEmasPgrdPeG1hZ_ELagZ9a-i6Jkw&usqp=CAU)"></div>
-                    <div class="swiper-slide" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMBhY6hfEmasPgrdPeG1hZ_ELagZ9a-i6Jkw&usqp=CAU)"></div>
-                 </div>
-                 <!-- Add Pagination -->
-                 <div class="swiper-pagination" style="visibility: hidden;"></div>
-               </div>
-             </div>
-             <div class="artists">
-                <div class="usernm">
-                    <img src="img/pfp.jpg" class="pfpp" alt="" srcset="">
-                    <div>Arijit</div>
-                </div>
-               <!-- Swiper -->
-            <div class="swiper-container">
-              <div class="swiper-wrapper">
-                  <div class="swiper-slide" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMBhY6hfEmasPgrdPeG1hZ_ELagZ9a-i6Jkw&usqp=CAU)"></div>
-                  <div class="swiper-slide" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMBhY6hfEmasPgrdPeG1hZ_ELagZ9a-i6Jkw&usqp=CAU)"></div>
-                  <div class="swiper-slide" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMBhY6hfEmasPgrdPeG1hZ_ELagZ9a-i6Jkw&usqp=CAU)"></div>
-                  <div class="swiper-slide" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMBhY6hfEmasPgrdPeG1hZ_ELagZ9a-i6Jkw&usqp=CAU)"></div>
-                  <div class="swiper-slide" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMBhY6hfEmasPgrdPeG1hZ_ELagZ9a-i6Jkw&usqp=CAU)"></div>
-                  <div class="swiper-slide" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMBhY6hfEmasPgrdPeG1hZ_ELagZ9a-i6Jkw&usqp=CAU)"></div>
-               </div>
-               <!-- Add Pagination -->
-               <div class="swiper-pagination" style="visibility: hidden;"></div>
-             </div>
-           </div>
-
-
-               </div>
-           </div>
+               <% }) %>
+            </div>
        </section>
     <section class="submit">
         <div class="inner">
@@ -220,8 +171,6 @@
                 <i class="fab fa-facebook"></i>
                 <i class="fab fa-facebook"></i>
                 <i class="fab fa-facebook"></i>
-
-
             </div>
         </div>
 
@@ -230,7 +179,6 @@
     <script src="https://kit.fontawesome.com/67a49e1ba0.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
     <script src="/js/home.js"></script>
 </body>
