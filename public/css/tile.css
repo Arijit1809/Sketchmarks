@@ -65,6 +65,12 @@ a{
     text-transform: capitalize;
     margin: 10px 0;
 }
+.likes-number{
+    color: black;
+}
+#heart{
+    color: red;
+}
 .comment{
     color: black;
     font-family: 'Alata';
@@ -101,13 +107,11 @@ a{
     color: rgb(64, 64, 255);
 }
 
-}
-
 .click-div-share i{
-    color: white;
+    color: grey;
 }
 .click-div-share i:hover{
     cursor: pointer;
-    color: grey;
+    color: black;
 }
 
