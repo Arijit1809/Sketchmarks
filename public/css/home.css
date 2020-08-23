@@ -344,18 +344,33 @@ body {
     font-family: "Dancing Script", cursive;
 }
 
-.top-post{
+.top-post-left, .top-post-right{
     margin: 30px 0;
     border: 2px solid black;
     text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Ubuntu";
 }
 
 .top-post-img{
-    width: 30%;
+    width: 50%;
 }
 
-.top-post-left, .top-post-right{
-    display: flex;
+.credits{
+    margin: 30px 50px;
+    text-align: center;
+    width: 50%;
+}
+
+.artist{
+    font-size: 3rem;
+}
+
+.top-post-desc{
+    font-size: 2.25rem;
+    margin-bottom: 50px;
 }
 
 /* Top posts end */
@@ -490,7 +505,7 @@ body {
     margin-bottom: 10px;
     text-align: center;
 }
-#heart:hover{
+.heart:hover{
     cursor: pointer;
     color: red !important;
 }
@@ -822,43 +837,6 @@ footer {
         padding: 0 5px;
     }
 
-    .artists {
-        display: flex;
-        border: solid;
-        border-radius: 10px;
-        border-color: black;
-        margin: 10px;
-        background-color: rgb(0, 0, 0);
-    }
-
-    .usernm {
-        text-align: center;
-        margin-left: 30px;
-        color: rgb(255, 255, 255);
-        width: 28%;
-        font-family: 'Alata';
-        font-size: 2rem;
-        /
-
-    }
-
-    .pfpp {
-        height: 100px;
-        width: 100px;
-        border-radius: 50%;
-        
-    }
-
-    .swiper-slide {
-        max-width: 200px;
-        max-height: 200px;
-    }
-
-    .swiper-container {
-        margin-left: 10px;
-        width: 300px;
-    }
-
 
     #posting {
         background-image: unset;
@@ -961,48 +939,6 @@ footer {
         cursive; */
         background-size: 100%;
     }
-    #tpartist {
-        font-size: 3rem;
-        padding: 60px 0px;
-    }
-    
-    .artists {
-        display: flex;
-        border: solid;
-        border-radius: 10px;
-        border-color: black;
-        margin: 10px;
-        background-color: rgb(0, 0, 0);
-    }
-
-    .usernm {
-        text-align: center;
-        margin-left: 30px;
-        color: rgb(255, 255, 255);
-        width: 28%;
-        font-family: 'Alata';
-        font-size: 2rem;
-        /* padding-top: 70px; */
-
-    }
-
-    .pfpp {
-        height: 100px;
-        width: 100px;
-        border-radius: 50%;
-        /* margin-top: 25%; */
-    }
-
-    .swiper-slide {
-        max-width: 200px;
-        max-height: 200px;
-    }
-
-    .swiper-container {
-        margin-left: 10px;
-        width: 300px;
-    }
-
 
     #posting {
         background-image: unset;
