@@ -93,8 +93,13 @@ input{
     .inner{
         padding: 0 10px;
     }
+    .outer{
+        margin-top: 0px;
+        max-height: 85vh;
+    }
     .flex {
         padding: 60px 50px;
+        max-width: 90vw;
     }
     .head{
         font-size: 3rem;
@@ -107,6 +112,9 @@ input{
         margin-bottom: 20px;
     }
     #check{
+        margin-bottom: 20px;
+    }
+    .signup{
         margin-bottom: 20px;
     }
 
