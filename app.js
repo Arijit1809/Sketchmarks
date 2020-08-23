@@ -221,26 +221,6 @@ app.get("/posts",function(req,res){
     })
 })
 
-app.get("/about", function (req, res) {
-    
-    if (req.user)
-        res.render("about", {
-            loginDisplay: "none",
-            signupDisplay: "none",
-            logoutDisplay: "inline-block",
-            profileDisplay: "inline-block",
-            username: req.user.username
-        })
-    else
-        res.render("about", {
-            loginDisplay: "inline-block",
-            signupDisplay: "inline-block",
-            logoutDisplay: "none",
-            profileDisplay: "none",
-            username: "NA"
-        })
-})
-
 app.get("/likepost/:postId",(req,res)=>{
     if(req.isAuthenticated()){
         Post.findById(req.params.postId,(err,result)=>{
@@ -270,11 +250,13 @@ app.get("/thread/:postId",(req,res)=>{
         if(err) console.log(err)
         else{
             let btncolour=false
+            let viewer=false
             if(req.isAuthenticated()){
+                viewer=req.user.username
                 let ind=result.likes.likers.indexOf(req.user.username)
                 if(ind>-1) btncolour=true
             }
-            res.send({data: result, colour: btncolour})
+            res.send({data: result, colour: btncolour, viewer: viewer})
         } 
     })
 })
@@ -422,10 +404,23 @@ app.post("/checkusername",(req,res)=>{
 app.post("/comment/:postId",(req,res)=>{
     if(req.isAuthenticated()){
         Post.findByIdAndUpdate(req.params.postId,{$push:{"comments": {name: req.user.username, comment: req.body.comment}}},{new: true},(err,result)=>{
-            res.send(result.comments)
+            res.send({comments: result.comments, viewer: req.user.username})
         })
     }
     else res.send(false)
+})
+
+app.post("/deletecomment/:postId",(req,res)=>{
+    Post.findById(req.params.postId,(err,result)=>{
+        for(let i=0; i<result.comments.length; i++){
+            if(result.comments[i].comment==req.body.comment && req.user.username==result.comments[i].name){
+                result.comments.splice(i,1)
+                break
+            }
+        }
+        result.save()
+        res.send({comments: result.comments, viewer: req.user.username})
+    })
 })
 /****************************Post requests end****************************/
 
