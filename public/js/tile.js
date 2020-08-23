@@ -39,5 +39,10 @@ $(document).ready(()=>{
             })
         }
     })
+    $(".delete-comment").click(function(){
+        $.post("/deletecomment/"+id,{comment: $(this).parent().children("span").html()},function(result,status){
+            
+        })
+    })
 })
 new ClipboardJS(".click-div-share")
