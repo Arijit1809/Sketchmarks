@@ -5,7 +5,18 @@ $(document).ready(()=>{
         $(".comment-area").val("")
         if (newComment){
             $.post("/comment/"+id,{comment: newComment}, function(result,status){
-                if(result) location.reload()
+                if(result){
+                    let commentsString = ""
+                    result.comments.forEach(function (comment) {
+                        if (comment.name == result.viewer) {
+                            commentsString += `<div class="comment-div"><a href="/profile/${comment.name}">${comment.name}</a> says <span>${comment.comment}</span> &nbsp;<i class="fas fa-trash delete-comment" title="Delete this comment"></i></div>\n`
+                        }
+                        else {
+                            commentsString += `<div class="comment-div"><a href="/profile/${comment.name}">${comment.name}</a> says ${comment.comment}</div>\n`
+                        }
+                    })
+                    $(".click-div-comments").html(commentsString)
+                }
                 else location="/login"
             })
         }
@@ -31,11 +42,21 @@ $(document).ready(()=>{
             })
         }
     })
-    $(".delete-comment").click(function(){
-        let sure=confirm("Are you sure you want to delete this comment?")
-        if(sure){
-            $.post("/deletecomment/"+id,{comment: $(this).parent().children("span").html()},function(result,status){
-                location.reload()
+    $(".click-div-comments").on("click",".delete-comment",function () {
+        let sure = confirm("Are you sure you want to delete this comment?")
+        if (sure) {
+            let id = $(".tile-img").attr("id")
+            $.post("/deletecomment/" + id, { comment: $(this).parent().children("span").html() }, function (result, status) {
+                let commentsString = ""
+                result.comments.forEach(function (comment) {
+                    if (comment.name == result.viewer) {
+                        commentsString += `<div class="comment-div"><a href="/profile/${comment.name}">${comment.name}</a> says <span>${comment.comment}</span> &nbsp;<i class="fas fa-trash delete-comment" title="Delete this comment"></i></div>\n`
+                    }
+                    else {
+                        commentsString += `<div class="comment-div"><a href="/profile/${comment.name}">${comment.name}</a> says ${comment.comment}</div>\n`
+                    }
+                })
+                $(".click-div-comments").html(commentsString)
             })
         }
     })
