@@ -66,6 +66,7 @@ $(document).ready(function () {
         $("#click-div-img").attr("src","")
         $(".secondary-img").attr("src","")
         $("#click-div-user").html("")
+        $(".click-div-comments").html("")
         $("#heart").css("color","black")
         $(".like-btn").attr("id","")
         $(".likes-number").html("")
