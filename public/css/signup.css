@@ -99,8 +99,13 @@ input {
     .inner {
         padding: 0 10px;
     }
+    .outer{
+        max-height: 95vh;
+    }
     .flex {
-        padding: 60px 50px;
+        padding: 30px 40px;
+        max-width: 95vw;
+        max-height: 95vh;
     }
     .head {
         font-size: 3rem;
@@ -110,6 +115,9 @@ input {
         margin-bottom: 10px;
     }
     .form-box{
-        margin: 10px auto;
+        margin: 5px 0;
+    }
+    #sub-btn{
+        margin-bottom: 10px;
     }
 }
