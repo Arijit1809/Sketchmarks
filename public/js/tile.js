@@ -7,7 +7,7 @@ $(document).ready(()=>{
             $.post("/comment/"+id,{comment: newComment}, function(result,status){
                 if(result){
                     let commentString=""
-                    result.forEach(comment => {
+                    result.comments.forEach(comment => {
                         commentString+=`<div class="comment">
                         <a href="/profile/${comment.name}" class="commenter">${comment.name}</a> says <span>${comment.comment}</span>
                         </div>`
@@ -22,9 +22,9 @@ $(document).ready(()=>{
         $.get("/likepost/"+$(".tile-img").attr("id"),function(result,status){
             if(result){
                 if(result.colour)
-                    $("#heart").css("color","red")
+                    $("#heart").css("color","red").removeClass("far").addClass("fas").css("transition","0.3s ease-in-out")
                 else
-                    $("#heart").css("color","grey")
+                    $("#heart").css("color","grey").removeClass("fas").addClass("far").css("transition","0.3s ease-in-out")
                 $(".likes-number").html(result.likes)
             } 
             else location="/login"
