@@ -124,6 +124,16 @@
 /*Navbar End*/
 body{
   background-color: black;
+  background-image: url(../img/black.jpg);
+  background-size: auto;
+}
+.team{
+  margin-top: 70px;
+  margin-bottom: 50px;
+  color: red;
+  font-family: "Ubuntu";
+  font-size: 3rem;
+  text-align: center;
 }
 
 .flexbox1{
@@ -177,6 +187,7 @@ body{
   letter-spacing: 15px;
   text-align: center;
   align-items: center;
+  margin-top: 100px;
 }
 .fab{
   color: #858e99;
