@@ -148,7 +148,13 @@ a{
     color: white;
     cursor: pointer;
 }
-
+.delete-comment{
+    color: rgb(180, 0, 0);
+}
+.delete-comment:hover{
+    color: orangered;
+    cursor: pointer;
+}
 
 .click-div-share i{
     color: grey;

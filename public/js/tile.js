@@ -6,37 +6,16 @@ $(document).ready(()=>{
         if (newComment){
             $.post("/comment/"+id,{comment: newComment}, function(result,status){
                 if(result){
-                    let commentString=""
-                    result.comments.forEach(comment=>{
-                        if(result.viewer==comment.name){
-                            commentString+=`<div class="comment">
-                            <a href="/profile/${comment.name}" class="commenter">${comment.name}</a> says <span>${comment.comment}</span> &nbsp;<i class="fas fa-trash delete-comment" title="Delete this comment"></i></div>`
+                    let commentsString = ""
+                    result.comments.forEach(function (comment) {
+                        if (comment.name == result.viewer) {
+                            commentsString += `<div class="comment"><a href="/profile/${comment.name}" class="commenter">${comment.name}</a> says <span>${comment.comment}</span> &nbsp;<i class="fas fa-trash delete-comment" title="Delete this comment"></i></div>\n`
                         }
-                        else{
-                            commentString+=`<div class="comment">
-                            <a href="/profile/${comment.name}" class="commenter">${comment.name}</a> says <span>${comment.comment}</span> &nbsp;</div>`
+                        else {
+                            commentsString += `<div class="comment"><a href="/profile/${comment.name}" class="commenter">${comment.name}</a> says ${comment.comment}</div>\n`
                         }
-                        $(".click-div-comments").html(commentString)
-                        $(".delete-comment").click(function(){
-                            let sure=confirm("Are you sure you want to delete this comment?")
-                            if(sure){
-                                $.post("/deletecomment/"+id,{comment: $(this).parent().children("span").html()},function(result,status){
-                                    let commentString=""
-                                    result.comments.forEach(comment=>{
-                                        if(result.viewer==comment.name){
-                                            commentString+=`<div class="comment">
-                                            <a href="/profile/${comment.name}" class="commenter">${comment.name}</a> says <span>${comment.comment}</span> &nbsp;<i class="fas fa-trash delete-comment" title="Delete this comment"></i></div>`
-                                        }
-                                        else{
-                                            commentString+=`<div class="comment">
-                                            <a href="/profile/${comment.name}" class="commenter">${comment.name}</a> says <span>${comment.comment}</span> &nbsp;</div>`
-                                        }
-                                    });
-                                    $(".click-div-comments").html(commentString)
-                                })
-                            }
-                        })
                     })
+                    $(".click-div-comments").html(commentsString)
                 }
                 else location="/login"
             })
@@ -63,22 +42,21 @@ $(document).ready(()=>{
             })
         }
     })
-    $(".delete-comment").click(function(){
-        let sure=confirm("Are you sure you want to delete this comment?")
-        if(sure){
-            $.post("/deletecomment/"+id,{comment: $(this).parent().children("span").html()},function(result,status){
-                let commentString=""
-                result.comments.forEach(comment=>{
-                    if(result.viewer==comment.name){
-                        commentString+=`<div class="comment">
-                        <a href="/profile/${comment.name}" class="commenter">${comment.name}</a> says <span>${comment.comment}</span> &nbsp;<i class="fas fa-trash delete-comment" title="Delete this comment"></i></div>`
+    $(".click-div-comments").on("click",".delete-comment",function () {
+        let sure = confirm("Are you sure you want to delete this comment?")
+        if (sure) {
+            let id = $(".tile-img").attr("id")
+            $.post("/deletecomment/" + id, { comment: $(this).parent().children("span").html() }, function (result, status) {
+                let commentsString = ""
+                result.comments.forEach(function (comment) {
+                    if (comment.name == result.viewer) {
+                        commentsString += `<div class="comment"><a href="/profile/${comment.name}" class="commenter">${comment.name}</a> says <span>${comment.comment}</span> &nbsp;<i class="fas fa-trash delete-comment" title="Delete this comment"></i></div>\n`
                     }
-                    else{
-                        commentString+=`<div class="comment">
-                        <a href="/profile/${comment.name}" class="commenter">${comment.name}</a> says <span>${comment.comment}</span> &nbsp;</div>`
+                    else {
+                        commentsString += `<div class="comment"><a href="/profile/${comment.name}" class="commenter">${comment.name}</a> says ${comment.comment}</div>\n`
                     }
-                });
-                $(".click-div-comments").html(commentString)
+                })
+                $(".click-div-comments").html(commentsString)
             })
         }
     })

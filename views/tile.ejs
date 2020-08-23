@@ -22,11 +22,13 @@
             <div class="comment-div">
                 <h2 class="desc"><%=tile.desc%></h2>
                 <div class="click-div-likes">
-                    <span class="like-btn"><i class="far fa-heart" id="heart"
+                    <span class="like-btn"><i id="heart"
                     <% if(colour){ %>
                         style="color: red;"
+                        class="fas fa-heart"
                     <% }else{ %>
                         style="color: grey;"
+                        class="far fa-heart"
                     <% } %>
                     ></i></span>
                     <span class="likes-number"><%=tile.likes.likesNum%></span>
@@ -38,7 +40,7 @@
                 <div class="click-div-comments">
                     <% tile.comments.forEach((comment)=>{ %>
                         <div class="comment">
-                            <a href="/profile/<%=comment.name%>" class="commenter"><%=comment.name%></a> says <span><%=comment.comment%></span> &nbsp;
+                            <a href="/profile/<%=comment.name%>" class="commenter"><%=comment.name%></a> says <span><%=comment.comment%></span>&nbsp;
                             <% if(comment.name==viewer){ %>
                                 <i class="fas fa-trash delete-comment" title="Delete this comment"></i>
                             <% } %>
