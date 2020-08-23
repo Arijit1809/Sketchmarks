@@ -54,7 +54,7 @@ $(document).ready(()=>{
       })
     }
   })
-
+  
   $("#click-div-close").click(function(){
     $(".click-div").css("display","none")
     $(".click-div-desc").html("")
@@ -62,6 +62,7 @@ $(document).ready(()=>{
     $("#click-div-img").attr("src","")
     $(".secondary-img").attr("src","")
     $("#click-div-user").html("")
+    $(".click-div-comments").html("")
     $("#heart").css("color","black")
     $(".like-btn").attr("id","")
     $(".likes-number").html("")
