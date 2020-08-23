@@ -325,9 +325,8 @@ body {
 
 /* Top Posts */
 .top-posts {
-    background-color: white;
-    background-image: linear-gradient(#0099ff, rgb(0, 4, 255));
-
+    background-image: url(/img/topbg.jpg);
+    background-position: center;
     padding-bottom: 50px;
 }
 
