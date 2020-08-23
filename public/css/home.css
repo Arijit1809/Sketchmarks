@@ -489,6 +489,7 @@ body {
 .secondary-img{
     width: 100%;
     height: auto;
+    min-height: 100%;
     filter: blur(10px) brightness(75%);
 }
 #click-div-img {
@@ -817,10 +818,8 @@ footer {
 
 @media (max-width: 768px) {
     #land-name {
-        font-size: 3rem;
-        /* font-weight: 1000;
-        position:absolute;
-        top: 40%; */
+        font-size: 4.5rem;
+        letter-spacing: 1px;
     }
     .landing {
         height: 100vh;
