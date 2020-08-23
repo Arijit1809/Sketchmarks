@@ -381,7 +381,7 @@ body {
 }
 
 .top-post-comments{
-    text-align: left;
+    text-align: center;
 }
 
 .tpostcom{
@@ -389,8 +389,18 @@ body {
     background-color: rgba(0, 0, 0, 0.52);
     padding: 20px;
     border-radius: 10px;
+    text-align: left;
 }
 
+.top-share i{
+    font-size: 1.25rem;
+    margin: 0 10px;
+}
+
+.top-share i:hover{
+    cursor: pointer;
+    color: #3282b8;
+}
 /* Top posts end */
 
 /* Posts  */
@@ -651,7 +661,7 @@ body {
     font-family: "Alata";
     font-size: 1.2rem;
     margin-bottom: 30px;
-    width: 600px;
+    max-width: 600px;
     height: 200px;
     word-break: break-word;
 }
