@@ -48,11 +48,16 @@ $(document).ready(function () {
                 $(".click-div-share").attr("data-clipboard-text","/tile/"+id)
                 $(".like-btn").attr("id",result.data._id)
                 $(".likes-number").html(result.data.likes.likesNum)
-                if (result.colour) $("#heart").css("color","red")
-                else $("#heart").css("color","white")
-                let commentsString=""
-                result.data.comments.forEach(function(comment){
-                    commentsString+=`<div class="comment-div"><a href="/profile/${comment.name}">${comment.name}</a> says ${comment.comment}</div>\n`
+                if (result.colour) $(".heart").css("color","red")
+                else $(".heart").css("color","white")
+                let commentsString = ""
+                result.data.comments.forEach(function (comment) {
+                    if (comment.name == result.viewer) {
+                        commentsString += `<div class="comment-div"><a href="/profile/${comment.name}">${comment.name}</a> says <span>${comment.comment}</span> &nbsp;<i class="fas fa-trash delete-comment" title="Delete this comment"></i></div>\n`
+                    }
+                    else {
+                        commentsString += `<div class="comment-div"><a href="/profile/${comment.name}">${comment.name}</a> says ${comment.comment}</div>\n`
+                    }
                 })
                 $(".click-div-comments").html(commentsString)
             })
@@ -67,7 +72,7 @@ $(document).ready(function () {
         $(".secondary-img").attr("src","")
         $("#click-div-user").html("")
         $(".click-div-comments").html("")
-        $("#heart").css("color","black")
+        $(".heart").css("color","black")
         $(".like-btn").attr("id","")
         $(".likes-number").html("")
     })
@@ -76,9 +81,9 @@ $(document).ready(function () {
         $.get("/likepost/"+$(this).attr("id"),function(result,status){
             if(result){
                 if(result.colour)
-                    $("#heart").css("color","red")
+                    $(".heart").css("color","red")
                 else
-                    $("#heart").css("color","grey")
+                    $(".heart").css("color","white")
                 $(".likes-number").html(result.likes)
             } 
             else location="/login"
@@ -92,9 +97,14 @@ $(document).ready(function () {
         if(newComment){
             $.post("/comment/"+id,{comment: newComment},function(result,status){
                 if(result){
-                    let commentsString=""
-                    result.forEach(function(comment){
-                        commentsString+=`<div class="comment-div"><a href="/profile/${comment.name}">${comment.name}</a> says ${comment.comment}</div>\n`
+                    let commentsString = ""
+                    result.comments.forEach(function (comment) {
+                        if (comment.name == result.viewer) {
+                            commentsString += `<div class="comment-div"><a href="/profile/${comment.name}">${comment.name}</a> says <span>${comment.comment}</span> &nbsp;<i class="fas fa-trash delete-comment" title="Delete this comment"></i></div>\n`
+                        }
+                        else {
+                            commentsString += `<div class="comment-div"><a href="/profile/${comment.name}">${comment.name}</a> says ${comment.comment}</div>\n`
+                        }
                     })
                     $(".click-div-comments").html(commentsString)
                 }
@@ -110,6 +120,24 @@ $(document).ready(function () {
             $.get("/deletepost/"+$(".like-btn").attr("id"),function(result,status){
                 location.reload(true)
                 console.log(done)
+            })
+        }
+    })
+    $(".click-div-comments").on("click",".delete-comment",function () {
+        let sure = confirm("Are you sure you want to delete this comment?")
+        if (sure) {
+            let id = $(".like-btn").attr("id")
+            $.post("/deletecomment/" + id, { comment: $(this).parent().children("span").html() }, function (result, status) {
+                let commentsString = ""
+                result.comments.forEach(function (comment) {
+                if (comment.name == result.viewer) {
+                    commentsString += `<div class="comment-div"><a href="/profile/${comment.name}">${comment.name}</a> says <span>${comment.comment}</span> &nbsp;<i class="fas fa-trash delete-comment" title="Delete this comment"></i></div>\n`
+                }
+                else {
+                    commentsString += `<div class="comment-div"><a href="/profile/${comment.name}">${comment.name}</a> says ${comment.comment}</div>\n`
+                }
+                })
+                $(".click-div-comments").html(commentsString)
             })
         }
     })
