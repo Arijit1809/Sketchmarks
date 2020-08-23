@@ -101,7 +101,7 @@ body {
 .navbar .logout:hover {
     color: white;
     background-color: brown;
-} 
+}
 
 
 .brand {
@@ -358,7 +358,8 @@ body {
 }
 
 .top-post-img{
-    max-width: 50%;
+    max-width: 400px;
+    max-height: 400px;
     border-radius: 10px;
 }
 
@@ -827,7 +828,7 @@ footer {
     .land-main {
         height: 100vh;
     }
-    
+
     #land-desc {
         font-family: 'Alata';
         color: #dfd3c3;
@@ -974,5 +975,5 @@ footer {
     }
     .column img{
         margin-bottom: 20px;
-    } 
+    }
 }
