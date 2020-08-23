@@ -60,30 +60,29 @@
         </div>
         <div class="content">
             
-            <div class="click-div">
-                <div class="imgajax">
-                    <img src="" alt="" id="click-div-img">
+            <div class="click-div">    
+                <img src="" alt="" id="click-div-img">
+                <div class="click-div-secondary">
+                    <img src="" class="secondary-img">
                 </div>
                 <div class="likecomm">
                     <div id="click-div-user"></div>
-                    <dic class="click-div-desc"></dic>
+                    <div class="click-div-desc"></div>
                     <div class="click-div-likes">
                         <span class="like-btn"><i class="fas fa-heart" id="heart"></i></span>
                         <span class="likes-number"></span>
-                        <span class="click-div-share" data-clipboard-action="copy" data-clipboard-text=""><i class="fas fa-share-square" id="share-btn"></i></span>
+                        <span class="click-div-share" title="Share this post" data-clipboard-action="copy" data-clipboard-text=""><i class="fas fa-share-square"></i></span>
                         <% if(sameUser){ %>
-                        <span id="click-div-delete"><i class="fas fa-trash-alt" id="dustbin"></i></span>
+                        <span id="click-div-delete" title="Delete this post"><i class="fas fa-trash-alt" id="dustbin"></i></span>
                         <% } %>
                     </div>
                     <div class="click-div-comments"></div>
                     <div class="comsub">
-                        <textarea id="" cols="30" rows="2" class="post-comment"
-                            placeholder="Add your comment here"></textarea>
-                        <button class="post-submit">Submit</button>
+                        <textarea cols="30" rows="2" class="post-comment" placeholder="Add your comment here"></textarea>
+                        <button class="post-submit" title="Post comment"><i class="fas fa-comment" id="comment-icon"></i></button>
                     </div>
+                    <span id="click-div-close">&#10060;</span>
                 </div>
-
-                <span id="click-div-close">&#10060;</span>
             </div>
             <div class="title"><%= username %>'s art gallery</div>
             <% if(works.length>0){ %>
