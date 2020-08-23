@@ -312,20 +312,12 @@ body {
 
 .likecomm {
     background-color: #2b2e4aa1;
-    /* background: #1a2a6c; */
-    /* fallback for old browsers */
-    /* background: -webkit-linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c); */
-    /* Chrome 10-25, Safari 5.1-6 */
-    /* background: linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c); */
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     position: relative;
     padding: 0;
     color: white;
-    /* margin-left: 100px; */
     margin-top: 10%;
     margin-bottom: 10%;
-    /* margin-right: 10vw; */
-    max-width: 50vw;
+    max-width: 40vw;
     border-radius: 10px;
     /* height: auto; */
     max-height: 80%;
@@ -384,8 +376,8 @@ a{
 
 #click-div-close {
     position: absolute;
-    right: 0;
-    top: 0;
+    right: 70px;
+    top: 40px;
     font-size: 2rem;
     opacity: 0.5;
 }
