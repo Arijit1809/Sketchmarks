@@ -52,7 +52,7 @@ $(document).ready(function () {
                 else $("#heart").css("color","white")
                 let commentsString=""
                 result.data.comments.forEach(function(comment){
-                    commentsString+=`<div><a href="/profile/${comment.name}">${comment.name}</a> says ${comment.comment}</div>\n`
+                    commentsString+=`<div class="comment-div"><a href="/profile/${comment.name}">${comment.name}</a> says ${comment.comment}</div>\n`
                 })
                 $(".click-div-comments").html(commentsString)
             })
@@ -93,7 +93,7 @@ $(document).ready(function () {
                 if(result){
                     let commentsString=""
                     result.forEach(function(comment){
-                        commentsString+=`<div><a href="/profile/${comment.name}">${comment.name}</a> says ${comment.comment}</div>\n`
+                        commentsString+=`<div class="comment-div"><a href="/profile/${comment.name}">${comment.name}</a> says ${comment.comment}</div>\n`
                     })
                     $(".click-div-comments").html(commentsString)
                 }
