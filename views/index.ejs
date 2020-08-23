@@ -4,25 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sketchmarks</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Alata&family=Alice&family=Eczar:wght@600&display=swap&family=Pacifico&display=swap&family=Dancing+Script:wght@700&display=swap&family=Ubuntu:wght@500&display=swap&family=Great+Vibes&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="/css/home.css">
 </head>
 <body>
-    <nav class="navbar">
+    <!-- <nav class="navbar">
         <div class="inner">
             <ul>
                 <a id="brand">Sketchmarks</a>
                 <li><a href="#">Home</a></li>
-                <li><a href="#">Contributors</a></li>
+                <li><a href="#">Artists</a></li>
                 <li><a href="/posts">Posts</a></li>
-                <li  style="display: <%=loginDisplay%>;"><a href="/login" class="login">Log In</a></li>
-                <li id="signup-li" style="display: <%=signupDisplay%>;"><a href="/signup" class="signup">Sign Up</a></li>
-                <li style="display: <%=profileDisplay%>;"><a href="/profile/<%=username%>">Profile</a></li>
-                <li id="logout-li" style="display: <%=logoutDisplay%>;"><a href="/logout" class="logout">Log Out</a></li>
+                <li  style="display: <%=//loginDisplay%>;"><a href="/login" class="login">Log In</a></li>
+                <li id="signup-li" style="display: <%=//signupDisplay%>;"><a href="/signup" class="signup">Sign Up</a></li>
+                <li style="display: <%=//profileDisplay%>;"><a href="/profile/<%=//username%>">Profile</a></li>
+                <li id="logout-li" style="display: <%=//logoutDisplay%>;"><a href="/logout" class="logout">Log Out</a></li>
             </ul>
+        </div>
+    </nav> -->
+    <nav class="navbar">
+        <div class="inner">
+            <a class="brand">Sketchmarks</a>
+            <button class="menu-toggler">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="navbar-menu">
+                <a href="/">Home</a>
+                <a href="/">About</a>
+                <a href="/">Artists</a>
+                <a href="/posts">Posts</a>
+                <a href="/login" class="login" style="display: <%=loginDisplay%>;">Log In</a>
+                <a href="/signup" class="signup" style="display: <%=signupDisplay%>;">Sign Up</a>
+                <a href="/profile/<%=username%>" style="display: <%=profileDisplay%>;">Profile</a>
+                <a href="/logout" class="logout" style="display: <%=logoutDisplay%>;">Log Out</a>
+
+            </div>
         </div>
     </nav>
     <section class="landing">
@@ -42,21 +61,23 @@
 
             <h1 class="section-head">Posts</h1>
             <!-- <img src="../img/unnamed.png" alt=""  width="100%" class="br"> -->
-            <div class="click-div">
-                <div class="imgajax">
-                    <div id="click-div-user"></div>
-                    <img src="" alt="" id="click-div-img">
+            <div class="click-div">    
+                <img src="" alt="" id="click-div-img">
+                <div class="click-div-secondary">
+                    <img src="" class="secondary-img">
                 </div>
                 <div class="likecomm">
-                    
+                    <div id="click-div-user"></div>
+                    <div class="click-div-desc"></div>
                     <div class="click-div-likes">
-                        <span class="like-btn"><i class="fas fa-heart" id="heart"></i></span>
+                        <span class="like-btn"><i class="fas fa-heart heart" ></i></span>
                         <span class="likes-number"></span>
+                        <span class="click-div-share" title="Share this post" data-clipboard-action="copy" data-clipboard-text=""><i class="fas fa-share-square"></i></span>
                     </div>
                     <div class="click-div-comments"></div>
                     <div class="comsub">
-                        <textarea id="" cols="30" rows="2" class="post-comment" placeholder="Add your comment here"></textarea>
-                        <button class="post-submit">Submit</button>
+                        <textarea cols="30" rows="2" class="post-comment" placeholder="Add your comment here"></textarea>
+                        <button class="post-submit" title="Post comment"><i class="fas fa-comment" id="comment-icon"></i></button>
                     </div>
                 </div>
 
@@ -104,116 +125,91 @@
                         </div>
                     <% }) %>
                 <% } %>
-                <!-- <div class="column">
-                        style="width:100%" class="click-img">
-                    <img src="https://images.adsttc.com/media/images/5b74/3c09/f197/cc47/f600/006c/newsletter/NORM-LI_180812_4_AERIAL_F_04.jpg?1534344187"
-                        style="width:100%" class="click-img">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhPM4CTCdlaD6CXS0Bqk1SR__1P-E1S6YKskZMrfo-euo6YyE&s"
-                        style="width:100%" class="click-img">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFCrcJ2jRcfyydpdqSR1CMKAFNlyKaNEcUX5_eVhz8ibiJzCcp&s"
-                        style="width:100%" class="click-img">
-                </div>
-                <div class="column">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSEZAbH2MIA7EoWrEHTb_nsgPLHc2OmJWDf-Uos_sJN42FgtUn&s"
-                        style="width:100%" class="click-img">
-                    <img src="https://www.evolo.us/wp-content/uploads/2019/04/0516-0.jpg" style="width:100%"
-                        class="click-img">
-                    <img src="https://thecustomizewindows.com/wp-content/uploads/2013/05/Horizontal-Lines-in-Composition.jpg"
-                        style="width:100%" class="click-img">
-                    <img src="https://images.unsplash.com/photo-1526512340740-9217d0159da9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
-                        style="width:100%" class="click-img">
-                </div>
-                <div class="column">
-                    <img src="https://thumbs.dreamstime.com/z/black-white-vertical-new-york-flatiron-building-stands-right-heart-manhattan-intersection-two-famous-nyc-landmarks-45486075.jpg"
-                        style="width:100%" class="click-img">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDh-bXWweyAn8cNAqpc6EAjpQrEZk9wILEwpwW9RG1ltjRi1cm&s"
-                        style="width:100%" class="click-img">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8d22dI4UU3OxIyTQkjVve0hZb4f_k6FnN7r-K9EyrntFp5ww&s"
-                        style="width:100%" class="click-img">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-SWQFMDvrjgK18CxneKvQVOS7abY9SIuaKc9RPS6GBwBsN6o&s"
-                        style="width:100%" class="click-img">
-                </div>
-                <div class="column">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWxpohRoS0LkKy3fI3dYx2EGnrt8xK1aoh3ZDZ9TyjKr0TRns&s"
-                        style="width:100%" class="click-img">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGSuikWgQRgaE4OU4Zs3_je7ELKTzHrtdmnjIu_9fqKlNCBbME&s"
-                        style="width:100%" class="click-img">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c8/Untersberg_Mountain_Salzburg_Austria_Landscape_Photography_%28256594075%29.jpeg"
-                        style="width:100%" class="click-img">
-                    <img src="https://www.wsp.com/-/media/Project/Global/Image/Petronas-towers-exterior-view-facades.jpg?h=750&la=en-CN&w=530&hash=DB2452BC971DB24487D0487F514D62B18E8B2970"
-                        style="width:100%" class="click-img">
-                </div> -->
             </div>
+            <div class="all-posts"><a href="/posts">Click here to see all the amazing talents of other people</a></div>
 
         </div>
     </section>
-    <section class="contributors">
-           <div class="inner">
-               <h1 class="section-head" id="tpartist">Top Artists</h1>
-               <!-- <img src="../img/unnamed.png" alt=""  width="100%" class="br"> -->
-               <div>
-                 <div class="artists">
-                    <div class="usernm">
-                        <img src="img/pfp.jpg" class="pfpp" alt="" srcset="">
-                        <div>Arijit</div>
+    <section class="top-posts">
+        <div class="inner">
+            <h1 class="section-head">Top Tiles</h1>
+            <div class="top-post-left">
+                <img src="data:image/<%=topPosts[0].img.contentType%>;base64,<%=topPosts[0].img.data.toString('base64')%>" id="<%=topPosts[0]._id%>" class="top-post-img">
+                <div class="credits">
+                    <div class="artist">By <a href="/profile/<%=topPosts[0].name%>"><%=topPosts[0].name%></a></div>
+                    <div class="top-post-desc"><%=topPosts[0].desc%></div>
+                    <div class="top-post-comments">
+                        <span class="like-btn"><i class="fas fa-heart heart" ></i></span>
+                        <span class="top-post-likes"><%=topPosts[0].likes.likesNum%></span>
+                        <span class="click-div-share" title="Share this post" data-clipboard-action="copy" data-clipboard-text=""><i class="fas fa-share-square"></i></span>
+                        <% topPosts[0].comments.forEach((comment)=>{ %>
+                            <div class="tpostcom"><%=comment.name%> says <%=comment.comment%></div>
+                        <% }) %>
                     </div>
-                   <!-- Swiper -->
-                <div class="swiper-container">
-                  <div class="swiper-wrapper">
-                      <div class="swiper-slide" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMBhY6hfEmasPgrdPeG1hZ_ELagZ9a-i6Jkw&usqp=CAU)"></div>
-                      <div class="swiper-slide" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMBhY6hfEmasPgrdPeG1hZ_ELagZ9a-i6Jkw&usqp=CAU)"></div>
-                      <div class="swiper-slide" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMBhY6hfEmasPgrdPeG1hZ_ELagZ9a-i6Jkw&usqp=CAU)"></div>
-                      <div class="swiper-slide" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMBhY6hfEmasPgrdPeG1hZ_ELagZ9a-i6Jkw&usqp=CAU)"></div>
-                      <div class="swiper-slide" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMBhY6hfEmasPgrdPeG1hZ_ELagZ9a-i6Jkw&usqp=CAU)"></div>
-                      <div class="swiper-slide" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMBhY6hfEmasPgrdPeG1hZ_ELagZ9a-i6Jkw&usqp=CAU)"></div>
-                   </div>
-                   <!-- Add Pagination -->
-                   <div class="swiper-pagination"  style="visibility: hidden;"></div>
-                 </div>
-               </div>
-               <div class="artists">
-                <div class="usernm">
-                    <img src="img/pfp.jpg" class="pfpp" alt="" srcset="">
-                    <div>Arijit</div>
                 </div>
-                 <!-- Swiper -->
-              <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMBhY6hfEmasPgrdPeG1hZ_ELagZ9a-i6Jkw&usqp=CAU)"></div>
-                    <div class="swiper-slide" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMBhY6hfEmasPgrdPeG1hZ_ELagZ9a-i6Jkw&usqp=CAU)"></div>
-                    <div class="swiper-slide" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMBhY6hfEmasPgrdPeG1hZ_ELagZ9a-i6Jkw&usqp=CAU)"></div>
-                    <div class="swiper-slide" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMBhY6hfEmasPgrdPeG1hZ_ELagZ9a-i6Jkw&usqp=CAU)"></div>
-                    <div class="swiper-slide" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMBhY6hfEmasPgrdPeG1hZ_ELagZ9a-i6Jkw&usqp=CAU)"></div>
-                    <div class="swiper-slide" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMBhY6hfEmasPgrdPeG1hZ_ELagZ9a-i6Jkw&usqp=CAU)"></div>
-                 </div>
-                 <!-- Add Pagination -->
-                 <div class="swiper-pagination" style="visibility: hidden;"></div>
-               </div>
-             </div>
-             <div class="artists">
-                <div class="usernm">
-                    <img src="img/pfp.jpg" class="pfpp" alt="" srcset="">
-                    <div>Arijit</div>
+            </div>
+            <div class="top-post-right">
+                <div class="credits">
+                    <div class="artist">By <a href="/profile/<%=topPosts[1].name%>"><%=topPosts[1].name%></a></div>
+                    <div class="top-post-desc"><%=topPosts[1].desc%></div>
+                    <div class="top-post-comments">
+                        <span class="like-btn"><i class="fas fa-heart heart" ></i></span>
+                        <span class="top-post-likes"><%=topPosts[1].likes.likesNum%></span>
+                        <span class="click-div-share" title="Share this post" data-clipboard-action="copy" data-clipboard-text=""><i class="fas fa-share-square"></i></span>
+                        <% topPosts[1].comments.forEach((comment)=>{ %>
+                            <div class="tpostcom"><%=comment.name%> says <%=comment.comment%></div>
+                        <% }) %>
+                    </div>
                 </div>
-               <!-- Swiper -->
-            <div class="swiper-container">
-              <div class="swiper-wrapper">
-                  <div class="swiper-slide" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMBhY6hfEmasPgrdPeG1hZ_ELagZ9a-i6Jkw&usqp=CAU)"></div>
-                  <div class="swiper-slide" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMBhY6hfEmasPgrdPeG1hZ_ELagZ9a-i6Jkw&usqp=CAU)"></div>
-                  <div class="swiper-slide" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMBhY6hfEmasPgrdPeG1hZ_ELagZ9a-i6Jkw&usqp=CAU)"></div>
-                  <div class="swiper-slide" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMBhY6hfEmasPgrdPeG1hZ_ELagZ9a-i6Jkw&usqp=CAU)"></div>
-                  <div class="swiper-slide" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMBhY6hfEmasPgrdPeG1hZ_ELagZ9a-i6Jkw&usqp=CAU)"></div>
-                  <div class="swiper-slide" style="background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSMBhY6hfEmasPgrdPeG1hZ_ELagZ9a-i6Jkw&usqp=CAU)"></div>
-               </div>
-               <!-- Add Pagination -->
-               <div class="swiper-pagination" style="visibility: hidden;"></div>
-             </div>
-           </div>
-
-
-               </div>
-           </div>
-       </section>
+                <img src="data:image/<%=topPosts[1].img.contentType%>;base64,<%=topPosts[1].img.data.toString('base64')%>" id="<%=topPosts[1]._id%>" class="top-post-img">
+            </div>
+            <div class="top-post-left">
+                <img src="data:image/<%=topPosts[2].img.contentType%>;base64,<%=topPosts[2].img.data.toString('base64')%>" id="<%=topPosts[2]._id%>" class="top-post-img">
+                <div class="credits">
+                    <div class="artist">By <a href="/profile/<%=topPosts[2].name%>"><%=topPosts[2].name%></a></div>
+                    <div class="top-post-desc"><%=topPosts[2].desc%></div>
+                    <div class="top-post-comments">
+                        <span class="like-btn"><i class="fas fa-heart heart" ></i></span>
+                        <span class="top-post-likes"><%=topPosts[2].likes.likesNum%></span>
+                        <span class="click-div-share" title="Share this post" data-clipboard-action="copy" data-clipboard-text=""><i class="fas fa-share-square"></i></span>
+                        <% topPosts[2].comments.forEach((comment)=>{ %>
+                            <div class="tpostcom"><%=comment.name%> says <%=comment.comment%></div>
+                        <% }) %>
+                    </div>
+                </div>
+            </div>
+            <div class="top-post-right">
+                <div class="credits">
+                    <div class="artist">By <a href="/profile/<%=topPosts[3].name%>"><%=topPosts[3].name%></a></div>
+                    <div class="top-post-desc"><%=topPosts[3].desc%></div>
+                    <div class="top-post-comments">
+                        <span class="like-btn"><i class="fas fa-heart heart" ></i></span>
+                        <span class="top-post-likes"><%=topPosts[3].likes.likesNum%></span>
+                        <span class="click-div-share" title="Share this post" data-clipboard-action="copy" data-clipboard-text=""><i class="fas fa-share-square"></i></span>
+                        <% topPosts[3].comments.forEach((comment)=>{ %>
+                            <div class="tpostcom"><%=comment.name%> says <%=comment.comment%></div>
+                        <% }) %>
+                    </div>
+                </div>
+                <img src="data:image/<%=topPosts[3].img.contentType%>;base64,<%=topPosts[3].img.data.toString('base64')%>" id="<%=topPosts[3]._id%>" class="top-post-img">
+            </div>
+            <div class="top-post-left">
+                <img src="data:image/<%=topPosts[4].img.contentType%>;base64,<%=topPosts[4].img.data.toString('base64')%>" id="<%=topPosts[4]._id%>" class="top-post-img">
+                <div class="credits">
+                    <div class="artist">By <a href="/profile/<%=topPosts[4].name%>"><%=topPosts[4].name%></a></div>
+                    <div class="top-post-desc"><%=topPosts[4].desc%></div>
+                    <div class="top-post-comments">
+                        <span class="like-btn"><i class="fas fa-heart heart" ></i></span>
+                        <span class="top-post-likes"><%=topPosts[4].likes.likesNum%></span>
+                        <span class="click-div-share" title="Share this post" data-clipboard-action="copy" data-clipboard-text=""><i class="fas fa-share-square"></i></span>
+                        <% topPosts[4].comments.forEach((comment)=>{ %>
+                            <div class="tpostcom"><%=comment.name%> says <%=comment.comment%></div>
+                        <% }) %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="submit">
         <div class="inner">
           <h1  id="posting">Upload Art</h1>
@@ -222,7 +218,8 @@
                   <label for="post-img" id="post-label"><i class="fa fa-cloud-upload"></i> Select Image</label>
                   <input type='file' id="post-img" name="work" accept="image/*" required>
                   <img id="preview" src="#" alt="">
-                  <input type="text" placeholder="Describe your work" id="sub-desc" name="desc" required>
+                  <textarea cols="30" rows="2" placeholder="Give a caption to your art" id="sub-desc" name="desc"
+                      required></textarea>
                   <button type="submit" class="sub-btn">Submit</button>
               </form>
           </div>
@@ -238,8 +235,6 @@
                 <i class="fab fa-facebook"></i>
                 <i class="fab fa-facebook"></i>
                 <i class="fab fa-facebook"></i>
-
-
             </div>
         </div>
 
@@ -247,7 +242,8 @@
 
     <script src="https://kit.fontawesome.com/67a49e1ba0.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
     <script src="/js/home.js"></script>
 </body>
 </html>

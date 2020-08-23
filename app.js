@@ -37,6 +37,7 @@ app.use(passport.session());
 mongoose.connect("mongodb://localhost:27017/userDB", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
+  useFindAndModify: false
 });
 mongoose.set("useCreateIndex", true);
 /****************************Mongo Server end****************************/
@@ -110,24 +111,28 @@ app.get("/",(req,res)=>{
     Post.find({}).sort({$natural: -1}).limit(12).exec((err,results)=>{
         if(err) console.log(err)
         else{
-            if (req.user)
-                res.render("index",{
-                    loginDisplay: "none",
-                    signupDisplay: "none",
-                    logoutDisplay: "inline-block",
-                    profileDisplay: "inline-block",
-                    username: req.user.username,
-                    recentPosts: results
-                })
-            else
-                res.render("index",{
-                    loginDisplay: "inline-block",
-                    signupDisplay: "inline-block",
-                    logoutDisplay: "none",
-                    profileDisplay: "none",
-                    username: "NA",
-                    recentPosts: results
-                })
+            Post.find({}).sort({"likes.likesNum": -1}).limit(5).exec((err,topPosts)=>{
+                if (req.user)
+                    res.render("index",{
+                        loginDisplay: "none",
+                        signupDisplay: "none",
+                        logoutDisplay: "inline-block",
+                        profileDisplay: "inline-block",
+                        username: req.user.username,
+                        recentPosts: results,
+                        topPosts: topPosts
+                    })
+                else
+                    res.render("index",{
+                        loginDisplay: "inline-block",
+                        signupDisplay: "inline-block",
+                        logoutDisplay: "none",
+                        profileDisplay: "none",
+                        username: "NA",
+                        recentPosts: results,
+                        topPosts: topPosts
+                    })
+            })
         }
     })
 })
@@ -163,6 +168,10 @@ app.get("/profile/:username_url", (req, res)=>{
                                 about: about,
                                 contact: contact,
                                 works: results,
+                                loginDisplay: "none",
+                                signupDisplay: "none",
+                                logoutDisplay: "inline-block",
+                                profileDisplay: "none",
                                 sameUser: true 
                             })
                         else
@@ -171,6 +180,10 @@ app.get("/profile/:username_url", (req, res)=>{
                                 about: about,
                                 contact: contact,
                                 works: results,
+                                loginDisplay: "inline-block",
+                                signupDisplay: "inline-block",
+                                logoutDisplay: "none",
+                                profileDisplay: "none",
                                 sameUser: false 
                             })
                     }
@@ -183,7 +196,29 @@ app.get("/profile/:username_url", (req, res)=>{
 });
 
 app.get("/posts",function(req,res){
-    res.render("posts");
+    Post.find({}).sort({$natural: -1}).exec((err,results)=>{
+        if(err) console.log(err)
+        else{
+            if (req.user)
+                res.render("posts",{
+                    loginDisplay: "none",
+                    signupDisplay: "none",
+                    logoutDisplay: "inline-block",
+                    profileDisplay: "inline-block",
+                    username: req.user.username,
+                    recentPosts: results
+                })
+            else
+                res.render("posts",{
+                    loginDisplay: "inline-block",
+                    signupDisplay: "inline-block",
+                    logoutDisplay: "none",
+                    profileDisplay: "none",
+                    username: "NA",
+                    recentPosts: results
+                })
+        }
+    })
 })
 
 app.get("/likepost/:postId",(req,res)=>{
@@ -192,6 +227,7 @@ app.get("/likepost/:postId",(req,res)=>{
             if(err) console.log(err)
             else{
                 let ind=result.likes.likers.indexOf(req.user.username)
+                let btncolour=false
                 if(ind>-1){
                     result.likes.likesNum--
                     result.likes.likers.splice(ind,1)
@@ -199,9 +235,10 @@ app.get("/likepost/:postId",(req,res)=>{
                 else{
                     result.likes.likesNum++
                     result.likes.likers.push(req.user.username)
+                    btncolour=true
                 }
                 result.save()
-                res.send(`${result.likes.likesNum}`)
+                res.send({likes: result.likes.likesNum, colour:btncolour})
             }
         })
     }
@@ -211,7 +248,14 @@ app.get("/likepost/:postId",(req,res)=>{
 app.get("/thread/:postId",(req,res)=>{
     Post.findById(req.params.postId,(err,result)=>{
         if(err) console.log(err)
-        else res.send(result)
+        else{
+            let btncolour=false
+            if(req.isAuthenticated()){
+                let ind=result.likes.likers.indexOf(req.user.username)
+                if(ind>-1) btncolour=true
+            }
+            res.send({data: result, colour: btncolour})
+        } 
     })
 })
 
@@ -223,7 +267,7 @@ app.get("/deletepost/:postId",(req,res)=>{
                 fs.unlink("uploads/"+result.filename,(err)=>{if(err)console.log(err)})
                 Post.deleteOne({_id: req.params.postId},(err,result)=>{
                     if(err) console.log(err)
-                    else res.send(true)
+                    else res.send(req.user.username)
                 })
             }
             else res.send("You are not authorised to perform this action.")
@@ -233,8 +277,41 @@ app.get("/deletepost/:postId",(req,res)=>{
 
 })
 
-app.get("/tile",(req,res)=>{
-    res.render("tile")
+app.get("/tile/:postId",(req,res)=>{
+    Post.findById(req.params.postId,(err,result)=>{
+        if(err) res.send("404: Tile not found")
+        else{
+            if(result){
+                let btncolour=false
+                if(req.isAuthenticated()){
+                    let ind=result.likes.likers.indexOf(req.user.username)
+                    if(ind>-1) btncolour=true
+                    if(req.user.username==result.name){
+                        res.render("tile",{
+                            tile: result,
+                            sameUser: true,
+                            colour: btncolour
+                        })
+                    }
+                    else
+                        res.render("tile",{
+                            tile: result,
+                            sameUser: false,
+                            colour: btncolour
+                        })
+                }
+                else
+                    res.render("tile",{
+                        tile: result,
+                        sameUser: false,
+                        colour: btncolour
+                })
+                    
+            }
+            else
+                res.send("404: Tile not found")
+        }
+    })
 })
 
 // app.get("/loginfail",(req,res)=>{

@@ -8,35 +8,123 @@
     color: #d3d3d3;
     text-shadow: none;
 }
-
 html {
     scroll-behavior: smooth;
 }
 body{
-    background-color: black;
-    color: white;
+    background-color: #18191a;
+    color: #000000;
 }
-
+a{
+    text-decoration: none;
+}
 .main{
     display: flex;
     align-items: center;
+    flex-direction: column;
 }
-
+.author{
+    text-align: center;
+    font-size: 2rem;
+    font-family: 'Alata';
+    margin:20px auto;
+    color: white;
+}
 /* Tile section */
-.tile-div{
-    margin: 100px 50px;
-    width: 50vw;
-}
 
 .tile-img{
-    width: 100%;
-    border: 3px solid purple;
+    max-width: 95vw;
+    border-radius: 10px;
+    max-height: 85vh;
 }
-
 /* Tile section end */
 
 /* Comments section */
-.comments{
-    border: 2px solid white;
-    max-height: 90vh;
+.comments-section{
+    border-radius: 10px;
+    
+    width: 95vw;
+    /* overflow: auto; */
+    margin: 10px;
+    margin-bottom: 70px;
+    padding: 10px;
+    background-color:#3A3B3C;
 }
+.desc{
+    color: #E4E6EA;
+    font-family: 'Alata';
+    text-transform: capitalize;
+    margin: 10px 0 20px;
+    font-size: 1rem;
+}
+.click-div-likes{
+    margin-bottom: 20px;
+}
+.like-btn{
+    margin: 0px 0px 0px 5px;
+}
+
+.likes-number{
+    color: #E4E6EA;
+    margin-right: 10px;
+    font-family: 'Alata';
+}
+#heart{
+    color: red;
+}
+.comment{
+    color: #B1B3B8;
+    font-family: 'Alata';
+    margin-bottom: 10px;
+    width: auto;
+}
+.commenter{
+    color: #E4E6EA;
+}
+.submit{
+    display: flex;
+    flex-direction: row;
+    margin: 10px 5px 0px 5px;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    background-color: #18191a;
+    width: 100vw;
+}
+.click-div-comments{
+    overflow: auto;
+}
+.click-div-share{
+    margin-right: 10px;
+}
+#click-div-delete{
+    color: red;
+}
+.comment-area{
+    color: rgb(255, 255, 255);
+    font-family: 'Alata';
+    padding: 10px;
+    border-radius: 20px;
+    width: 90vw;
+    background-color: #3A3B3C;
+}
+.sub-btn{
+    display: inline-block;
+    margin-left: 5px;
+    background-color: transparent;
+    border: 0px;
+}
+#comment-icon{
+    font-size: 2rem;
+    color: #A8ABAF;
+}
+
+
+.click-div-share i{
+    color: grey;
+}
+.click-div-share i:hover{
+    cursor: pointer;
+    color: black;
+}
+
