@@ -18,6 +18,14 @@ body{
 a{
     text-decoration: none;
 }
+.tile-bg{
+    position: fixed;
+    width: 100%;
+    min-height: 100%;
+    height:auto;
+    filter: blur(20px);
+    z-index: -999;
+}
 .main{
     display: flex;
     align-items: center;
@@ -48,7 +56,8 @@ a{
     margin: 10px;
     margin-bottom: 70px;
     padding: 10px;
-    background-color:#3A3B3C;
+    /* background-color:#3A3B3C; */
+    background-color: #2b2e4aa1;
 }
 .desc{
     color: #E4E6EA;
@@ -62,21 +71,27 @@ a{
 }
 .like-btn{
     margin: 0px 0px 0px 5px;
+    font-size: 1rem;
 }
 
 .likes-number{
     color: #E4E6EA;
     margin-right: 10px;
     font-family: 'Alata';
+    font-size: 1rem;
 }
 #heart{
     color: red;
 }
 .comment{
-    color: #B1B3B8;
+    /* color: #B1B3B8; */
+    color: white;
     font-family: 'Alata';
     margin-bottom: 10px;
     width: auto;
+    padding: 20px 10px;
+    background-color: rgba(0, 0, 0, 0.52);
+    border-radius: 10px;
 }
 .commenter{
     color: #E4E6EA;
@@ -88,7 +103,8 @@ a{
     padding: 10px;
     position: fixed;
     bottom: 0;
-    background-color: #18191a;
+    /* background-color: #18191a; */
+    background-color: #2b2e4a;
     width: 100vw;
 }
 .click-div-comments{
@@ -106,7 +122,11 @@ a{
     padding: 10px;
     border-radius: 20px;
     width: 90vw;
-    background-color: #3A3B3C;
+    /* background-color: #3A3B3C; */
+    background-color: #d3d3d36e;
+}
+.comment-area::placeholder{
+    color: white;
 }
 .sub-btn{
     display: inline-block;
