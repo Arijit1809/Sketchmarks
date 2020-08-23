@@ -221,6 +221,26 @@ app.get("/posts",function(req,res){
     })
 })
 
+app.get("/about", function (req, res) {
+    
+    if (req.user)
+        res.render("about", {
+            loginDisplay: "none",
+            signupDisplay: "none",
+            logoutDisplay: "inline-block",
+            profileDisplay: "inline-block",
+            username: req.user.username
+        })
+    else
+        res.render("about", {
+            loginDisplay: "inline-block",
+            signupDisplay: "inline-block",
+            logoutDisplay: "none",
+            profileDisplay: "none",
+            username: "NA"
+        })
+})
+
 app.get("/likepost/:postId",(req,res)=>{
     if(req.isAuthenticated()){
         Post.findById(req.params.postId,(err,result)=>{
