@@ -634,16 +634,19 @@ body {
 
 #sub-desc {
     border-radius: 10px;
-    padding: 10px 20px;
+    padding: 20px 20px;
     color: black;
-    font-family: "Alice";
+    font-family: "Alata";
     font-size: 1.2rem;
     margin-bottom: 30px;
+    width: 600px;
+    height: 200px;
+    word-break: break-word;
 }
 
 #sub-desc::placeholder {
     color: black;
-    font-family: "Alice";
+    font-family: "Alata";
     font-size: 1.2rem;
 }
 #post-label{
