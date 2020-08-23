@@ -134,14 +134,29 @@ body{
   height: 380;
   flex: 33%;
 }
-.pfpp{
-  height: 300px;
-  margin-right: 40px;
-  margin-top: 25px;
-  border-radius: 175px;
-  float:right;
-  clear:right;
-  position: relative;
+.name{
+  font-family: "Ubuntu";
+}
+.info{
+  margin-left: 50px;
+  margin-right: 50px;
+}
+.post{
+  color: red;
+  margin: 10px auto 0;
+}
+.iconbar{
+  letter-spacing: 15px;
+  text-align: center;
+  align-items: center;
+}
+.fab{
+  color: #858e99;
+  font-size: 2rem;
+}
+.far{
+  color: #858e99;
+  font-size: 2rem;
 }
 
 /*Footer*/
