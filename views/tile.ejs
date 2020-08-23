@@ -30,15 +30,18 @@
                     <% } %>
                     ></i></span>
                     <span class="likes-number"><%=tile.likes.likesNum%></span>
-                    <span class="click-div-share" data-clipboard-action="copy" data-clipboard-text="/tile/<%=tile._id%>"><i class="far fa-share-square"></i></span>
+                    <span class="click-div-share" data-clipboard-action="copy" data-clipboard-text="/tile/<%=tile._id%>" title="Share this post"><i class="far fa-share-square"></i></span>
                     <% if(sameUser){ %>
-                        <span id="click-div-delete"><i class="far fa-trash-alt" id="dustbin"></i></span>
+                        <span id="click-div-delete"><i class="far fa-trash-alt" id="dustbin" title="Delete this post"></i></span>
                     <% } %>
                 </div>
                 <div class="click-div-comments">
                     <% tile.comments.forEach((comment)=>{ %>
                         <div class="comment">
-                            <a href="/profile/<%=comment.name%>" class="commenter"><%=comment.name%></a> says <span><%=comment.comment%></span>
+                            <a href="/profile/<%=comment.name%>" class="commenter"><%=comment.name%></a> says <span><%=comment.comment%></span>&nbsp;&nbsp;
+                            <% if(comment.name==viewer){ %>
+                                <i class="fas fa-trash delete-comment" title="Delete this comment"></i>
+                            <% } %>
                         </div>
                     <% }) %>
                 </div>
@@ -48,7 +51,7 @@
     </div>
     <div class="submit">
         <textarea class="comment-area" cols="100" rows="1" placeholder="Add your comment here"></textarea>
-        <button class="sub-btn"><i class="far fa-comment" id="comment-icon"></i></button>
+        <button class="sub-btn"><i class="far fa-comment" id="comment-icon" title="Post comment"></i></button>
     </div>
 
 
