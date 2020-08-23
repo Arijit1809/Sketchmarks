@@ -390,6 +390,7 @@ body {
     padding: 20px;
     border-radius: 10px;
     text-align: left;
+    overflow: auto;
 }
 
 .top-share i{
@@ -663,6 +664,7 @@ body {
     font-size: 1.2rem;
     margin-bottom: 30px;
     max-width: 600px;
+    
     height: 200px;
     word-break: break-word;
 }
@@ -853,7 +855,7 @@ footer {
         padding: 60px 150px 60px;
         /* font-family: 'Pacifico',
         cursive; */
-        background-size: 100%;
+        background-size: 120%;
     }
 
     #posting {
@@ -969,10 +971,21 @@ footer {
 
 @media (max-width: 600px) {
     .column{
-        flex:100%;
-        padding:0px 20px;
+        flex:50%;
+        padding:0px 5px;
     }
     .column img{
-        margin-bottom: 20px;
+        margin-bottom: 5px;
+    }
+    #sub-desc{
+        max-width: 90vw;
+    }
+    #tiles{
+        font-size: 3rem;
+        background-image: url(../img/name_bg2.png);
+        padding: 60px;
+    }
+    #post-title{
+        padding: 60px;
     }
 }
