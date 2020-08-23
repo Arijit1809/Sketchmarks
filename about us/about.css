@@ -98,44 +98,70 @@ body{
   background-color: black;
 }
 
-.header{
+.flexbox1{
+  display: flex;
+  flex-direction: row;
   margin-top: 80px;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
-  color: white;
+  width: 1200px;
+  height: 400px;
 }
-.tansen
-{
-  background-color: #101d2b;
-  height: 350px;
+.flexbox{
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 1200px;
+  height: 400px;
 }
 
-.arijit
-{
-  background-color: #be9b48;
-  height: 350px;
-}
-
-.shubham
-{
-  background-color: #101d2b;
-  height: 350px;
-}
 .pfp{
-  height: 250px;
-  margin-left: 40px;
-  margin-top: 20px;
+  margin:0;
+  width: 400px;
+  position: relative;
 }
-.pfpp{
-  height: 250px;
-  margin-right: 40px;
-  margin-top: 20px;
-  float:right;
-    clear:right;
+
+.text{
+  background-color: white;
+  height: 380;
+  flex: 33%;
+}
+.pic{
+  background-color: white;
+  height: 380;
+  flex: 33%;
+}
+.name{
+  font-family: "Ubuntu";
+}
+.info{
+  margin-left: 50px;
+  margin-right: 50px;
+}
+.post{
+  color: red;
+  margin: 10px auto 0;
+}
+.iconbar{
+  letter-spacing: 15px;
+  text-align: center;
+  align-items: center;
+}
+.fab{
+  color: #858e99;
+  font-size: 2rem;
+}
+.far{
+  color: #858e99;
+  font-size: 2rem;
 }
 
 /*Footer*/
 footer {
-    margin: 0px 0 50px;
+    margin: 0 0 50px;
 }
 
 .foot-text {

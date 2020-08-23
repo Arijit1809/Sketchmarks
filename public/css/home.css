@@ -17,7 +17,7 @@ html {
 
 body {
     background-color: black;
-    background: url(../img/bg.jpg) no-repeat center center;
+    background: url(/img/bg.jpg) no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
 }
@@ -101,7 +101,7 @@ body {
 .navbar .logout:hover {
     color: white;
     background-color: brown;
-} 
+}
 
 
 .brand {
@@ -358,7 +358,8 @@ body {
 }
 
 .top-post-img{
-    max-width: 50%;
+    max-width: 400px;
+    max-height: 400px;
     border-radius: 10px;
 }
 
@@ -380,7 +381,7 @@ body {
 }
 
 .top-post-comments{
-    text-align: left;
+    text-align: center;
 }
 
 .tpostcom{
@@ -388,8 +389,18 @@ body {
     background-color: rgba(0, 0, 0, 0.52);
     padding: 20px;
     border-radius: 10px;
+    text-align: left;
 }
 
+.top-share i{
+    font-size: 1.25rem;
+    margin: 0 10px;
+}
+
+.top-share i:hover{
+    cursor: pointer;
+    color: #3282b8;
+}
 /* Top posts end */
 
 /* Posts  */
@@ -817,7 +828,7 @@ footer {
     .land-main {
         height: 100vh;
     }
-    
+
     #land-desc {
         font-family: 'Alata';
         color: #dfd3c3;
@@ -964,5 +975,5 @@ footer {
     }
     .column img{
         margin-bottom: 20px;
-    } 
+    }
 }

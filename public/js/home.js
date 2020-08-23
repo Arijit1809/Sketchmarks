@@ -44,8 +44,8 @@ $(document).ready(()=>{
         $(".click-div-share").attr("data-clipboard-text","/tile/"+id)
         $(".like-btn").attr("id",result.data._id)
         $(".likes-number").html(result.data.likes.likesNum)
-        if (result.colour) $("#heart").css("color","red")
-        else $("#heart").css("color","white")
+        if (result.colour) $(".heart").css("color","red")
+        else $(".heart").css("color","white")
         let commentsString=""
         result.data.comments.forEach(function(comment){
           commentsString+=`<div class="comment-div"><a href="/profile/${comment.name}">${comment.name}</a> says ${comment.comment}</div>\n`
@@ -63,7 +63,7 @@ $(document).ready(()=>{
     $(".secondary-img").attr("src","")
     $("#click-div-user").html("")
     $(".click-div-comments").html("")
-    $("#heart").css("color","black")
+    $(".heart").css("color","black")
     $(".like-btn").attr("id","")
     $(".likes-number").html("")
   })
@@ -72,9 +72,9 @@ $(document).ready(()=>{
     $.get("/likepost/"+$(this).attr("id"),function(result,status){
         if(result){
             if(result.colour)
-                $("#heart").css("color","red")
+                $(".heart").css("color","red")
             else
-                $("#heart").css("color","grey")
+                $(".heart").css("color","grey")
             $(".likes-number").html(result.likes)
         } 
         else location="/login"
@@ -100,3 +100,4 @@ $(document).ready(()=>{
   })
 })
 new ClipboardJS(".click-div-share")
+new ClipboardJS(".top-share")
