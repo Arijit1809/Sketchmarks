@@ -668,7 +668,7 @@ body {
     font-size: 1.2rem;
     margin-bottom: 30px;
     max-width: 600px;
-    
+    background-color: #d3d3d3d5;
     height: 200px;
     word-break: break-word;
 }
@@ -687,7 +687,7 @@ body {
     font-size: 1.5rem;
     margin-bottom: 40px;
     transition: 0.1s linear;
-    background-color: grey;
+    background-color: rgb(44, 44, 44);
 }
 
 #post-label:hover {

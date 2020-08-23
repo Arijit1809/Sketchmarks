@@ -35,18 +35,6 @@ $(document).ready(()=>{
         let sure=confirm("Are you sure you want to delete this comment?")
         if(sure){
             $.post("/deletecomment/"+id,{comment: $(this).parent().children("span").html()},function(result,status){
-                // let commentString=""
-                // result.comments.forEach(comment=>{
-                //     if(result.viewer==comment.name){
-                //         commentString+=`<div class="comment">
-                //         <a href="/profile/${comment.name}" class="commenter">${comment.name}</a> says <span>${comment.comment}</span> &nbsp;<i class="fas fa-trash delete-comment" title="Delete this comment"></i></div>`
-                //     }
-                //     else{
-                //         commentString+=`<div class="comment">
-                //         <a href="/profile/${comment.name}" class="commenter">${comment.name}</a> says <span>${comment.comment}</span> &nbsp;</div>`
-                //     }
-                // });
-                // $(".click-div-comments").html(commentString)
                 location.reload()
             })
         }
