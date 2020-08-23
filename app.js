@@ -194,7 +194,25 @@ app.get("/profile/:username_url", (req, res)=>{
     })
 
 });
-
+app.get("/about", function (req, res) {
+    if (req.user)
+        res.render("about", {
+            loginDisplay: "none",
+            signupDisplay: "none",
+            logoutDisplay: "inline-block",
+            profileDisplay: "inline-block",
+            username: req.user.username
+        })
+    else
+        res.render("about", {
+            loginDisplay: "inline-block",
+            signupDisplay: "inline-block",
+            logoutDisplay: "none",
+            profileDisplay: "none",
+            username: "NA"
+        })
+    
+})
 app.get("/posts",function(req,res){
     Post.find({}).sort({$natural: -1}).exec((err,results)=>{
         if(err) console.log(err)
