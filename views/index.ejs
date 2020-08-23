@@ -9,20 +9,7 @@
     <link rel="stylesheet" href="/css/home.css">
 </head>
 <body>
-    <!-- <nav class="navbar">
-        <div class="inner">
-            <ul>
-                <a id="brand">Sketchmarks</a>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Artists</a></li>
-                <li><a href="/posts">Posts</a></li>
-                <li  style="display: <%=//loginDisplay%>;"><a href="/login" class="login">Log In</a></li>
-                <li id="signup-li" style="display: <%=//signupDisplay%>;"><a href="/signup" class="signup">Sign Up</a></li>
-                <li style="display: <%=//profileDisplay%>;"><a href="/profile/<%=//username%>">Profile</a></li>
-                <li id="logout-li" style="display: <%=//logoutDisplay%>;"><a href="/logout" class="logout">Log Out</a></li>
-            </ul>
-        </div>
-    </nav> -->
+    
     <nav class="navbar">
         <div class="inner">
             <a class="brand">Sketchmarks</a>
@@ -33,7 +20,7 @@
             </button>
             <div class="navbar-menu">
                 <a href="/">Home</a>
-                <a href="/">About</a>
+                <a href="/about">About</a>
                 <a href="/">Artists</a>
                 <a href="/posts">Posts</a>
                 <a href="/login" class="login" style="display: <%=loginDisplay%>;">Log In</a>
@@ -59,7 +46,7 @@
     <section class="posts">
         <div class="inner">
 
-            <h1 class="section-head">Posts</h1>
+            <h1 class="section-head" id="post-title">Posts</h1>
             <!-- <img src="../img/unnamed.png" alt=""  width="100%" class="br"> -->
             <div class="click-div">    
                 <img src="" alt="" id="click-div-img">
@@ -132,7 +119,7 @@
     </section>
     <section class="top-posts">
         <div class="inner">
-            <h1 class="section-head">Top Tiles</h1>
+            <h1 class="section-head" id="tiles">Top Tiles</h1>
             <div class="top-post-left">
                 <img src="data:image/<%=topPosts[0].img.contentType%>;base64,<%=topPosts[0].img.data.toString('base64')%>" class="top-post-img">
                 <div class="credits">
