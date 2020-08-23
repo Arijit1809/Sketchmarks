@@ -285,28 +285,33 @@ app.get("/tile/:postId",(req,res)=>{
         else{
             if(result){
                 let btncolour=false
+                let viewer=false
                 if(req.isAuthenticated()){
                     let ind=result.likes.likers.indexOf(req.user.username)
                     if(ind>-1) btncolour=true
+                    viewer=req.user.username
                     if(req.user.username==result.name){
                         res.render("tile",{
                             tile: result,
                             sameUser: true,
-                            colour: btncolour
+                            colour: btncolour,
+                            viewer: viewer
                         })
                     }
                     else
                         res.render("tile",{
                             tile: result,
                             sameUser: false,
-                            colour: btncolour
+                            colour: btncolour,
+                            viewer: viewer
                         })
                 }
                 else
                     res.render("tile",{
                         tile: result,
                         sameUser: false,
-                        colour: btncolour
+                        colour: btncolour,
+                        viewer: viewer
                 })
                     
             }
