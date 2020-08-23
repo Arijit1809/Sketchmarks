@@ -38,7 +38,7 @@
                 <div class="click-div-comments">
                     <% tile.comments.forEach((comment)=>{ %>
                         <div class="comment">
-                            <a href="/profile/<%=comment.name%>" class="commenter"><%=comment.name%></a> says <span><%=comment.comment%></span>&nbsp;&nbsp;
+                            <a href="/profile/<%=comment.name%>" class="commenter"><%=comment.name%></a> says <span><%=comment.comment%></span> &nbsp;
                             <% if(comment.name==viewer){ %>
                                 <i class="fas fa-trash delete-comment" title="Delete this comment"></i>
                             <% } %>
