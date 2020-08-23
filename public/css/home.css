@@ -650,7 +650,7 @@ body {
     font-family: "Alata";
     font-size: 1.2rem;
     margin-bottom: 30px;
-    width: 600px;
+    max-width: 600px;
     height: 200px;
     word-break: break-word;
 }
