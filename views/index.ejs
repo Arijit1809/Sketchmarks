@@ -134,14 +134,14 @@
         <div class="inner">
             <h1 class="section-head">Top Tiles</h1>
             <div class="top-post-left">
-                <img src="data:image/<%=topPosts[0].img.contentType%>;base64,<%=topPosts[0].img.data.toString('base64')%>" id="<%=topPosts[0]._id%>" class="top-post-img">
+                <img src="data:image/<%=topPosts[0].img.contentType%>;base64,<%=topPosts[0].img.data.toString('base64')%>" class="top-post-img">
                 <div class="credits">
                     <div class="artist">By <a href="/profile/<%=topPosts[0].name%>"><%=topPosts[0].name%></a></div>
                     <div class="top-post-desc"><%=topPosts[0].desc%></div>
                     <div class="top-post-comments">
-                        <span class="like-btn"><i class="fas fa-heart heart" ></i></span>
-                        <span class="top-post-likes"><%=topPosts[0].likes.likesNum%></span>
-                        <span class="click-div-share" title="Share this post" data-clipboard-action="copy" data-clipboard-text=""><i class="fas fa-share-square"></i></span>
+                        <span class="like-btn" id="<%=topPosts[0]._id%>"><i class="fas fa-heart heart" ></i></span>
+                        <span class="top-post-likes likes-number"><%=topPosts[0].likes.likesNum%></span>
+                        <span class="top-share" title="Share this post" data-clipboard-action="copy" data-clipboard-text="/tile/<%=topPosts[0]._id%>"><i class="fas fa-share-square"></i></span>
                         <% topPosts[0].comments.forEach((comment)=>{ %>
                             <div class="tpostcom"><%=comment.name%> says <%=comment.comment%></div>
                         <% }) %>
@@ -153,25 +153,25 @@
                     <div class="artist">By <a href="/profile/<%=topPosts[1].name%>"><%=topPosts[1].name%></a></div>
                     <div class="top-post-desc"><%=topPosts[1].desc%></div>
                     <div class="top-post-comments">
-                        <span class="like-btn"><i class="fas fa-heart heart" ></i></span>
-                        <span class="top-post-likes"><%=topPosts[1].likes.likesNum%></span>
-                        <span class="click-div-share" title="Share this post" data-clipboard-action="copy" data-clipboard-text=""><i class="fas fa-share-square"></i></span>
+                        <span class="like-btn" id="<%=topPosts[1]._id%>"><i class="fas fa-heart heart" ></i></span>
+                        <span class="top-post-likes likes-number"><%=topPosts[1].likes.likesNum%></span>
+                        <span class="top-share" title="Share this post" data-clipboard-action="copy" data-clipboard-text="/tile/<%=topPosts[1]._id%>"><i class="fas fa-share-square"></i></span>
                         <% topPosts[1].comments.forEach((comment)=>{ %>
                             <div class="tpostcom"><%=comment.name%> says <%=comment.comment%></div>
                         <% }) %>
                     </div>
                 </div>
-                <img src="data:image/<%=topPosts[1].img.contentType%>;base64,<%=topPosts[1].img.data.toString('base64')%>" id="<%=topPosts[1]._id%>" class="top-post-img">
+                <img src="data:image/<%=topPosts[1].img.contentType%>;base64,<%=topPosts[1].img.data.toString('base64')%>" class="top-post-img">
             </div>
             <div class="top-post-left">
-                <img src="data:image/<%=topPosts[2].img.contentType%>;base64,<%=topPosts[2].img.data.toString('base64')%>" id="<%=topPosts[2]._id%>" class="top-post-img">
+                <img src="data:image/<%=topPosts[2].img.contentType%>;base64,<%=topPosts[2].img.data.toString('base64')%>" class="top-post-img">
                 <div class="credits">
                     <div class="artist">By <a href="/profile/<%=topPosts[2].name%>"><%=topPosts[2].name%></a></div>
                     <div class="top-post-desc"><%=topPosts[2].desc%></div>
                     <div class="top-post-comments">
-                        <span class="like-btn"><i class="fas fa-heart heart" ></i></span>
-                        <span class="top-post-likes"><%=topPosts[2].likes.likesNum%></span>
-                        <span class="click-div-share" title="Share this post" data-clipboard-action="copy" data-clipboard-text=""><i class="fas fa-share-square"></i></span>
+                        <span class="like-btn" id="<%=topPosts[2]._id%>"><i class="fas fa-heart heart" ></i></span>
+                        <span class="top-post-likes likes-number"><%=topPosts[2].likes.likesNum%></span>
+                        <span class="top-share" title="Share this post" data-clipboard-action="copy" data-clipboard-text="/tile/<%=topPosts[2]._id%>"><i class="fas fa-share-square"></i></span>
                         <% topPosts[2].comments.forEach((comment)=>{ %>
                             <div class="tpostcom"><%=comment.name%> says <%=comment.comment%></div>
                         <% }) %>
@@ -183,25 +183,25 @@
                     <div class="artist">By <a href="/profile/<%=topPosts[3].name%>"><%=topPosts[3].name%></a></div>
                     <div class="top-post-desc"><%=topPosts[3].desc%></div>
                     <div class="top-post-comments">
-                        <span class="like-btn"><i class="fas fa-heart heart" ></i></span>
-                        <span class="top-post-likes"><%=topPosts[3].likes.likesNum%></span>
-                        <span class="click-div-share" title="Share this post" data-clipboard-action="copy" data-clipboard-text=""><i class="fas fa-share-square"></i></span>
+                        <span class="like-btn" id="<%=topPosts[3]._id%>"><i class="fas fa-heart heart" ></i></span>
+                        <span class="top-post-likes likes-number"><%=topPosts[3].likes.likesNum%></span>
+                        <span class="top-share" title="Share this post" data-clipboard-action="copy" data-clipboard-text="/tile/<%=topPosts[3]._id%>"><i class="fas fa-share-square"></i></span>
                         <% topPosts[3].comments.forEach((comment)=>{ %>
                             <div class="tpostcom"><%=comment.name%> says <%=comment.comment%></div>
                         <% }) %>
                     </div>
                 </div>
-                <img src="data:image/<%=topPosts[3].img.contentType%>;base64,<%=topPosts[3].img.data.toString('base64')%>" id="<%=topPosts[3]._id%>" class="top-post-img">
+                <img src="data:image/<%=topPosts[3].img.contentType%>;base64,<%=topPosts[3].img.data.toString('base64')%>" class="top-post-img">
             </div>
             <div class="top-post-left">
-                <img src="data:image/<%=topPosts[4].img.contentType%>;base64,<%=topPosts[4].img.data.toString('base64')%>" id="<%=topPosts[4]._id%>" class="top-post-img">
+                <img src="data:image/<%=topPosts[4].img.contentType%>;base64,<%=topPosts[4].img.data.toString('base64')%>" class="top-post-img">
                 <div class="credits">
                     <div class="artist">By <a href="/profile/<%=topPosts[4].name%>"><%=topPosts[4].name%></a></div>
                     <div class="top-post-desc"><%=topPosts[4].desc%></div>
                     <div class="top-post-comments">
-                        <span class="like-btn"><i class="fas fa-heart heart" ></i></span>
-                        <span class="top-post-likes"><%=topPosts[4].likes.likesNum%></span>
-                        <span class="click-div-share" title="Share this post" data-clipboard-action="copy" data-clipboard-text=""><i class="fas fa-share-square"></i></span>
+                        <span class="like-btn" id="<%=topPosts[4]._id%>"><i class="fas fa-heart heart" ></i></span>
+                        <span class="top-post-likes likes-number"><%=topPosts[4].likes.likesNum%></span>
+                        <span class="top-share" title="Share this post" data-clipboard-action="copy" data-clipboard-text="/tile/<%=topPosts[4]._id%>"><i class="fas fa-share-square"></i></span>
                         <% topPosts[4].comments.forEach((comment)=>{ %>
                             <div class="tpostcom"><%=comment.name%> says <%=comment.comment%></div>
                         <% }) %>
