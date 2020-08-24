@@ -259,7 +259,7 @@ body {
 /* Landing page */
 .landing {
     height: 100vh;
-    
+
 }
 
 .land-main {
@@ -326,8 +326,10 @@ body {
 
 /* Top Posts */
 .top-posts {
-    background-image: url(/img/topbg.jpg);
+    background-image: url(/img/whitebg1.jpg);
     background-position: center;
+    background-size: cover;
+    /* background-color: black; */
     padding-bottom: 50px;
 }
 
@@ -348,7 +350,8 @@ body {
     margin: 30px 0;
     padding: 10px;
     /* border: 2px solid black; */
-    background-color: #354a2ba1;
+    background:rgba(0,0,0,0.8);
+    /* opacity: 0.8; */
     text-align: center;
     display: flex;
     flex-direction: row;
@@ -590,7 +593,7 @@ body {
     flex-direction: row;
     position: sticky;
     bottom: 0;
-    padding: 10px;
+    padding: 17px;
     background-color: #2b2e4a;
 }
 
@@ -609,6 +612,13 @@ body {
 .post-comment::placeholder {
     color: rgb(255, 255, 255);
     font-size: 1rem;
+}
+.delete-comment{
+    color: rgb(180, 0, 0);
+}
+.delete-comment:hover{
+    color: orangered;
+    cursor: pointer;
 }
 #comment-icon {
     font-size: 2rem;
@@ -668,7 +678,7 @@ body {
     font-size: 1.2rem;
     margin-bottom: 30px;
     max-width: 600px;
-    
+    background-color: #d3d3d3d5;
     height: 200px;
     word-break: break-word;
 }
@@ -687,7 +697,7 @@ body {
     font-size: 1.5rem;
     margin-bottom: 40px;
     transition: 0.1s linear;
-    background-color: grey;
+    background-color: rgb(44, 44, 44);
 }
 
 #post-label:hover {
