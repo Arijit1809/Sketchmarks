@@ -12,7 +12,8 @@ html {
     scroll-behavior: smooth;
 }
 body{
-    background-color: #18191a;
+    /* background-color: #18191a; */
+    background-color: #181a2b;
     color: #000000;
 }
 a{
@@ -135,14 +136,7 @@ a{
     background-color: white;
 }
 
-.tile-bg{
-    position: fixed;
-    width: 100%;
-    min-height: 100%;
-    height:auto;
-    filter: blur(20px);
-    z-index: -999;
-}
+
 .main{
     display: flex;
     align-items: center;
