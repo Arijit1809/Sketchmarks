@@ -575,7 +575,7 @@ body {
     .navbar-menu {
         position: fixed;
         height: 100vh;
-        width: 60%;
+        width: 70%;
         background-color: black;
         top: 0;
         right: -100%;
@@ -663,6 +663,10 @@ body {
 }
 
 @media (max-width: 600px) {
+    .navbar-menu a {
+        display: block;
+        font-size: 20px;
+    }
     .grid-container {
         display: unset;
     }
