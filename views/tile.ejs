@@ -32,50 +32,53 @@
         </div>
     </nav>
     <div class="main">
-        <a href="/profile/<%=tile.name%>" class="author">By <%=tile.name%></a>
-        <div class="tile">
-            <img src="data:image/<%=tile.img.contentType%>;base64,<%=tile.img.data.toString('base64')%>" id="<%=tile._id%>" class="tile-img">
-            
-        </div>
-        <div class="comments-section">
-            <div class="comment-div">
-                <h2 class="desc"><%=tile.desc%></h2>
-                <div class="click-div-likes">
-                    <span class="like-btn"><i id="heart"
-                    <% if(colour){ %>
-                        style="color: red;"
-                        class="fas fa-heart"
-                    <% }else{ %>
-                        style="color: grey;"
-                        class="far fa-heart"
-                    <% } %>
-                    ></i></span>
-                    <span class="likes-number"><%=tile.likes.likesNum%></span>
-                    <span class="click-div-share" data-clipboard-action="copy" data-clipboard-text="/tile/<%=tile._id%>" title="Share this post"><i class="far fa-share-square"></i></span>
-                    <% if(sameUser){ %>
-                        <span id="click-div-delete"><i class="far fa-trash-alt" id="dustbin" title="Delete this post"></i></span>
-                    <% } %>
-                </div>
-                <div class="click-div-comments">
-                    <% tile.comments.forEach((comment)=>{ %>
-                        <div class="comment">
-                            <a href="/profile/<%=comment.name%>" class="commenter"><%=comment.name%></a> says <span><%=comment.comment%></span>&nbsp;
-                            <% if(comment.name==viewer){ %>
-                                <i class="fas fa-trash delete-comment" title="Delete this comment"></i>
-                            <% } %>
-                        </div>
-                    <% }) %>
-                </div>
+        <div class="inner">
+            <a href="/profile/<%=tile.name%>" class="author">By <%=tile.name%></a>
+            <div class="tile">
+                <img src="data:image/<%=tile.img.contentType%>;base64,<%=tile.img.data.toString('base64')%>" id="<%=tile._id%>" class="tile-img">
                 
+            </div>
+            <div class="comments-section">
+                <div class="comment-div">
+                    <h2 class="desc"><%=tile.desc%></h2>
+                    <div class="click-div-likes">
+                        <span class="like-btn"><i id="heart"
+                        <% if(colour){ %>
+                            style="color: red;"
+                            class="fas fa-heart"
+                        <% }else{ %>
+                            style="color: grey;"
+                            class="far fa-heart"
+                        <% } %>
+                        ></i></span>
+                        <span class="likes-number"><%=tile.likes.likesNum%></span>
+                        <span class="share-container">
+                            <span class="click-div-share" data-clipboard-action="copy" data-clipboard-text="/tile/<%=tile._id%>" title="Share this post"><i class="far fa-share-square"></i></span>
+                            <span class="tooltip">Link copied to clipboard</span>
+                        </span>
+                        <% if(sameUser){ %>
+                            <span id="click-div-delete"><i class="far fa-trash-alt" id="dustbin" title="Delete this post"></i></span>
+                        <% } %>
+                    </div>
+                    <div class="click-div-comments">
+                        <% tile.comments.forEach((comment)=>{ %>
+                            <div class="comment">
+                                <a href="/profile/<%=comment.name%>" class="commenter"><%=comment.name%></a> says <span><%=comment.comment%></span>&nbsp;
+                                <% if(comment.name==viewer){ %>
+                                    <i class="fas fa-trash delete-comment" title="Delete this comment"></i>
+                                <% } %>
+                            </div>
+                        <% }) %>
+                    </div>
+                    
+                </div>
             </div>
         </div>
     </div>
     <div class="submit">
-        <textarea class="comment-area" cols="100" rows="1" placeholder="Add your comment here"></textarea>
+        <textarea class="comment-area" cols="30" rows="1" placeholder="Add your comment here"></textarea>
         <button class="sub-btn"><i class="far fa-comment" id="comment-icon" title="Post comment"></i></button>
     </div>
-
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
     <script src="https://kit.fontawesome.com/67a49e1ba0.js" crossorigin="anonymous"></script>
