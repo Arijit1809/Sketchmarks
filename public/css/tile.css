@@ -14,7 +14,7 @@ html {
 body{
     /* background-color: #18191a; */
     background-color: #181a2b;
-    background: url(/img/tilebg.jpg);
+    background-image: url(/img/tilebg.jpg);
     color: #000000;
 }
 .inner{
@@ -335,6 +335,9 @@ a{
 }
 
 @media screen and (max-width: 980px) {
+    .author{
+        margin-top: 20px;
+    }
     .navbar {
         padding: 20px 20px;
     }
@@ -393,4 +396,30 @@ a{
     .inner-width {
         max-width: 800px;
     }
+    .inner{
+        padding: 0 10px;
+    }
+    .tile{
+        margin-bottom: 10px;
+    }
+    .comment-div{
+        padding: 10px;
+    }
+    .comments-section{
+        margin-bottom: 90px;
+    }
+    .comment-area{
+        height: 50px;
+    }
+    .comment-area::placeholder{
+        font-size: 1rem;
+    }
+    .submit{
+        background-color: #2b2e4a;
+    }
+    body{
+        background-image: unset;
+    }
+
+
 }

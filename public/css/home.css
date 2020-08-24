@@ -326,6 +326,7 @@ body {
     background-color: black;
     background-image: url(../img/black.jpg);
     background-size: auto;
+    padding: 20px;
 }
 
 .header {
@@ -406,8 +407,9 @@ body {
 }
 .secondary-img{
     width: 100%;
+    
+    min-height: 100vw;
     height: auto;
-    min-height: 100%;
     filter: blur(10px) brightness(75%);
 }
 #click-div-img {
@@ -601,6 +603,22 @@ body {
     border: 0px;
 }
 
+.all-posts{
+    background-color: rgba(255, 255, 255, 0.612);
+    font-family: 'Ubuntu';
+    padding: 20px;
+    font-size: 1rem;
+    text-align: center;
+    /* margin: 20px; */
+    border-radius: 10px;
+    margin-top: 20px;
+    
+}
+.all-posts a{
+    text-decoration: none;
+    color: black;
+}
+
 /* Posts end */
 
 /* Submit */
@@ -737,7 +755,7 @@ footer {
     .navbar-menu {
         position: fixed;
         height: 100vh;
-        width: 60%;
+        width: 70%;
         background-color: black;
         top: 0;
         right: -100%;
@@ -754,9 +772,10 @@ footer {
         text-decoration: white;
         color: white;
     }
-    .login,.signup{
+    .login,.signup,.logout{
         display:block;
         margin: 15px 0;
+        padding: 5px 5px;
     }
 
     .sticky .navbar-menu {
@@ -953,15 +972,35 @@ footer {
         cursor: pointer;
         transform: scale(1);
     }
+    .top-post-right{
+        flex-direction: column-reverse;
+    }
+    .top-post-img{
+        margin-bottom: 20px;
+    }
+    .top-post-img:hover {
+        transform: scale(1);
+        transition: ease-in-out 0.3s;
+        cursor: pointer;
+    }
+    
 }
 
 @media (max-width: 600px) {
+    .navbar-menu a{
+        font-size: 20px;
+    }
     .column{
         flex:50%;
-        padding:0px 5px;
+        padding:0px 1px;
     }
     .column img{
-        margin-bottom: 5px;
+        margin-top: 1px;
+        margin-bottom: 1px;
+        border-radius: 0px;
+    }
+    .posts{
+        padding: 0;
     }
     #sub-desc{
         max-width: 90vw;
@@ -974,4 +1013,11 @@ footer {
     #post-title{
         padding: 60px;
     }
+    .artist{
+        font-size: 2rem;
+    }
+    .top-post-desc{
+        font-size: 1rem;
+    }
+
 }
