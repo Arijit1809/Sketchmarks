@@ -14,6 +14,7 @@ html {
 body{
     /* background-color: #18191a; */
     background-color: #181a2b;
+    background: url(/img/tilebg.jpg);
     color: #000000;
 }
 .inner{
@@ -28,7 +29,7 @@ a{
     position: fixed;
     background-color: transparent;
     width: 100%;
-    padding: 30px 0;
+    padding: 10px 0;
     top: 0;
     z-index: 2;
     transition: .3s linear;
@@ -88,7 +89,7 @@ a{
 .brand {
     color: white;
     text-transform: uppercase;
-    font-size: 1rem;
+    font-size: 0.75rem;
 }
 
 .menu-toggler {
@@ -113,7 +114,7 @@ a{
 
 .navbar-menu a {
     color: rgb(255, 255, 255);
-    font-size: 1rem;
+    font-size: 0.75rem;
     font-weight: 500;
     margin-left: 30px;
     transition: .2s linear;
@@ -121,12 +122,12 @@ a{
 }
 
 .navbar-menu a:hover {
-    color: #ffffff !important;
+    color: grey;
 }
 
 .sticky {
     background-color: black;
-    padding: 18px 0;
+    padding: 10px 0;
 }
 
 .sticky .logo {
@@ -152,7 +153,7 @@ a{
     text-align: center;
     font-size: 2rem;
     font-family: 'Alata';
-    margin:20px auto;
+    margin: 40px auto;
     color: white;
     display: block;
 }
@@ -161,16 +162,16 @@ a{
 .tile-img{
     /* max-width: 95vw; */
     border-radius: 10px;
-    max-height: 85vh;
-    display: block;
+    /* max-height: 85vh; */
+    width: 100%;
 }
 /* Tile section end */
 
 /* Comments section */
 .comments-section{
     border-radius: 10px;
-    margin: 10px 0 100px;
-    padding: 10px;
+    margin: 0 100px;
+    /* padding: 10px; */
     /* background-color:#3A3B3C; */
     background-color: #2b2e4aa1;
     display: block;
@@ -280,7 +281,7 @@ a{
 .comment-area{
     color: white;
     font-family: 'Alata';
-    padding: 10px;
+    padding: 3px 10px 0;
     border-radius: 10px;
     width: 100%;
     /* background-color: #3A3B3C; */
