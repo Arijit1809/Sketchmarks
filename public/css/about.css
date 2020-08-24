@@ -1,3 +1,9 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /*Navbar*/
 .navbar {
   position: fixed;
@@ -136,16 +142,7 @@ body{
   text-align: center;
 }
 
-.flexbox1{
-  display: flex;
-  flex-direction: row;
-  margin-top: 80px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  width: 1200px;
-  height: 400px;
-}
+
 .flexbox{
   display: flex;
   flex-direction: row;
@@ -153,24 +150,26 @@ body{
   margin-right: auto;
   text-align: center;
   width: 1200px;
-  height: 400px;
+  flex: 33%;
 }
-
+.tansen,.arijit,.shubham{
+  display: flex;
+  flex-direction: column;
+  flex: 50%;
+}
 .pfp{
   margin:0;
   width: 400px;
   position: relative;
 }
-
 .text{
   background-color: white;
-  height: 380;
-  flex: 33%;
+  height: 400px;
 }
 .pic{
   background-color: white;
-  height: 380;
-  flex: 33%;
+  height:400px;
+  
 }
 .name{
   font-family: "Ubuntu";
@@ -218,3 +217,89 @@ footer {
     font-size: 2rem;
     padding: 0 10px;
 }
+
+@media screen and (max-width: 768px) {
+  .flexbox{
+    display: unset;
+  }
+
+  .tansen,.shubham{
+    flex-direction: column-reverse;
+  }
+  .pfp{
+    height: unset;
+    max-width: 100vw;
+    padding: 10px;
+    width: unset;
+  }
+  .pic{
+    height: unset;
+  }
+  .text {
+    height: unset;
+    padding: 20px 0px;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .navbar {
+    padding: 20px 20px;
+  }
+
+  .menu-toggler {
+    display: block;
+  }
+
+  .navbar-menu {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    top: 0;
+    right: -100%;
+    /* max-width: 400px; */
+    text-align: center;
+    padding: 80px 50px;
+    transition: .3s linear;
+  }
+
+  .navbar-menu a {
+    display: block;
+    font-size: 30px;
+    margin: 30px 0;
+    text-decoration: white;
+    color: white;
+  }
+
+  .sticky .navbar-menu {
+    background-color: black;
+  }
+
+  .sticky .navbar-menu a {
+    color: white;
+  }
+
+  .navbar-menu.active {
+    right: 0;
+  }
+
+  .menu-toggler.active span:nth-child(1) {
+    transform: rotate(-45deg);
+    top: 4px;
+  }
+
+  .menu-toggler.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggler.active span:nth-child(3) {
+    transform: rotate(45deg);
+    bottom: 14px;
+  }
+
+  .inner-width {
+    max-width: 800px;
+  }
+}
+
+/* Footer-end */
