@@ -174,9 +174,15 @@ $(document).ready(() => {
   })
   $(".click-div-share").click(function(){
     $(".tooltip").fadeIn()
-    setTimeout(() => {
+    setTimeout(()=>{
       $(".tooltip").fadeOut()
-    }, 2000);
+    }, 3000);
+  })
+  $(".top-share").click(function(){
+    $(this).parent().children(".tooltip-top").fadeIn()
+    setTimeout(()=>{
+      $(this).parent().children(".tooltip-top").fadeOut()
+    }, 3000);
   })
 })
 new ClipboardJS(".click-div-share")

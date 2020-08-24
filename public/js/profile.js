@@ -1,16 +1,12 @@
 $(document).ready(function () {
     $(window).scroll(function () {
         if (this.scrollY > 20) {
-            $(".navbar").addClass("sticky");
-            
+            $(".navbar").addClass("sticky");            
         }
         else {
-            $(".navbar").removeClass("sticky");
-            
+            $(".navbar").removeClass("sticky");            
         }
-    });
-
-
+    })
     $('.menu-toggler').click(function () {
         $(this).toggleClass("active");
         $(".navbar-menu").toggleClass("active");
@@ -141,5 +137,11 @@ $(document).ready(function () {
             })
         }
     })
-});
+    $(".click-div-share").click(function(){
+        $(".tooltip").fadeIn()
+        setTimeout(()=>{
+          $(".tooltip").fadeOut()
+        }, 3000);
+    })
+})
 new ClipboardJS(".click-div-share")

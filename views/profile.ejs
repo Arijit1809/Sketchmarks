@@ -72,7 +72,10 @@
                     <div class="click-div-likes">
                         <span class="like-btn"><i class="fas fa-heart heart"></i></span>
                         <span class="likes-number"></span>
-                        <span class="click-div-share" title="Share this post" data-clipboard-action="copy" data-clipboard-text=""><i class="fas fa-share-square"></i></span>
+                        <span class="share-container">
+                            <span class="click-div-share" title="Share this post" data-clipboard-action="copy" data-clipboard-text=""><i class="fas fa-share-square"></i></span>
+                            <span class="tooltip">Link copied to clipboard</span>
+                        </span>
                         <% if(sameUser){ %>
                         <span id="click-div-delete" title="Delete this post"><i class="fas fa-trash-alt" id="dustbin"></i></span>
                         <% } %>
