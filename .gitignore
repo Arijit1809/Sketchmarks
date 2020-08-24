@@ -1,5 +1,4 @@
 node_modules
-uploads
 npm-debug.log
 .DS_Store
 /*.env
