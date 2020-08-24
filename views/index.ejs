@@ -59,7 +59,10 @@
                     <div class="click-div-likes">
                         <span class="like-btn"><i class="fas fa-heart heart" ></i></span>
                         <span class="likes-number"></span>
-                        <span class="click-div-share" title="Share this post" data-clipboard-action="copy" data-clipboard-text=""><i class="fas fa-share-square"></i></span>
+                        <span class="share-container">
+                            <span class="click-div-share" title="Share this post" data-clipboard-action="copy" data-clipboard-text=""><i class="fas fa-share-square"></i></span>
+                            <span class="tooltip">Link copied to clipboard</span>
+                        </span>
                     </div>
                     <div class="click-div-comments"></div>
                     <div class="comsub">
@@ -139,7 +142,10 @@
                         <% } %>
                         ></i></span>
                         <span class="top-post-likes top-likes-number"><%=topPosts[0].likes.likesNum%></span>
-                        <span class="top-share" title="Share this post" data-clipboard-action="copy" data-clipboard-text="/tile/<%=topPosts[0]._id%>"><i class="fas fa-share-square"></i></span>
+                        <span class="share-container">
+                            <span class="top-share" title="Share this post" data-clipboard-action="copy" data-clipboard-text="/tile/<%=topPosts[0]._id%>"><i class="fas fa-share-square"></i></span>
+                            <span class="tooltip-top">Link copied to clipboard</span>
+                        </span>
                     </div>
                 </div>
             </div>
@@ -161,7 +167,10 @@
                         <% } %>
                         ></i></span>
                         <span class="top-post-likes top-likes-number"><%=topPosts[1].likes.likesNum%></span>
-                        <span class="top-share" title="Share this post" data-clipboard-action="copy" data-clipboard-text="/tile/<%=topPosts[1]._id%>"><i class="fas fa-share-square"></i></span>
+                        <span class="share-container">
+                            <span class="top-share" title="Share this post" data-clipboard-action="copy" data-clipboard-text="/tile/<%=topPosts[1]._id%>"><i class="fas fa-share-square"></i></span>
+                            <span class="tooltip-top">Link copied to clipboard</span>
+                        </span>
                     </div>
                 </div>
                 <img src="data:image/<%=topPosts[1].img.contentType%>;base64,<%=topPosts[1].img.data.toString('base64')%>" id="<%=topPosts[1]._id%>" class="top-post-img">
@@ -185,7 +194,10 @@
                         <% } %>
                         ></i></span>
                         <span class="top-post-likes top-likes-number"><%=topPosts[2].likes.likesNum%></span>
-                        <span class="top-share" title="Share this post" data-clipboard-action="copy" data-clipboard-text="/tile/<%=topPosts[2]._id%>"><i class="fas fa-share-square"></i></span>
+                        <span class="share-container">
+                            <span class="top-share" title="Share this post" data-clipboard-action="copy" data-clipboard-text="/tile/<%=topPosts[2]._id%>"><i class="fas fa-share-square"></i></span>
+                            <span class="tooltip-top">Link copied to clipboard</span>
+                        </span>
                     </div>
                 </div>
             </div>
@@ -207,7 +219,10 @@
                         <% } %>
                         ></i></span>
                         <span class="top-post-likes top-likes-number"><%=topPosts[3].likes.likesNum%></span>
-                        <span class="top-share" title="Share this post" data-clipboard-action="copy" data-clipboard-text="/tile/<%=topPosts[3]._id%>"><i class="fas fa-share-square"></i></span>
+                        <span class="share-container">
+                            <span class="top-share" title="Share this post" data-clipboard-action="copy" data-clipboard-text="/tile/<%=topPosts[3]._id%>"><i class="fas fa-share-square"></i></span>
+                            <span class="tooltip-top">Link copied to clipboard</span>
+                        </span>
                     </div>
                 </div>
                 <img src="data:image/<%=topPosts[3].img.contentType%>;base64,<%=topPosts[3].img.data.toString('base64')%>" id="<%=topPosts[3]._id%>" class="top-post-img">
@@ -231,7 +246,10 @@
                         <% } %>
                         ></i></span>
                         <span class="top-post-likes top-likes-number"><%=topPosts[4].likes.likesNum%></span>
-                        <span class="top-share" title="Share this post" data-clipboard-action="copy" data-clipboard-text="/tile/<%=topPosts[4]._id%>"><i class="fas fa-share-square"></i></span>
+                        <span class="share-container">
+                            <span class="top-share" title="Share this post" data-clipboard-action="copy" data-clipboard-text="/tile/<%=topPosts[4]._id%>"><i class="fas fa-share-square"></i></span>
+                            <span class="tooltip-top">Link copied to clipboard</span>
+                        </span>
                     </div>
                 </div>
             </div>

@@ -469,6 +469,59 @@ body {
     cursor: pointer;
     color: #3282b8;
 }
+.share-container{
+    position: relative;
+}
+.tooltip{
+    display: none;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    border-radius: 6px;
+    position: absolute;
+    left: -75px;
+    top: 35px;
+    z-index: 3;
+    width: 190px;
+    font-family: "Ubuntu";
+    font-size: 0.75rem;
+}
+.tooltip::after {
+    content: " ";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent black transparent;
+}
+.tooltip-top{
+    display: none;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    border-radius: 6px;
+    z-index: 3;
+    position: absolute;
+    top: -50px;
+    left: -55px;
+    width: 190px;
+    font-family: "Ubuntu";
+    font-size: 0.75rem;
+}
+.tooltip-top::after {
+    content: " ";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
 #click-div-close {
     position: absolute;
     right: 70px;
