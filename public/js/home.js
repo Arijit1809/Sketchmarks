@@ -86,6 +86,20 @@ $(document).ready(() => {
     })
   })
 
+  $(".top-like-btn").click(function () {
+    let current=this
+    $.get("/likepost/" + $(this).attr("id"), function (result, status) {
+      if (result) {
+        if (result.colour)
+          $(current).parent().find(".top-heart").css("color", "red")
+        else
+          $(current).parent().find(".top-heart").css("color", "grey")
+        $(current).parent().find(".top-likes-number").html(result.likes)
+      }
+      else location = "/login"
+    })
+  })
+
   $(".post-submit").click(function () {
     let id = $(".like-btn").attr("id")
     let newComment = $(".post-comment").val()
