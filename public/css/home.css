@@ -469,6 +469,21 @@ body {
     cursor: pointer;
     color: #3282b8;
 }
+.share-container{
+    position: relative;
+}
+.tooltip{
+    display: none;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 3;
+    width: 120px;
+}
 #click-div-close {
     position: absolute;
     right: 70px;
