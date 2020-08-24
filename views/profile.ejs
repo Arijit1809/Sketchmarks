@@ -8,6 +8,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Alata&family=Alice&family=Eczar:wght@600&display=swap&family=Pacifico&display=swap&family=Dancing+Script:wght@700&display=swap&family=Ubuntu:wght@500&display=swap"
         rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="/css/profile.css">
@@ -47,7 +48,7 @@
                 <% if(sameUser){ %>
                     <div class="submit-main">
                         <form action="/submit" method="post" enctype=multipart/form-data id="submit-form">
-                            <input type="text" placeholder="Describe your work" id="sub-desc" name="desc" required>
+                            <textarea rows="3" type="text" placeholder="Describe your work" id="sub-desc" name="desc" required></textarea>
                             <label for="post-img" id="post-label">Upload your work</label>
                             <input type='file' id="post-img" name="work" accept="image/*" required>
                             <img id="preview" src="#" alt="Your image will appear here">
