@@ -8,6 +8,8 @@ const session = require('express-session')
 const passport = require("passport")
 const passportLocalMongoose = require("passport-local-mongoose")
 const fs=require("fs")
+const cookieParser=require("cookie-parser")
+const MongoStore=require("connect-mongo")(session)
 /************************* Package End ******************************/ 
 
 const app=express()
@@ -18,13 +20,15 @@ app.use(bodyParser.urlencoded({
     extended:true
 }))
 app.use(bodyParser.json())
-app.use(express.static("public"))
+app.use(express.static(path.join(__dirname, 'public')))
+app.use(cookieParser())
 
 app.use(
   session({
     secret: "Our little secret.",
     resave: false,
     saveUninitialized: false,
+    store: new MongoStore({ mongooseConnection: mongoose.connection })
   })
 );
 
@@ -373,7 +377,13 @@ app.post('/login',(req,res)=>{
         else{
             req.logIn(user,(err)=>{
                 if(err) console.log(err)
-                else res.redirect(`/profile/${user.username}`)
+                else{
+                    if(req.body.remember) 
+                        req.session.cookie.originalMaxAge=365*24*60*60*1000
+                    else
+                        req.session.cookie.expires = false
+                    res.redirect(`/profile/${user.username}`)
+                } 
             })
         }
     })(req,res)
