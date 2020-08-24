@@ -141,6 +141,37 @@ $(document).ready(() => {
       })
     }
   })
+  $(".top-post-img").click(function(){
+    let src = $(this).attr("src")
+    let id = $(this).attr("id")
+    if (media.matches) {
+      location = "/tile/" + id
+    }
+    else {
+      $(".click-div").css("display", "flex")
+      $.get("/thread/" + id, function (result, status) {
+        $("#click-div-img").attr("src", src)
+        $(".secondary-img").attr("src", src)
+        $("#click-div-user").html(`By <a href="/profile/${result.data.name}">${result.data.name}</a>`)
+        $(".click-div-desc").html(result.data.desc)
+        $(".click-div-share").attr("data-clipboard-text", "/tile/" + id)
+        $(".like-btn").attr("id", result.data._id)
+        $(".likes-number").html(result.data.likes.likesNum)
+        if (result.colour) $(".heart").css("color", "red")
+        else $(".heart").css("color", "grey")
+        let commentsString = ""
+        result.data.comments.forEach(function (comment) {
+          if (comment.name == result.viewer) {
+            commentsString += `<div class="comment-div"><a href="/profile/${comment.name}">${comment.name}</a> says <span>${comment.comment}</span> &nbsp;<i class="fas fa-trash delete-comment" title="Delete this comment"></i></div>\n`
+          }
+          else {
+            commentsString += `<div class="comment-div"><a href="/profile/${comment.name}">${comment.name}</a> says ${comment.comment}</div>\n`
+          }
+        })
+        $(".click-div-comments").html(commentsString)
+      })
+    }
+  })
 })
 new ClipboardJS(".click-div-share")
 new ClipboardJS(".top-share")

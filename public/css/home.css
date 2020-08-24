@@ -263,8 +263,13 @@ body {
     max-width: 400px;
     max-height: 400px;
     border-radius: 10px;
+    transition: ease-in-out 0.3s;
 }
-
+.top-post-img:hover {
+    transform: scale(1.2);
+    transition: ease-in-out 0.3s;
+    cursor: pointer;
+}
 .credits{
     margin: 30px 20px;
     text-align: center;
@@ -374,11 +379,9 @@ body {
 }
 
 .column img:hover {
-    /* box-shadow: 0 0 40px #d3d3d3; */
     transform: scale(1.2);
     transition: ease-in-out 0.3s;
     cursor: pointer;
-
 }
 
 .click-div {
