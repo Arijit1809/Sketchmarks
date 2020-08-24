@@ -575,7 +575,7 @@ body {
     .navbar-menu {
         position: fixed;
         height: 100vh;
-        width: 100%;
+        width: 60%;
         background-color: black;
         top: 0;
         right: -100%;
@@ -739,6 +739,12 @@ body {
     .like-btn,
     .likes-number {
         font-size: 1rem;
+    }
+    .column img:hover {
+        box-shadow: 0 0 20px #d3d3d3;
+        transition: ease-in-out 0.3s;
+        cursor: pointer;
+        transform: scale(1);
     }
 }
 
