@@ -45,7 +45,7 @@ $(document).ready(() => {
         $(".like-btn").attr("id", result.data._id)
         $(".likes-number").html(result.data.likes.likesNum)
         if (result.colour) $(".heart").css("color", "red")
-        else $(".heart").css("color", "white")
+        else $(".heart").css("color", "grey")
         let commentsString = ""
         result.data.comments.forEach(function (comment) {
           if (comment.name == result.viewer) {
@@ -81,6 +81,20 @@ $(document).ready(() => {
         else
           $(".heart").css("color", "grey")
         $(".likes-number").html(result.likes)
+      }
+      else location = "/login"
+    })
+  })
+
+  $(".top-like-btn").click(function () {
+    let current=this
+    $.get("/likepost/" + $(this).attr("id"), function (result, status) {
+      if (result) {
+        if (result.colour)
+          $(current).parent().find(".top-heart").css("color", "red")
+        else
+          $(current).parent().find(".top-heart").css("color", "grey")
+        $(current).parent().find(".top-likes-number").html(result.likes)
       }
       else location = "/login"
     })
