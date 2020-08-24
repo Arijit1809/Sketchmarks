@@ -45,7 +45,7 @@ $(document).ready(() => {
         $(".like-btn").attr("id", result.data._id)
         $(".likes-number").html(result.data.likes.likesNum)
         if (result.colour) $(".heart").css("color", "red")
-        else $(".heart").css("color", "white")
+        else $(".heart").css("color", "grey")
         let commentsString = ""
         result.data.comments.forEach(function (comment) {
           if (comment.name == result.viewer) {

@@ -278,7 +278,7 @@ body {
 }
 
 .top-post-desc{
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin-bottom: 30px;
 }
 
@@ -296,13 +296,22 @@ body {
 }
 
 .top-share i{
-    font-size: 1.25rem;
-    margin: 0 10px;
+    font-size: 2rem;
+    margin: 0 20px;
 }
 
 .top-share i:hover{
     cursor: pointer;
     color: #3282b8;
+}
+.top-heart{
+    font-size: 2rem;
+}
+.top-heart:hover{
+    cursor: pointer;
+}
+.top-likes-number{
+    font-size: 2rem;
 }
 /* Top posts end */
 
@@ -442,7 +451,6 @@ body {
 }
 .heart:hover{
     cursor: pointer;
-    color: red !important;
 }
 .like-btn,
 .likes-number {
