@@ -1,4 +1,15 @@
 $(document).ready(()=>{
+    $(window).scroll(() => {
+        if (this.scrollY > 20)
+            $(".navbar").addClass("sticky")
+        else
+            $(".navbar").removeClass("sticky")
+    })
+
+    $('.menu-toggler').click(function () {
+        $(this).toggleClass("active");
+        $(".navbar-menu").toggleClass("active");
+    });
     let id=$(".tile-img").attr("id")
     $(".sub-btn").click(function(){
         let newComment=$(".comment-area").val()

@@ -18,6 +18,123 @@ body{
 a{
     text-decoration: none;
 }
+.navbar {
+    position: fixed;
+    background-color: transparent;
+    width: 100%;
+    padding: 30px 0;
+    top: 0;
+    z-index: 2;
+    transition: .3s linear;
+    font-family: 'Alata';
+}
+
+.navbar .inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .login {
+    border: 2px solid brown;
+    padding: 5px 20px;
+    border-radius: 10px;
+    background-color: brown;
+    color: #d3d3d3;
+    font-family: "Ubuntu";
+    transition: 0.1s linear;
+}
+
+.navbar .login:hover {
+    background-color: red;
+    color: #d3d3d3;
+}
+
+.navbar .signup {
+    border: 2px solid purple;
+    padding: 5px 20px;
+    border-radius: 10px;
+    font-family: "Ubuntu";
+    transition: 0.1s linear;
+
+}
+
+.navbar .signup:hover {
+    background-color: purple;
+    color: #d3d3d3;
+}
+
+.navbar .logout {
+    border: 2px solid brown;
+    color: #d3d3d3;
+    padding: 5px 20px;
+    border-radius: 10px;
+    font-family: "Ubuntu";
+    transition: 0.1s linear;
+}
+
+.navbar .logout:hover {
+    color: white;
+    background-color: brown;
+}
+
+
+.brand {
+    color: white;
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+
+.menu-toggler {
+    background: none;
+    width: 30px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    outline: none;
+    z-index: 999;
+    display: none;
+}
+
+.menu-toggler span {
+    display: block;
+    height: 3px;
+    background-color: rgb(255, 255, 255);
+    margin: 6px 0;
+    position: relative;
+    transition: .3s linear;
+}
+
+.navbar-menu a {
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+    font-weight: 500;
+    margin-left: 30px;
+    transition: .2s linear;
+    text-decoration: none;
+}
+
+.navbar-menu a:hover {
+    color: #ffffff !important;
+}
+
+.sticky {
+    background-color: black;
+    padding: 18px 0;
+}
+
+.sticky .logo {
+    background-image: url(../images/black-logo.png);
+}
+
+.sticky .navbar-menu a {
+    color: white;
+}
+
+.sticky .menu-toggler span {
+    background-color: white;
+}
+
 .tile-bg{
     position: fixed;
     width: 100%;
@@ -30,6 +147,7 @@ a{
     display: flex;
     align-items: center;
     flex-direction: column;
+    margin-top: 50px;
 }
 .author{
     text-align: center;
@@ -80,8 +198,12 @@ a{
     font-family: 'Alata';
     font-size: 1rem;
 }
+#heart{
+    transition: linear 0.3s;
+}
 #heart:hover{
     cursor: pointer;
+    transform: scale(1.3);
 }
 .comment{
     /* color: #B1B3B8; */
@@ -115,10 +237,18 @@ a{
 }
 #click-div-delete{
     color: orange;
+    transition: linear 0.3s;  
 }
 #click-div-delete:hover{
     color: red;
     cursor: pointer;
+    
+}
+#dustbin{
+    transition: linear 0.3s;
+}
+#dustbin:hover{
+    transform: scale(1.3);
 }
 .comment-area{
     color: rgb(255, 255, 255);
@@ -129,38 +259,110 @@ a{
     /* background-color: #3A3B3C; */
     background-color: #d3d3d36e;
     resize: none;
-    margin-right: 30px;
+    margin-right: 5px;
 }
 .comment-area::placeholder{
     color: white;
 }
 .sub-btn{
     display: inline-block;
-    margin-left: 5px;
+    margin:0px 10px;
     background-color: transparent;
     border: 0px;
 }
 #comment-icon{
     font-size: 2rem;
     color: #A8ABAF;
+    transition: linear 0.3s;
 }
 #comment-icon:hover{
     color: white;
     cursor: pointer;
+    transform: scale(1.3);
 }
 .delete-comment{
     color: rgb(180, 0, 0);
+    transition: linear 0.3s;
 }
 .delete-comment:hover{
     color: orangered;
     cursor: pointer;
+    transform: scale(1.3);
 }
 
 .click-div-share i{
     color: grey;
+    transition: linear 0.3s;
 }
 .click-div-share i:hover{
     cursor: pointer;
     color: white;
+    transform: scale(1.3);
 }
 
+@media screen and (max-width: 1250px) {
+    .navbar {
+        padding: 20px 20px;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .navbar {
+        padding: 20px 20px;
+    }
+
+    .menu-toggler {
+        display: block;
+    }
+
+    .navbar-menu {
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        background-color: black;
+        top: 0;
+        right: -100%;
+        /* max-width: 400px; */
+        text-align: center;
+        padding: 80px 50px;
+        transition: .3s linear;
+    }
+
+    .navbar-menu a {
+        display: block;
+        font-size: 30px;
+        margin: 30px 0;
+        text-decoration: white;
+        color: white;
+    }
+
+    .sticky .navbar-menu {
+        background-color: black;
+    }
+
+    .sticky .navbar-menu a {
+        color: white;
+    }
+
+    .navbar-menu.active {
+        right: 0;
+    }
+
+    .menu-toggler.active span:nth-child(1) {
+        transform: rotate(-45deg);
+        top: 4px;
+    }
+
+    .menu-toggler.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggler.active span:nth-child(3) {
+        transform: rotate(45deg);
+        bottom: 14px;
+    }
+
+    .inner-width {
+        max-width: 800px;
+    }
+}
