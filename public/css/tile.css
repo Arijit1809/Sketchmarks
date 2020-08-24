@@ -16,6 +16,11 @@ body{
     background-color: #181a2b;
     color: #000000;
 }
+.inner{
+    max-width: 1200px;
+    padding: 0 40px;
+    margin: auto;
+}
 a{
     text-decoration: none;
 }
@@ -149,27 +154,27 @@ a{
     font-family: 'Alata';
     margin:20px auto;
     color: white;
+    display: block;
 }
 /* Tile section */
 
 .tile-img{
-    max-width: 95vw;
+    /* max-width: 95vw; */
     border-radius: 10px;
     max-height: 85vh;
+    display: block;
 }
 /* Tile section end */
 
 /* Comments section */
 .comments-section{
     border-radius: 10px;
-    
-    width: 95vw;
-    /* overflow: auto; */
-    margin: 10px;
-    margin-bottom: 70px;
+    margin: 10px 0 100px;
     padding: 10px;
     /* background-color:#3A3B3C; */
     background-color: #2b2e4aa1;
+    display: block;
+    width: 100%;
 }
 .desc{
     color: #E4E6EA;
@@ -215,19 +220,47 @@ a{
 .submit{
     display: flex;
     flex-direction: row;
-    margin: 10px 5px 0px 5px;
+    margin-top: 40px;
     padding: 10px;
     position: fixed;
     bottom: 0;
+    width: 100%;
     /* background-color: #18191a; */
-    background-color: #2b2e4a;
-    width: 100vw;
+    background-color: #2b2e4aa1;
 }
 .click-div-comments{
     overflow: auto;
 }
 .click-div-share{
     margin-right: 10px;
+}
+.share-container{
+    position: relative;
+}
+.tooltip{
+    display: none;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    border-radius: 6px;
+    position: absolute;
+    left: -85px;
+    top: 35px;
+    z-index: 3;
+    width: 190px;
+    font-family: "Ubuntu";
+    font-size: 0.75rem;
+}
+.tooltip::after {
+    content: " ";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent black transparent;
 }
 #click-div-delete{
     color: orange;
@@ -245,15 +278,15 @@ a{
     transform: scale(1.3);
 }
 .comment-area{
-    color: rgb(255, 255, 255);
+    color: white;
     font-family: 'Alata';
     padding: 10px;
-    border-radius: 20px;
-    width: 90vw;
+    border-radius: 10px;
+    width: 100%;
     /* background-color: #3A3B3C; */
     background-color: #d3d3d36e;
     resize: none;
-    margin-right: 5px;
+    border: none;
 }
 .comment-area::placeholder{
     color: white;

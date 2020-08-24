@@ -71,5 +71,11 @@ $(document).ready(()=>{
             })
         }
     })
+    $(".click-div-share").click(function(){
+        $(".tooltip").fadeIn()
+        setTimeout(()=>{
+            $(".tooltip").fadeOut()
+        }, 3000);
+    })
 })
 new ClipboardJS(".click-div-share")
