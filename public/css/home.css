@@ -194,6 +194,10 @@ body {
 }
 .navbtm-icon{
     font-size: 1.5rem;
+    color: #d3d3d3;
+}
+.navbtm-icon:hover{
+    color: white;
 }
 /* Landing page */
 .landing {
@@ -949,8 +953,8 @@ footer {
 
 @media (max-width: 768px) {
     #land-name {
-        font-size: 4.5rem;
-        letter-spacing: 1px;
+        font-size: 6.5rem;
+        letter-spacing: 10px;
     }
     .landing {
         height: 100vh;
@@ -975,7 +979,7 @@ footer {
         text-decoration: none;
         margin: 0 5px;
         padding: 10px 10px;
-        font-size: 1rem;
+        font-size: 1.2rem;
         font-family: "Ubuntu";
         border-radius: 10px;
     }
@@ -1128,6 +1132,16 @@ footer {
     .navbar-menu a{
         font-size: 20px;
     }
+    .navbar form input{
+        font-size: 20px;
+        width: 200px;
+    }
+    .navbar form button{
+        font-size: 20px;
+    }
+    #land-name{
+        font-size: 3rem;
+    }
     .column{
         flex:50%;
         padding:0px 1px;
@@ -1136,6 +1150,9 @@ footer {
         margin-top: 1px;
         margin-bottom: 1px;
         border-radius: 0px;
+    }
+    .land-log-btn,.land-sign-btn{
+        font-size: 1rem;
     }
     .posts{
         padding:10px 0px;

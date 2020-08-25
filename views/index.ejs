@@ -27,7 +27,7 @@
                 <a href="/profile/<%=username%>" style="display: <%=profileDisplay%>;">Profile</a>
                 <a href="/logout" class="logout" style="display: <%=logoutDisplay%>;">Log Out</a>
                 <form action="/searchprofile" method="POST">
-                    <input type="text" name="profile" placeholder="Go to profile">
+                    <input id="searchbar" type="text" name="profile" placeholder="Go to profile">
                     <button type="submit">
                         <i class="fas fa-search"></i>
                     </button>
@@ -299,7 +299,7 @@
             <a href="/"><i class="fas fa-home"></i></a>
         </div>
         <div class="search-nav navbtm-icon">
-            <i class="fas fa-search"></i>
+            <a href="#searchbar"><i class="fas fa-search"></i></a>
         </div>
         <div class="add-nav navbtm-icon">
             <a href="#posting"><i class="fas fa-plus-square"></i></a>
