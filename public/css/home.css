@@ -1067,18 +1067,18 @@ footer {
 
 .nav-btm{
     display: none;
-    flex-direction: row;
+    /* flex-direction: row; */
     flex: 20%;
     height: 60px;
     width: 100vw;
     justify-content: space-around;
     align-content: center;
     position: fixed;
-    bottom: 0px;
+    bottom: 0;
     background-color:#121212;
     padding: 10px;
 }
-#navbtm-icon{
+.navbtm-icon{
     font-size: 1.5rem;
 }
 .dikhao {
