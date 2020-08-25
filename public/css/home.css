@@ -758,7 +758,7 @@ body {
 
 /* Footer */
 footer {
-    margin: 0px 0 50px;
+    margin: 0px 0 100px;
 }
 
 .foot-text {
@@ -1077,14 +1077,14 @@ footer {
     display: flex;
     /* flex-direction: row; */
     /* flex: 20%; */
-    height: 60px;
+    height: 70px;
     width: 100vw;
     justify-content: space-around;
     align-content: center;
     position: fixed;
     bottom: -70px;
     background-color:#121212;
-    padding: 10px;
+    padding: 20px 10px;
     transition: 0.3s linear;
 }
 .navbtm-icon{
@@ -1094,10 +1094,4 @@ footer {
     display: none;
 } */
 
-@media (max-width: 768px) {
-    
-    /* .dikhao {
-        display: flex;
-    } */
 
-}

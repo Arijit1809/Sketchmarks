@@ -616,7 +616,7 @@ a{
 }
 
 footer {
-    margin: 0px 0 50px;
+    margin: 0px 0 100px;
 }
 
 .foot-text {
@@ -873,4 +873,24 @@ footer {
     .column{
         flex:100%;
     }
+}
+
+.nav-btm {
+    display: flex;
+    /* flex-direction: row; */
+    /* flex: 20%; */
+    height: 70px;
+    width: 100vw;
+    justify-content: space-around;
+    align-content: center;
+    position: fixed;
+    bottom: -70px;
+    background-color: #121212;
+    padding: 20px 10px;
+    transition: 0.3s linear;
+}
+
+.navbtm-icon {
+    font-size: 1.5rem;
+    color: white;
 }
