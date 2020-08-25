@@ -90,7 +90,9 @@ a{
 .brand {
     color: white;
     text-transform: uppercase;
-    font-size: 0.75rem;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: ease-in-out 0.2s;
 }
 
 .menu-toggler {
@@ -145,11 +147,11 @@ a{
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin-top: 50px;
+    margin-top: 80px;
 }
 .author{
     text-align: center;
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-family: 'Alata';
     margin: 40px auto;
     color: white;
@@ -185,28 +187,28 @@ a{
     font-family: 'Alata';
     text-transform: capitalize;
     margin: 10px 0 20px 5px;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 .click-div-likes{
     margin-bottom: 20px;
 }
 .like-btn{
     margin: 0px 0px 0px 5px;
-    font-size: 1rem;
+    font-size: 1.5rem;
 }
 
 .likes-number{
     color: #E4E6EA;
     margin-right: 10px;
     font-family: 'Alata';
-    font-size: 1rem;
+    font-size: 1.5rem;
 }
 #heart{
     transition: linear 0.3s;
 }
 #heart:hover{
     cursor: pointer;
-    transform: scale(1.3);
+    transform: scale(1.2);
 }
 .comment{
     /* color: #B1B3B8; */
@@ -220,6 +222,9 @@ a{
 }
 .commenter{
     color: #E4E6EA;
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    
 }
 .submit{
     display: flex;
@@ -270,6 +275,7 @@ a{
 #click-div-delete{
     color: orange;
     transition: linear 0.3s;
+    font-size: 1.5rem;
 }
 #click-div-delete:hover{
     color: red;
@@ -325,11 +331,12 @@ a{
 .click-div-share i{
     color: grey;
     transition: linear 0.3s;
+    font-size: 1.5rem;
 }
 .click-div-share i:hover{
     cursor: pointer;
     color: white;
-    transform: scale(1.3);
+    transform: scale(1.2);
 }
 .spinner{
     height: 100vh;
@@ -476,6 +483,7 @@ a{
     }
     .comment-area{
         height: 50px;
+        font-size: 1rem;
     }
     .comment-area::placeholder{
         font-size: 1rem;
