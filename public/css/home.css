@@ -278,7 +278,6 @@ body {
 
 .web-desc-main{
     margin: 0 0 100px;
-    padding-top: 100px;
 }
 
 .web-desc-text{
@@ -316,7 +315,7 @@ body {
 
 .section-head {
     text-align: center;
-    padding: 70px 150px 100px;
+    padding: 0 150px 100px;
     font-size: 5rem;
     color: white;
     margin: 0;
@@ -328,7 +327,7 @@ body {
 }
 .section-head1 {
     text-align: center;
-    padding: 100px 150px 100px;
+    padding: 0 150px 100px;
     font-size: 5rem;
     color: white;
     margin: 0;
@@ -770,7 +769,7 @@ body {
     font-family: "Dancing Script",
     cursive;
     text-align: center;
-    padding: 50px 150px 60px;
+    padding: 0 150px 60px;
     font-size: 5rem;
     color: white;
     margin: 0;
@@ -973,7 +972,12 @@ footer {
         transform: rotate(45deg);
         bottom: 14px;
     }
-
+    .web-desc-main{
+        margin: 0 30px;
+    }
+    .web-desc-text{
+        font-size: 2.5rem;
+    }
     .inner-width {
         max-width: 800px;
     }
@@ -1022,9 +1026,21 @@ footer {
         font-family: "Ubuntu";
         border-radius: 10px;
     }
+    .web-desc-main{
+        margin: 0 40px;
+    }
+    .web-desc-text{
+        font-size: 2rem;
+    }
+    .desc-account{
+        font-size: 1.5rem;
+    }
+    .desc-tip{
+        font-size: 1rem;
+    }
     .section-head {
         font-size: 3.1rem;
-        padding: 60px 150px 60px;
+        padding: 0 150px 60px;
         /* font-family: 'Pacifico',
         cursive; */
         background-size: 100%;
@@ -1032,7 +1048,7 @@ footer {
     .section-head1 {
         font-size: 3.1rem;
         margin-top: 20px;
-        padding: 60px 150px 60px;
+        padding: 0 150px 60px;
         /* font-family: 'Pacifico',
         cursive; */
         background-size: 100%;
@@ -1051,7 +1067,7 @@ footer {
         background-image: unset;
         font-size: 4rem;
         background-size: 100%;
-        padding: 60px 10px 60px;
+        padding: 0 10px 60px;
     }
 
     .sub-btn {
@@ -1188,7 +1204,13 @@ footer {
         font-size: 20px;
     }
     #land-name{
-        font-size: 3rem;
+        font-size: 4.5rem;
+    }
+    .web-desc{
+        padding: 100px 0;
+    }
+    .top-posts{
+        padding: 100px 0;
     }
     .column{
         flex:50%;
@@ -1203,26 +1225,25 @@ footer {
         font-size: 1rem;
     }
     .posts{
-        padding:20px 0px;
-    }
-    
-    #post-title{
-        background-image: unset;
-        font-family: 'Alata';
-        color: rgb(255, 255, 255);
+        padding: 100px 0px;
     }
     #sub-desc{
         max-width: 90vw;
     }
     #tiles{
         font-size: 3rem;
+        font-family: "Dancing Script";
         background-image: unset;
-        font-family: 'Alata';
-        color: black;
+        color: white;
         padding: 60px;
+        padding-top: 0;
     }
     #post-title{
         padding: 60px;
+        padding-top: 0;
+        background-image: unset;
+        font-family: "Dancing Script";
+        color: rgb(255, 255, 255);
     }
     .artist{
         font-size: 2rem;
