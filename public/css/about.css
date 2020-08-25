@@ -177,18 +177,22 @@ body{
 .pic{
   background-color: white;
   height:400px;
-  
+
 }
 .name{
-  font-family: "Ubuntu";
+  font-family: 'Niconne', cursive;
+  font-size: 3rem;
 }
 .info{
   margin-left: 50px;
   margin-right: 50px;
+  font-family: "Ubuntu";
 }
 .post{
   color: red;
   margin: 10px auto 0;
+  font-family: "Ubuntu";
+  margin-bottom: 30px;
 }
 .iconbar{
   letter-spacing: 15px;
@@ -237,15 +241,51 @@ footer {
   .pfp{
     height: unset;
     max-width: 100vw;
-    padding: 10px;
+    padding: 0;
     width: unset;
+    background-color: #403f3e;
+    background-size: cover;
   }
   .pic{
     height: unset;
+    background-color: #403f3e;
   }
   .text {
     height: unset;
     padding: 20px 0px;
+    background-color: #403f3e;
+  }
+  .name{
+    font-family: 'Niconne', cursive;
+    font-size: 3rem;
+    color: white;
+  }
+  .info{
+    margin-left: 50px;
+    margin-right: 50px;
+    font-family: "Ubuntu";
+    color: white;
+  }
+  .post{
+    color: red;
+    margin: 10px auto 0;
+    font-family: "Ubuntu";
+    margin-bottom: 30px;
+
+  }
+  .iconbar{
+    letter-spacing: 15px;
+    text-align: center;
+    align-items: center;
+    margin-top: 100px;
+  }
+  .fab{
+    color: white;
+    font-size: 2rem;
+  }
+  .far{
+    color: white;
+    font-size: 2rem;
   }
 }
 
