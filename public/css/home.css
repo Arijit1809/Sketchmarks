@@ -901,9 +901,6 @@ footer {
     .navbar form button{
         font-size: 1.75rem;
     }
-    .navbar .login{
-        display: block !important;
-    }
     .login,.signup,.logout{
         display:block;
         margin: 15px;
