@@ -1,10 +1,12 @@
 $(document).ready(function () {
     $(window).scroll(function () {
         if (this.scrollY > 20) {
-            $(".navbar").addClass("sticky");            
+            $(".navbar").addClass("sticky")
+            $(".nav-btm").css("bottom", "0")
         }
         else {
-            $(".navbar").removeClass("sticky");            
+            $(".navbar").removeClass("sticky")
+            $(".nav-btm").css("bottom", "-70px")
         }
     })
     $('.menu-toggler').click(function () {
