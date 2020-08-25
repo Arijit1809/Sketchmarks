@@ -138,7 +138,25 @@ body {
 .navbar-menu a:hover {
     color: #ffffff !important;
 }
-
+.navbar form{
+    display: inline;
+    margin-left: 30px;
+}
+.navbar form input{
+    padding: 5px;
+    padding-left: 10px;
+    border-radius: 10px;
+    margin-right: 5px;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.651);
+    border: none;
+    font-family: "Ubuntu";
+}
+.navbar form button{
+    background-color: transparent;
+    border: none;
+    font-size: 1.05rem;
+}
 .sticky {
     /* background-color: black; */
     padding: 18px 0;
@@ -172,7 +190,7 @@ body {
     color: #ffa36c;
     letter-spacing: 15px;
     font-family: 'Great Vibes';
-    background: url(../img/bg9.jpg) 50% 50%;
+    background: url(../img/bg9-min.jpg) 50% 50%;
     background-size: cover;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
@@ -232,6 +250,18 @@ body {
 .section-head {
     text-align: center;
     padding: 70px 150px 100px;
+    font-size: 5rem;
+    color: white;
+    margin: 0;
+    background-image: url(../img/name_bg.png);
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: "Dancing Script", cursive;
+}
+.section-head1 {
+    text-align: center;
+    padding: 100px 150px 100px;
     font-size: 5rem;
     color: white;
     margin: 0;
@@ -448,7 +478,7 @@ body {
 }
 .secondary-img{
     width: 100%;
-    
+
     min-height: 100vw;
     height: auto;
     filter: blur(10px) brightness(75%);
@@ -653,7 +683,7 @@ body {
     /* margin: 20px; */
     border-radius: 10px;
     margin: 20px 10px 0px 10px;
-    
+
 }
 .all-posts a{
     text-decoration: none;
@@ -911,6 +941,14 @@ footer {
         cursive; */
         background-size: 120%;
     }
+    .section-head1 {
+        font-size: 3.1rem;
+        margin-top: 20px;
+        padding: 60px 150px 60px;
+        /* font-family: 'Pacifico',
+        cursive; */
+        background-size: 120%;
+    }
 
     #posting {
         background-image: unset;
@@ -1038,7 +1076,7 @@ footer {
         transition: ease-in-out 0.3s;
         cursor: pointer;
     }
-    
+
 }
 
 @media (max-width: 600px) {

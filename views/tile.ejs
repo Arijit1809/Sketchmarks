@@ -12,17 +12,16 @@
 <body>
     <nav class="navbar">
         <div class="inner">
-            <a class="brand">Sketchmarks</a>
+            <a href="/" class="brand">Sketchmarks</a>
             <button class="menu-toggler">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
             <div class="navbar-menu">
-                <a href="/">Home</a>
-                <a href="/about">About</a>
                 <a href="/">Artists</a>
                 <a href="/posts">Posts</a>
+                <a href="/about">About</a>
                 <!-- <a href="/login" class="login" style="display: <%=//loginDisplay%>;">Log In</a>
                 <a href="/signup" class="signup" style="display: <%=//signupDisplay%>;">Sign Up</a>
                 <a href="/profile/<%=//username%>" style="display: <%=//profileDisplay%>;">Profile</a>
@@ -42,7 +41,7 @@
             <a href="/profile/<%=tile.name%>" class="author">By <%=tile.name%></a>
             <div class="tile">
                 <img src="data:image/<%=tile.img.contentType%>;base64,<%=tile.img.data.toString('base64')%>" id="<%=tile._id%>" class="tile-img">
-                
+
             </div>
             <div class="comments-section">
                 <div class="comment-div">
@@ -76,7 +75,7 @@
                             </div>
                         <% }) %>
                     </div>
-                    
+
                 </div>
             </div>
         </div>

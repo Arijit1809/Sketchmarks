@@ -19,14 +19,19 @@
                 <span></span>
             </button>
             <div class="navbar-menu">
-                <a href="/about">About</a>
                 <a href="/">Artists</a>
                 <a href="/posts">Posts</a>
+                <a href="/about">About</a>
                 <a href="/login" class="login" style="display: <%=loginDisplay%>;">Log In</a>
                 <a href="/signup" class="signup" style="display: <%=signupDisplay%>;">Sign Up</a>
                 <a href="/profile/<%=username%>" style="display: <%=profileDisplay%>;">Profile</a>
                 <a href="/logout" class="logout" style="display: <%=logoutDisplay%>;">Log Out</a>
-
+                <form action="/searchprofile" method="POST">
+                    <input type="text" name="profile" placeholder="Go to profile">
+                    <button type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
             </div>
         </div>
     </nav>
