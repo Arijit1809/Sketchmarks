@@ -267,7 +267,41 @@ body {
 
 /* Landing page end */
 
+/* Website Description */
 
+.web-desc{
+    background-color: rgba(0, 0, 0, 0.63);
+}
+
+.web-desc-main{
+    margin: 0 100px 100px;
+    padding-top: 100px;
+}
+
+.web-desc-text{
+    font-size: 2.5rem;
+    font-family: "Ubuntu";
+    margin-bottom: 50px;
+    color: #e84545;
+    text-shadow: 3px 3px 5px #bb3838;
+    letter-spacing: 5px;
+}
+.desc-account{
+    font-size: 2rem;
+    font-family: "Alice";
+    color: #bb3838;
+    text-shadow: 2px 2px 2px #9c2f2f;
+    margin-bottom: 10px;
+    letter-spacing: 3px;
+}
+.desc-tip{
+    font-size: 1.1rem;
+    color: rgb(85, 85, 85);
+    letter-spacing: 1px;
+    font-family: "Alata";
+}
+
+/* Website Description end */
 /* Top Posts */
 .top-posts {
     background-image: url(/img/whitebg1.jpg);
