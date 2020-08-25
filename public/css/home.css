@@ -138,12 +138,8 @@ body {
 }
 
 .sticky {
-    background-color: black;
+    /* background-color: black; */
     padding: 18px 0;
-}
-
-.sticky .logo {
-    background-image: url(../images/black-logo.png);
 }
 
 .sticky .navbar-menu a {
@@ -792,8 +788,19 @@ footer {
 
     .menu-toggler {
         display: block;
+        
     }
-
+    .sticky .menu-toggler{
+        background-color: #121212;
+        border-radius: 50%;
+        padding: 10px;
+        width: 50px;
+        transition: .3s linear;
+    }
+    .sticky .brand{
+        visibility: hidden;
+        transition: .3s linear;
+    }
     .navbar-menu {
         position: fixed;
         height: 100vh;
@@ -821,7 +828,7 @@ footer {
     }
 
     .sticky .navbar-menu {
-        background-color: black;
+        background-color:#121212;
     }
 
     .sticky .navbar-menu a {
