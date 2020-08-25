@@ -417,6 +417,7 @@ body {
   
 .double-bounce2{
     animation-delay: -1.0s;
+    background-color: black;
 }
   
 @keyframes sk-bounce {
