@@ -88,7 +88,7 @@ body {
     cursor: pointer;
     position: relative;
     outline: none;
-    z-index: 999;
+    z-index: 4;
     display: none;
 }
 
@@ -333,7 +333,7 @@ body {
     left: 0;
     bottom: 0;
     color: black;
-    z-index: 10;
+    z-index: 4;
     display: none;
     flex-direction: row;
     align-items: center;
@@ -343,7 +343,7 @@ body {
 .click-div-secondary{
     width: 100%;
     position: fixed;
-    z-index: -999;
+    z-index: -1;
 }
 a{
     color: white;
