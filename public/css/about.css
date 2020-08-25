@@ -170,11 +170,13 @@ body{
   text-align: center;
   width: 1200px;
   flex: 33%;
+ 
 }
 .tansen,.arijit,.shubham{
   display: flex;
   flex-direction: column;
   flex: 50%;
+  
 }
 .pfp{
   margin:0;
@@ -228,19 +230,20 @@ footer {
 }
 
 .foot-text {
-    text-align: center;
-    margin: 40px 0;
-    font-size: 1.5rem;
-    font-family: "Alice";
+  text-align: center;
+  margin: 40px 0;
+  font-size: 1.5rem;
+  font-family: "Alata";
+  color: white;
 }
 
 .icons {
-    text-align: center;
+  text-align: center;
 }
 
 .icons i {
-    font-size: 2rem;
-    padding: 0 10px;
+  font-size: 2rem;
+  padding: 0 10px;
 }
 
 @media screen and (max-width: 768px) {
@@ -379,4 +382,82 @@ footer {
   .nav-btm {
     display: flex;
   }
+}
+
+
+@media (max-width: 600px) {
+  .navbar-menu a {
+    font-size: 20px;
+  }
+
+  .navbar form input {
+    font-size: 20px;
+    width: 200px;
+  }
+
+  .navbar form button {
+    font-size: 20px;
+  }
+
+  #land-name {
+    font-size: 3rem;
+  }
+
+  .column {
+    flex: 50%;
+    padding: 0px 1px;
+  }
+
+  .column img {
+    margin-top: 1px;
+    margin-bottom: 1px;
+    border-radius: 0px;
+  }
+
+  .land-log-btn,
+  .land-sign-btn {
+    font-size: 1rem;
+  }
+
+  .posts {
+    padding: 20px 0px;
+  }
+
+  #post-title {
+    background-image: unset;
+    font-family: 'Alata';
+    color: rgb(255, 255, 255);
+  }
+
+  #sub-desc {
+    max-width: 90vw;
+  }
+
+  #tiles {
+    font-size: 3rem;
+    background-image: unset;
+    font-family: 'Alata';
+    color: black;
+    padding: 60px;
+  }
+
+  #post-title {
+    padding: 60px;
+  }
+
+  .artist {
+    font-size: 2rem;
+  }
+
+  .top-post-desc {
+    font-size: 1rem;
+  }
+
+  .navbar form input {
+    padding: 10px;
+    padding-left: 15px;
+    font-size: 20px;
+    width: 150px;
+  }
+
 }
