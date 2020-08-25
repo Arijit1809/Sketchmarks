@@ -291,20 +291,26 @@
 
     </footer>
     <div class="nav-btm">
-        <div class="home-nav" id="navbtm-icon">
+        <div class="home-nav navbtm-icon">
             <a href="/"><i class="fas fa-home"></i></a>
         </div>
-        <div class="search-nav" id="navbtm-icon">
+        <div class="search-nav navbtm-icon">
             <i class="fas fa-search"></i>
         </div>
-        <div class="add-nav" id="navbtm-icon">
+        <div class="add-nav navbtm-icon">
             <a href="#posting"><i class="fas fa-plus-square"></i></a>
         </div>
-        <div class="posts-nav" id="navbtm-icon">
+        <div class="posts-nav navbtm-icon">
             <a href="/posts"><i class="fas fa-images"></i></a>
         </div>
-        <div class="profile-nav" id="navbtm-icon">
-            <a href="/profile/<%=username%>"><i class="fas fa-user-circle"></i></a>
+        <div class="profile-nav navbtm-icon">
+            <a 
+            <% if(username!="NA"){ %>
+                href="/profile/<%=username%>"
+            <% }else{ %>
+                href="/login"
+            <% } %>
+            ><i class="fas fa-user-circle"></i></a>
         </div>
     </div>
 

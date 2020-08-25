@@ -77,5 +77,10 @@ $(document).ready(()=>{
             $(".tooltip").fadeOut()
         }, 3000);
     })
+    $(document).ajaxStart(function(){
+        $(".spinner").fadeIn().css("display","flex")
+    }).ajaxStop(function(){
+        $(".spinner").fadeOut()
+    })
 })
 new ClipboardJS(".click-div-share")

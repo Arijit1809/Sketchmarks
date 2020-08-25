@@ -35,7 +35,6 @@ $(document).ready(function () {
             location="/tile/"+id
         }
         else{
-            $(".click-div").css("display","flex")
             $.get("/thread/"+id,function(result,status){
                 $("#click-div-img").attr("src",src)
                 $(".secondary-img").attr("src",src)
@@ -56,6 +55,7 @@ $(document).ready(function () {
                     }
                 })
                 $(".click-div-comments").html(commentsString)
+                $(".click-div").css("display","flex")
             })
         }
     })
@@ -142,6 +142,11 @@ $(document).ready(function () {
         setTimeout(()=>{
           $(".tooltip").fadeOut()
         }, 3000);
+    })
+    $(document).ajaxStart(function(){
+        $(".spinner").fadeIn().css("display","flex")
+    }).ajaxStop(function(){
+        $(".spinner").fadeOut()
     })
 })
 new ClipboardJS(".click-div-share")
