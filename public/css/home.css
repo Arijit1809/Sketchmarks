@@ -104,6 +104,7 @@ body {
     text-transform: uppercase;
     font-size: 1rem;
     text-decoration: none;
+    transition: linear .2s;
 }
 
 .menu-toggler {
@@ -143,22 +144,30 @@ body {
     margin-left: 30px;
 }
 .navbar form input{
-    padding: 5px;
-    padding-left: 10px;
-    border-radius: 10px;
+    padding: 8px 0 8px 10px;
+    border-radius: 5px;
     margin-right: 5px;
-    color: black;
-    background-color: rgba(255, 255, 255, 0.651);
+    color: white;
+    width: 200px;
+    background-color: rgba(255, 68, 0, 0.322);
     border: none;
     font-family: "Ubuntu";
+}
+.navbar form input::placeholder{
+    color: white;
+    opacity: 0.8;
 }
 .navbar form button{
     background-color: transparent;
     border: none;
     font-size: 1.05rem;
 }
+.navbar form button i:hover{
+    color: grey;
+    cursor: pointer;
+}
 .sticky {
-    /* background-color: black; */
+    background-color: black;
     padding: 18px 0;
 }
 
@@ -169,7 +178,28 @@ body {
 .sticky .menu-toggler span {
     background-color: white;
 }
-
+.nav-btm{
+    display: none;
+    
+    /* flex-direction: row; */
+    /* flex: 20%; */
+    height: 70px;
+    width: 100vw;
+    justify-content: space-around;
+    align-content: center;
+    position: fixed;
+    bottom: -70px;
+    background-color:#121212;
+    padding: 20px 10px;
+    transition: 0.2s linear;
+}
+.navbtm-icon{
+    font-size: 1.5rem;
+    color: #d3d3d3;
+}
+.navbtm-icon:hover{
+    color: white;
+}
 /* Landing page */
 .landing {
     height: 100vh;
@@ -815,10 +845,12 @@ footer {
 }
 
 @media screen and (max-width: 980px) {
+    .sticky{
+        background-color: unset;
+    }
     .navbar {
         padding: 20px 20px;
     }
-
     .menu-toggler {
         display: block;
         
@@ -828,16 +860,19 @@ footer {
         border-radius: 50%;
         padding: 10px;
         width: 50px;
-        transition: .3s linear;
+        transition: .2s linear;
     }
     .sticky .brand{
         visibility: hidden;
         transition: .3s linear;
     }
     .navbar-menu {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
         position: fixed;
         height: 100vh;
-        width: 70%;
+        width: 100%;
         background-color: black;
         top: 0;
         right: -100%;
@@ -854,12 +889,24 @@ footer {
         text-decoration: white;
         color: white;
     }
+    .navbar form{
+        display: block;
+        margin-top: 20px;
+    }
+    .navbar form input{
+        padding: 10px;
+        padding-left: 15px;
+        font-size: 30px;
+        width: 300px;
+    }
+    .navbar form button{
+        font-size: 1.75rem;
+    }
     .login,.signup,.logout{
         display:block;
-        margin: 15px 0;
+        margin: 15px;
         padding: 5px 5px;
     }
-
     .sticky .navbar-menu {
         background-color:#121212;
     }
@@ -889,6 +936,9 @@ footer {
     .inner-width {
         max-width: 800px;
     }
+    .nav-btm {
+        display: flex;
+    }
 }
 /* Footer-end */
 
@@ -901,8 +951,8 @@ footer {
 
 @media (max-width: 768px) {
     #land-name {
-        font-size: 4.5rem;
-        letter-spacing: 1px;
+        font-size: 6.5rem;
+        letter-spacing: 10px;
     }
     .landing {
         height: 100vh;
@@ -927,7 +977,7 @@ footer {
         text-decoration: none;
         margin: 0 5px;
         padding: 10px 10px;
-        font-size: 1rem;
+        font-size: 1.2rem;
         font-family: "Ubuntu";
         border-radius: 10px;
     }
@@ -936,7 +986,7 @@ footer {
         padding: 60px 150px 60px;
         /* font-family: 'Pacifico',
         cursive; */
-        background-size: 120%;
+        background-size: 100%;
     }
     .section-head1 {
         font-size: 3.1rem;
@@ -944,7 +994,16 @@ footer {
         padding: 60px 150px 60px;
         /* font-family: 'Pacifico',
         cursive; */
-        background-size: 120%;
+        background-size: 100%;
+    }
+
+    .row{
+        padding-bottom: 0px;
+    }
+
+    .all-posts{
+        max-width: 80vw;
+        margin: 20px auto 0px;
     }
 
     #posting {
@@ -1080,6 +1139,16 @@ footer {
     .navbar-menu a{
         font-size: 20px;
     }
+    .navbar form input{
+        font-size: 20px;
+        width: 200px;
+    }
+    .navbar form button{
+        font-size: 20px;
+    }
+    #land-name{
+        font-size: 3rem;
+    }
     .column{
         flex:50%;
         padding:0px 1px;
@@ -1089,15 +1158,26 @@ footer {
         margin-bottom: 1px;
         border-radius: 0px;
     }
+    .land-log-btn,.land-sign-btn{
+        font-size: 1rem;
+    }
     .posts{
-        padding:10px 0px;
+        padding:20px 0px;
+    }
+    
+    #post-title{
+        background-image: unset;
+        font-family: 'Alata';
+        color: rgb(255, 255, 255);
     }
     #sub-desc{
         max-width: 90vw;
     }
     #tiles{
         font-size: 3rem;
-        background-image: url(../img/name_bg2.png);
+        background-image: unset;
+        font-family: 'Alata';
+        color: black;
         padding: 60px;
     }
     #post-title{
@@ -1109,28 +1189,11 @@ footer {
     .top-post-desc{
         font-size: 1rem;
     }
+    .navbar form input {
+        padding: 10px;
+        padding-left: 15px;
+        font-size: 20px;
+        width: 150px;
+    }
 
 }
-
-.nav-btm{
-    display: flex;
-    /* flex-direction: row; */
-    /* flex: 20%; */
-    height: 70px;
-    width: 100vw;
-    justify-content: space-around;
-    align-content: center;
-    position: fixed;
-    bottom: -70px;
-    background-color:#121212;
-    padding: 20px 10px;
-    transition: 0.3s linear;
-}
-.navbtm-icon{
-    font-size: 1.5rem;
-}
-/* .dikhao {
-    display: none;
-} */
-
-

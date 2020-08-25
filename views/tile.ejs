@@ -12,17 +12,15 @@
 <body>
     <nav class="navbar">
         <div class="inner">
-            <a class="brand">Sketchmarks</a>
+            <a href="/" class="brand">Sketchmarks</a>
             <button class="menu-toggler">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
             <div class="navbar-menu">
-                <a href="/">Home</a>
-                <a href="/about">About</a>
-                <a href="/">Artists</a>
                 <a href="/posts">Posts</a>
+                <a href="/about">About</a>
                 <!-- <a href="/login" class="login" style="display: <%=//loginDisplay%>;">Log In</a>
                 <a href="/signup" class="signup" style="display: <%=//signupDisplay%>;">Sign Up</a>
                 <a href="/profile/<%=//username%>" style="display: <%=//profileDisplay%>;">Profile</a>
@@ -69,7 +67,9 @@
                     <div class="click-div-comments">
                         <% tile.comments.forEach((comment)=>{ %>
                             <div class="comment">
-                                <a href="/profile/<%=comment.name%>" class="commenter"><%=comment.name%></a> says <span><%=comment.comment%></span>&nbsp;
+                                <a href="/profile/<%=comment.name%>">
+                                    <div class="commenter"><%=comment.name%>:</div></a> 
+                                    <span><%=comment.comment%></span>&nbsp;
                                 <% if(comment.name==viewer){ %>
                                     <i class="fas fa-trash delete-comment" title="Delete this comment"></i>
                                 <% } %>
@@ -89,18 +89,14 @@
         <div class="home-nav navbtm-icon">
             <a href="/"><i class="fas fa-home"></i></a>
         </div>
-        <div class="search-nav navbtm-icon">
-            <i class="fas fa-search"></i>
-        </div>
+        
         <div class="add-nav navbtm-icon">
-            <a href="#posting"><i class="fas fa-plus-square"></i></a>
+            <a href="/#posting"><i class="fas fa-plus-square"></i></a>
         </div>
         <div class="posts-nav navbtm-icon">
             <a href="/posts"><i class="fas fa-images"></i></a>
         </div>
-        <div class="profile-nav navbtm-icon">
-             <i class="fas fa-user-circle"></i></a>
-        </div>
+        
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
