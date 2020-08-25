@@ -143,19 +143,27 @@ body {
     margin-left: 30px;
 }
 .navbar form input{
-    padding: 5px;
-    padding-left: 10px;
-    border-radius: 10px;
+    padding: 8px 0 8px 10px;
+    border-radius: 5px;
     margin-right: 5px;
-    color: black;
-    background-color: rgba(255, 255, 255, 0.651);
+    color: white;
+    width: 200px;
+    background-color: rgba(255, 68, 0, 0.322);
     border: none;
     font-family: "Ubuntu";
+}
+.navbar form input::placeholder{
+    color: white;
+    opacity: 0.8;
 }
 .navbar form button{
     background-color: transparent;
     border: none;
     font-size: 1.05rem;
+}
+.navbar form button i:hover{
+    color: grey;
+    cursor: pointer;
 }
 .sticky {
     background-color: black;
@@ -169,7 +177,24 @@ body {
 .sticky .menu-toggler span {
     background-color: white;
 }
-
+.nav-btm{
+    display: none;
+    
+    /* flex-direction: row; */
+    /* flex: 20%; */
+    height: 70px;
+    width: 100vw;
+    justify-content: space-around;
+    align-content: center;
+    position: fixed;
+    bottom: -70px;
+    background-color:#121212;
+    padding: 20px 10px;
+    transition: 0.2s linear;
+}
+.navbtm-icon{
+    font-size: 1.5rem;
+}
 /* Landing page */
 .landing {
     height: 100vh;
@@ -821,7 +846,6 @@ footer {
     .navbar {
         padding: 20px 20px;
     }
-
     .menu-toggler {
         display: block;
         
@@ -838,6 +862,9 @@ footer {
         transition: .3s linear;
     }
     .navbar-menu {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
         position: fixed;
         height: 100vh;
         width: 100%;
@@ -857,12 +884,27 @@ footer {
         text-decoration: white;
         color: white;
     }
+    .navbar form{
+        display: block;
+        margin-top: 10px;
+    }
+    .navbar form input{
+        padding: 10px;
+        padding-left: 15px;
+        font-size: 30px;
+        width: 300px;
+    }
+    .navbar form button{
+        font-size: 1.75rem;
+    }
+    .navbar .login{
+        display: block !important;
+    }
     .login,.signup,.logout{
         display:block;
-        margin: 15px 0;
+        margin: 15px;
         padding: 5px 5px;
     }
-
     .sticky .navbar-menu {
         background-color:#121212;
     }
@@ -1117,25 +1159,3 @@ footer {
     }
 
 }
-
-.nav-btm{
-    display: flex;
-    
-    /* flex-direction: row; */
-    /* flex: 20%; */
-    height: 70px;
-    width: 100vw;
-    justify-content: space-around;
-    align-content: center;
-    position: fixed;
-    bottom: -70px;
-    background-color:#121212;
-    padding: 20px 10px;
-    transition: 0.2s linear;
-}
-.navbtm-icon{
-    font-size: 1.5rem;
-}
-
-
-
