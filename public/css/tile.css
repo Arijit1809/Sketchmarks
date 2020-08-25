@@ -495,7 +495,7 @@ a{
 
 
 .nav-btm {
-    display: flex;
+    display: none;
     /* flex-direction: row; */
     /* flex: 20%; */
     height: 70px;
@@ -513,4 +513,8 @@ a{
     font-size: 1.5rem;
     color: white;
 }
-
+@media (max-width: 980px){
+    .nav-btm{
+        display: flex;
+    }
+}
