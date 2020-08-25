@@ -1073,29 +1073,30 @@ footer {
 }
 
 .nav-btm{
-    display: none;
+    display: flex;
     /* flex-direction: row; */
-    flex: 20%;
+    /* flex: 20%; */
     height: 60px;
     width: 100vw;
     justify-content: space-around;
     align-content: center;
     position: fixed;
-    bottom: 0;
+    bottom: -70px;
     background-color:#121212;
     padding: 10px;
+    transition: 0.3s linear;
 }
 .navbtm-icon{
     font-size: 1.5rem;
 }
-.dikhao {
+/* .dikhao {
     display: none;
-}
+} */
 
 @media (max-width: 768px) {
     
-    .dikhao {
+    /* .dikhao {
         display: flex;
-    }
+    } */
 
 }

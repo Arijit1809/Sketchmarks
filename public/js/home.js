@@ -2,11 +2,11 @@ $(document).ready(() => {
   $(window).scroll(() => {
     if (this.scrollY > 20){
       $(".navbar").addClass("sticky")
-      $(".nav-btm").addClass("dikhao")
+      $(".nav-btm").css("bottom","0")
     }
     else{
       $(".navbar").removeClass("sticky")
-      $(".nav-btm").removeClass("dikhao")
+      $(".nav-btm").css("bottom","-70px")
     }
   })
 
