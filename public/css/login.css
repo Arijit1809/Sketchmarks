@@ -4,6 +4,7 @@
     padding: 0;
     color: white;
     font-family: "Ubuntu";
+    outline: none;
 }
 html{
     scroll-behavior: smooth;
