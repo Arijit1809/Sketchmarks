@@ -138,7 +138,25 @@ body {
 .navbar-menu a:hover {
     color: #ffffff !important;
 }
-
+.navbar form{
+    display: inline;
+    margin-left: 30px;
+}
+.navbar form input{
+    padding: 5px;
+    padding-left: 10px;
+    border-radius: 10px;
+    margin-right: 5px;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.651);
+    border: none;
+    font-family: "Ubuntu";
+}
+.navbar form button{
+    background-color: transparent;
+    border: none;
+    font-size: 1.05rem;
+}
 .sticky {
     /* background-color: black; */
     padding: 18px 0;

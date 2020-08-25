@@ -455,6 +455,10 @@ app.post("/deletecomment/:postId",(req,res)=>{
         res.send({comments: result.comments, viewer: req.user.username})
     })
 })
+
+app.post("/searchprofile",(req,res)=>{
+    res.redirect("/profile/"+req.body.profile)
+})
 /****************************Post requests end****************************/
 
 app.listen(process.env.PORT||3000,()=>{
