@@ -184,6 +184,11 @@ $(document).ready(() => {
       $(this).parent().children(".tooltip-top").fadeOut()
     }, 3000);
   })
+  $(document).ajaxStart(function(){
+    $(".loader").show()
+  }).ajaxStop(function(){
+    $(".loader").hide()
+  })
 })
 new ClipboardJS(".click-div-share")
 new ClipboardJS(".top-share")

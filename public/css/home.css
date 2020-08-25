@@ -384,7 +384,24 @@ body {
     transition: ease-in-out 0.3s;
     cursor: pointer;
 }
-
+.loader{
+    border: 16px solid #f3f3f3; 
+    border-top: 16px solid #3498db; 
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    z-index: 5;
+    animation: spin 1s linear infinite;
+    display: none;
+}
+@keyframes spin{
+    0%{ 
+        transform: rotate(0deg); 
+    }
+    100%{
+        transform: rotate(360deg); 
+    }
+}
 .click-div {
     background-color: rgba(0, 0, 0, 0.842);
     /* filter: blur(4px); */
@@ -394,7 +411,7 @@ body {
     left: 0;
     bottom: 0;
     color: black;
-    z-index: 10;
+    z-index: 4;
     display: none;
     flex-direction: row;
     align-items: center;
