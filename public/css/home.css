@@ -274,6 +274,7 @@ body {
 
 .web-desc{
     background-color: rgba(0, 0, 0, 0.63);
+    padding-top: 100px;
 }
 
 .web-desc-main{
@@ -315,10 +316,10 @@ body {
 
 .section-head {
     text-align: center;
-    padding: 0 150px 100px;
+    padding: 30px 150px;
     font-size: 5rem;
     color: white;
-    margin: 0;
+    margin: 0 0 100px;
     background-image: url(../img/name_bg.png);
     background-size: 70%;
     background-repeat: no-repeat;
@@ -769,10 +770,10 @@ body {
     font-family: "Dancing Script",
     cursive;
     text-align: center;
-    padding: 0 150px 60px;
+    padding: 30px 150px;
     font-size: 5rem;
     color: white;
-    margin: 0;
+    margin-bottom: 60px;
     background-image: url(../img/name_bg.png);
     background-size: 70%;
     background-repeat: no-repeat;
