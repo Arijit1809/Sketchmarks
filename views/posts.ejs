@@ -14,14 +14,13 @@
 <body>
     <nav class="navbar">
         <div class="inner">
-            <a class="brand">Sketchmarks</a>
+            <a href="/" class="brand">Sketchmarks</a>
             <button class="menu-toggler">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
             <div class="navbar-menu">
-                <a href="/">Home</a>
                 <a href="/">About</a>
                 <a href="/">Artists</a>
                 <a href="/posts">Posts</a>
@@ -126,6 +125,24 @@
         </div>
 
     </footer>
+    <div class="nav-btm">
+        <div class="home-nav navbtm-icon">
+            <a href="/"><i class="fas fa-home"></i></a>
+        </div>
+        <div class="search-nav navbtm-icon">
+            <i class="fas fa-search"></i>
+        </div>
+        <div class="add-nav navbtm-icon">
+            <a href="#posting"><i class="fas fa-plus-square"></i></a>
+        </div>
+        <div class="posts-nav navbtm-icon">
+            <a href="/posts"><i class="fas fa-images"></i></a>
+        </div>
+        <div class="profile-nav navbtm-icon">
+            <a <% if(username!="NA"){ %> href="/profile/<%=username%>" <% }else{ %> href="/login" <% } %>><i
+                    class="fas fa-user-circle"></i></a>
+        </div>
+    </div>
 
     <script src="https://kit.fontawesome.com/67a49e1ba0.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
