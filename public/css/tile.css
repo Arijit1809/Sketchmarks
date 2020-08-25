@@ -127,13 +127,10 @@ a{
 }
 
 .sticky {
-    background-color: black;
+    /* background-color: black; */
     padding: 10px 0;
 }
 
-.sticky .logo {
-    background-image: url(../images/black-logo.png);
-}
 
 .sticky .navbar-menu a {
     color: white;
@@ -142,7 +139,7 @@ a{
 .sticky .menu-toggler span {
     background-color: white;
 }
-
+/* MAIN BODYYYYY****************/
 
 .main{
     display: flex;
@@ -177,6 +174,7 @@ a{
     background-color: #2b2e4aa1;
     display: block;
     width: 100%;
+    margin-bottom: 160px;
 }
 .desc{
     color: #E4E6EA;
@@ -229,6 +227,7 @@ a{
     width: 100%;
     /* background-color: #18191a; */
     background-color: #2b2e4aa1;
+    transition: linear 0.2s;
 }
 .click-div-comments{
     overflow: auto;
@@ -386,11 +385,20 @@ a{
     .navbar {
         padding: 20px 20px;
     }
-
     .menu-toggler {
         display: block;
     }
-
+    .sticky .menu-toggler {
+        background-color: #121212;
+        border-radius: 50%;
+        padding: 10px;
+        width: 50px;
+        transition: .2s linear;
+    }
+    .sticky .brand {
+        visibility: hidden;
+        transition: .3s linear;
+    }
     .navbar-menu {
         position: fixed;
         height: 100vh;
@@ -401,7 +409,7 @@ a{
         /* max-width: 400px; */
         text-align: center;
         padding: 80px 50px;
-        transition: .3s linear;
+        transition: .2s linear;
     }
 
     .navbar-menu a {
@@ -413,7 +421,7 @@ a{
     }
 
     .sticky .navbar-menu {
-        background-color: black;
+        background-color: #121212;
     }
 
     .sticky .navbar-menu a {
@@ -451,7 +459,7 @@ a{
         padding: 10px;
     }
     .comments-section{
-        margin-bottom: 90px;
+        margin-bottom: 160px;
     }
     .comment-area{
         height: 50px;
@@ -465,6 +473,31 @@ a{
     body{
         background-image: unset;
     }
+    .nav-btm {
+        display: flex;
+    }
 
 
 }
+
+
+.nav-btm {
+    display: flex;
+    /* flex-direction: row; */
+    /* flex: 20%; */
+    height: 70px;
+    width: 100vw;
+    justify-content: space-around;
+    align-content: center;
+    position: fixed;
+    bottom: -70px;
+    background-color: #121212;
+    padding: 20px 10px;
+    transition: 0.2s linear;
+}
+
+.navbtm-icon {
+    font-size: 1.5rem;
+    color: white;
+}
+

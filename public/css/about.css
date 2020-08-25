@@ -21,11 +21,6 @@
   font-family: 'Alata';
 }
 
-/* .inner-width { */
-/* max-width: 89vw; */
-/* margin: auto; */
-/* padding: 0 40px; */
-/* } */
 
 .navbar .inner {
   display: flex;
@@ -118,12 +113,8 @@
 }
 
 .sticky {
-  background-color: black;
+  /* background-color: black; */
   padding: 18px 0;
-}
-
-.sticky .logo {
-  background-image: url(../images/black-logo.png);
 }
 
 .sticky .navbar-menu a {
@@ -253,22 +244,31 @@ footer {
   .navbar {
     padding: 20px 20px;
   }
-
   .menu-toggler {
     display: block;
   }
-
+  .sticky .menu-toggler {
+    background-color: #121212;
+    border-radius: 50%;
+    padding: 10px;
+    width: 50px;
+    transition: .2s linear;
+  }
+  .sticky .brand {
+    visibility: hidden;
+    transition: .3s linear;
+  }
   .navbar-menu {
     position: fixed;
     height: 100vh;
-    width: 60%;
+    width: 100%;
     background-color: black;
     top: 0;
     right: -100%;
     /* max-width: 400px; */
     text-align: center;
     padding: 80px 50px;
-    transition: .3s linear;
+    transition: .2s linear;
   }
 
   .navbar-menu a {
@@ -280,7 +280,7 @@ footer {
   }
 
   .sticky .navbar-menu {
-    background-color: black;
+    background-color: #121212;
   }
 
   .sticky .navbar-menu a {
@@ -308,6 +308,9 @@ footer {
   .inner-width {
     max-width: 800px;
   }
+  .nav-btm {
+    display: flex;
+  }
 }
 
 /* Footer-end */
@@ -324,9 +327,13 @@ footer {
   bottom: -70px;
   background-color: #121212;
   padding: 20px 10px;
-  transition: 0.3s linear;
+  transition: 0.2s linear;
 }
-
-.navbtm-icon {
+.navbtm-icon{
   font-size: 1.5rem;
+  color: white;
+}
+.navbtm-icon a{
+  font-size: 1.5rem;
+  color: white;
 }
