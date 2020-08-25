@@ -397,8 +397,8 @@ body {
     z-index: 5;
 }
 .loader{
-    width: 40px;
-    height: 40px;
+    width: 120px;
+    height: 120px;
     position: relative;
     margin: 100px auto;
 }
