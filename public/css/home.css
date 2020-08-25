@@ -111,7 +111,7 @@ body {
     cursor: pointer;
     position: relative;
     outline: none;
-    z-index: 999;
+    z-index: 3;
     display: none;
 }
 
@@ -403,7 +403,7 @@ body {
 .click-div-secondary{
     width: 100%;
     position: fixed;
-    z-index: -999;
+    z-index: -1;
 }
 .secondary-img{
     width: 100%;
