@@ -127,7 +127,7 @@ a{
 }
 
 .sticky {
-    /* background-color: black; */
+    background-color: black;
     padding: 10px 0;
 }
 
@@ -160,8 +160,9 @@ a{
 .tile-img{
     /* max-width: 95vw; */
     border-radius: 10px;
-    /* max-height: 85vh; */
-    width: 100%;
+    max-width: 100vw;
+    max-height: 90vh;
+    /* width: 100%; */
 }
 /* Tile section end */
 
@@ -175,6 +176,9 @@ a{
     display: block;
     width: 100%;
     margin-bottom: 160px;
+}
+.comment-div{
+    padding: 10px;
 }
 .desc{
     color: #E4E6EA;
@@ -379,6 +383,9 @@ a{
 }
 
 @media screen and (max-width: 980px) {
+    .sticky{
+        background-color: unset;
+    }
     .author{
         margin-top: 20px;
     }
@@ -454,6 +461,12 @@ a{
     }
     .tile{
         margin-bottom: 10px;
+    }
+    .tile-img{
+        min-width:90% ;
+        max-width: 100%;
+        height: auto;
+        max-height: 80vh;
     }
     .comment-div{
         padding: 10px;

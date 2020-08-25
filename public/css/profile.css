@@ -116,7 +116,7 @@ body {
 }
 
 .sticky {
-    /* background-color: blnone */
+    background-color: black;
     padding: 18px 0;
 }
 
@@ -638,6 +638,9 @@ footer {
 }
 
 @media screen and (max-width: 980px) {
+    .sticky{
+        background-color: unset;
+    }
     .navbar{
         padding: 20px 20px;
     }
