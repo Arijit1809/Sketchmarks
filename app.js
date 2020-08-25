@@ -38,7 +38,7 @@ app.use(passport.session());
 
 
 /****************************Mongo Server****************************/
-mongoose.connect("mongodb://localhost:27017/userDB", {
+mongoose.connect("mongodb+srv://admin:admin123@cluster0.xcfk9.gcp.mongodb.net/userDB", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false
@@ -457,6 +457,6 @@ app.post("/deletecomment/:postId",(req,res)=>{
 })
 /****************************Post requests end****************************/
 
-app.listen(3000,()=>{
+app.listen(process.env.PORT||3000,()=>{
     console.log("Server started on port 3000")
 })

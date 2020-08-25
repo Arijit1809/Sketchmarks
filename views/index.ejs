@@ -44,10 +44,14 @@
         </div>
     </section>
     <section class="posts">
+        <div class="spinner">
+            <div class="loader">
+                <div class="double-bounce1"></div>
+                <div class="double-bounce2"></div>
+            </div>
+        </div>
         <div class="inner" >
-
             <h1 class="section-head" id="post-title">Posts</h1>
-            <!-- <img src="../img/unnamed.png" alt=""  width="100%" class="br"> -->
             <div class="click-div">    
                 <img src="" alt="" id="click-div-img">
                 <div class="click-div-secondary">
@@ -123,6 +127,7 @@
     <section class="top-posts">
         <div class="inner">
             <h1 class="section-head" id="tiles">Top Tiles</h1>
+            <% if(topPosts.length>4){ %>
             <div class="top-post-left">
                 <img src="data:image/<%=topPosts[0].img.contentType%>;base64,<%=topPosts[0].img.data.toString('base64')%>" id="<%=topPosts[0]._id%>" class="top-post-img">
                 <div class="credits">
@@ -253,6 +258,7 @@
                     </div>
                 </div>
             </div>
+            <% } %>
         </div>
     </section>
     <section class="submit">

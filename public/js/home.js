@@ -35,7 +35,6 @@ $(document).ready(() => {
       location = "/tile/" + id
     }
     else {
-      $(".click-div").css("display", "flex")
       $.get("/thread/" + id, function (result, status) {
         $("#click-div-img").attr("src", src)
         $(".secondary-img").attr("src", src)
@@ -56,6 +55,7 @@ $(document).ready(() => {
           }
         })
         $(".click-div-comments").html(commentsString)
+        $(".click-div").css("display", "flex")
       })
     }
   })
@@ -183,6 +183,11 @@ $(document).ready(() => {
     setTimeout(()=>{
       $(this).parent().children(".tooltip-top").fadeOut()
     }, 3000);
+  })
+  $(document).ajaxStart(function(){
+    $(".spinner").css("display","flex")
+  }).ajaxStop(function(){
+    $(".spinner").css("display","none")
   })
 })
 new ClipboardJS(".click-div-share")
