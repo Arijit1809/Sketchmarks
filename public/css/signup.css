@@ -124,7 +124,7 @@ input {
 }
 
 .nav-btm {
-    display: flex;
+    display: none;
     /* flex-direction: row; */
     /* flex: 20%; */
     height: 70px;
@@ -140,4 +140,9 @@ input {
 
 .navbtm-icon {
     font-size: 1.5rem;
+}
+@media (max-width: 980px){
+    .nav-btm{
+        display: flex;
+    }
 }
