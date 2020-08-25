@@ -104,6 +104,7 @@ body {
     text-transform: uppercase;
     font-size: 1rem;
     text-decoration: none;
+    transition: linear .2s;
 }
 
 .menu-toggler {
@@ -890,7 +891,7 @@ footer {
     }
     .navbar form{
         display: block;
-        margin-top: 10px;
+        margin-top: 20px;
     }
     .navbar form input{
         padding: 10px;
@@ -985,7 +986,7 @@ footer {
         padding: 60px 150px 60px;
         /* font-family: 'Pacifico',
         cursive; */
-        background-size: 120%;
+        background-size: 100%;
     }
     .section-head1 {
         font-size: 3.1rem;
@@ -993,7 +994,16 @@ footer {
         padding: 60px 150px 60px;
         /* font-family: 'Pacifico',
         cursive; */
-        background-size: 120%;
+        background-size: 100%;
+    }
+
+    .row{
+        padding-bottom: 0px;
+    }
+
+    .all-posts{
+        max-width: 80vw;
+        margin: 20px auto 0px;
     }
 
     #posting {
@@ -1152,7 +1162,7 @@ footer {
         font-size: 1rem;
     }
     .posts{
-        padding:10px 0px;
+        padding:20px 0px;
     }
     #sub-desc{
         max-width: 90vw;
@@ -1170,6 +1180,12 @@ footer {
     }
     .top-post-desc{
         font-size: 1rem;
+    }
+    .navbar form input {
+        padding: 10px;
+        padding-left: 15px;
+        font-size: 20px;
+        width: 150px;
     }
 
 }
