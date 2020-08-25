@@ -1,9 +1,13 @@
 $(document).ready(() => {
   $(window).scroll(() => {
-    if (this.scrollY > 20)
+    if (this.scrollY > 20){
       $(".navbar").addClass("sticky")
-    else
+      $(".nav-btm").addClass("dikhao")
+    }
+    else{
       $(".navbar").removeClass("sticky")
+      $(".nav-btm").removeClass("dikhao")
+    }
   })
 
   $('.menu-toggler').click(function () {

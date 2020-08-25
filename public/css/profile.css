@@ -189,6 +189,7 @@ body {
     background-size: cover;
     grid-column-start: 2;
     grid-column-end: 3;
+    
 
 
 }
@@ -267,7 +268,8 @@ body {
     grid-template-columns: auto auto;
     margin: auto;
     padding: 20px;
-}
+    background-color: #2b2e4aa1;
+    }
 
 .empty{
     margin: 20vh 0;
@@ -562,6 +564,7 @@ a{
     font-family: "Alata";
     font-size: 1.2rem;
     margin-bottom: 20px;
+    background-color:#d3d3d3d5;
     
 }
 #sub-desc::placeholder{
@@ -609,6 +612,28 @@ a{
 .sub-btn:hover{
     cursor: pointer;
     background-color: black;
+}
+
+footer {
+    margin: 0px 0 50px;
+}
+
+.foot-text {
+    text-align: center;
+    margin: 40px 0;
+    font-size: 1.5rem;
+    font-family: "Alata";
+    color: white;
+}
+
+.icons {
+    text-align: center;
+    color: white;
+}
+
+.icons i {
+    font-size: 2rem;
+    padding: 0 10px;
 }
 
 @media screen and (max-width: 980px) {
@@ -807,7 +832,7 @@ a{
     }
     .profile{
         height: auto;
-        min-height: 100vh;
+        
         padding: 20px;
         color: white;
         background-image: radial-gradient(rgba(26, 37, 193, 0.481), rgba(13, 69, 152, 0.536));
@@ -831,7 +856,6 @@ a{
     .title{
         padding: 50px 5px 0px;
     }
-    
 }
 
 @media screen and (max-width: 500px) {
