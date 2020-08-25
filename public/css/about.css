@@ -232,6 +232,7 @@ footer {
     margin: 40px 0;
     font-size: 1.5rem;
     font-family: "Alice";
+    color: white;
 }
 
 .icons {
@@ -241,6 +242,7 @@ footer {
 .icons i {
     font-size: 2rem;
     padding: 0 10px;
+    color: white;
 }
 
 @media screen and (max-width: 768px) {
