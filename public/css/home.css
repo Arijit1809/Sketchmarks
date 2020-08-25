@@ -388,9 +388,10 @@ body {
     height: 100vh;
     width: 100vw;
     background-color: rgba(0, 0, 0, 0.842);
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
+    z-index: 5;
 }
 .loader{
     border: 16px solid #f3f3f3; 
@@ -398,9 +399,7 @@ body {
     border-radius: 50%;
     width: 120px;
     height: 120px;
-    z-index: 5;
     animation: spin 1s linear infinite;
-    display: none;
 }
 @keyframes spin{
     0%{ 

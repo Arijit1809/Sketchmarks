@@ -185,9 +185,9 @@ $(document).ready(() => {
     }, 3000);
   })
   $(document).ajaxStart(function(){
-    $(".loader").show()
+    $(".spinner").css("display","flex")
   }).ajaxStop(function(){
-    $(".loader").hide()
+    $(".spinner").css("display","none")
   })
 })
 new ClipboardJS(".click-div-share")
