@@ -1164,12 +1164,20 @@ footer {
     .posts{
         padding:20px 0px;
     }
+    
+    #post-title{
+        background-image: unset;
+        font-family: 'Alata';
+        color: rgb(255, 255, 255);
+    }
     #sub-desc{
         max-width: 90vw;
     }
     #tiles{
         font-size: 3rem;
-        background-image: url(../img/name_bg2.png);
+        background-image: unset;
+        font-family: 'Alata';
+        color: black;
         padding: 60px;
     }
     #post-title{
