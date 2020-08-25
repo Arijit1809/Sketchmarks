@@ -1,9 +1,9 @@
 $(document).ready(()=>{
     $(window).scroll(() => {
-        if (this.scrollY > 20){
+        if (this.scrollY > 10){
                $(".navbar").addClass("sticky")
                $(".nav-btm").css("bottom", "0")
-               $(".submit").css("bottom","70")
+               $(".submit").css("bottom","70px")
         }
         else{
                 $(".navbar").removeClass("sticky")
