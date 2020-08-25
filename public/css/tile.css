@@ -265,12 +265,12 @@ a{
 }
 #click-div-delete{
     color: orange;
-    transition: linear 0.3s;  
+    transition: linear 0.3s;
 }
 #click-div-delete:hover{
     color: red;
     cursor: pointer;
-    
+
 }
 #dustbin{
     transition: linear 0.3s;
