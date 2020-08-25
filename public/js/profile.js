@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $(window).scroll(function () {
-        if (this.scrollY > 20) {
+        if (this.scrollY > 10) {
             $(".navbar").addClass("sticky")
             $(".nav-btm").css("bottom", "0")
         }
