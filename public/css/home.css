@@ -37,6 +37,9 @@ body {
     width: 60%;
 }
 
+.section-hr{
+    color: #d3d3d38c;
+}
 /* Navbar */
 .navbar {
     position: fixed;
@@ -274,12 +277,12 @@ body {
 }
 
 .web-desc-main{
-    margin: 0 100px 100px;
+    margin: 0 0 100px;
     padding-top: 100px;
 }
 
 .web-desc-text{
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-family: "Ubuntu";
     margin-bottom: 50px;
     color: #e84545;
@@ -308,7 +311,7 @@ body {
     background-position: center;
     background-size: cover;
     /* background-color: black; */
-    padding-bottom: 50px;
+    padding: 100px 0;
 }
 
 .section-head {
@@ -414,11 +417,10 @@ body {
 
 /* Posts  */
 .posts {
-    padding: 0;
     background-color: black;
     background-image: url(../img/black.jpg);
     background-size: auto;
-    padding: 20px;
+    padding: 100px 0;
 }
 
 .header {
@@ -760,6 +762,7 @@ body {
 .submit {
     text-align: center;
     background-image: url(../img/collage.jpg);
+    padding: 100px 0;
 }
 
 #posting {
