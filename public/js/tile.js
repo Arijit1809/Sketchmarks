@@ -1,10 +1,15 @@
 $(document).ready(()=>{
     $(window).scroll(() => {
-        if (this.scrollY > 20)
-            $(".navbar").addClass("sticky")
-        else
-            $(".navbar").removeClass("sticky")
-    })
+        if (this.scrollY > 20){
+               $(".navbar").addClass("sticky")
+               $(".nav-btm").css("bottom", "0")
+               $(".submit").css("bottom","70")
+        }
+        else{
+                $(".navbar").removeClass("sticky")
+                $(".nav-btm").css("bottom", "-70px")
+                $(".submit").css("bottom", "0")
+        }
 
     $('.menu-toggler').click(function () {
         $(this).toggleClass("active");
