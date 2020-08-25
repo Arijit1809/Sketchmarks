@@ -38,7 +38,7 @@ app.use(passport.session());
 
 
 /****************************Mongo Server****************************/
-mongoose.connect("mongodb+srv://admin:admin123@cluster0.xcfk9.gcp.mongodb.net/userDB", {
+mongoose.connect("mongodb://localhost:27017/userDB", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false

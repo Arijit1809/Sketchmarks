@@ -10,6 +10,7 @@ $(document).ready(()=>{
                 $(".nav-btm").css("bottom", "-70px")
                 $(".submit").css("bottom", "0")
         }
+    })
 
     $('.menu-toggler').click(function () {
         $(this).toggleClass("active");
