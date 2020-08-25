@@ -741,7 +741,7 @@ body {
 }
 
 .all-posts{
-    background-color: rgba(255, 255, 255, 0.612);
+    background-color: rgba(61, 61, 61, 0.527);
     font-family: 'Ubuntu';
     padding: 20px;
     font-size: 1rem;
@@ -753,7 +753,7 @@ body {
 }
 .all-posts a{
     text-decoration: none;
-    color: black;
+    color: #d3d3d3;
 }
 
 /* Posts end */
