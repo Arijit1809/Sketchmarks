@@ -678,6 +678,15 @@ a{
         position: relative;
         /* background-color: black; */
     }
+    #preview{
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    #sub-desc{
+        width: 500px;
+        height: 200px;
+        max-width: 80vw;
+    }
 
     .gallery {
         display: grid;
@@ -796,6 +805,33 @@ a{
         cursor: pointer;
         transform: scale(1);
     }
+    .profile{
+        height: auto;
+        min-height: 100vh;
+        padding: 20px;
+        color: white;
+        background-image: radial-gradient(rgba(26, 37, 193, 0.481), rgba(13, 69, 152, 0.536));
+    }
+    .profile-inner{
+        position: unset;
+        top: unset;
+        left: unset;
+        transform: unset;
+    }
+    .profile h1{
+        padding-top: 80px;
+        color: white;
+    }
+    .profile h2{
+        color: white;
+    }
+    .profile h3{
+        color: white;
+    }
+    .title{
+        padding: 50px 5px 0px;
+    }
+    
 }
 
 @media screen and (max-width: 500px) {
