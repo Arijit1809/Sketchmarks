@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/profilephoto.css">
+</head>
+<body>
+    <div class="inner">
+        <div class="flex">
+            <h1 class="heading">Set a profile photo</h1>
+            <h3>This photo will be displayed on your profile.</h3>
+            <form action="/profilephoto" method="POST" enctype="multipart/form-data">
+                <label for="pfp">Select a photo</label>
+                <input type="file" accept="image/*" name="pfp" id="pfp" required>
+                <img id="preview" src="#" alt="">
+                <button type="submit" name="set">Set</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/js/profilephoto.js"></script>
+</body>
+</html>

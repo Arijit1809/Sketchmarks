@@ -51,6 +51,10 @@ mongoose.set("useCreateIndex", true);
 const userSchema = new mongoose.Schema({
   username: String,
   password: String,
+  pfp:{
+      data: Buffer,
+      contentType: String
+  },
   about:String,
   contact : String
 });
@@ -99,6 +103,15 @@ const storage = multer.diskStorage({
     }
 })
 
+const pfpStorage=multer.diskStorage({
+    destination: (req,file,cb)=>{
+        cb(null,"profilepics")
+    },
+    filename: (req,file,cb)=>{
+        cb(null,req.user.username)
+    }
+})
+
 const imageFilter = (req, file, cb)=>{
     if (!file.originalname.match(/\.(jpg|JPG|jpeg|JPEG|png|PNG)$/)){
         req.fileValidationError = 'Only image files are allowed.'
@@ -108,6 +121,7 @@ const imageFilter = (req, file, cb)=>{
 }
 
 const upload=multer({storage: storage,fileFilter: imageFilter})
+const pfp=multer({storage: pfpStorage,fileFilter: imageFilter})
 /****************************Multer Settings end****************************/
 
 /****************************Get requests****************************/
@@ -162,7 +176,7 @@ app.get("/profile/:username_url", (req, res)=>{
             if(result){
                 const about=result.about
                 const contact=result.contact
-                
+                const userPfp=result.pfp
                 Post.find({name: username}).sort({$natural: -1}).exec((err,results)=>{
                     if(err) console.log(err)
                     else {
@@ -171,6 +185,7 @@ app.get("/profile/:username_url", (req, res)=>{
                                 username: username,
                                 about: about,
                                 contact: contact,
+                                pfp: userPfp,
                                 works: results,
                                 loginDisplay: "none",
                                 signupDisplay: "none",
@@ -183,6 +198,7 @@ app.get("/profile/:username_url", (req, res)=>{
                                 username: username,
                                 about: about,
                                 contact: contact,
+                                pfp: userPfp,
                                 works: results,
                                 loginDisplay: "inline-block",
                                 signupDisplay: "inline-block",
@@ -343,9 +359,10 @@ app.get("/tile/:postId",(req,res)=>{
     })
 })
 
-// app.get("/loginfail",(req,res)=>{
-//     res.render("login", {errorVisi: "visible"})
-// })
+app.get("/profilephoto",(req,res)=>{
+    if(req.isAuthenticated())
+        res.render("profilephoto")
+})
 /****************************Get requests end****************************/
 
 /****************************Post Requests****************************/
@@ -357,7 +374,11 @@ app.post("/signup", function (req, res) {
     User.register({
         username: req.body.username,
         about : req.body.about,
-        contact: req.body.contact
+        contact: req.body.contact,
+        pfp:{
+            data: fs.readFileSync(path.join(__dirname +"/Procfile")),
+            contentType: "None"
+        }
     }, req.body.password, function (err, user) {
         if (err) {
             console.log(err);
@@ -458,6 +479,21 @@ app.post("/deletecomment/:postId",(req,res)=>{
 
 app.post("/searchprofile",(req,res)=>{
     res.redirect("/profile/"+req.body.profile)
+})
+app.post("/profilephoto",pfp.single("pfp"),(req,res)=>{
+    User.findOne({username: req.user.username},(err,result)=>{
+        if(err) console.log(err)
+        else{
+            if(fs.existsSync("profilepics/"+req.user.username))
+                fs.unlinkSync("profilepics/"+req.user.username)
+            result.pfp={
+                data: fs.readFileSync(path.join(__dirname+'/profilepics/'+req.file.filename)),
+                contentType: 'image/png'
+            }
+            result.save()
+            res.redirect("/profile/"+req.user.username)
+        }
+    })
 })
 /****************************Post requests end****************************/
 
