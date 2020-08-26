@@ -930,6 +930,9 @@ footer {
         visibility: hidden;
         transition: .3s linear;
     }
+    .row{
+        background: none;
+    }
     .navbar-menu {
         display: flex;
         align-items: center;
