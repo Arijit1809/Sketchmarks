@@ -115,6 +115,10 @@ a{
     transition: .3s linear;
 }
 
+.navtop-home {
+    display: none;
+}
+
 .navbar-menu a {
     color: rgb(255, 255, 255);
     font-size: 0.75rem;
@@ -390,6 +394,9 @@ a{
 }
 
 @media screen and (max-width: 980px) {
+    .navtop-home {
+        display: block;
+    }
     .sticky{
         background-color: unset;
     }

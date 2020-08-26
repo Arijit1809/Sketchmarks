@@ -181,6 +181,9 @@ body {
 .sticky .menu-toggler span {
     background-color: white;
 }
+.navtop-home{
+    display: none;
+}
 .nav-btm{
     display: none;
     
@@ -310,7 +313,7 @@ body {
     /* background-image: url(/img/whitebg1.jpg); */
     /* background-position: center; */
     /* background-size: cover; */
-    background: linear-gradient(135deg,#a50101,#e84545);
+    background: linear-gradient(90deg,#7a0000,#e84545);
     padding: 100px 0;
 }
 
@@ -320,7 +323,7 @@ body {
     font-size: 5rem;
     color: white;
     margin: 0 0 100px;
-    background-image: url(../img/name_bg.png);
+    background-image: url(../img/name_bg2.png);
     background-size: 70%;
     background-repeat: no-repeat;
     background-position: center;
@@ -332,7 +335,7 @@ body {
     font-size: 5rem;
     color: white;
     margin: 0;
-    background-image: url(../img/name_bg.png);
+    background-image: url(../img/name_bg2.png);
     background-size: 70%;
     background-repeat: no-repeat;
     background-position: center;
@@ -422,7 +425,7 @@ body {
     /* position: relative; */
     /* #6a2c70,#6f4a8e,#d35400 */
     padding: 100px 0;
-    background: linear-gradient(45deg,rgb(107, 1, 107),#f56aff);
+    background: linear-gradient(90deg,rgb(71, 0, 71),#dc5ee6);
 }
 /* .posts::before {
     background: linear-gradient(45deg,#680c7a,#9b3e00,#680c7a);
@@ -986,6 +989,9 @@ footer {
         transform: rotate(45deg);
         bottom: 14px;
     }
+    .navtop-home {
+        display: block;
+    }
     .web-desc-main{
         margin: 0 30px;
     }
@@ -1009,6 +1015,7 @@ footer {
 }
 
 @media (max-width: 768px) {
+    
     #land-name {
         font-size: 6.5rem;
         letter-spacing: 10px;

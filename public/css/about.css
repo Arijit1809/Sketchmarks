@@ -124,6 +124,9 @@
 .sticky .menu-toggler span {
   background-color: white;
 }
+.navtop-home {
+  display: none;
+}
 .nav-btm {
   display: none;
   /* flex-direction: row; */
@@ -306,6 +309,9 @@ footer {
 }
 
 @media screen and (max-width: 980px) {
+  .navtop-home {
+    display: block;
+  }
   .nav-btm{
     display: flex;
   }
