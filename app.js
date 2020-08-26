@@ -443,14 +443,6 @@ app.post("/submit",upload.single("work"),(req,res)=>{
     else res.redirect("/login") 
 })
 
-// app.post("/getpost",(req,res)=>{
-//     Post.findById(req.body.id,(err,result)=>{
-//         if(err) console.log(err)
-//         else res.send(result)
-//     })
-// })
-
-
 app.post("/checkusername",(req,res)=>{
 
     User.findOne({username: req.body.user},(err,result)=>{
@@ -486,6 +478,7 @@ app.post("/deletecomment/:postId",(req,res)=>{
 app.post("/searchprofile",(req,res)=>{
     res.redirect("/profile/"+req.body.profile)
 })
+
 app.post("/profilephoto",upload.single("pfp"),(req,res)=>{
     User.findOne({username: req.user.username},(err,result)=>{
         if(err) console.log(err)
@@ -495,6 +488,7 @@ app.post("/profilephoto",upload.single("pfp"),(req,res)=>{
                 contentType: 'image/png'
             }
             result.save()
+            console.log(result)
             res.redirect("/profile/"+req.user.username)
         }
     })
