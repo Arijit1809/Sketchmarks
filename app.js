@@ -93,22 +93,29 @@ passport.deserializeUser(User.deserializeUser());
 
 
 /****************************Multer Settings****************************/
+// var dir = './tmp';
+if (!fs.existsSync("uploads")){
+    fs.mkdirSync("uploads");
+}
+if (!fs.existsSync("profilepics")){
+    fs.mkdirSync("profilepics");
+}
 const storage = multer.diskStorage({
     destination: (req, file, cb)=>{
-        cb(null, 'uploads')
+        if(file.fieldname=="work"){
+            cb(null, "uploads")
+        }
+        else{
+            cb(null,"profilepics")
+        }
     },
-
     filename: (req, file, cb)=>{
-        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
-    }
-})
-
-const pfpStorage=multer.diskStorage({
-    destination: (req,file,cb)=>{
-        cb(null,"profilepics")
-    },
-    filename: (req,file,cb)=>{
-        cb(null,req.user.username)
+        if(file.fieldname=="work"){
+            cb(null, file.fieldname+'-'+Date.now()+path.extname(file.originalname))
+        }
+        else{
+            cb(null,req.user.username)
+        }
     }
 })
 
@@ -121,7 +128,6 @@ const imageFilter = (req, file, cb)=>{
 }
 
 const upload=multer({storage: storage,fileFilter: imageFilter})
-const pfp=multer({storage: pfpStorage,fileFilter: imageFilter})
 /****************************Multer Settings end****************************/
 
 /****************************Get requests****************************/
@@ -480,12 +486,10 @@ app.post("/deletecomment/:postId",(req,res)=>{
 app.post("/searchprofile",(req,res)=>{
     res.redirect("/profile/"+req.body.profile)
 })
-app.post("/profilephoto",pfp.single("pfp"),(req,res)=>{
+app.post("/profilephoto",upload.single("pfp"),(req,res)=>{
     User.findOne({username: req.user.username},(err,result)=>{
         if(err) console.log(err)
         else{
-            if(fs.existsSync("profilepics/"+req.user.username))
-                fs.unlinkSync("profilepics/"+req.user.username)
             result.pfp={
                 data: fs.readFileSync(path.join(__dirname+'/profilepics/'+req.file.filename)),
                 contentType: 'image/png'
