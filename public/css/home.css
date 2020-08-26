@@ -181,6 +181,9 @@ body {
 .sticky .menu-toggler span {
     background-color: white;
 }
+.navtop-home{
+    display: none;
+}
 .nav-btm{
     display: none;
     
@@ -274,6 +277,7 @@ body {
 
 .web-desc{
     background-color: rgba(0, 0, 0, 0.63);
+    padding-top: 100px;
 }
 
 .web-desc-main{
@@ -306,20 +310,20 @@ body {
 /* Website Description end */
 /* Top Posts */
 .top-posts {
-    background-image: url(/img/whitebg1.jpg);
-    background-position: center;
-    background-size: cover;
-    /* background-color: black; */
+    /* background-image: url(/img/whitebg1.jpg); */
+    /* background-position: center; */
+    /* background-size: cover; */
+    background: linear-gradient(90deg,#7a0000,#e84545);
     padding: 100px 0;
 }
 
 .section-head {
     text-align: center;
-    padding: 0 150px 100px;
+    padding: 30px 150px;
     font-size: 5rem;
     color: white;
-    margin: 0;
-    background-image: url(../img/name_bg.png);
+    margin: 0 0 40px;
+    background-image: url(../img/name_bg2.png);
     background-size: 70%;
     background-repeat: no-repeat;
     background-position: center;
@@ -331,7 +335,7 @@ body {
     font-size: 5rem;
     color: white;
     margin: 0;
-    background-image: url(../img/name_bg.png);
+    background-image: url(../img/name_bg2.png);
     background-size: 70%;
     background-repeat: no-repeat;
     background-position: center;
@@ -416,11 +420,24 @@ body {
 
 /* Posts  */
 .posts {
-    background-color: black;
-    background-image: url(../img/black.jpg);
-    background-size: auto;
+    /* background-image: url(../img/black.jpg); */
+    /* background-size: auto; */
+    /* position: relative; */
+    /* #6a2c70,#6f4a8e,#d35400 */
     padding: 100px 0;
+    background: linear-gradient(90deg,rgb(71, 0, 71),#dc5ee6);
 }
+/* .posts::before {
+    background: linear-gradient(45deg,#680c7a,#9b3e00,#680c7a);
+    content: "";
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%;  
+    opacity: 0.9; 
+    z-index: -1;
+} */
 
 .header {
     text-align: right;
@@ -760,7 +777,7 @@ body {
 /* Submit */
 .submit {
     text-align: center;
-    background-image: url(../img/collage.jpg);
+    background-image: url(/img/collage.jpg);
     padding: 100px 0;
 }
 
@@ -769,11 +786,11 @@ body {
     font-family: "Dancing Script",
     cursive;
     text-align: center;
-    padding: 0 150px 60px;
+    padding: 30px 150px;
     font-size: 5rem;
     color: white;
-    margin: 0;
-    background-image: url(../img/name_bg.png);
+    margin-bottom: 60px;
+    background-image: url(/img/name_bg.png);
     background-size: 70%;
     background-repeat: no-repeat;
     background-position: center;
@@ -972,6 +989,9 @@ footer {
         transform: rotate(45deg);
         bottom: 14px;
     }
+    .navtop-home {
+        display: block;
+    }
     .web-desc-main{
         margin: 0 30px;
     }
@@ -995,6 +1015,7 @@ footer {
 }
 
 @media (max-width: 768px) {
+    
     #land-name {
         font-size: 6.5rem;
         letter-spacing: 10px;
@@ -1258,4 +1279,11 @@ footer {
         width: 150px;
     }
 
+}
+
+@media (max-width: 410px) {
+    #land-name{
+        font-size: 4rem;
+        letter-spacing: 5px;
+    }
 }
