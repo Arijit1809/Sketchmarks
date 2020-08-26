@@ -314,7 +314,7 @@ body {
     /* background-image: url(/img/whitebg1.jpg); */
     /* background-position: center; */
     /* background-size: cover; */
-    background: linear-gradient(90deg,#7a0000,#e84545);
+    background: linear-gradient(-90deg,#7a0000,#e84545);
     padding: 100px 0;
 }
 
