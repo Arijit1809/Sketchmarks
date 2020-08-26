@@ -175,7 +175,7 @@ app.get("/profile/:username_url", (req, res)=>{
                                 loginDisplay: "none",
                                 signupDisplay: "none",
                                 logoutDisplay: "inline-block",
-                                profileDisplay: "none",
+                                profileDisplay: "inline-block",
                                 sameUser: true 
                             })
                         else

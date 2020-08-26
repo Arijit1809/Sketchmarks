@@ -67,7 +67,7 @@ html{
 }
 
 .navbar .logout {
-    border: 2px solid rgb(255, 255, 255);
+    border: 2px solid brown;
     color: #ffffff;
     padding: 5px 20px;
     border-radius: 10px;
@@ -76,8 +76,8 @@ html{
 }
 
 .navbar .logout:hover {
-    color: rgb(0, 0, 0);
-    background-color: rgb(255, 255, 255);
+    color: white;
+    background-color: brown;
 }
 
 .brand {
@@ -118,6 +118,9 @@ html{
 
 .navbar-menu a:hover {
     color: #a1a5af !important;
+}
+.navtop-home {
+    display: none;
 }
 
 /* .sticky {
@@ -547,7 +550,7 @@ a{
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.582);
     border-radius: 10px;
-    max-width: 95vw;
+    max-width: 20vw;
 }
 
 
@@ -707,6 +710,10 @@ footer {
         bottom: 14px;
     }
 
+    .navtop-home {
+        display: block;
+    }
+
     .inner-width {
         max-width: 800px;
     }
@@ -719,6 +726,9 @@ footer {
         width: 100vw;
         position: relative;
         /* background-color: black; */
+    }
+    .submit-main{
+        max-width: 95vw;
     }
     #preview{
         text-align: center;
@@ -797,6 +807,7 @@ footer {
 }
 
 @media (max-width: 768px) {
+    
     .click-div {
         flex-direction: column;
         margin: 5px 0px;
