@@ -70,6 +70,7 @@ body {
 
 .navbar .login:hover {
     background-color: red;
+    border-color: red;
     color: #d3d3d3;
 }
 
