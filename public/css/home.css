@@ -322,7 +322,7 @@ body {
     padding: 30px 150px;
     font-size: 5rem;
     color: white;
-    margin: 0 0 100px;
+    margin: 0 0 40px;
     background-image: url(../img/name_bg2.png);
     background-size: 70%;
     background-repeat: no-repeat;
@@ -1279,4 +1279,11 @@ footer {
         width: 150px;
     }
 
+}
+
+@media (max-width: 410px) {
+    #land-name{
+        font-size: 4rem;
+        letter-spacing: 5px;
+    }
 }
