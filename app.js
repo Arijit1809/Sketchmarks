@@ -488,7 +488,6 @@ app.post("/profilephoto",upload.single("pfp"),(req,res)=>{
                 contentType: 'image/png'
             }
             result.save()
-            console.log(result)
             res.redirect("/profile/"+req.user.username)
         }
     })
