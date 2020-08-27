@@ -34,8 +34,21 @@
         </div>
     </nav>
     <% if(sameUser){ %>
+        <section class="add-post">
+            <div class="new-post-div">
+                <form action="/submit" method="post" enctype=multipart/form-data id="submit-form">
+                    <label for="post-img" id="post-label"><i class="fa fa-cloud-upload"></i> Pick Artwork </label>
+                    <input type='file' id="post-img" name="work" accept="image/*" required>
+                    <img id="preview" src="#" alt="">
+                    <textarea cols="30" rows="2" placeholder="Give a caption to your tile" id="sub-desc" name="desc"
+                        required></textarea>
+                    <button type="submit" class="sub-btn">Create</button>
+                </form>
+                <span class="new-post-close">&#10060;</span>
+            </div>
+        </section>
         <div class="add-postbtm">
-            <a href="/add-post"><i class="fas fa-plus"></i></a>
+            <i class="fas fa-plus"></i>
         </div>
     <% } %>
     <div class="grid-container">

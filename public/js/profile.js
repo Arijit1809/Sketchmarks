@@ -156,5 +156,14 @@ $(document).ready(function () {
     $(".pfp-container").mouseleave(function(){
         $(".change-pfp").fadeOut(300)
     })
+    $(".fa-plus-square").click(function(){
+        $(".add-post").fadeIn().css("display","flex")
+    })
+    $(".add-postbtm").click(function(){
+        $(".add-post").fadeIn().css("display","flex")
+    })
+    $(".new-post-close").click(function(){
+        $(".add-post").fadeOut()
+    })
 })
 new ClipboardJS(".click-div-share")
