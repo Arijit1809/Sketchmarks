@@ -165,6 +165,7 @@ html{
     grid-template-columns: 25vw auto;
     height: 100vh;
     border-radius: 20px;
+    overflow-x: hidden;
 }
 
 .profile {
