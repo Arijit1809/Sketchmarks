@@ -137,6 +137,7 @@ html{
     align-items: center;
     justify-content: center;
     transition: 0.2s ease-in-out;
+    z-index: 3;
 }
 .add-postbtm:hover{
     background-color: brown;
