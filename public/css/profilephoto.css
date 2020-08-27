@@ -189,8 +189,7 @@ h3,h4{
     
 }
 .nav-btm {
-    display: flex;
-
+    display: none;
     /* flex-direction: row; */
     /* flex: 20%; */
     height: 70px;
@@ -215,9 +214,11 @@ h3,h4{
 .navbtm-icon:hover,.nav-btm a:hover {
     color: white;
 }
-
-
-
-
-
 /* Main end */
+
+@media (max-width: 780px){
+    .nav-btm{
+        display: flex;
+    }
+    
+}
