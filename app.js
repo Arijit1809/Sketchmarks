@@ -305,7 +305,7 @@ app.get("/thread/:postId",(req,res)=>{
 })
 
 app.get("/deletepost/:postId",(req,res)=>{
-    if(req.isAuthenticated() && req.user.username==result.name){
+    if(req.isAuthenticated()){
         Post.deleteOne({_id: req.params.postId},(err,result)=>{
             if(err) console.log(err)
             else res.send(req.user.username)
