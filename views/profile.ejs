@@ -36,12 +36,15 @@
             </div>
         </div>
     </nav>
+    <div class="add-postbtm">
+        <a href="/add-post"><i class="fas fa-plus-square"></i></a>
+    </div>
     <div class="grid-container">
         <div class="profile">
 
             <div class="profile-inner">
                 <!-- <img src="./images/bg.jpg" class="pfp" alt="Profile Pic"> -->
-                <h1><%= username %></h1>
+                
                 <div class="pfp-container">
                     <% if(pfp.contentType=="None"){ %>
                         <img src="/img/pfp.jpg" style="width: 100%;">
@@ -49,13 +52,14 @@
                         <img src="data:image/<%=pfp.contentType%>;base64,<%=pfp.data.toString('base64')%>" style="width: 100%;" class="pfp" alt="">
                     <% } %>
                 </div>
+                <h1><%= username %></h1>
                 <% if(sameUser){ %>
                     <a href="/profilephoto" class="change-pfp">Edit Profile Photo</a>
                 <% } %>
                 <h2><%= about %> </h2>
                 <h2><%= contact %> </h2>
                 <% if(sameUser){ %>
-                    <div class="submit-main">
+                    <div class="submit-main" style="display: none;">
                         <form action="/submit" method="post" enctype=multipart/form-data id="submit-form">
                             <label for="post-img" id="post-label">Add to your art gallery</label>
                             <input type='file' id="post-img" name="work" accept="image/*" required>
