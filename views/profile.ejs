@@ -47,9 +47,9 @@
                 
                 <div class="pfp-container">
                     <% if(pfp.contentType=="None"){ %>
-                        <img src="/img/pfp.jpg" style="width: 100%;">
+                        <img src="/img/pfp.jpg">
                     <% }else{ %>
-                        <img src="data:image/<%=pfp.contentType%>;base64,<%=pfp.data.toString('base64')%>" style="width: 100%;" class="pfp" alt="">
+                        <img src="data:image/<%=pfp.contentType%>;base64,<%=pfp.data.toString('base64')%>" class="pfp" alt="">
                     <% } %>
                 </div>
                 <h1><%= username %></h1>
