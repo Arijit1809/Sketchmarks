@@ -1,4 +1,14 @@
 $(document).ready(function(){
+    $(window).scroll(function(){
+        if (this.scrollY>10){
+            $(".navbar").addClass("sticky")
+            $(".nav-btm").css("bottom","0")
+        }
+        else{
+            $(".navbar").removeClass("sticky")
+            $(".nav-btm").css("bottom","-70px")
+        }
+    })
     function readURL(input){
         if (input.files && input.files[0]){
             let reader=new FileReader()

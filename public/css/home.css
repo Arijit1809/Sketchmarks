@@ -784,7 +784,10 @@ body {
 /* Submit */
 .submit {
     text-align: center;
-    background-image: url(/img/collage.jpg);
+    background: url(/img/collage.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
     padding: 100px 0;
 }
 
