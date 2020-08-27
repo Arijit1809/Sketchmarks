@@ -5,9 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Alata&family=Alice&family=Eczar:wght@600&display=swap&family=Pacifico&display=swap&family=Dancing+Script:wght@700&display=swap&family=Ubuntu:wght@500&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alata&family=Alice&family=Eczar:wght@600&display=swap&family=Pacifico&display=swap&family=Dancing+Script:wght@700&display=swap&family=Ubuntu:wght@500&display=swap&family=Noto+Sans:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -46,6 +44,9 @@
                 <!-- <img src="./images/bg.jpg" class="pfp" alt="Profile Pic"> -->
                 
                 <div class="pfp-container">
+                    <% if(sameUser){ %>
+                        <a href="/profilephoto" class="change-pfp">Edit Profile Photo</a>
+                    <% } %>
                     <% if(pfp.contentType=="None"){ %>
                         <img src="/img/pfp.jpg">
                     <% }else{ %>
@@ -53,22 +54,8 @@
                     <% } %>
                 </div>
                 <h1><%= username %></h1>
-                <% if(sameUser){ %>
-                    <a href="/profilephoto" class="change-pfp">Edit Profile Photo</a>
-                <% } %>
-                <h2><%= about %> </h2>
-                <h2><%= contact %> </h2>
-                <% if(sameUser){ %>
-                    <div class="submit-main" style="display: none;">
-                        <form action="/submit" method="post" enctype=multipart/form-data id="submit-form">
-                            <label for="post-img" id="post-label">Add to your art gallery</label>
-                            <input type='file' id="post-img" name="work" accept="image/*" required>
-                            <img id="preview" src="">
-                            <textarea rows="3" type="text" placeholder="Give a caption to your art" id="sub-desc" name="desc" required></textarea>
-                            <button type="submit" class="sub-btn">Submit</button>
-                        </form>
-                    </div>
-                <% } %>
+                <h2 class="about"><%= about %> </h2>
+                <h2 class="insta"><i class="fab fa-instagram"></i> : <%= contact %> </h2>
             </div>
 
         </div>
