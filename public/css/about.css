@@ -173,13 +173,13 @@ body{
   text-align: center;
   width: 1200px;
   flex: 33%;
- 
+
 }
 .tansen,.arijit,.shubham{
   display: flex;
   flex-direction: column;
   flex: 50%;
-  
+
 }
 .pfp{
   margin:0;
@@ -245,8 +245,9 @@ footer {
 }
 
 .icons i {
-  font-size: 2rem;
-  padding: 0 10px;
+    font-size: 2rem;
+    padding: 0 10px;
+    color: white;
 }
 
 @media screen and (max-width: 768px) {
@@ -336,6 +337,9 @@ footer {
     transition: .3s linear;
   }
   .navbar-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     position: fixed;
     height: 100vh;
     width: 100%;

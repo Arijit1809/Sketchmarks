@@ -51,6 +51,10 @@ mongoose.set("useCreateIndex", true);
 const userSchema = new mongoose.Schema({
   username: String,
   password: String,
+  pfp:{
+      data: Buffer,
+      contentType: String
+  },
   about:String,
   contact : String
 });
@@ -89,13 +93,29 @@ passport.deserializeUser(User.deserializeUser());
 
 
 /****************************Multer Settings****************************/
+// var dir = './tmp';
+if (!fs.existsSync("uploads")){
+    fs.mkdirSync("uploads");
+}
+if (!fs.existsSync("profilepics")){
+    fs.mkdirSync("profilepics");
+}
 const storage = multer.diskStorage({
     destination: (req, file, cb)=>{
-        cb(null, 'uploads')
+        if(file.fieldname=="work"){
+            cb(null, "uploads")
+        }
+        else{
+            cb(null,"profilepics")
+        }
     },
-
     filename: (req, file, cb)=>{
-        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
+        if(file.fieldname=="work"){
+            cb(null, file.fieldname+'-'+Date.now()+path.extname(file.originalname))
+        }
+        else{
+            cb(null,req.user.username)
+        }
     }
 })
 
@@ -162,7 +182,7 @@ app.get("/profile/:username_url", (req, res)=>{
             if(result){
                 const about=result.about
                 const contact=result.contact
-                
+                const userPfp=result.pfp
                 Post.find({name: username}).sort({$natural: -1}).exec((err,results)=>{
                     if(err) console.log(err)
                     else {
@@ -171,6 +191,7 @@ app.get("/profile/:username_url", (req, res)=>{
                                 username: username,
                                 about: about,
                                 contact: contact,
+                                pfp: userPfp,
                                 works: results,
                                 loginDisplay: "none",
                                 signupDisplay: "none",
@@ -183,6 +204,7 @@ app.get("/profile/:username_url", (req, res)=>{
                                 username: username,
                                 about: about,
                                 contact: contact,
+                                pfp: userPfp,
                                 works: results,
                                 loginDisplay: "inline-block",
                                 signupDisplay: "inline-block",
@@ -343,9 +365,10 @@ app.get("/tile/:postId",(req,res)=>{
     })
 })
 
-// app.get("/loginfail",(req,res)=>{
-//     res.render("login", {errorVisi: "visible"})
-// })
+app.get("/profilephoto",(req,res)=>{
+    if(req.isAuthenticated())
+        res.render("profilephoto")
+})
 /****************************Get requests end****************************/
 
 /****************************Post Requests****************************/
@@ -357,7 +380,11 @@ app.post("/signup", function (req, res) {
     User.register({
         username: req.body.username,
         about : req.body.about,
-        contact: req.body.contact
+        contact: req.body.contact,
+        pfp:{
+            data: fs.readFileSync(path.join(__dirname +"/Procfile")),
+            contentType: "None"
+        }
     }, req.body.password, function (err, user) {
         if (err) {
             console.log(err);
@@ -416,14 +443,6 @@ app.post("/submit",upload.single("work"),(req,res)=>{
     else res.redirect("/login") 
 })
 
-// app.post("/getpost",(req,res)=>{
-//     Post.findById(req.body.id,(err,result)=>{
-//         if(err) console.log(err)
-//         else res.send(result)
-//     })
-// })
-
-
 app.post("/checkusername",(req,res)=>{
 
     User.findOne({username: req.body.user},(err,result)=>{
@@ -458,6 +477,20 @@ app.post("/deletecomment/:postId",(req,res)=>{
 
 app.post("/searchprofile",(req,res)=>{
     res.redirect("/profile/"+req.body.profile)
+})
+
+app.post("/profilephoto",upload.single("pfp"),(req,res)=>{
+    User.findOne({username: req.user.username},(err,result)=>{
+        if(err) console.log(err)
+        else{
+            result.pfp={
+                data: fs.readFileSync(path.join(__dirname+'/profilepics/'+req.file.filename)),
+                contentType: 'image/png'
+            }
+            result.save()
+            res.redirect("/profile/"+req.user.username)
+        }
+    })
 })
 /****************************Post requests end****************************/
 

@@ -70,6 +70,7 @@ body {
 
 .navbar .login:hover {
     background-color: red;
+    border-color: red;
     color: #d3d3d3;
 }
 
@@ -313,7 +314,7 @@ body {
     /* background-image: url(/img/whitebg1.jpg); */
     /* background-position: center; */
     /* background-size: cover; */
-    background: linear-gradient(90deg,#7a0000,#e84545);
+    background: linear-gradient(-90deg,#7a0000,#e84545);
     padding: 100px 0;
 }
 
@@ -447,8 +448,9 @@ body {
 .row {
     display: flex;
     flex-wrap: wrap;
-    padding: 0 4px;
-    padding-bottom: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.63);
 }
 
 .column {
@@ -765,7 +767,12 @@ body {
     /* margin: 20px; */
     border-radius: 10px;
     margin: 20px 10px 0px 10px;
+    transition: 0.2s ease-in-out;
 
+}
+.all-posts:hover{
+    background-color: rgba(0, 0, 0, 0.63);
+    cursor: pointer;
 }
 .all-posts a{
     text-decoration: none;
@@ -923,6 +930,9 @@ footer {
         visibility: hidden;
         transition: .3s linear;
     }
+    .row{
+        background: none;
+    }
     .navbar-menu {
         display: flex;
         align-items: center;
@@ -1061,7 +1071,7 @@ footer {
     }
     .section-head {
         font-size: 3.1rem;
-        padding: 0 150px 60px;
+        padding: 30px 150px;
         /* font-family: 'Pacifico',
         cursive; */
         background-size: 100%;
