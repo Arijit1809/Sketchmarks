@@ -36,32 +36,33 @@ html{
 }
 
 .navbar .login {
-    border: 2px solid rgb(255, 255, 255);
+    border: 2px solid brown;
     padding: 5px 20px;
     border-radius: 10px;
-    background-color: rgb(255, 255, 255);
-    color: #000000;
-    font-family: "Alata";
-    transition: 0.1s linear;
+    background-color: brown;
+    color: #d3d3d3;
+    font-family: "Ubuntu";
+    transition: 0.2s ease-in-out;
 }
 
 .navbar .login:hover {
-    background-color: rgb(255, 255, 255);
-    color: #000000;
+    background-color: red;
+    border-color: red;
+    color: white;
 }
 
 .navbar .signup {
-    border: 2px solid rgb(255, 255, 255);
+    border: 2px solid purple;
     padding: 5px 20px;
     border-radius: 10px;
-    font-family: "Alata";
-    transition: 0.1s linear;
+    font-family: "Ubuntu";
+    transition: 0.2s ease-in-out;
 
 }
 
 .navbar .signup:hover {
-    background-color: rgb(255, 255, 255);
-    color: #000000;
+    background-color: purple;
+    color: white;
 }
 
 .navbar .logout {
@@ -69,7 +70,7 @@ html{
     color: #ffffff;
     padding: 5px 20px;
     border-radius: 10px;
-    font-family: "Alata";
+    font-family: "Ubuntu";
     transition: 0.1s linear;
 }
 
@@ -80,9 +81,10 @@ html{
 
 .brand {
     color: white;
-    text-transform: uppercase;
-    font-size: 1rem;
+    font-size: 1.5rem;
     text-decoration: none;
+    letter-spacing: 2px;
+    font-family: "Ubuntu";
 }
 
 .menu-toggler {
@@ -115,14 +117,14 @@ html{
 }
 
 .navbar-menu a:hover {
-    color: #a1a5af !important;
+    color: #a1a5af;
 }
 .navtop-home {
     display: none;
 }
 
 .add-postbtm{
-    background-color: red;
+    background-color: #e84545;
     position: fixed;
     bottom: 10%;
     right: 5%;
@@ -133,6 +135,11 @@ html{
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: 0.2s ease-in-out;
+}
+.add-postbtm:hover{
+    background-color: brown;
+    cursor: pointer;
 }
 .fas{
     font-size: 2rem;
@@ -203,12 +210,13 @@ html{
 }
 
 .profile h1 {
-    font-family: 'Noto sans', cursive;
+    font-family: 'Noto sans';
     font-size: 3rem;
     margin-bottom: 10px;
     color: #512155;
     text-shadow: 2px 2px 5px blueviolet;
     text-align: center;
+    font-weight: 700;
 }
 .insta i{
     background: linear-gradient(#405de6,red);
@@ -218,7 +226,7 @@ html{
     vertical-align: -5px;
 }
 .insta,.about {
-    font-family: 'Noto sans', cursive;
+    font-family: 'Work sans', cursive;
     color: rgb(0, 0, 0);
     text-align: center;
     margin: 10px 0;
@@ -291,36 +299,37 @@ html{
     padding-top: 90px;
     margin-bottom: 50px;
     align-content: center;
-    font-family: 'Alata',
-        cursive;
-
-    font-size:3rem;
+    font-family: 'Ubuntu', cursive;
+    letter-spacing: 5px;
+    font-size: 2.5rem;
     z-index: 2;
     color: rgb(255, 255, 255);
     text-align: center;
-    text-transform: uppercase;
-
 }
 .gallery {
     display: grid;
-
     grid-row-gap: 30px;
     grid-template-columns: auto auto;
     margin: auto;
     padding: 20px;
     background-color: #2b2e4aa1;
-    }
+}
 
 .empty{
     margin: 20vh 0;
-    font-family: 'Alata';
+    font-family: 'Work sans';
     text-align: center;
     font-size: 1.5rem;
-    color: white;
+    color: #b8b8b8cb;
 
 }
 .empty h2{
     margin-bottom: 20px;
+}
+.empty h3{
+    font-size: 1rem;
+    letter-spacing: 3px;
+    color: rgba(255, 255, 255, 0.438);
 }
 .spinner{
     height: 100vh;
