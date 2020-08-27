@@ -292,6 +292,7 @@ html{
 .column img:hover {
     /* box-shadow: 0 0 40px #d3d3d3; */
     transform: scale(1.2);
+    z-index: 2;
     transition: ease-in-out 0.3s;
     cursor: pointer;
 }
