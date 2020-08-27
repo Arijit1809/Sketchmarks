@@ -189,18 +189,17 @@ html{
 }
 .change-pfp{
     display: none;
+    align-items: center;
+    justify-content: center;
     position: absolute;
-    top: 0;
+    top: 0px;
     left: 0;
-    width: 100%;
-    height: 100%;
-    text-decoration-line: none;
-    font-family: 'Alata';
-    background-color: black;
+    width: 240px;
+    height: 240px;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.548);
     color: white;
-    padding: 10px;
-    border-radius: 10px;
-    font-size: 0.75rem;
+    border-radius: 50%;
 }
 
 .profile h1 {
