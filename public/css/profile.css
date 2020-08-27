@@ -123,6 +123,18 @@ html{
     display: none;
 }
 
+.add-postbtm{
+    background-color: red;
+    position: fixed;
+    bottom: 10%;
+    right: 5%;
+    padding: 20px;
+    border-radius: 50%;
+}
+.fas{
+    font-size: 2rem;
+}
+
 /* .sticky {
     background-color: black;
     padding: 18px 0;
@@ -138,7 +150,7 @@ html{
 
 .grid-container {
     display: grid;
-    grid-template-columns: 22vw auto;
+    grid-template-columns: 25vw auto;
     height: 100vh;
     border-radius: 20px;
 }
@@ -147,7 +159,7 @@ html{
     background-image: linear-gradient(rgba(218, 218, 218, 0.575), rgba(102, 102, 102, 0.582));
     position: fixed;
     height: 100vh;
-    width: 22vw;
+    width: 25vw;
     justify-content: center;
 }
 
@@ -160,28 +172,47 @@ html{
     transform: translate(-50%, -50%);
 }
 
+.pfp-container{
+    margin: auto;
+    width: 50%;
+}
+.pfp-container img{
+    /* width: 150px; */
+    /* height: 150px; */
+    border-radius: 50%;
+}
+.change-pfp{
+    text-decoration-line: none;
+    font-family: 'Alata';
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
 .profile h1 {
     /* font-family: 'Baloo Tamma 2',
         cursive; */
     font-family: 'Alata',
     cursive;
     font-size: 3rem;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     color: rgb(0, 0, 0);
     text-align: center;
     text-transform: uppercase;
-    padding-top: 40px;
+    padding-top: 20px;
 }
 
 .profile h2 {
     font-family: 'Baloo Tamma 2',
         cursive;
-
     color: rgb(0, 0, 0);
     text-align: center;
     text-transform: uppercase;
     padding-top: 0px;
+    font-size: 1.25rem;
     margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .content {
@@ -810,6 +841,9 @@ footer {
 }
 
 @media (max-width: 768px) {
+    .pfp-container{
+        margin-top:80px;
+    }
     
     .click-div {
         flex-direction: column;
@@ -878,7 +912,7 @@ footer {
         transform: unset;
     }
     .profile h1{
-        padding-top: 80px;
+        padding-top: 20px;
         color: white;
     }
     .profile h2{
