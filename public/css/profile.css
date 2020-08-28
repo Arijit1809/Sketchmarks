@@ -7,8 +7,6 @@
 
 body {
     background-color: black;
-    background-image: url(../img/black.jpg);
-    background-size: auto;
 }
 html{
     scroll-behavior: smooth;
@@ -38,32 +36,33 @@ html{
 }
 
 .navbar .login {
-    border: 2px solid rgb(255, 255, 255);
+    border: 2px solid brown;
     padding: 5px 20px;
     border-radius: 10px;
-    background-color: rgb(255, 255, 255);
-    color: #000000;
-    font-family: "Alata";
-    transition: 0.1s linear;
+    background-color: brown;
+    color: #d3d3d3;
+    font-family: "Ubuntu";
+    transition: 0.2s ease-in-out;
 }
 
 .navbar .login:hover {
-    background-color: rgb(255, 255, 255);
-    color: #000000;
+    background-color: red;
+    border-color: red;
+    color: white;
 }
 
 .navbar .signup {
-    border: 2px solid rgb(255, 255, 255);
+    border: 2px solid purple;
     padding: 5px 20px;
     border-radius: 10px;
-    font-family: "Alata";
-    transition: 0.1s linear;
+    font-family: "Ubuntu";
+    transition: 0.2s ease-in-out;
 
 }
 
 .navbar .signup:hover {
-    background-color: rgb(255, 255, 255);
-    color: #000000;
+    background-color: purple;
+    color: white;
 }
 
 .navbar .logout {
@@ -71,7 +70,7 @@ html{
     color: #ffffff;
     padding: 5px 20px;
     border-radius: 10px;
-    font-family: "Alata";
+    font-family: "Ubuntu";
     transition: 0.1s linear;
 }
 
@@ -82,9 +81,10 @@ html{
 
 .brand {
     color: white;
-    text-transform: uppercase;
-    font-size: 1rem;
+    font-size: 1.5rem;
     text-decoration: none;
+    letter-spacing: 2px;
+    font-family: "Ubuntu";
 }
 
 .menu-toggler {
@@ -117,19 +117,31 @@ html{
 }
 
 .navbar-menu a:hover {
-    color: #a1a5af !important;
+    color: #a1a5af;
 }
 .navtop-home {
     display: none;
 }
 
 .add-postbtm{
-    background-color: red;
+    background-color: #e84545;
+    color: white;
     position: fixed;
     bottom: 10%;
     right: 5%;
     padding: 20px;
     border-radius: 50%;
+    height: 70px;
+    width: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s ease-in-out;
+    z-index: 3;
+}
+.add-postbtm:hover{
+    background-color: brown;
+    cursor: pointer;
 }
 .fas{
     font-size: 2rem;
@@ -153,10 +165,11 @@ html{
     grid-template-columns: 25vw auto;
     height: 100vh;
     border-radius: 20px;
+    overflow-x: hidden;
 }
 
 .profile {
-    background-image: linear-gradient(rgba(218, 218, 218, 0.575), rgba(102, 102, 102, 0.582));
+    background: linear-gradient(-45deg,#f08a5d,#e84545,#b83b5e);
     position: fixed;
     height: 100vh;
     width: 25vw;
@@ -164,6 +177,9 @@ html{
 }
 
 .profile-inner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 0;
     position: absolute;
     top: 50%;
@@ -174,60 +190,59 @@ html{
 
 .pfp-container{
     margin: auto;
-    width: 50%;
+    position: relative;
 }
 .pfp-container img{
-    /* width: 150px; */
-    /* height: 150px; */
+    width: 240px;
+    height: 240px;
     border-radius: 50%;
 }
 .change-pfp{
-    text-decoration-line: none;
-    font-family: 'Alata';
-    background-color: black;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 240px;
+    height: 240px;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.548);
     color: white;
-    padding: 10px;
-    border-radius: 10px;
+    border-radius: 50%;
 }
 
 .profile h1 {
-    /* font-family: 'Baloo Tamma 2',
-        cursive; */
-    font-family: 'Alata',
-    cursive;
+    font-family: 'Noto sans';
     font-size: 3rem;
     margin-bottom: 10px;
+    color: #512155;
+    text-shadow: 2px 2px 5px blueviolet;
+    text-align: center;
+    font-weight: 700;
+}
+.insta i{
+    background: linear-gradient(#405de6,red);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2rem;
+    vertical-align: -5px;
+}
+.insta,.about {
+    font-family: 'Work sans', cursive;
     color: rgb(0, 0, 0);
     text-align: center;
-    text-transform: uppercase;
-    padding-top: 20px;
+    margin: 10px 0;
+    font-size: 1.5rem;
 }
-
-.profile h2 {
-    font-family: 'Baloo Tamma 2',
-        cursive;
-    color: rgb(0, 0, 0);
-    text-align: center;
-    text-transform: uppercase;
-    padding-top: 0px;
-    font-size: 1.25rem;
-    margin-bottom: 20px;
-    margin-top: 20px;
+.about{
+    font-size: 1rem;
 }
-
 .content {
-
     height: 100%;
-
-
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: linear-gradient(45deg,#6a2c70,#b83b5e);
     grid-column-start: 2;
     grid-column-end: 3;
-    
-
-
 }
 .row {
     display: flex;
@@ -277,6 +292,7 @@ html{
 .column img:hover {
     /* box-shadow: 0 0 40px #d3d3d3; */
     transform: scale(1.2);
+    z-index: 2;
     transition: ease-in-out 0.3s;
     cursor: pointer;
 }
@@ -287,36 +303,37 @@ html{
     padding-top: 90px;
     margin-bottom: 50px;
     align-content: center;
-    font-family: 'Alata',
-        cursive;
-
-    font-size:3rem;
+    font-family: 'Ubuntu', cursive;
+    letter-spacing: 5px;
+    font-size: 2.5rem;
     z-index: 2;
     color: rgb(255, 255, 255);
     text-align: center;
-    text-transform: uppercase;
-
 }
 .gallery {
     display: grid;
-
     grid-row-gap: 30px;
     grid-template-columns: auto auto;
     margin: auto;
     padding: 20px;
     background-color: #2b2e4aa1;
-    }
+}
 
 .empty{
     margin: 20vh 0;
-    font-family: 'Alata';
+    font-family: 'Work sans';
     text-align: center;
     font-size: 1.5rem;
-    color: white;
+    color: #b8b8b8cb;
 
 }
 .empty h2{
     margin-bottom: 20px;
+}
+.empty h3{
+    font-size: 1rem;
+    letter-spacing: 3px;
+    color: rgba(255, 255, 255, 0.438);
 }
 .spinner{
     height: 100vh;
@@ -440,9 +457,12 @@ a{
 }
 .like-btn,
 .likes-number {
-    font-size: 1.25rem;
     margin-right: 5px;
+    font-size: 1.25rem;
     font-family: 'Alata';
+}
+.heart{
+    font-size: 1.25rem;
 }
 .click-div-share i{
     font-size: 1.25rem;
@@ -544,6 +564,7 @@ a{
 }
 .delete-comment{
     color: rgb(180, 0, 0);
+    font-size: 1.25rem;
 }
 .delete-comment:hover{
     color: orangered;
@@ -584,7 +605,17 @@ a{
     max-width: 20vw;
 }
 
-
+.add-post{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 4;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.877);
+}
 #submit-form{
     display: flex;
     flex-direction: column;
@@ -617,19 +648,19 @@ a{
     border-radius: 10px;
     font-size: 1.2rem;
     margin-bottom: 20px;
-    transition: 0.1s linear;
+    transition: 0.2s ease-in-out;
     color: white;
 }
 #post-label:hover{
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
 }
 #post-img{
     display: none;
 }
 #preview{
     width: 50%;
-    max-height: 200px;
+    max-width: 500px;
     margin-bottom: 40px;
     border-radius: 10px;
     font-family: "Alata";
@@ -647,9 +678,19 @@ a{
 }
 .sub-btn:hover{
     cursor: pointer;
-    background-color: black;
+    background-color: white;
 }
-
+.new-post-close{
+    position: absolute;
+    top: 30px;
+    right: 70px;
+    font-size: 2rem;
+    opacity: 0.5;
+}
+.new-post-close:hover{
+    opacity: 1;
+    cursor: pointer;
+}
 footer {
     margin: 0px 0 100px;
 }
@@ -803,6 +844,9 @@ footer {
     }
     .nav-btm {
         display: flex;
+    }
+    .add-postbtm{
+        display: none;
     }
 }
 

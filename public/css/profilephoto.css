@@ -7,12 +7,15 @@ html{
     scroll-behavior: smooth;
 }
 body{
-    background-color: black;
+    background: url(/img/bg.jpg) no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
     color: white;
 }
 .inner{
     max-width: 1200px;
     padding: 0 40px;
+    margin: auto;
 }
 .navbar {
     position: fixed;
@@ -172,25 +175,69 @@ body{
     align-content: center;
     justify-content: center;
     text-align: center;
+    margin: auto;
+    margin-top: 100px;
+    background-color: #e8454550;
+    border-radius: 30px;
+    width: 75vw;
 }
 h1{
-    font-family: 'Alata';
-    margin: 100px 0px 40px;
+    font-family: 'Noto Sans';
+    margin: 50px;
+    margin-bottom: 0;
+    font-size: 4rem;
+    color: rgb(153, 0, 153);
 }
-h3,h4{
+h4{
     font-family: 'Alata';
     margin: 20px;
 }
+#pfp{
+    display: none;
+}
+#preview{
+    width: 50%;
+    margin: 30px 0;
+}
+.pfp-label{
+    border: 2px solid white;
+    padding: 20px 40px;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    transition: 0.2s ease-in-out;
+}
+.pfp-label:hover{
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
 .update-pfp{
     font-family: 'Alata';
+    margin: 40px;
     display: flex;
     flex-direction: column;
-    padding: 40px;
-    
+    justify-content: center;
+    align-items: center;
+}
+.sub-btn{
+    background-color: rgba(0, 0, 0, 0.589);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: grey;
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    font-family: "Noto sans";
+    transition: 0.2s ease-in-out;
+}
+.sub-btn:hover{
+    cursor: pointer;
+    box-shadow: 0 0 5px white;
+    background-color: black;
+    color: white;
 }
 .nav-btm {
-    display: flex;
-
+    display: none;
     /* flex-direction: row; */
     /* flex: 20%; */
     height: 70px;
@@ -215,9 +262,11 @@ h3,h4{
 .navbtm-icon:hover,.nav-btm a:hover {
     color: white;
 }
-
-
-
-
-
 /* Main end */
+
+@media (max-width: 780px){
+    .nav-btm{
+        display: flex;
+    }
+    
+}

@@ -50,10 +50,10 @@ $(document).ready(function () {
                 let commentsString = ""
                 result.data.comments.forEach(function (comment) {
                     if (comment.name == result.viewer) {
-                        commentsString += `<div class="comment-div"><a href="/profile/${comment.name}">${comment.name}</a> says <span>${comment.comment}</span> &nbsp;<i class="fas fa-trash delete-comment" title="Delete this comment"></i></div>\n`
+                        commentsString += `<div class="comment-div"><a href="/profile/${comment.name}">${comment.name}</a>: <span>${comment.comment}</span> &nbsp;<i class="fas fa-trash delete-comment" title="Delete this comment"></i></div>\n`
                     }
                     else {
-                        commentsString += `<div class="comment-div"><a href="/profile/${comment.name}">${comment.name}</a> says ${comment.comment}</div>\n`
+                        commentsString += `<div class="comment-div"><a href="/profile/${comment.name}">${comment.name}</a>: ${comment.comment}</div>\n`
                     }
                 })
                 $(".click-div-comments").html(commentsString)
@@ -98,10 +98,10 @@ $(document).ready(function () {
                     let commentsString = ""
                     result.comments.forEach(function (comment) {
                         if (comment.name == result.viewer) {
-                            commentsString += `<div class="comment-div"><a href="/profile/${comment.name}">${comment.name}</a> says <span>${comment.comment}</span> &nbsp;<i class="fas fa-trash delete-comment" title="Delete this comment"></i></div>\n`
+                            commentsString += `<div class="comment-div"><a href="/profile/${comment.name}">${comment.name}</a>: <span>${comment.comment}</span> &nbsp;<i class="fas fa-trash delete-comment" title="Delete this comment"></i></div>\n`
                         }
                         else {
-                            commentsString += `<div class="comment-div"><a href="/profile/${comment.name}">${comment.name}</a> says ${comment.comment}</div>\n`
+                            commentsString += `<div class="comment-div"><a href="/profile/${comment.name}">${comment.name}</a>: ${comment.comment}</div>\n`
                         }
                     })
                     $(".click-div-comments").html(commentsString)
@@ -129,10 +129,10 @@ $(document).ready(function () {
                 let commentsString = ""
                 result.comments.forEach(function (comment) {
                 if (comment.name == result.viewer) {
-                    commentsString += `<div class="comment-div"><a href="/profile/${comment.name}">${comment.name}</a> says <span>${comment.comment}</span> &nbsp;<i class="fas fa-trash delete-comment" title="Delete this comment"></i></div>\n`
+                    commentsString += `<div class="comment-div"><a href="/profile/${comment.name}">${comment.name}</a>: <span>${comment.comment}</span> &nbsp;<i class="fas fa-trash delete-comment" title="Delete this comment"></i></div>\n`
                 }
                 else {
-                    commentsString += `<div class="comment-div"><a href="/profile/${comment.name}">${comment.name}</a> says ${comment.comment}</div>\n`
+                    commentsString += `<div class="comment-div"><a href="/profile/${comment.name}">${comment.name}</a>: ${comment.comment}</div>\n`
                 }
                 })
                 $(".click-div-comments").html(commentsString)
@@ -149,6 +149,21 @@ $(document).ready(function () {
         $(".spinner").fadeIn().css("display","flex")
     }).ajaxStop(function(){
         $(".spinner").fadeOut()
+    })
+    $(".pfp-container").mouseover(function(){
+        $(".change-pfp").fadeIn(300).css("display","flex")
+    })
+    $(".pfp-container").mouseleave(function(){
+        $(".change-pfp").fadeOut(300)
+    })
+    $(".fa-plus-square").click(function(){
+        $(".add-post").fadeIn().css("display","flex")
+    })
+    $(".add-postbtm").click(function(){
+        $(".add-post").fadeIn().css("display","flex")
+    })
+    $(".new-post-close").click(function(){
+        $(".add-post").fadeOut()
     })
 })
 new ClipboardJS(".click-div-share")

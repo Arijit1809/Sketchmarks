@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Alata&family=Alice&family=Eczar:wght@600&display=swap&family=Pacifico&display=swap&family=Dancing+Script:wght@700&display=swap&family=Ubuntu:wght@500&display=swap&family=Great+Vibes&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alata&family=Alice&family=Eczar:wght@600&display=swap&family=Pacifico&display=swap&family=Dancing+Script:wght@700&display=swap&family=Ubuntu:wght@500&display=swap&family=Noto+Sans:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/profilephoto.css">
 </head>
 <body>
@@ -28,14 +26,13 @@
     </nav>
     <div class="inner">
         <div class="flex">
-            <h1 class="heading">Update your profile</h1>
-            <h3>Change your profile picture</h3>
+            <h1 class="heading">Update profile photo</h1>
             <h4>This photo will be displayed on your profile.</h4>
             <form action="/profilephoto" method="POST" enctype="multipart/form-data" class="update-pfp">
-                <label for="pfp">Select a photo</label>
+                <label for="pfp" class="pfp-label">Select a photo</label>
                 <input type="file" accept="image/*" name="pfp" id="pfp" required>
                 <img id="preview" src="#" alt="">
-                <button type="submit">Set</button>
+                <button type="submit" class="sub-btn">Set</button>
             </form>
         </div>
     </div>
@@ -51,14 +48,10 @@
          <div class="posts-nav navbtm-icon">
              <a href="/posts"><i class="fas fa-images"></i></a>
          </div>
-         <div class="profile-nav navbtm-icon">
-             <a <% if(username!="NA"){ %> href="/profile/<%=username%>" <% }else{ %> href="/login" <% } %>><i
-                     class="fas fa-user-circle"></i></a>
-         </div>
      </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/67a49e1ba0.js" crossorigin="anonymous"></script>
     <script src="/js/profilephoto.js"></script>
-     <script src="https://kit.fontawesome.com/67a49e1ba0.js" crossorigin="anonymous"></script>
 </body>
 </html>

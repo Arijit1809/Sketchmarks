@@ -69,7 +69,6 @@ const User = new mongoose.model("User", userSchema);
 const postSchema=new mongoose.Schema({
     name: String,
     desc: String,
-    filename: String,
     img:{
         data: Buffer,
         contentType: String
@@ -306,21 +305,13 @@ app.get("/thread/:postId",(req,res)=>{
 })
 
 app.get("/deletepost/:postId",(req,res)=>{
-    Post.findById(req.params.postId,(err,result)=>{
-        if(err) console.log(err)
-        else{
-            if(req.isAuthenticated() && req.user.username==result.name){
-                fs.unlink("uploads/"+result.filename,(err)=>{if(err)console.log(err)})
-                Post.deleteOne({_id: req.params.postId},(err,result)=>{
-                    if(err) console.log(err)
-                    else res.send(req.user.username)
-                })
-            }
-            else res.send("You are not authorised to perform this action.")
-        }
-    })
-
-
+    if(req.isAuthenticated()){
+        Post.deleteOne({_id: req.params.postId},(err,result)=>{
+            if(err) console.log(err)
+            else res.send(req.user.username)
+        })
+    }
+    else res.send("You are not authorised to perform this action.")
 })
 
 app.get("/tile/:postId",(req,res)=>{
@@ -421,9 +412,8 @@ app.post("/submit",upload.single("work"),(req,res)=>{
         let imgObj={
             name: req.user.username,
             desc: req.body.desc,
-            filename: req.file.filename,
             img:{
-                data: fs.readFileSync(path.join(__dirname + '/uploads/' + req.file.filename)),
+                data: fs.readFileSync(path.join(__dirname+'/uploads/'+req.file.filename)),
                 contentType: 'image/png'
             },
             likes:{
@@ -436,6 +426,7 @@ app.post("/submit",upload.single("work"),(req,res)=>{
             if(err) console.log(err)
             else{ 
                 result.save()
+                fs.unlinkSync("uploads/"+req.file.filename)
                 res.redirect(`/profile/${req.user.username}`)
             }
         })
@@ -484,10 +475,11 @@ app.post("/profilephoto",upload.single("pfp"),(req,res)=>{
         if(err) console.log(err)
         else{
             result.pfp={
-                data: fs.readFileSync(path.join(__dirname+'/profilepics/'+req.file.filename)),
+                data: fs.readFileSync(path.join(__dirname+"/profilepics/"+req.file.filename)),
                 contentType: 'image/png'
             }
             result.save()
+            fs.unlinkSync("profilepics/"+req.file.filename)
             res.redirect("/profile/"+req.user.username)
         }
     })
