@@ -49,7 +49,7 @@ body {
     top: 0;
     z-index: 2;
     transition: .3s linear;
-    font-family: 'Alata';
+    font-family: 'Ubuntu';
 }
 
 .navbar .inner {
@@ -105,8 +105,8 @@ body {
 
 .brand {
     color: white;
-    text-transform: uppercase;
-    font-size: 1rem;
+    /* text-transform: uppercase; */
+    font-size: 1.25rem;
     text-decoration: none;
     transition: linear .2s;
 }
@@ -898,6 +898,7 @@ footer {
 
 .icons {
     text-align: center;
+    font-family: "Ubuntu";
 }
 
 .icons i {
