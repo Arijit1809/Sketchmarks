@@ -6,10 +6,12 @@
     <title>Sketchmarks</title>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Alata&family=Alice&family=Eczar:wght@600&display=swap&family=Pacifico&display=swap&family=Dancing+Script:wght@700&display=swap&family=Ubuntu:wght@500&display=swap&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="icon" href="../img/fav.png" type="image/x-icon"/>
+    <link rel="shortcut icon" href="../img/fav.png" type="image/x-icon"/>
     <link rel="stylesheet" href="/css/home.css">
 </head>
 <body>
-    
+
     <nav class="navbar">
         <div class="inner">
             <a href="/" class="brand">Sketchmarks</a>
@@ -55,7 +57,7 @@
                 <% if(username=="NA"){ %>
                     <div class="desc-account">Make an account to get started today. It's free, forever.</div>
                     <div class="desc-tip">Press the sign up button on the navigation menu to make an account.</div>
-                <% } %> 
+                <% } %>
             </div>&nbsp; <!--Dont remove-->
         </div>
     </section>
@@ -69,7 +71,7 @@
         </div>
         <div class="inner" >
             <h1 class="section-head" id="post-title">Posts</h1>
-            <div class="click-div">    
+            <div class="click-div">
                 <img src="" alt="" id="click-div-img">
                 <div class="click-div-secondary">
                     <img src="" class="secondary-img">
@@ -177,7 +179,7 @@
                     <div class="artist">By <a href="/profile/<%=topPosts[1].name%>"><%=topPosts[1].name%></a></div>
                     <div class="top-post-desc"><%=topPosts[1].desc%></div>
                     <div class="top-post-comments">
-                        <span class="top-like-btn" id="<%=topPosts[1]._id%>"><i class="fas fa-heart top-heart" 
+                        <span class="top-like-btn" id="<%=topPosts[1]._id%>"><i class="fas fa-heart top-heart"
                         <% if(username!="NA"){ %>
                             <% let ind=topPosts[1].likes.likers.indexOf(username) %>
                             <% if(ind>-1){ %>
@@ -204,7 +206,7 @@
                     <div class="artist">By <a href="/profile/<%=topPosts[2].name%>"><%=topPosts[2].name%></a></div>
                     <div class="top-post-desc"><%=topPosts[2].desc%></div>
                     <div class="top-post-comments">
-                        <span class="top-like-btn" id="<%=topPosts[2]._id%>"><i class="fas fa-heart top-heart" 
+                        <span class="top-like-btn" id="<%=topPosts[2]._id%>"><i class="fas fa-heart top-heart"
                         <% if(username!="NA"){ %>
                             <% let ind=topPosts[2].likes.likers.indexOf(username) %>
                             <% if(ind>-1){ %>
@@ -229,7 +231,7 @@
                     <div class="artist">By <a href="/profile/<%=topPosts[3].name%>"><%=topPosts[3].name%></a></div>
                     <div class="top-post-desc"><%=topPosts[3].desc%></div>
                     <div class="top-post-comments">
-                        <span class="top-like-btn" id="<%=topPosts[3]._id%>"><i class="fas fa-heart top-heart" 
+                        <span class="top-like-btn" id="<%=topPosts[3]._id%>"><i class="fas fa-heart top-heart"
                         <% if(username!="NA"){ %>
                             <% let ind=topPosts[3].likes.likers.indexOf(username) %>
                             <% if(ind>-1){ %>
@@ -256,7 +258,7 @@
                     <div class="artist">By <a href="/profile/<%=topPosts[4].name%>"><%=topPosts[4].name%></a></div>
                     <div class="top-post-desc"><%=topPosts[4].desc%></div>
                     <div class="top-post-comments">
-                        <span class="top-like-btn" id="<%=topPosts[4]._id%>"><i class="fas fa-heart top-heart" 
+                        <span class="top-like-btn" id="<%=topPosts[4]._id%>"><i class="fas fa-heart top-heart"
                         <% if(username!="NA"){ %>
                             <% let ind=topPosts[4].likes.likers.indexOf(username) %>
                             <% if(ind>-1){ %>
@@ -311,10 +313,10 @@
     </footer>
     <div class="nav-btm">
         <div class="home-nav navbtm-icon">
-            <a href="/#land-name"><i class="fas fa-home"></i></a>          
+            <a href="/#land-name"><i class="fas fa-home"></i></a>
         </div>
-        
-        
+
+
         <div class="add-nav navbtm-icon">
             <a href="#posting"><i class="fas fa-plus-square"></i></a>
         </div>
@@ -322,7 +324,7 @@
             <a href="/posts"><i class="fas fa-images"></i></a>
         </div>
         <div class="profile-nav navbtm-icon">
-            <a 
+            <a
             <% if(username!="NA"){ %>
                 href="/profile/<%=username%>"
             <% }else{ %>
