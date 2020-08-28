@@ -1251,8 +1251,7 @@ footer {
         padding-top: 0;
     }
     #post-title{
-        padding: 60px;
-        padding-top: 0;
+        padding: 0 60px 10px;
         background-image: unset;
         font-family: "Dancing Script";
         color: rgb(255, 255, 255);
