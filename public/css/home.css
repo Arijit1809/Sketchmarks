@@ -314,7 +314,7 @@ body {
     /* background-image: url(/img/whitebg1.jpg); */
     /* background-position: center; */
     /* background-size: cover; */
-    background: linear-gradient(-90deg,#7a0000,#e84545);
+    background: linear-gradient(-90deg,rgb(107, 0, 107),#e84545bd);
     padding: 100px 0;
 }
 
@@ -428,7 +428,7 @@ body {
 /* Posts  */
 .posts {
     padding: 100px 0;
-    background: linear-gradient(90deg,rgb(71, 0, 71),#dc5ee6);
+    background: linear-gradient(90deg,rgb(107, 0, 107),#e84545bd);
 }
 .header {
     text-align: right;
