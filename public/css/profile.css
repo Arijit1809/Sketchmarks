@@ -704,6 +704,7 @@ footer {
 }
 
 .icons {
+    font-family: 'Ubuntu';
     text-align: center;
     color: white;
 }
@@ -886,7 +887,7 @@ footer {
 
 @media (max-width: 768px) {
     .pfp-container{
-        margin-top:80px;
+        margin-top:120px;
     }
     
     .click-div {
@@ -943,11 +944,11 @@ footer {
         transform: scale(1);
     }
     .profile{
-        height: auto;
+        height: 100vh;
         
         padding: 20px;
         color: white;
-        background-image: radial-gradient(rgba(26, 37, 193, 0.481), rgba(13, 69, 152, 0.536));
+        /* background-image: radial-gradient(rgba(26, 37, 193, 0.481), rgba(13, 69, 152, 0.536)); */
     }
     .profile-inner{
         position: unset;
@@ -957,16 +958,15 @@ footer {
     }
     .profile h1{
         padding-top: 20px;
-        color: white;
+        /* color: white; */
     }
-    .profile h2{
-        color: white;
-    }
-    .profile h3{
-        color: white;
-    }
+    
     .title{
         padding: 50px 5px 0px;
+    }
+    footer {
+        margin: 0px 0 70px;
+        padding-bottom: 30px;
     }
 }
 
