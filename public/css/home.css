@@ -1057,12 +1057,15 @@ footer {
     .section-head1 {
         font-size: 3.1rem;
         margin-top: 20px;
-        padding: 0 150px 60px;
+        padding: 0 150px 10px;
         /* font-family: 'Pacifico',
         cursive; */
         background-size: 100%;
     }
-
+    .posts-subheading{
+        font-size: 1rem;
+        margin-bottom: 70px;
+    }
     .row{
         padding-bottom: 0px;
     }
@@ -1253,6 +1256,9 @@ footer {
         background-image: unset;
         font-family: "Dancing Script";
         color: rgb(255, 255, 255);
+    }
+    .section-head1{
+        color: rgb(255, 0, 149) !important;
     }
     .artist{
         font-size: 2rem;
