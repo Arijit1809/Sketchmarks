@@ -5,10 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Alata&family=Alice&family=Eczar:wght@600&display=swap&family=Pacifico&display=swap&family=Dancing+Script:wght@700&display=swap&family=Ubuntu:wght@500&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alata&family=Alice&family=Eczar:wght@600&display=swap&family=Pacifico&display=swap&family=Dancing+Script:wght@700&display=swap&family=Ubuntu:wght@500&display=swap&family=Noto+Sans:wght@700&display=swap&family=Work+Sans&display=swap" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="/css/profile.css">
@@ -18,7 +15,7 @@
 
     <nav class="navbar">
         <div class="inner-width">
-            <a href="/" class="brand">Sketchmarks</a>
+            <a href="/" class="brand">Sketchtiles</a>
             <button class="menu-toggler">
                 <span></span>
                 <span></span>
@@ -36,31 +33,43 @@
             </div>
         </div>
     </nav>
+    <% if(sameUser){ %>
+        <section class="add-post">
+            <div class="new-post-div">
+                <form action="/submit" method="post" enctype=multipart/form-data id="submit-form">
+                    <label for="post-img" id="post-label"><i class="fa fa-cloud-upload"></i> Pick Artwork </label>
+                    <input type='file' id="post-img" name="work" accept="image/*" required>
+                    <img id="preview" src="#" alt="">
+                    <textarea cols="30" rows="2" placeholder="Give a caption to your tile" id="sub-desc" name="desc"
+                        required></textarea>
+                    <button type="submit" class="sub-btn">Create</button>
+                </form>
+                <span class="new-post-close">&#10060;</span>
+            </div>
+        </section>
+        <div class="add-postbtm">
+            <i class="fas fa-plus"></i>
+        </div>
+    <% } %>
     <div class="grid-container">
         <div class="profile">
 
             <div class="profile-inner">
                 <!-- <img src="./images/bg.jpg" class="pfp" alt="Profile Pic"> -->
+                
+                <div class="pfp-container">
+                    <% if(sameUser){ %>
+                        <a href="/profilephoto" class="change-pfp"><i class="fas fa-edit"></i></a>
+                    <% } %>
+                    <% if(pfp.contentType=="None"){ %>
+                        <img src="/img/pfp.jpg">
+                    <% }else{ %>
+                        <img src="data:image/<%=pfp.contentType%>;base64,<%=pfp.data.toString('base64')%>" class="pfp" alt="">
+                    <% } %>
+                </div>
                 <h1><%= username %></h1>
-                <h2><%= about %> </h2>
-                <h2><%= contact %> </h2>
-                <% if(sameUser){ %>
-                    <div class="submit-main">
-                        <form action="/submit" method="post" enctype=multipart/form-data id="submit-form">
-                            
-                            <label for="post-img" id="post-label">Add to your art gallery</label>
-                            <input type='file' id="post-img" name="work" accept="image/*" required>
-
-                            
-
-                            <img id="preview" src="">
-                            <textarea rows="3" type="text" placeholder="Give a caption to your art" id="sub-desc" name="desc"
-
-                                required></textarea>
-                            <button type="submit" class="sub-btn">Submit</button>
-                        </form>
-                    </div>
-                <% } %>
+                <h2 class="about"><%= about %> </h2>
+                <h2 class="insta"><i class="fab fa-instagram"></i> : <%= contact %> </h2>
             </div>
 
         </div>
@@ -98,7 +107,7 @@
                 </div>
                 <span id="click-div-close">&#10060;</span>
             </div>
-            <div class="title"><%= username %>'s art gallery</div>
+            <div class="title"><%= username %>'s Art Gallery</div>
             <% if(works.length>0){ %>
                 <div class="row">               
                     <div class="column">
@@ -118,21 +127,23 @@
                     </div>
                 </div>
                 <% }else{ %>
-                    <div class="empty"><h2>Your gallery is empty :(</h2>
-                        <h3>Share your artistic ideas with the world now!</h3>
-                    </div>
+                    <% if(sameUser){ %>
+                        <div class="empty"><h2>Your gallery is empty.</h2>
+                            <h3>Make your first post by pressing the + button.</h3>
+                        </div>
+                    <% }else{ %>
+                        <div class="empty"><h2>User gallery is empty.</h2></div>
+                    <% } %>
                 <% } %>
             
             <footer>
                 <div class="inner">
-                    <hr>
+                    <!-- <hr> -->
                     <div class="foot-text">
-                        &copy;Sketchmarks
+                        &copy;Sketchtiles
                     </div>
                     <div class="icons">
-                        <i class="fab fa-facebook"></i>
-                        <i class="fab fa-facebook"></i>
-                        <i class="fab fa-facebook"></i>
+                        Made with ❤️ by Shrutanten, Arijit and Shubham
                     </div>
                 </div>
 

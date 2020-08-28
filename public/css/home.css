@@ -49,7 +49,7 @@ body {
     top: 0;
     z-index: 2;
     transition: .3s linear;
-    font-family: 'Alata';
+    font-family: 'Ubuntu';
 }
 
 .navbar .inner {
@@ -71,7 +71,7 @@ body {
 .navbar .login:hover {
     background-color: red;
     border-color: red;
-    color: #d3d3d3;
+    color: white;
 }
 
 .navbar .signup {
@@ -105,8 +105,8 @@ body {
 
 .brand {
     color: white;
-    text-transform: uppercase;
-    font-size: 1rem;
+    /* text-transform: uppercase; */
+    font-size: 1.25rem;
     text-decoration: none;
     transition: linear .2s;
 }
@@ -314,7 +314,7 @@ body {
     /* background-image: url(/img/whitebg1.jpg); */
     /* background-position: center; */
     /* background-size: cover; */
-    background: linear-gradient(-90deg,#7a0000,#e84545);
+    background: linear-gradient(-90deg,rgb(107, 0, 107),#e84545bd);
     padding: 100px 0;
 }
 
@@ -332,17 +332,23 @@ body {
 }
 .section-head1 {
     text-align: center;
-    padding: 0 150px 100px;
-    font-size: 5rem;
-    color: white;
+    padding: 0 150px 10px;
+    font-size: 7rem;
+    text-decoration: underline;
+    color: rgb(255, 0, 149);
     margin: 0;
     background-image: url(../img/name_bg2.png);
     background-size: 70%;
+    letter-spacing: 10px;
     background-repeat: no-repeat;
     background-position: center;
     font-family: "Dancing Script", cursive;
 }
-
+.posts-subheading{
+    text-align: center;
+    margin-bottom: 90px;
+    font-family: "Work Sans";
+}
 .top-post-left, .top-post-right{
     margin: 30px 0;
     padding: 10px;
@@ -421,25 +427,9 @@ body {
 
 /* Posts  */
 .posts {
-    /* background-image: url(../img/black.jpg); */
-    /* background-size: auto; */
-    /* position: relative; */
-    /* #6a2c70,#6f4a8e,#d35400 */
     padding: 100px 0;
-    background: linear-gradient(90deg,rgb(71, 0, 71),#dc5ee6);
+    background: linear-gradient(90deg,rgb(107, 0, 107),#e84545bd);
 }
-/* .posts::before {
-    background: linear-gradient(45deg,#680c7a,#9b3e00,#680c7a);
-    content: "";
-    position: absolute;
-    top: 0; 
-    left: 0;
-    width: 100%; 
-    height: 100%;  
-    opacity: 0.9; 
-    z-index: -1;
-} */
-
 .header {
     text-align: right;
     padding: 32px;
@@ -464,25 +454,6 @@ body {
     border-radius: 5px;
   	/* transform: scale(1); */
   	transition: .3s ease-in-out;
-}
-
-.btn {
-    border: none;
-    outline: none;
-    padding: 10px 16px;
-    background-color: grey;
-    cursor: pointer;
-    font-size: 18px;
-    border-radius: 7px;
-}
-
-.btn:hover {
-    background-color: #ddd;
-}
-
-.btn.active {
-    background-color: red;
-    color: white;
 }
 
 .ncolumns {
@@ -539,6 +510,9 @@ body {
     50% { 
         transform: scale(1.0);
     }
+}
+.posts-page{
+    background: linear-gradient(90deg,rgb(71, 0, 71),rgb(189, 72, 30));
 }
 .click-div {
     background-color: rgba(0, 0, 0, 0.842);
@@ -784,7 +758,10 @@ body {
 /* Submit */
 .submit {
     text-align: center;
-    background-image: url(/img/collage.jpg);
+    background: url(/img/collage.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
     padding: 100px 0;
 }
 
@@ -895,6 +872,7 @@ footer {
 
 .icons {
     text-align: center;
+    font-family: "Ubuntu";
 }
 
 .icons i {
@@ -1079,12 +1057,15 @@ footer {
     .section-head1 {
         font-size: 3.1rem;
         margin-top: 20px;
-        padding: 0 150px 60px;
+        padding: 0 150px 10px;
         /* font-family: 'Pacifico',
         cursive; */
         background-size: 100%;
     }
-
+    .posts-subheading{
+        font-size: 1rem;
+        margin-bottom: 70px;
+    }
     .row{
         padding-bottom: 0px;
     }
@@ -1270,11 +1251,13 @@ footer {
         padding-top: 0;
     }
     #post-title{
-        padding: 60px;
-        padding-top: 0;
+        padding: 0 60px 10px;
         background-image: unset;
         font-family: "Dancing Script";
         color: rgb(255, 255, 255);
+    }
+    .section-head1{
+        color: rgb(255, 0, 149) !important;
     }
     .artist{
         font-size: 2rem;
