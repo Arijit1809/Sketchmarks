@@ -189,12 +189,12 @@ body{
   position: relative;
 }
 .text{
-  /* background: linear-gradient(rgba(128, 0, 128, 0.63),rgba(255, 166, 0, 0.63)); */
   background: transparent;
   height: 400px;
   padding: 20px;
   align-content: center;
   position: relative;
+  background-color: rgba(0, 0, 0, 0.233);
 }
 .pic{
   position: relative;
@@ -284,9 +284,6 @@ footer {
   .pic{
     height: unset;
     background: rgba(0, 0, 0, 0.281);
-  }
-  .text {
-    background-color: rgba(0, 0, 0, 0.281);
   }
   .name{
     font-family: 'Niconne', cursive;
