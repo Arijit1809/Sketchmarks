@@ -223,6 +223,7 @@ html{
 }
 .insta i{
     background: linear-gradient(#405de6,red);
+    -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 2rem;
@@ -889,7 +890,6 @@ footer {
     .pfp-container{
         margin-top:120px;
     }
-    
     .click-div {
         flex-direction: column;
         margin: 5px 0px;
