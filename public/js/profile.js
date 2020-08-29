@@ -150,9 +150,16 @@ $(document).ready(function () {
     }).ajaxStop(function(){
         $(".spinner").fadeOut()
     })
-    $(".pfp-container").mouseover(function(){
-        $(".change-pfp").fadeIn(300).css("display","flex")
-    })
+    if(!media.matches){
+        $(".pfp-container").mouseover(function(){
+            $(".change-pfp").fadeIn(300).css("display","flex")
+        })
+    }
+    else{
+        $(".pfp-container").click(function(){
+            $(".change-pfp").fadeIn(300).css("display","flex")
+        })
+    }
     $(".pfp-container").mouseleave(function(){
         $(".change-pfp").fadeOut(300)
     })
