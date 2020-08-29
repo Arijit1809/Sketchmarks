@@ -887,6 +887,9 @@ footer {
 }
 
 @media (max-width: 768px) {
+    body{
+        background-size: auto;
+    }
     .pfp-container{
         margin-top:120px;
     }

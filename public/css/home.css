@@ -22,7 +22,6 @@ body {
     background-size: cover;
     background-attachment: fixed;
 }
-
 .inner {
     max-width: 1200px;
     padding: 0 0;
@@ -231,6 +230,7 @@ body {
     background-size: cover;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
+    background-clip: text;
 }
 
 #land-desc {
