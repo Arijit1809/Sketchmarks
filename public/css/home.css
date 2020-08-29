@@ -334,7 +334,7 @@ body {
     text-align: center;
     padding: 0 150px 10px;
     font-size: 7rem;
-    text-decoration: underline;
+    /* text-decoration: underline; */
     color: rgb(255, 0, 149);
     margin: 0;
     background-image: url(../img/name_bg2.png);
