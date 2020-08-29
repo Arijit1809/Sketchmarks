@@ -183,11 +183,11 @@ body{
     width: 75vw;
 }
 h1{
-    font-family: 'Noto Sans';
+    font-family: 'Alice';
     margin: 50px;
     margin-bottom: 0;
     font-size: 4rem;
-    color: rgb(153, 0, 153);
+    color: rgb(255, 0, 242);
 }
 h4{
     font-family: 'Alata';

@@ -5,8 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
-    <link rel="icon" href="/img/fav.png" type="image/x-icon"/>
-    <link rel="shortcut icon" href="/img/fav.png" type="image/x-icon"/>
     <link href="https://fonts.googleapis.com/css2?family=Alata&family=Alice&family=Eczar:wght@600&display=swap&family=Pacifico&display=swap&family=Dancing+Script:wght@700&display=swap&family=Ubuntu:wght@500&display=swap&family=Noto+Sans:wght@700&display=swap&family=Work+Sans&display=swap" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -31,7 +29,7 @@
                 <a href="/signup" class="signup" style="display: <%=signupDisplay%>;">Sign Up</a>
                 <a href="/profile/<%=username%>" style="display: <%=profileDisplay%>;">Profile</a>
                 <a href="/logout" class="logout" style="display: <%=logoutDisplay%>;">Log Out</a>
-                
+
             </div>
         </div>
     </nav>
@@ -58,7 +56,7 @@
 
             <div class="profile-inner">
                 <!-- <img src="./images/bg.jpg" class="pfp" alt="Profile Pic"> -->
-                
+
                 <div class="pfp-container">
                     <% if(sameUser){ %>
                         <a href="/profilephoto" class="change-pfp"><i class="fas fa-edit"></i></a>
@@ -82,7 +80,7 @@
                     <div class="double-bounce2"></div>
                 </div>
             </div>
-            <div class="click-div">    
+            <div class="click-div">
                 <img src="" alt="" id="click-div-img">
                 <div class="click-div-secondary">
                     <img src="" class="secondary-img">
@@ -137,7 +135,7 @@
                         <div class="empty"><h2>User gallery is empty.</h2></div>
                     <% } %>
                 <% } %>
-            
+
             <footer>
                 <div class="inner">
                     <!-- <hr> -->
@@ -152,12 +150,12 @@
             </footer>
         </div>
     </div>
-     
+
      <div class="nav-btm">
          <div class="home-nav navbtm-icon">
              <a href="/"><i class="fas fa-home"></i></a>
          </div>
-        
+
          <div class="add-nav navbtm-icon">
              <a href="#submit-form"><i class="fas fa-plus-square"></i></a>
          </div>
