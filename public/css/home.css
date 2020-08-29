@@ -18,11 +18,10 @@ html {
 
 body {
     background-color: black;
-    background: url(/img/bg.jpg) no-repeat center center;
+    background: url(/img/bgd.jpg) no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
 }
-
 .inner {
     max-width: 1200px;
     padding: 0 0;
@@ -222,7 +221,7 @@ body {
 }
 
 #land-name {
-    font-size: 9rem;
+    font-size: 11rem;
     font-weight: 900;
     color: #ffa36c;
     letter-spacing: 15px;
@@ -231,6 +230,7 @@ body {
     background-size: cover;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
+    background-clip: text;
 }
 
 #land-desc {
@@ -334,7 +334,7 @@ body {
     text-align: center;
     padding: 0 150px 10px;
     font-size: 7rem;
-    text-decoration: underline;
+    /* text-decoration: underline; */
     color: rgb(255, 0, 149);
     margin: 0;
     background-image: url(../img/name_bg2.png);

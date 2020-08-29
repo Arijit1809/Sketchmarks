@@ -10,6 +10,7 @@ body{
     background: url(/img/bg.jpg) no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
+    background-color: black;
     color: white;
 }
 .inner{
@@ -182,11 +183,11 @@ body{
     width: 75vw;
 }
 h1{
-    font-family: 'Noto Sans';
+    font-family: 'Alice';
     margin: 50px;
     margin-bottom: 0;
     font-size: 4rem;
-    color: rgb(153, 0, 153);
+    color: rgb(255, 0, 242);
 }
 h4{
     font-family: 'Alata';
@@ -246,7 +247,7 @@ h4{
     align-content: center;
     position: fixed;
     bottom: 0px;
-    background-color: #121212;
+    /* background-color: #121212; */
     padding: 20px 10px;
     transition: 0.2s linear;
 }
@@ -268,12 +269,38 @@ h4{
     .nav-btm{
         display: flex;
     }
+    .navbar{
+        padding: 20px 0px;
+    }
+    .inner{
+        padding: 0px;
+        max-width: 90vw;
+    }
+    
+    .flex{
+        margin: 100px auto;
+        /* position: absolute;
+        top: 50%;
+        transform: translateY(-50%); */
+        width: 90vw;
+    }
     h1{
-        font-size: 3rem;
+        font-size: 2rem;
+        margin: 50px 20px 0px;
+        
+    }
+    .update-pfp{
+        margin-top: 0;
     }
     .pfp-label{
         padding: 10px 20px;
         font-size: 1.25rem;
+    }
+    .sub-btn{
+        font-size: 1rem;
+    }
+    #preview{
+        margin: 10px;
     }
     
 }
