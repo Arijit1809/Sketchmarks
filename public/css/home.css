@@ -18,7 +18,7 @@ html {
 
 body {
     background-color: black;
-    background: url(/img/bg.jpg) no-repeat center center;
+    background: url(/img/ogbg.jpg) no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
 }

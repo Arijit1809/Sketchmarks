@@ -32,6 +32,7 @@ body {
   text-align: center;
   text-decoration: none;
   border-radius: 6px;
+  
 
 }
 .home a{
@@ -171,6 +172,7 @@ input {
       padding-bottom: 20px;
     }
     .home{
+    top: 20px;
     margin-left: 0px;
     width: 100%;
     text-align: center;
@@ -183,6 +185,10 @@ input {
     .home i{
       display: block;
       font-size: 2rem;
+      color:black;
+      background-color: white;
+      border-radius: 50%;
+      padding: 10px;
     }
 
 }
