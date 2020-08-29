@@ -9,6 +9,10 @@ $(document).ready(function(){
           $(".nav-btm").css("bottom","-70px")
         }
     })
+    $('.menu-toggler').click(function () {
+        $(this).toggleClass("active");
+        $(".navbar-menu").toggleClass("active");
+    });
     $(".pic").mouseover(function(){
         $(this).children(".iconbar").fadeIn().css("display","flex")
     }).mouseleave(function(){
