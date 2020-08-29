@@ -52,10 +52,10 @@ $(document).ready(() => {
         let commentsString = ""
         result.data.comments.forEach(function (comment) {
           if (comment.name == result.viewer) {
-            commentsString += `<div class="comment-div"><a href="/profile/${comment.name}">${comment.name}</a> says <span>${comment.comment}</span> &nbsp;<i class="fas fa-trash delete-comment" title="Delete this comment"></i></div>\n`
+            commentsString += `<div class="comment-div"><a href="/profile/${comment.name}">${comment.name}</a>: <span>${comment.comment}</span> &nbsp;<i class="fas fa-trash delete-comment" title="Delete this comment"></i></div>\n`
           }
           else {
-            commentsString += `<div class="comment-div"><a href="/profile/${comment.name}">${comment.name}</a> says ${comment.comment}</div>\n`
+            commentsString += `<div class="comment-div"><a href="/profile/${comment.name}">${comment.name}</a>: ${comment.comment}</div>\n`
           }
         })
         $(".click-div-comments").html(commentsString)
@@ -114,10 +114,10 @@ $(document).ready(() => {
           let commentsString = ""
           result.comments.forEach(function (comment) {
             if (comment.name == result.viewer) {
-              commentsString += `<div class="comment-div"><a href="/profile/${comment.name}">${comment.name}</a> says <span>${comment.comment}</span> &nbsp;<i class="fas fa-trash delete-comment" title="Delete this comment"></i></div>\n`
+              commentsString += `<div class="comment-div"><a href="/profile/${comment.name}">${comment.name}</a>: <span>${comment.comment}</span> &nbsp;<i class="fas fa-trash delete-comment" title="Delete this comment"></i></div>\n`
             }
             else {
-              commentsString += `<div class="comment-div"><a href="/profile/${comment.name}">${comment.name}</a> says ${comment.comment}</div>\n`
+              commentsString += `<div class="comment-div"><a href="/profile/${comment.name}">${comment.name}</a>: ${comment.comment}</div>\n`
             }
           })
           $(".click-div-comments").html(commentsString)
@@ -135,10 +135,10 @@ $(document).ready(() => {
         let commentsString = ""
         result.comments.forEach(function (comment) {
           if (comment.name == result.viewer) {
-            commentsString += `<div class="comment-div"><a href="/profile/${comment.name}">${comment.name}</a> says <span>${comment.comment}</span> &nbsp;<i class="fas fa-trash delete-comment" title="Delete this comment"></i></div>\n`
+            commentsString += `<div class="comment-div"><a href="/profile/${comment.name}">${comment.name}</a>: <span>${comment.comment}</span> &nbsp;<i class="fas fa-trash delete-comment" title="Delete this comment"></i></div>\n`
           }
           else {
-            commentsString += `<div class="comment-div"><a href="/profile/${comment.name}">${comment.name}</a> says ${comment.comment}</div>\n`
+            commentsString += `<div class="comment-div"><a href="/profile/${comment.name}">${comment.name}</a>: ${comment.comment}</div>\n`
           }
         })
         $(".click-div-comments").html(commentsString)
@@ -166,10 +166,10 @@ $(document).ready(() => {
         let commentsString = ""
         result.data.comments.forEach(function (comment) {
           if (comment.name == result.viewer) {
-            commentsString += `<div class="comment-div"><a href="/profile/${comment.name}">${comment.name}</a> says <span>${comment.comment}</span> &nbsp;<i class="fas fa-trash delete-comment" title="Delete this comment"></i></div>\n`
+            commentsString += `<div class="comment-div"><a href="/profile/${comment.name}">${comment.name}</a>: <span>${comment.comment}</span> &nbsp;<i class="fas fa-trash delete-comment" title="Delete this comment"></i></div>\n`
           }
           else {
-            commentsString += `<div class="comment-div"><a href="/profile/${comment.name}">${comment.name}</a> says ${comment.comment}</div>\n`
+            commentsString += `<div class="comment-div"><a href="/profile/${comment.name}">${comment.name}</a>: ${comment.comment}</div>\n`
           }
         })
         $(".click-div-comments").html(commentsString)
