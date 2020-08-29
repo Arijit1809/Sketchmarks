@@ -57,7 +57,6 @@ body{
     align-items: center;
     justify-content: center;
     padding: 50px 80px;
-    margin-top: 80px;
     border-radius: 10px;
     background-color: rgba(128, 128, 128, 0.438);
     box-shadow: 0 0 50px black;
@@ -163,9 +162,6 @@ input{
     .flex{
       padding-top: 20px;
       padding-bottom: 20px;
-    }
-    .home .sketch{
-      display: none;
     }
     .home i{
       display: block;

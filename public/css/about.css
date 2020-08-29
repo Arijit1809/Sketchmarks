@@ -3,10 +3,15 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+html{
+  scroll-behavior: smooth;
+}
 .inner{
   max-width: 1200px;
   margin: auto;
+}
+body{
+  background: linear-gradient(90deg,#b83b5e,#6a2c70,#125c79,#c26e4a);
 }
 
 /*Navbar*/
@@ -150,17 +155,15 @@
   color: white;
 }
 /*Navbar End*/
-body{
-  background-color: black;
-  background-image: url(../img/black.jpg);
-  background-size: auto;
-}
 .team{
   margin-top: 90px;
   margin-bottom: 50px;
-  color: red;
-  font-family: "Ubuntu";
-  font-size: 3rem;
+  background: linear-gradient(rgb(255, 3, 255),rgb(1, 110, 199));
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-family: "Pacifico";
+  font-size: 4rem;
   text-align: center;
 }
 
@@ -171,7 +174,6 @@ body{
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  width: 1200px;
   flex: 33%;
 
 }
@@ -187,46 +189,56 @@ body{
   position: relative;
 }
 .text{
-  background-color: white;
+  background: transparent;
   height: 400px;
   padding: 20px;
   align-content: center;
   position: relative;
+  background-color: rgba(0, 0, 0, 0.233);
 }
 .pic{
+  position: relative;
   background-color: white;
   height:400px;
 
 }
 .name{
   font-family: 'Niconne', cursive;
-  font-size: 3rem;
+  color: #e84545;
+  letter-spacing: 5px;
+  text-shadow: 2px 2px 1px #b83838;
+  font-size: 3.5rem;
 }
 .info{
-  margin-left: 50px;
-  margin-right: 50px;
-  font-family: "Ubuntu";
+  font-family: "Work Sans";
+  color: #d3d3d3c7;
 }
 .post{
-  color: red;
+  color: #0000008c;
   margin: 10px auto 0;
   font-family: "Ubuntu";
   margin-bottom: 30px;
 }
 .iconbar{
-  letter-spacing: 15px;
-  text-align: center;
+  display: none;
   align-items: center;
+  justify-content: center;
   position: absolute;
-  bottom: 20px;
-  left: 90px;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.685);
+}
+.iconbar i{
+  margin: 0 20px;
 }
 .fab{
-  color: #858e99;
+  color: white;
   font-size: 2rem;
 }
 .far{
-  color: #858e99;
+  color: white;
   font-size: 2rem;
 }
 
@@ -266,50 +278,28 @@ footer {
   .pfp{
     height: unset;
     max-width: 100vw;
-    padding: 0;
     width: unset;
-    background-color: #403f3e;
     background-size: cover;
   }
   .pic{
     height: unset;
-    background-color: #403f3e;
-  }
-  .text {
-    height: auto;
-    padding: 20px 0px;
-    background-color: #403f3e;
+    background: rgba(0, 0, 0, 0.281);
   }
   .name{
     font-family: 'Niconne', cursive;
-    font-size: 3rem;
-    color: white;
-  }
-  .info{
-    margin-left: 50px;
-    margin-right: 50px;
-    font-family: "Ubuntu";
-    color: white;
+    font-size: 5rem;
   }
   .post{
-    color: red;
-    margin: 10px auto 0;
-    font-family: "Ubuntu";
-    margin-bottom: 30px;
-
+    color: #d3d3d3;
   }
   .iconbar{
-    letter-spacing: 15px;
     text-align: center;
     align-items: center;
-    margin-top: 100px;
   }
   .fab{
-    color: white;
     font-size: 2rem;
   }
   .far{
-    color: white;
     font-size: 2rem;
   }
 }
@@ -397,82 +387,4 @@ footer {
   .nav-btm {
     display: flex;
   }
-}
-
-
-@media (max-width: 600px) {
-  .navbar-menu a {
-    font-size: 20px;
-  }
-
-  .navbar form input {
-    font-size: 20px;
-    width: 200px;
-  }
-
-  .navbar form button {
-    font-size: 20px;
-  }
-
-  #land-name {
-    font-size: 3rem;
-  }
-
-  .column {
-    flex: 50%;
-    padding: 0px 1px;
-  }
-
-  .column img {
-    margin-top: 1px;
-    margin-bottom: 1px;
-    border-radius: 0px;
-  }
-
-  .land-log-btn,
-  .land-sign-btn {
-    font-size: 1rem;
-  }
-
-  .posts {
-    padding: 20px 0px;
-  }
-
-  #post-title {
-    background-image: unset;
-    font-family: 'Alata';
-    color: rgb(255, 255, 255);
-  }
-
-  #sub-desc {
-    max-width: 90vw;
-  }
-
-  #tiles {
-    font-size: 3rem;
-    background-image: unset;
-    font-family: 'Alata';
-    color: black;
-    padding: 60px;
-  }
-
-  #post-title {
-    padding: 60px;
-  }
-
-  .artist {
-    font-size: 2rem;
-  }
-
-  .top-post-desc {
-    font-size: 1rem;
-  }
-
-  .navbar form input {
-    padding: 10px;
-    padding-left: 15px;
-    font-size: 20px;
-    width: 150px;
-  }
-
 }

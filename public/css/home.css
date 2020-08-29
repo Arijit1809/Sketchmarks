@@ -229,7 +229,7 @@ body {
     color: #ffa36c;
     letter-spacing: 15px;
     font-family: 'Great Vibes';
-    background: url(../img/bg9-min.jpg) 50% 50%;
+    background: url(/img/bg9-min.jpg) 50% 50%;
     background-size: cover;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
@@ -1055,7 +1055,11 @@ footer {
         padding: 30px 150px;
         /* font-family: 'Pacifico',
         cursive; */
-        background-size: 100%;
+        /* background-size: 100%; */
+        background-image: url(../img/name_bg2.png);
+        background-size: 70%;
+        background-repeat: no-repeat;
+        background-position: center;
     }
     .section-head1 {
         font-size: 3.1rem;
@@ -1081,9 +1085,8 @@ footer {
     #posting {
         background-image: unset;
         font-size: 4rem;
-        background-size: 100%;
-        padding: 0 10px 60px;
-    }
+        padding: 0 60px 10px;
+}
 
     .sub-btn {
         background-color: black;
@@ -1250,14 +1253,21 @@ footer {
         font-family: "Dancing Script";
         background-image: unset;
         color: white;
-        padding: 60px;
-        padding-top: 0;
+        padding: 0 60px 10px;
+        background-image: url(../img/name_bg2.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
     }
     #post-title{
         padding: 0 60px 10px;
         background-image: unset;
         font-family: "Dancing Script";
         color: rgb(255, 255, 255);
+        background-image: url(../img/name_bg2.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
     }
     .section-head1{
         color: rgb(255, 0, 149) !important;
