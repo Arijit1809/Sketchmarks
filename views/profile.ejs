@@ -111,19 +111,21 @@
             </div>
             <div class="title"><%= username %>'s Art Gallery</div>
             <% if(works.length>0){ %>
-                <div class="row">               
+                <div class="row">
                     <div class="column">
-                        <% for(let i=0; i<Math.floor(works.length/3); i++){ %>
-                            <img src="data:image/<%=works[i].img.contentType%>;base64,<%=works[i].img.data.toString('base64')%>" style="width: 100%;" class="click-img" id="<%=works[i]._id%>" alt="">
+                        <% for(let i=Math.floor(works.length/3*2); i<works.length; i++){ %>
+                        <img src="data:image/<%=works[i].img.contentType%>;base64,<%=works[i].img.data.toString('base64')%>"
+                            style="width: 100%;" class="click-img" id="<%=works[i]._id%>" alt="">
                         <% } %>
                     </div>
                     <div class="column">
                         <% for(let i=Math.floor(works.length/3); i<Math.floor(works.length/3*2); i++){ %>
-                            <img src="data:image/<%=works[i].img.contentType%>;base64,<%=works[i].img.data.toString('base64')%>" style="width: 100%;" class="click-img" id="<%=works[i]._id%>" alt="">
-                            <% } %>
-                        </div>
-                        <div class="column">
-                        <% for(let i=Math.floor(works.length/3*2); i<works.length; i++){ %>
+                        <img src="data:image/<%=works[i].img.contentType%>;base64,<%=works[i].img.data.toString('base64')%>"
+                            style="width: 100%;" class="click-img" id="<%=works[i]._id%>" alt="">
+                        <% } %>
+                    </div>
+                    <div class="column">
+                        <% for(let i=0; i<Math.floor(works.length/3); i++){ %>
                             <img src="data:image/<%=works[i].img.contentType%>;base64,<%=works[i].img.data.toString('base64')%>" style="width: 100%;" class="click-img" id="<%=works[i]._id%>" alt="">
                         <% } %>
                     </div>
