@@ -3,10 +3,15 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+html{
+  scroll-behavior: smooth;
+}
 .inner{
   max-width: 1200px;
   margin: auto;
+}
+body{
+  background: linear-gradient(90deg,#b83b5e,#6a2c70,#125c79,#c26e4a);
 }
 
 /*Navbar*/
@@ -150,17 +155,15 @@
   color: white;
 }
 /*Navbar End*/
-body{
-  background-color: black;
-  background-image: url(../img/black.jpg);
-  background-size: auto;
-}
 .team{
   margin-top: 90px;
   margin-bottom: 50px;
-  color: red;
-  font-family: "Ubuntu";
-  font-size: 3rem;
+  background: linear-gradient(rgb(255, 3, 255),rgb(1, 110, 199));
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-family: "Pacifico";
+  font-size: 4rem;
   text-align: center;
 }
 
@@ -171,7 +174,6 @@ body{
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  width: 1200px;
   flex: 33%;
 
 }
@@ -187,46 +189,60 @@ body{
   position: relative;
 }
 .text{
-  background-color: white;
+  /* background: linear-gradient(rgba(128, 0, 128, 0.63),rgba(255, 166, 0, 0.63)); */
+  background: transparent;
   height: 400px;
   padding: 20px;
   align-content: center;
   position: relative;
 }
+.arijit .text{
+  background: transparent;
+  /* background: linear-gradient(rgba(255, 166, 0, 0.63),rgba(128, 0, 128, 0.63)); */
+}
 .pic{
+  position: relative;
   background-color: white;
   height:400px;
 
 }
 .name{
   font-family: 'Niconne', cursive;
-  font-size: 3rem;
+  color: #e84545;
+  letter-spacing: 5px;
+  text-shadow: 2px 2px 1px #b83838;
+  font-size: 3.5rem;
 }
 .info{
-  margin-left: 50px;
-  margin-right: 50px;
-  font-family: "Ubuntu";
+  font-family: "Work Sans";
+  color: #d3d3d3c7;
 }
 .post{
-  color: red;
+  color: #0000008c;
   margin: 10px auto 0;
   font-family: "Ubuntu";
   margin-bottom: 30px;
 }
 .iconbar{
-  letter-spacing: 15px;
-  text-align: center;
+  display: none;
   align-items: center;
+  justify-content: center;
   position: absolute;
-  bottom: 20px;
-  left: 90px;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.685);
+}
+.iconbar i{
+  margin: 0 20px;
 }
 .fab{
-  color: #858e99;
+  color: white;
   font-size: 2rem;
 }
 .far{
-  color: #858e99;
+  color: white;
   font-size: 2rem;
 }
 

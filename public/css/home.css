@@ -229,7 +229,7 @@ body {
     color: #ffa36c;
     letter-spacing: 15px;
     font-family: 'Great Vibes';
-    background: url(../img/bg9-min.jpg) 50% 50%;
+    background: url(/img/bg9-min.jpg) 50% 50%;
     background-size: cover;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;

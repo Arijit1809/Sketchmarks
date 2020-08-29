@@ -305,13 +305,18 @@ app.get("/thread/:postId",(req,res)=>{
 })
 
 app.get("/deletepost/:postId",(req,res)=>{
-    if(req.isAuthenticated()){
-        Post.deleteOne({_id: req.params.postId},(err,result)=>{
-            if(err) console.log(err)
-            else res.send(req.user.username)
-        })
-    }
-    else res.send("You are not authorised to perform this action.")
+    Post.findById(req.params.postId,(err,result)=>{
+        if(err) console.log(err)
+        else{
+            if(req.isAuthenticated() && req.user.username==result.name){
+                Post.deleteOne({_id: req.params.postId},(err,placeholder)=>{
+                    if(err) console.log(err)
+                    else res.send(req.user.username)
+                })
+            }
+            else res.send("You are not authorised to perform this action.")
+        }
+    })
 })
 
 app.get("/tile/:postId",(req,res)=>{
