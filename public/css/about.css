@@ -214,7 +214,7 @@ body{
   color: #d3d3d3c7;
 }
 .post{
-  color: #0000008c;
+  color: #d3d3d3e3;
   margin: 10px auto 0;
   font-family: "Ubuntu";
   margin-bottom: 30px;
@@ -290,7 +290,8 @@ footer {
     font-size: 5rem;
   }
   .post{
-    color: #d3d3d3;
+    color: #d3d3d3e3;
+    letter-spacing: 2px;
   }
   .iconbar{
     text-align: center;
