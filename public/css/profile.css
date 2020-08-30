@@ -222,7 +222,7 @@ html{
     font-weight: 700;
 }
 .insta i{
-    background: linear-gradient(#405de6,brown);
+    background-color: #F58529;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -231,17 +231,20 @@ html{
 }
 .insta {
     font-family: 'Work sans', cursive;
-    color: rgb(0, 0, 0);
-    /* color: white; */
+    color: rgba(255, 255, 255, 0.788);
+    background-color: rgba(0, 0, 0, 0.171);
     text-align: center;
     margin: 60px 0 10px;
     font-size: 1.3rem;
+    border-radius: 10px;
+    padding: 10px;
+    /* border: 2px solid rgba(0, 0, 0, 0.418); */
 }
 .about{
     font-size: 1rem;
     font-family: 'Work sans', cursive;
     text-align: center;
-    color: black;
+    color: #fffbfbe3;
 }
 .content {
     height: 100%;
