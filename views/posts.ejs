@@ -38,7 +38,6 @@
         <div class="inner">
             <h1 class="section-head1" id="post-title">All tiles</h1>
             <h2 class="posts-subheading">This page contains all the tiles posted, sorted by most recent first.</h2>
-            <!-- <img src="../img/unnamed.png" alt=""  width="100%" class="br"> -->
             <div class="click-div">
                 <img src="" alt="" id="click-div-img">
                 <div class="likecomm">
@@ -58,14 +57,6 @@
 
                 <span id="click-div-close">&#10060;</span>
             </div>
-            <!-- Header -->
-            <!-- <div class="header" id="myHeader">
-                <h3 class="ncolumns">Columns :</h3>
-                <button class="btn" onclick="two()">2</button>
-                <button class="btn active" onclick="four()">4</button>
-            </div> -->
-
-            <!-- Photo Grid -->
             <div class="row">
                 <% if(recentPosts.length>11){ %>
                     <div class="column">
@@ -116,19 +107,17 @@
 
     </footer>
     <div class="nav-btm">
-        <div class="home-nav navbtm-icon">
-            <a href="/"><i class="fas fa-home"></i></a>
-        </div>
-
-        <div class="add-nav navbtm-icon">
-            <a href="/#posting"><i class="fas fa-plus-square"></i></a>
+        <div class="profile-nav navbtm-icon">
+            <a <% if(username!="NA"){ %> href="/profile/<%=username%>" <% }else{ %> href="/login" <% } %>><i class="fas fa-user-circle"></i></a>
         </div>
         <div class="posts-nav navbtm-icon">
             <a href="/posts"><i class="fas fa-images"></i></a>
         </div>
-        <div class="profile-nav navbtm-icon">
-            <a <% if(username!="NA"){ %> href="/profile/<%=username%>" <% }else{ %> href="/login" <% } %>><i
-                    class="fas fa-user-circle"></i></a>
+        <div class="add-nav navbtm-icon">
+            <a href="/#posting"><i class="fas fa-plus-square"></i></a>
+        </div>
+        <div class="home-nav navbtm-icon">
+            <a href="/"><i class="fas fa-home"></i></a>
         </div>
     </div>
 
