@@ -102,7 +102,7 @@ a{
     cursor: pointer;
     position: relative;
     outline: none;
-    z-index: 999;
+    z-index: 3;
     display: none;
 }
 
