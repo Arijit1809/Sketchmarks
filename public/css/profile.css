@@ -217,12 +217,12 @@ html{
     font-size: 3rem;
     margin-bottom: 10px;
     color: #512155;
-    /* text-shadow: 2px 2px 5px blueviolet; */
+    text-shadow: 3px 3px 1px #6f4a8e;
     text-align: center;
     font-weight: 700;
 }
 .insta i{
-    background: linear-gradient(#405de6,red);
+    background: linear-gradient(#405de6,brown);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -235,10 +235,10 @@ html{
     /* color: white; */
     text-align: center;
     margin: 60px 0 10px;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 .about{
-    /* font-size: rem; */
+    font-size: 1rem;
     font-family: 'Work sans', cursive;
     text-align: center;
     color: black;
@@ -868,9 +868,21 @@ footer {
         width: 100vw;
         position: relative;
     }
+    .profile h1{
+        font-size: 5rem;
+    }
+    .about{
+        font-size: 1.5rem;
+    }
+    .insta{
+        font-size: 2rem;
+    }
+    .insta i{
+        font-size: 3rem;
+        vertical-align: -7px;
+    }
     .gallery {
         display: grid;
-        /* grid-column-gap: 10px; */
         grid-row-gap: 20px;
         grid-template-columns: auto;
         margin: auto;

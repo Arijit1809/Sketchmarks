@@ -40,16 +40,19 @@
         <div class="tansen">
             <div class="text">
                 <h1 class="name">Shrutanten</h1>
-                <h3 class="post">Full Stack Developer</h3>
-                <p class="info">Web designer and developer, and main contributor to the backend of this website. Pizza lover, cats are okay-er, jobless but definitely by choice, and a guy trying hard to make this not look like a tinder bio.</p>
+                <h3 class="post">Web Developer</h3>
+                <p class="info">Also a web designer, and main contributor to the backend of this website.<br>
+                This site was our first project, and it surprisingly turned out much better than expected. We are sure you will love it as well.
+                After all, I specifically requested it. 
+                </p>
             </div>
             <div class="pic">
                 <img src="/img/tansen.jpeg" class="pfp">
                 <div class="iconbar">
-                    <a href=""><i class="fab fa-facebook-square"></i></a>
-                    <a href=""><i class="fab fa-instagram"></i></a>
-                    <a href=""><i class="far fa-envelope"></i></a>
-                    <a href=""><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://upload.wikimedia.org/wikipedia/en/9/9a/Trollface_non-free.png" target="_blank"><i class="fab fa-facebook-square"></i></a>
+                    <a href="https://youtu.be/6n3pFFPSlW4" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="mailto:vjyji3@gmail.com" target="_blank"><i class="far fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/in/shrutanten/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
         </div>
@@ -57,8 +60,7 @@
             <div class="pic">
                 <img src="/img/arijit2.jpeg" class="pfp">
                 <div class="iconbar">
-                    <a href="https://www.facebook.com/profile.php?id=100008012558204" target="blank"><i
-                            class="fab fa-facebook-square"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=100008012558204" target="blank"><i class="fab fa-facebook-square"></i></a>
                     <a href="https://www.instagram.com/ari.jit.das/" target="blank"><i class="fab fa-instagram"></i></a>
                     <a href="mailto: adas7626@gmail.com" target="blank"><i class="far fa-envelope"></i></a>
                     <a href="https://www.linkedin.com/in/arijit-das-61055a123/" target="blank"><i class="fab fa-linkedin-in"></i></a>
@@ -66,11 +68,11 @@
             </div>
             <div class="text">
                 <h1 class="name">Arijit Das</h1>
-                <h3 class="post">Thoda bahut developer</h3>
-                <p class="info">Anyone seeing this section, please know that i am really dying to see lucifer s5
-                    and i am not able to watch it because i am poor af. So help please ;~;.
-                    Netflix dedo :)
-                    <p class="info">And yes i did stuff here B)</p>
+                <h3 class="post">Web developer</h3>
+                <p class="info">
+                    It was a fun ride to make this site with both of my friends and helped me learn a lot about web dev.
+                    Got some experience designing web pages so guess now i can call myself a designer B).
+                    To give life to this idea was really fun and hope everyone seeing it enjoys as much as we did while making it.❤️ 
                 </p>
             </div>
         </div>
@@ -78,16 +80,15 @@
             <div class="text">
                 <h1 class="name">Shubham</h1>
                 <h3 class="post">Frontend Developer</h3>
-                <p class="info">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                    labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+                <p class="info">I am an amateur web developer and was learning web development throughout developing this site. So my main work was to handle frontend and give designing ideas. Hope you like it :) </p>
             </div>
             <div class="pic">
                 <img src="/img/shubham2.jpeg" class="pfp">
                 <div class="iconbar">
-                    <a href="https://www.facebook.com/profile.php?id=100040831035967"><i class="fab fa-facebook-square"></i></a>
-                    <a href="https://www.instagram.com/shubham.goyal.242/"><i class="fab fa-instagram"></i></a>
-                    <a href="vivekgoyal164@gmail.com"><i class="far fa-envelope"></i></a>
-                    <a href="https://www.linkedin.com/in/shubham-goyal-b392901b3/"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=100040831035967" target="_blank"><i class="fab fa-facebook-square"></i></a>
+                    <a href="https://www.instagram.com/shubham.goyal.242/"><i class="fab fa-instagram" target="_blank"></i></a>
+                    <a href="mailto:vivekgoyal164@gmail.com" target="_blank"><i class="far fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/in/shubham-goyal-b392901b3/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
         </div>
@@ -106,19 +107,17 @@
     </footer>
 
     <div class="nav-btm">
-        <div class="home-nav navbtm-icon">
-            <a href="/"><i class="fas fa-home"></i></a>
-        </div>
-
-        <div class="add-nav navbtm-icon">
-            <a href="/#posting"><i class="fas fa-plus-square"></i></a>
+        <div class="profile-nav navbtm-icon">
+            <a <% if(username!="NA"){ %> href="/profile/<%=username%>" <% }else{ %> href="/login" <% } %>><i class="fas fa-user-circle"></i></a>
         </div>
         <div class="posts-nav navbtm-icon">
             <a href="/posts"><i class="fas fa-images"></i></a>
         </div>
-        <div class="profile-nav navbtm-icon">
-            <a <% if(username!="NA"){ %> href="/profile/<%=username%>" <% }else{ %> href="/login" <% } %>><i
-                    class="fas fa-user-circle"></i></a>
+        <div class="add-nav navbtm-icon">
+            <a href="/#posting"><i class="fas fa-plus-square"></i></a>
+        </div>
+        <div class="home-nav navbtm-icon">
+            <a href="/"><i class="fas fa-home"></i></a>
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
