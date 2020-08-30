@@ -217,7 +217,7 @@ html{
     font-size: 3rem;
     margin-bottom: 10px;
     color: #512155;
-    /* text-shadow: 2px 2px 5px blueviolet; */
+    text-shadow: 3px 3px 1px #6f4a8e;
     text-align: center;
     font-weight: 700;
 }
@@ -235,10 +235,10 @@ html{
     /* color: white; */
     text-align: center;
     margin: 60px 0 10px;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 .about{
-    /* font-size: rem; */
+    font-size: 1rem;
     font-family: 'Work sans', cursive;
     text-align: center;
     color: black;
@@ -867,6 +867,15 @@ footer {
     .profile {
         width: 100vw;
         position: relative;
+    }
+    .profile h1{
+        font-size: 5rem;
+    }
+    .about{
+        font-size: 1.5rem;
+    }
+    .insta{
+        font-size: 2rem;
     }
     .gallery {
         display: grid;
