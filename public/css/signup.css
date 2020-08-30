@@ -32,7 +32,7 @@ body {
   text-align: center;
   text-decoration: none;
   border-radius: 6px;
-  
+
 
 }
 .home a{
@@ -68,7 +68,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 30px 50px;
+    padding: 15px 50px;
     border-radius: 10px;
     background-color: rgba(128, 128, 128, 0.438);
     box-shadow: 0 0 50px black;
@@ -83,9 +83,8 @@ input {
 
 .user-error{
     visibility: hidden;
-    font-size: 0.9rem;
-    margin-top: 40px;
-    font-weight: 500;
+    font-size: 1rem;
+    margin-top: 20px;
 }
 
 #username{
@@ -98,7 +97,12 @@ input {
     padding: 20px 50px 20px 10px;
 
 }
-
+.insta-tip{
+    color: #d3d3d3;
+    font-size: 0.8rem;
+    margin-top: 10px;
+    font-family: "Work Sans";
+}
 #sub-btn {
     background-color: black;
     padding: 13px 30px;
@@ -163,14 +167,6 @@ input {
 }
 @media screen and (max-width: 768px) {
 
-    .outer{
-      margin-top: 50px;
-      margin-bottom: 3px;
-    }
-    .flex{
-      padding-top: 20px;
-      padding-bottom: 20px;
-    }
     .home{
     top: 20px;
     margin-left: 0px;
