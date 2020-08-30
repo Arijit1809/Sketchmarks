@@ -89,6 +89,7 @@ input{
 #sub-btn{
     background-color: black;
     padding: 13px 30px;
+    margin-bottom: 15px;
     border-radius: 10px;
     border: none;
     cursor: pointer;
@@ -110,7 +111,7 @@ input{
     }
     .outer{
         margin-top: 50px;
-        max-height: 85vh;
+        max-height: 70vh;
     }
     .flex {
         padding: 60px 50px;
