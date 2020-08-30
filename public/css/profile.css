@@ -222,7 +222,7 @@ html{
     font-weight: 700;
 }
 .insta i{
-    background: linear-gradient(#405de6,red);
+    background: linear-gradient(#405de6,brown);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -877,9 +877,12 @@ footer {
     .insta{
         font-size: 2rem;
     }
+    .insta i{
+        font-size: 3rem;
+        vertical-align: -7px;
+    }
     .gallery {
         display: grid;
-        /* grid-column-gap: 10px; */
         grid-row-gap: 20px;
         grid-template-columns: auto;
         margin: auto;
