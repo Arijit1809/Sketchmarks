@@ -1020,7 +1020,7 @@ footer {
     transition: 0.2s linear;
 }
 
-.navbtm-icon {
+.navbtm-icon a .fas{
     font-size: 1.5rem;
     color: white;
 }
