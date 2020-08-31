@@ -967,7 +967,7 @@ footer {
     }
     .profile{
         height: auto;
-
+        min-height: 100vh;
         padding: 20px;
         color: white;
         /* background-image: radial-gradient(rgba(26, 37, 193, 0.481), rgba(13, 69, 152, 0.536)); */
