@@ -154,7 +154,7 @@ a{
     justify-content: space-around;
     align-content: center;
     position: fixed;
-    bottom: -70px;
+    bottom: 0;
     background-color: #121212;
     padding: 20px 10px;
     transition: 0.2s linear;
