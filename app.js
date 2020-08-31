@@ -417,7 +417,7 @@ app.post("/submit",upload.single("work"),(req,res)=>{
     if(req.isAuthenticated()){
         sharp("uploads/"+req.file.filename)
             .resize(1000)
-            .jpeg({quality: 100})
+            .jpeg({quality: 30})
             .toBuffer((err, sharpData, info)=>{
                 let imgObj={
                     name: req.user.username,
@@ -487,7 +487,7 @@ app.post("/profilephoto",upload.single("pfp"),(req,res)=>{
         else{
             sharp("profilepics/"+req.file.filename)
                 .resize(1000)
-                .jpeg({quality: 100})
+                .jpeg({quality: 30})
                 .toBuffer((err,sharpData,info)=>{
                     result.pfp={
                         data: sharpData,
@@ -502,6 +502,4 @@ app.post("/profilephoto",upload.single("pfp"),(req,res)=>{
 })
 /****************************Post requests end****************************/
 
-app.listen(80,()=>{
-    console.log("Server started on port 3000")
-})
+app.listen(80)
