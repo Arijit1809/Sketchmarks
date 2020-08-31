@@ -6,13 +6,10 @@ $(document).ready(()=>{
     }
     $(window).scroll(() => {
         if (this.scrollY > 2){
-               $(".navbar").addClass("sticky")
-               if(!media.matches) $(".nav-btm").css("bottom", "0")
+            $(".navbar").addClass("sticky")
         }
         else{
-                $(".navbar").removeClass("sticky")
-                if(!media.matches) $(".nav-btm").css("bottom", "-70px")
-
+            $(".navbar").removeClass("sticky")
         }
     })
 
