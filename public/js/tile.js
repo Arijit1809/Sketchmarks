@@ -1,14 +1,15 @@
 $(document).ready(()=>{
+    let media=matchMedia("(max-width: 980px)")
     $(window).scroll(() => {
         if (this.scrollY > 2){
                $(".navbar").addClass("sticky")
                $(".nav-btm").css("bottom", "0")
-               $(".submit").css("bottom","70px")
+               if(media.matches) $(".submit").css("bottom","70px")
         }
         else{
                 $(".navbar").removeClass("sticky")
                 $(".nav-btm").css("bottom", "-70px")
-                $(".submit").css("bottom", "0")
+                if(media.matches) $(".submit").css("bottom", "0")
         }
     })
 
