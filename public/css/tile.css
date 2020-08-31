@@ -145,6 +145,25 @@ a{
 .sticky .menu-toggler span {
     background-color: white;
 }
+
+
+.nav-btm {
+    display: none;
+    height: 70px;
+    width: 100vw;
+    justify-content: space-around;
+    align-content: center;
+    position: fixed;
+    bottom: -70px;
+    background-color: #121212;
+    padding: 20px 10px;
+    transition: 0.2s linear;
+}
+
+.navbtm-icon {
+    font-size: 1.5rem;
+    color: white;
+}
 /* MAIN BODYYYYY****************/
 
 .main{
@@ -509,30 +528,4 @@ a{
     }
 
 
-}
-
-
-.nav-btm {
-    display: none;
-    /* flex-direction: row; */
-    /* flex: 20%; */
-    height: 70px;
-    width: 100vw;
-    justify-content: space-around;
-    align-content: center;
-    position: fixed;
-    bottom: -70px;
-    background-color: #121212;
-    padding: 20px 10px;
-    transition: 0.2s linear;
-}
-
-.navbtm-icon {
-    font-size: 1.5rem;
-    color: white;
-}
-@media (max-width: 980px){
-    .nav-btm{
-        display: flex;
-    }
 }
