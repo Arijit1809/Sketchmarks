@@ -491,6 +491,6 @@ app.post("/profilephoto",upload.single("pfp"),(req,res)=>{
 })
 /****************************Post requests end****************************/
 
-app.listen(process.env.PORT||3000,()=>{
+app.listen(80,()=>{
     console.log("Server started on port 3000")
 })
