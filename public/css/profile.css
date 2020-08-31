@@ -981,7 +981,7 @@ footer {
         transform: scale(1);
     }
     .profile{
-        height: 100vh;
+        height: auto;
 
         padding: 20px;
         color: white;
