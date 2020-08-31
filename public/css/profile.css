@@ -241,6 +241,7 @@ html{
     background: linear-gradient(to right,red,purple);
     color: white;
     opacity: 0.8;
+    vertical-align: -8px;
 }
 .insta {
     font-family: 'Work sans', cursive;
