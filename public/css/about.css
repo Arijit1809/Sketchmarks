@@ -290,7 +290,7 @@ footer {
     transition: .2s linear;
   }
   .sticky .brand {
-    visibility: hidden;
+    transform: translateY(-500%);
     transition: .3s linear;
   }
   .navbar-menu {
