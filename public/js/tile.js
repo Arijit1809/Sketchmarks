@@ -1,15 +1,18 @@
 $(document).ready(()=>{
     let media=matchMedia("(max-width: 980px)")
+    if(media.matches){
+        $(".submit").css("bottom","70px")
+        if(!media.matches) $(".nav-btm").css("bottom", "0")
+    }
     $(window).scroll(() => {
         if (this.scrollY > 2){
                $(".navbar").addClass("sticky")
-               $(".nav-btm").css("bottom", "0")
-               if(media.matches) $(".submit").css("bottom","70px")
+               if(!media.matches) $(".nav-btm").css("bottom", "0")
         }
         else{
                 $(".navbar").removeClass("sticky")
-                $(".nav-btm").css("bottom", "-70px")
-                if(media.matches) $(".submit").css("bottom", "0")
+                if(!media.matches) $(".nav-btm").css("bottom", "-70px")
+
         }
     })
 
