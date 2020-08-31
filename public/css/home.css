@@ -1211,10 +1211,6 @@ footer {
     .navbar-menu a{
         font-size: 20px;
     }
-    .navbar form input{
-        font-size: 20px;
-        width: 200px;
-    }
     .navbar form button{
         font-size: 20px;
     }
@@ -1283,7 +1279,7 @@ footer {
         padding: 10px;
         padding-left: 15px;
         font-size: 20px;
-        width: 150px;
+        width: 240px;
     }
 
 }
