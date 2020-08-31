@@ -224,6 +224,9 @@ a{
     background-color: rgba(0, 0, 0, 0.52);
     border-radius: 10px;
 }
+.comment span{
+    font-size: 1.3rem;
+}
 .commenter{
     color: #E4E6EA;
     font-size: 1.3rem;
