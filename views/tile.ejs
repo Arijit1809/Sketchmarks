@@ -58,7 +58,7 @@
                         ></i></span>
                         <span class="likes-number"><%=tile.likes.likesNum%></span>
                         <span class="share-container">
-                            <span class="click-div-share" data-clipboard-action="copy" data-clipboard-text="/tile/<%=tile._id%>" title="Share this post"><i class="far fa-share-square"></i></span>
+                            <span class="click-div-share" data-clipboard-action="copy" data-clipboard-text="sketchtiles.com/tile/<%=tile._id%>" title="Share this post"><i class="far fa-share-square"></i></span>
                             <span class="tooltip">Link copied to clipboard</span>
                         </span>
                         <% if(sameUser){ %>
@@ -69,8 +69,7 @@
                         <% tile.comments.forEach((comment)=>{ %>
                             <div class="comment">
                                 <a href="/profile/<%=comment.name%>">
-                                    <div class="commenter"><%=comment.name%>:</div></a> 
-                                    <span><%=comment.comment%></span>&nbsp;
+                                    <div class="commenter"><%=comment.name%>:</div></a> <span><%=comment.comment%></span>&nbsp;
                                 <% if(comment.name==viewer){ %>
                                     <i class="fas fa-trash delete-comment" title="Delete this comment"></i>
                                 <% } %>
