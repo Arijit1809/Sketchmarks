@@ -235,14 +235,12 @@ html{
     text-shadow: 3px 3px 1px #6f4a8e;
     text-align: center;
     font-weight: 700;
+    word-wrap: break-word;
 }
-.insta i{
-    background-color: #F58529;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 2rem;
-    vertical-align: -5px;
+.icono-instagram{
+    background: linear-gradient(to right,red,purple);
+    color: white;
+    opacity: 0.8;
 }
 .insta {
     font-family: 'Work sans', cursive;
@@ -253,7 +251,6 @@ html{
     font-size: 1.3rem;
     border-radius: 10px;
     padding: 10px;
-    /* border: 2px solid rgba(0, 0, 0, 0.418); */
 }
 .about{
     font-size: 1rem;
@@ -894,10 +891,6 @@ footer {
     }
     .insta{
         font-size: 2rem;
-    }
-    .insta i{
-        font-size: 3rem;
-        vertical-align: -7px;
     }
     .gallery {
         display: grid;
