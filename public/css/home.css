@@ -453,7 +453,7 @@ body {
     vertical-align: middle;
     border-radius: 5px;
       /* transform: scale(1); */
-  	/* transition: .3s ease-in-out; */
+  	transition: transform .3s ease-in-out;
 }
 
 .ncolumns {
