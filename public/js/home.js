@@ -109,10 +109,10 @@ $(document).ready(() => {
     let newComment = $(".post-comment").val()
     $(".post-comment").val("")
     if (newComment) {
-      $.post("/comment/" + id, { comment: newComment }, function (result, status) {
+      $.post("/comment/"+id, {comment: newComment}, function(result, status) {
         if (result) {
           let commentsString = ""
-          result.comments.forEach(function (comment) {
+          result.comments.forEach(function(comment) {
             if (comment.name == result.viewer) {
               commentsString += `<div class="comment-div"><a href="/profile/${comment.name}">${comment.name}</a>: <span>${comment.comment}</span> &nbsp;<i class="fas fa-trash delete-comment" title="Delete this comment"></i></div>\n`
             }
@@ -122,23 +122,23 @@ $(document).ready(() => {
           })
           $(".click-div-comments").html(commentsString)
         }
-        else location = "/login"
+        else location="/login"
       })
     }
   })
  
   $(".click-div-comments").on("click",".delete-comment",function () {
-    let sure = confirm("Are you sure you want to delete this comment?")
-    if (sure) {
+    let sure=confirm("Are you sure you want to delete this comment?")
+    if (sure){
       let id = $(".like-btn").attr("id")
-      $.post("/deletecomment/" + id, { comment: $(this).parent().children("span").html() }, function (result, status) {
+      $.post("/deletecomment/" + id, { comment: $(this).parent().children("span").html() }, function (result, status){
         let commentsString = ""
         result.comments.forEach(function (comment) {
           if (comment.name == result.viewer) {
             commentsString += `<div class="comment-div"><a href="/profile/${comment.name}">${comment.name}</a>: <span>${comment.comment}</span> &nbsp;<i class="fas fa-trash delete-comment" title="Delete this comment"></i></div>\n`
           }
           else {
-            commentsString += `<div class="comment-div"><a href="/profile/${comment.name}">${comment.name}</a>: ${comment.comment}</div>\n`
+            commentsString+=`<div class="comment-div"><a href="/profile/${comment.name}">${comment.name}</a>: ${comment.comment}</div>\n`
           }
         })
         $(".click-div-comments").html(commentsString)
@@ -152,7 +152,6 @@ $(document).ready(() => {
       location = "/tile/" + id
     }
     else {
-      $(".click-div").css("display", "flex")
       $.get("/thread/" + id, function (result, status) {
         $("#click-div-img").attr("src", src)
         $(".secondary-img").attr("src", src)
@@ -173,6 +172,7 @@ $(document).ready(() => {
           }
         })
         $(".click-div-comments").html(commentsString)
+        $(".click-div").css("display", "flex")
       })
     }
   })
