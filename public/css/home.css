@@ -452,7 +452,6 @@ body {
     margin-top: 8px;
     vertical-align: middle;
     border-radius: 5px;
-      /* transform: scale(1); */
   	transition: transform .3s ease-in-out;
 }
 
@@ -465,6 +464,7 @@ body {
 .column img:hover {
     transform: scale(1.2);
     transition: transform ease-in-out 0.3s;
+    z-index: 2;
     cursor: pointer;
 }
 .spinner{

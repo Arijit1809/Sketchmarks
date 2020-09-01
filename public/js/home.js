@@ -193,13 +193,6 @@ $(document).ready(() => {
   }).ajaxStop(function(){
     $(".spinner").fadeOut()
   })
-  if(!media.matches){
-    $(".column img").mouseover(function(){
-      $(this).css("z-index","2")
-    }).mouseleave(function(){
-      $(this).css("z-index","1")
-    })
-  }
 })
 new ClipboardJS(".click-div-share")
 new ClipboardJS(".top-share")
