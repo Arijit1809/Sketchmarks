@@ -453,7 +453,6 @@ body {
     vertical-align: middle;
     border-radius: 5px;
       /* transform: scale(1); */
-    z-index: 1;
   	transition: .3s ease-in-out;
 }
 
@@ -465,7 +464,6 @@ body {
 
 .column img:hover {
     transform: scale(1.2);
-    z-index: 2;
     transition: ease-in-out 0.3s;
     cursor: pointer;
 }
