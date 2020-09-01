@@ -453,7 +453,7 @@ body {
     vertical-align: middle;
     border-radius: 5px;
       /* transform: scale(1); */
-  	transition: .3s ease-in-out;
+  	/* transition: .3s ease-in-out; */
 }
 
 .ncolumns {
@@ -464,7 +464,7 @@ body {
 
 .column img:hover {
     transform: scale(1.2);
-    transition: ease-in-out 0.3s;
+    transition: transform ease-in-out 0.3s;
     cursor: pointer;
 }
 .spinner{
