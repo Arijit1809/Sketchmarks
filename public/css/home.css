@@ -452,7 +452,8 @@ body {
     margin-top: 8px;
     vertical-align: middle;
     border-radius: 5px;
-  	/* transform: scale(1); */
+      /* transform: scale(1); */
+    z-index: 1;
   	transition: .3s ease-in-out;
 }
 
