@@ -243,6 +243,10 @@ html{
     font-size: 2.5rem;
     vertical-align: -7px;
 }
+.insta a{
+    text-decoration: none;
+    color: inherit;
+}
 .insta {
     font-family: 'Work sans', cursive;
     color: rgba(255, 255, 255, 0.788);
