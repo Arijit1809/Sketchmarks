@@ -1,4 +1,8 @@
 $(document).ready(function () {
+    if (scrollY>20){
+        $(".navbar").addClass("sticky")
+        $(".nav-btm").css("bottom","0")
+    }
     $(window).scroll(function () {
         if (this.scrollY > 10) {
             $(".navbar").addClass("sticky")
@@ -42,7 +46,7 @@ $(document).ready(function () {
                 $(".secondary-img").attr("src",src)
                 $("#click-div-user").html(`By <a href="/profile/${result.data.name}">${result.data.name}</a>`)
                 $(".click-div-desc").html(result.data.desc)
-                $(".click-div-share").attr("data-clipboard-text","/tile/"+id)
+                $(".click-div-share").attr("data-clipboard-text","sketchtiles.com/tile/"+id)
                 $(".like-btn").attr("id",result.data._id)
                 $(".likes-number").html(result.data.likes.likesNum)
                 if (result.colour) $(".heart").css("color","red")
@@ -163,7 +167,7 @@ $(document).ready(function () {
     $(".pfp-container").mouseleave(function(){
         $(".change-pfp").fadeOut(300)
     })
-    $(".fa-plus-square").click(function(){
+    $(".icono-plusCircle").click(function(){
         $(".add-post").fadeIn().css("display","flex")
     })
     $(".add-postbtm").click(function(){

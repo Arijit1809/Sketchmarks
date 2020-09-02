@@ -18,10 +18,7 @@ html {
 
 body {
     background-color: black;
-
-
     background: url(/img/bgd.jpg) no-repeat center center;
-
     background-size: cover;
     background-attachment: fixed;
 }
@@ -171,7 +168,7 @@ body {
 }
 .sticky {
     background-color: black;
-    padding: 18px 0;
+    padding: 10px 0;
 }
 
 .sticky .navbar-menu a {
@@ -221,10 +218,10 @@ body {
 }
 
 #land-name {
-    font-size: 11rem;
+    font-size: 9rem;
     font-weight: 900;
     color: #ffa36c;
-    letter-spacing: 15px;
+    letter-spacing: 20px;
     font-family: 'Great Vibes';
     background: url(/img/bg9-min.jpg) 50% 50%;
     background-size: cover;
@@ -332,8 +329,8 @@ body {
 }
 .section-head1 {
     text-align: center;
-    padding: 0 150px 10px;
-    font-size: 7rem;
+    padding: 10px 150px;
+    font-size: 6rem;
     /* text-decoration: underline; */
     color: rgb(255, 0, 149);
     margin: 0;
@@ -444,7 +441,7 @@ body {
 }
 
 .column {
-    flex: 25%;
+    flex: 50%;
     padding: 0 4px;
 }
 
@@ -452,8 +449,7 @@ body {
     margin-top: 8px;
     vertical-align: middle;
     border-radius: 5px;
-  	/* transform: scale(1); */
-  	transition: .3s ease-in-out;
+  	transition: transform .3s ease-in-out;
 }
 
 .ncolumns {
@@ -464,7 +460,8 @@ body {
 
 .column img:hover {
     transform: scale(1.2);
-    transition: ease-in-out 0.3s;
+    transition: transform ease-in-out 0.3s;
+    z-index: 2;
     cursor: pointer;
 }
 .spinner{
@@ -930,7 +927,7 @@ footer {
     .navbar-menu a {
         display: block;
         font-size: 30px;
-        margin: 20px 0;
+        margin: 30px 0;
         text-decoration: white;
         color: white;
     }
@@ -995,13 +992,6 @@ footer {
 }
 /* Footer-end */
 
-@media screen and (max-width: 1100px) {
-    .column {
-        flex: 50%;
-        padding:0px 5px;
-    }
-}
-
 @media (max-width: 768px) {
 
     #land-name {
@@ -1050,9 +1040,6 @@ footer {
     .section-head {
         font-size: 3.1rem;
         padding: 30px 150px;
-        /* font-family: 'Pacifico',
-        cursive; */
-        /* background-size: 100%; */
         background-image: url(../img/name_bg2.png);
         background-size: 70%;
         background-repeat: no-repeat;
@@ -1062,8 +1049,6 @@ footer {
         font-size: 3.1rem;
         margin-top: 20px;
         padding: 0 150px 10px;
-        /* font-family: 'Pacifico',
-        cursive; */
         background-size: 100%;
     }
     .posts-subheading{
@@ -1211,15 +1196,15 @@ footer {
     .navbar-menu a{
         font-size: 20px;
     }
-    .navbar form input{
-        font-size: 20px;
-        width: 200px;
-    }
     .navbar form button{
         font-size: 20px;
     }
     #land-name{
-        font-size: 4.5rem;
+        font-size: 5.5rem;
+    }
+    #land-desc{
+        font-size: 1.5rem;
+        margin-bottom: 20px;
     }
     .web-desc{
         padding: 100px 0;
@@ -1228,7 +1213,6 @@ footer {
         padding: 100px 0;
     }
     .column{
-        flex:50%;
         padding:0px 1px;
     }
     .column img{
@@ -1237,7 +1221,7 @@ footer {
         border-radius: 0px;
     }
     .land-log-btn,.land-sign-btn{
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
     .posts{
         padding: 100px 0px;
@@ -1250,14 +1234,14 @@ footer {
         font-family: "Dancing Script";
         background-image: unset;
         color: white;
-        padding: 0 60px 10px;
+        padding: 10px 60px;
         background-image: url(../img/name_bg2.png);
         background-size: 100%;
         background-repeat: no-repeat;
         background-position: center;
     }
     #post-title{
-        padding: 0 60px 10px;
+        padding: 10px 60px;
         background-image: unset;
         font-family: "Dancing Script";
         color: rgb(255, 255, 255);
@@ -1279,7 +1263,7 @@ footer {
         padding: 10px;
         padding-left: 15px;
         font-size: 20px;
-        width: 150px;
+        width: 240px;
     }
 
 }

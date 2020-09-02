@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Alata&family=Alice&family=Pacifico&display=swap&display=swap&family=Ubuntu:wght@500&display=swap&display=swap&family=Work+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Niconne&family=Pacifico&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="/css/about.css">
 </head>
 
@@ -25,9 +24,8 @@
             </button>
             <div class="navbar-menu">
                 <a href="/" class="navtop-home">Home</a>
-                <a href="/about">About</a>
-
                 <a href="/posts">Posts</a>
+                <a href="/about">Team</a>
                 <a href="/login" class="login" style="display: <%=loginDisplay%>;">Log In</a>
                 <a href="/signup" class="signup" style="display: <%=signupDisplay%>;">Sign Up</a>
                 <a href="/profile/<%=username%>" style="display: <%=profileDisplay%>;">Profile</a>
@@ -105,24 +103,23 @@
         </div>
 
     </footer>
-
     <div class="nav-btm">
         <div class="profile-nav navbtm-icon">
-            <a <% if(username!="NA"){ %> href="/profile/<%=username%>" <% }else{ %> href="/login" <% } %>><i class="fas fa-user-circle"></i></a>
+            <a <% if(username!="NA"){ %> href="/profile/<%=username%>" <% }else{ %> href="/login" <% } %>><i class="fas fa-user"></i></a>
         </div>
         <div class="posts-nav navbtm-icon">
             <a href="/posts"><i class="fas fa-images"></i></a>
         </div>
         <div class="add-nav navbtm-icon">
-            <a href="/#posting"><i class="fas fa-plus-square"></i></a>
+            <a href="/#posting"><i class="fas fa-plus"></i></a>
         </div>
         <div class="home-nav navbtm-icon">
             <a href="/"><i class="fas fa-home"></i></a>
         </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
-    <script src="https://kit.fontawesome.com/67a49e1ba0.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
     <script src="/js/about.js"></script>
+    <script src="https://kit.fontawesome.com/67a49e1ba0.js" crossorigin="anonymous"></script>
 </body>
 </html>

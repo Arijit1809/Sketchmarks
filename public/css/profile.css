@@ -11,25 +11,22 @@ body {
 html{
     scroll-behavior: smooth;
 }
-
+.inner{
+    max-width: 1200px;
+    margin: auto;
+}
 .navbar {
     position: fixed;
-    background-color: transparent;
     width: 100%;
-    padding: 8px 0;
+    padding: 10px 0;
     top: 0;
     z-index: 2;
     transition: .3s linear;
-    font-family: 'Alata';
+    font-family: 'Ubuntu';
     background-color: black;
 }
 
-.inner-width {
-    max-width: 89vw;
-    margin: auto;
-}
-
-.navbar .inner-width {
+.navbar .inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -42,7 +39,7 @@ html{
     background-color: brown;
     color: #d3d3d3;
     font-family: "Ubuntu";
-    transition: 0.2s ease-in-out;
+    transition: 0.1s linear;
 }
 
 .navbar .login:hover {
@@ -56,18 +53,18 @@ html{
     padding: 5px 20px;
     border-radius: 10px;
     font-family: "Ubuntu";
-    transition: 0.2s ease-in-out;
+    transition: 0.1s linear;
 
 }
 
 .navbar .signup:hover {
     background-color: purple;
-    color: white;
+    color: #d3d3d3;
 }
 
 .navbar .logout {
     border: 2px solid brown;
-    color: #ffffff;
+    color: #d3d3d3;
     padding: 5px 20px;
     border-radius: 10px;
     font-family: "Ubuntu";
@@ -79,12 +76,13 @@ html{
     background-color: brown;
 }
 
+
 .brand {
     color: white;
-    font-size: 1.5rem;
+    /* text-transform: uppercase; */
+    font-size: 1.25rem;
     text-decoration: none;
-    letter-spacing: 2px;
-    font-family: "Ubuntu";
+    transition: linear .2s;
 }
 
 .menu-toggler {
@@ -94,7 +92,7 @@ html{
     cursor: pointer;
     position: relative;
     outline: none;
-    z-index: 4;
+    z-index: 3;
     display: none;
 }
 
@@ -117,12 +115,42 @@ html{
 }
 
 .navbar-menu a:hover {
-    color: #a1a5af;
+    color: #ffffff !important;
 }
-.navtop-home {
-    display: none;
+/* .sticky {
+    background-color: black;
+    padding: 18px 0;
 }
 
+.sticky .navbar-menu a {
+    color: white;
+}
+
+.sticky .menu-toggler span {
+    background-color: white;
+} */
+.navtop-home{
+    display: none;
+}
+.nav-btm{
+    display: none;
+    height: 70px;
+    width: 100vw;
+    justify-content: space-around;
+    align-content: center;
+    position: fixed;
+    bottom: -70px;
+    background-color:#121212;
+    padding: 20px 10px;
+    transition: 0.2s linear;
+}
+.navbtm-icon{
+    font-size: 1.5rem;
+    color: #d3d3d3;
+}
+.navbtm-icon:hover{
+    color: white;
+}
 .add-postbtm{
     background-color: #e84545;
     color: white;
@@ -143,22 +171,6 @@ html{
     background-color: brown;
     cursor: pointer;
 }
-.fas{
-    font-size: 2rem;
-}
-
-/* .sticky {
-    background-color: black;
-    padding: 18px 0;
-}
-
-.sticky .navbar-menu a {
-    color: white;
-}
-
-.sticky .menu-toggler span {
-    background-color: white;
-} */
 
 .grid-container {
     display: grid;
@@ -220,25 +232,30 @@ html{
     text-shadow: 3px 3px 1px #6f4a8e;
     text-align: center;
     font-weight: 700;
+    word-wrap: break-word;
 }
 .insta i{
-    background-color: #F58529;
+    background: linear-gradient(to left,red,rgb(212, 0, 255));
+    color: #d3d3d3;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 2rem;
-    vertical-align: -5px;
+    font-size: 2.5rem;
+    vertical-align: -7px;
+}
+.insta a{
+    text-decoration: none;
+    color: inherit;
 }
 .insta {
     font-family: 'Work sans', cursive;
     color: rgba(255, 255, 255, 0.788);
-    background-color: rgba(0, 0, 0, 0.171);
+    background-color: rgba(0, 0, 0, 0.43);
     text-align: center;
     margin: 60px 0 10px;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     border-radius: 10px;
     padding: 10px;
-    /* border: 2px solid rgba(0, 0, 0, 0.418); */
 }
 .about{
     font-size: 1rem;
@@ -268,6 +285,7 @@ html{
 .column img {
     margin-top: 8px;
     vertical-align: middle;
+    z-index: 1;
     border-radius: 5px;
     transition: .3s ease-in-out;
 }
@@ -881,8 +899,7 @@ footer {
         font-size: 2rem;
     }
     .insta i{
-        font-size: 3rem;
-        vertical-align: -7px;
+        vertical-align: top;
     }
     .gallery {
         display: grid;
@@ -1006,26 +1023,6 @@ footer {
     .column{
         flex:100%;
     }
-}
-
-.nav-btm {
-    display: none;
-    /* flex-direction: row; */
-    /* flex: 20%; */
-    height: 70px;
-    width: 100vw;
-    justify-content: space-around;
-    align-content: center;
-    position: fixed;
-    bottom: -70px;
-    background-color: #121212;
-    padding: 20px 10px;
-    transition: 0.2s linear;
-}
-
-.navbtm-icon a .fas{
-    font-size: 1.5rem;
-    color: white;
 }
 @media (max-width: 980px){
     .nav-btm{

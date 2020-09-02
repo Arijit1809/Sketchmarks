@@ -10,6 +10,7 @@ const passportLocalMongoose = require("passport-local-mongoose")
 const fs=require("fs")
 const cookieParser=require("cookie-parser")
 const MongoStore=require("connect-mongo")(session)
+const sharp=require("sharp")
 /************************* Package End ******************************/ 
 
 const app=express()
@@ -414,27 +415,32 @@ app.post('/login',(req,res)=>{
 
 app.post("/submit",upload.single("work"),(req,res)=>{
     if(req.isAuthenticated()){
-        let imgObj={
-            name: req.user.username,
-            desc: req.body.desc,
-            img:{
-                data: fs.readFileSync(path.join(__dirname+'/uploads/'+req.file.filename)),
-                contentType: 'image/png'
-            },
-            likes:{
-                likesNum: 0,
-                likers: []
-            },
-            comments: []
-        }
-        Post.create(imgObj,(err,result)=>{
-            if(err) console.log(err)
-            else{ 
-                result.save()
-                fs.unlinkSync("uploads/"+req.file.filename)
-                res.redirect(`/profile/${req.user.username}`)
-            }
-        })
+        sharp("uploads/"+req.file.filename)
+            .resize(1000)
+            .jpeg({quality: 30})
+            .toBuffer((err, sharpData, info)=>{
+                let imgObj={
+                    name: req.user.username,
+                    desc: req.body.desc,
+                    img:{
+                        data: sharpData,
+                        contentType: 'image/png'
+                    },
+                    likes:{
+                        likesNum: 0,
+                        likers: []
+                    },
+                    comments: []
+                }
+                Post.create(imgObj,(err,result)=>{
+                    if(err) console.log(err)
+                    else{ 
+                        result.save()
+                        fs.unlinkSync("uploads/"+req.file.filename)
+                        res.redirect(`/profile/${req.user.username}`)
+                    }
+                })
+            })
     }
     else res.redirect("/login") 
 })
@@ -479,18 +485,21 @@ app.post("/profilephoto",upload.single("pfp"),(req,res)=>{
     User.findOne({username: req.user.username},(err,result)=>{
         if(err) console.log(err)
         else{
-            result.pfp={
-                data: fs.readFileSync(path.join(__dirname+"/profilepics/"+req.file.filename)),
-                contentType: 'image/png'
-            }
-            result.save()
-            fs.unlinkSync("profilepics/"+req.file.filename)
-            res.redirect("/profile/"+req.user.username)
+            sharp("profilepics/"+req.file.filename)
+                .resize(1000)
+                .jpeg({quality: 30})
+                .toBuffer((err,sharpData,info)=>{
+                    result.pfp={
+                        data: sharpData,
+                        contentType: 'image/png'
+                    }
+                    result.save()
+                    fs.unlinkSync("profilepics/"+req.file.filename)
+                    res.redirect("/profile/"+req.user.username)
+                })
         }
     })
 })
 /****************************Post requests end****************************/
 
-app.listen(process.env.PORT||3000,()=>{
-    console.log("Server started on port 3000")
-})
+app.listen(80)

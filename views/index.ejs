@@ -6,6 +6,7 @@
     <title>Sketchtiles</title>
     <link href="https://fonts.googleapis.com/css2?family=Alata&family=Alice&family=Eczar:wght@600&display=swap&family=Pacifico&display=swap&family=Dancing+Script:wght@700&display=swap&family=Ubuntu:wght@500&display=swap&family=Great+Vibes&display=swap" rel="stylesheet">
     <link rel="icon" href="/img/fav.png" type="image/x-icon"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
     <link rel="shortcut icon" href="/img/fav.png" type="image/x-icon"/>
     <link rel="stylesheet" href="/css/home.css">
 </head>
@@ -22,7 +23,7 @@
             <div class="navbar-menu">
                 <a href="/" class="navtop-home">Home</a>
                 <a href="/posts">Posts</a>
-                <a href="/about">About</a>
+                <a href="/about">Team</a>
                 <a href="/login" class="login" style="display: <%=loginDisplay%>;">Log In</a>
                 <a href="/signup" class="signup" style="display: <%=signupDisplay%>;">Sign Up</a>
                 <a href="/profile/<%=username%>" style="display: <%=profileDisplay%>;">Profile</a>
@@ -106,25 +107,13 @@
             <div class="row">
                 <% if(recentPosts.length>11){ %>
                     <div class="column">
-                        <% for(let i=0; i<3; i++){ %>
+                        <% for(let i=0; i<Math.ceil(recentPosts.length/2); i++){ %>
                             <img src="data:image/<%=recentPosts[i].img.contentType%>;base64,
                             <%=recentPosts[i].img.data.toString('base64')%>" style="width:100%" id="<%=recentPosts[i]._id%>" class="click-img">
                         <% } %>
                     </div>
                     <div class="column">
-                        <% for(let i=3; i<6; i++){ %>
-                            <img src="data:image/<%=recentPosts[i].img.contentType%>;base64,
-                            <%=recentPosts[i].img.data.toString('base64')%>" style="width:100%" id="<%=recentPosts[i]._id%>" class="click-img">
-                        <% } %>
-                    </div>
-                    <div class="column">
-                        <% for(let i=6; i<9; i++){ %>
-                            <img src="data:image/<%=recentPosts[i].img.contentType%>;base64,
-                            <%=recentPosts[i].img.data.toString('base64')%>" style="width:100%" id="<%=recentPosts[i]._id%>" class="click-img">
-                        <% } %>
-                    </div>
-                    <div class="column">
-                        <% for(let i=9; i<12; i++){ %>
+                        <% for(let i=Math.ceil(recentPosts.length/2); i<recentPosts.length; i++){ %>
                             <img src="data:image/<%=recentPosts[i].img.contentType%>;base64,
                             <%=recentPosts[i].img.data.toString('base64')%>" style="width:100%" id="<%=recentPosts[i]._id%>" class="click-img">
                         <% } %>
@@ -167,7 +156,7 @@
                         ></i></span>
                         <span class="top-post-likes top-likes-number"><%=topPosts[0].likes.likesNum%></span>
                         <span class="share-container">
-                            <span class="top-share" title="Share this post" data-clipboard-action="copy" data-clipboard-text="/tile/<%=topPosts[0]._id%>"><i class="fas fa-share-square"></i></span>
+                            <span class="top-share" title="Share this post" data-clipboard-action="copy" data-clipboard-text="sketchtiles.com/tile/<%=topPosts[0]._id%>"><i class="fas fa-share-square"></i></span>
                             <span class="tooltip-top">Link copied to clipboard</span>
                         </span>
                     </div>
@@ -192,7 +181,7 @@
                         ></i></span>
                         <span class="top-post-likes top-likes-number"><%=topPosts[1].likes.likesNum%></span>
                         <span class="share-container">
-                            <span class="top-share" title="Share this post" data-clipboard-action="copy" data-clipboard-text="/tile/<%=topPosts[1]._id%>"><i class="fas fa-share-square"></i></span>
+                            <span class="top-share" title="Share this post" data-clipboard-action="copy" data-clipboard-text="sketchtiles.com/tile/<%=topPosts[1]._id%>"><i class="fas fa-share-square"></i></span>
                             <span class="tooltip-top">Link copied to clipboard</span>
                         </span>
                     </div>
@@ -219,7 +208,7 @@
                         ></i></span>
                         <span class="top-post-likes top-likes-number"><%=topPosts[2].likes.likesNum%></span>
                         <span class="share-container">
-                            <span class="top-share" title="Share this post" data-clipboard-action="copy" data-clipboard-text="/tile/<%=topPosts[2]._id%>"><i class="fas fa-share-square"></i></span>
+                            <span class="top-share" title="Share this post" data-clipboard-action="copy" data-clipboard-text="sketchtiles.com/tile/<%=topPosts[2]._id%>"><i class="fas fa-share-square"></i></span>
                             <span class="tooltip-top">Link copied to clipboard</span>
                         </span>
                     </div>
@@ -244,7 +233,7 @@
                         ></i></span>
                         <span class="top-post-likes top-likes-number"><%=topPosts[3].likes.likesNum%></span>
                         <span class="share-container">
-                            <span class="top-share" title="Share this post" data-clipboard-action="copy" data-clipboard-text="/tile/<%=topPosts[3]._id%>"><i class="fas fa-share-square"></i></span>
+                            <span class="top-share" title="Share this post" data-clipboard-action="copy" data-clipboard-text="sketchtiles.com/tile/<%=topPosts[3]._id%>"><i class="fas fa-share-square"></i></span>
                             <span class="tooltip-top">Link copied to clipboard</span>
                         </span>
                     </div>
@@ -271,7 +260,7 @@
                         ></i></span>
                         <span class="top-post-likes top-likes-number"><%=topPosts[4].likes.likesNum%></span>
                         <span class="share-container">
-                            <span class="top-share" title="Share this post" data-clipboard-action="copy" data-clipboard-text="/tile/<%=topPosts[4]._id%>"><i class="fas fa-share-square"></i></span>
+                            <span class="top-share" title="Share this post" data-clipboard-action="copy" data-clipboard-text="sketchtiles.com/tile/<%=topPosts[4]._id%>"><i class="fas fa-share-square"></i></span>
                             <span class="tooltip-top">Link copied to clipboard</span>
                         </span>
                     </div>
@@ -310,20 +299,19 @@
     </footer>
     <div class="nav-btm">
         <div class="profile-nav navbtm-icon">
-            <a <% if(username!="NA"){ %> href="/profile/<%=username%>" <% }else{ %> href="/login" <% } %>><i class="fas fa-user-circle"></i></a>
+            <a <% if(username!="NA"){ %> href="/profile/<%=username%>" <% }else{ %> href="/login" <% } %>><i class="fas fa-user"></i></a>
         </div>
         <div class="posts-nav navbtm-icon">
             <a href="/posts"><i class="fas fa-images"></i></a>
         </div>
         <div class="add-nav navbtm-icon">
-            <a href="/#posting"><i class="fas fa-plus-square"></i></a>
+            <a href="/#posting"><i class="fas fa-plus"></i></a>
         </div>
         <div class="home-nav navbtm-icon">
             <a href="/"><i class="fas fa-home"></i></a>
         </div>
     </div>
 
-    <script src="https://kit.fontawesome.com/67a49e1ba0.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>

@@ -1,14 +1,18 @@
 $(document).ready(()=>{
+    if (scrollY>20){
+        $(".navbar").addClass("sticky")
+        $(".nav-btm").css("bottom","0")
+    }
+    let media=matchMedia("(max-width: 980px)")
+    if(media.matches){
+        $(".submit").css("bottom","70px")
+    }
     $(window).scroll(() => {
         if (this.scrollY > 2){
-               $(".navbar").addClass("sticky")
-               $(".nav-btm").css("bottom", "0")
-               $(".submit").css("bottom","70px")
+            $(".navbar").addClass("sticky")
         }
         else{
-                $(".navbar").removeClass("sticky")
-                $(".nav-btm").css("bottom", "-70px")
-                $(".submit").css("bottom", "0")
+            $(".navbar").removeClass("sticky")
         }
     })
 
@@ -26,10 +30,10 @@ $(document).ready(()=>{
                     let commentsString = ""
                     result.comments.forEach(function (comment) {
                         if (comment.name == result.viewer) {
-                            commentsString += `<div class="comment"><a href="/profile/${comment.name}" class="commenter">${comment.name}</a> says <span>${comment.comment}</span> &nbsp;<i class="fas fa-trash delete-comment" title="Delete this comment"></i></div>\n`
+                            commentsString += `<div class="comment"><a href="/profile/${comment.name}" class="commenter">${comment.name}:</a> <span>${comment.comment}</span> &nbsp;<i class="fas fa-trash delete-comment" title="Delete this comment"></i></div>\n`
                         }
                         else {
-                            commentsString += `<div class="comment"><a href="/profile/${comment.name}" class="commenter">${comment.name}</a> says ${comment.comment}</div>\n`
+                            commentsString += `<div class="comment"><a href="/profile/${comment.name}" class="commenter">${comment.name}:</a> <span>${comment.comment}</span></div>\n`
                         }
                     })
                     $(".click-div-comments").html(commentsString)
@@ -67,10 +71,10 @@ $(document).ready(()=>{
                 let commentsString = ""
                 result.comments.forEach(function (comment) {
                     if (comment.name == result.viewer) {
-                        commentsString += `<div class="comment"><a href="/profile/${comment.name}" class="commenter">${comment.name}</a> says <span>${comment.comment}</span> &nbsp;<i class="fas fa-trash delete-comment" title="Delete this comment"></i></div>\n`
+                        commentsString += `<div class="comment"><a href="/profile/${comment.name}" class="commenter">${comment.name}:</a> <span>${comment.comment}</span> &nbsp;<i class="fas fa-trash delete-comment" title="Delete this comment"></i></div>\n`
                     }
                     else {
-                        commentsString += `<div class="comment"><a href="/profile/${comment.name}" class="commenter">${comment.name}</a> says ${comment.comment}</div>\n`
+                        commentsString += `<div class="comment"><a href="/profile/${comment.name}" class="commenter">${comment.name}:</a> <span>${comment.comment}</span></div>\n`
                     }
                 })
                 $(".click-div-comments").html(commentsString)

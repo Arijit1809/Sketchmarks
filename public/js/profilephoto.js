@@ -1,4 +1,8 @@
 $(document).ready(()=>{
+    if (scrollY>20){
+        $(".navbar").addClass("sticky")
+        $(".nav-btm").css("bottom","0")
+    }
     $(window).scroll(()=>{
         if (this.scrollY>10){
             $(".navbar").addClass("sticky")

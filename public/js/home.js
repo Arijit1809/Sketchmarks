@@ -1,4 +1,8 @@
 $(document).ready(() => {
+  if (scrollY>20){
+    $(".navbar").addClass("sticky")
+    $(".nav-btm").css("bottom","0")
+  }
   $(window).scroll(() => {
     if (this.scrollY > 20){
       $(".navbar").addClass("sticky")
@@ -44,7 +48,7 @@ $(document).ready(() => {
         $(".secondary-img").attr("src", src)
         $("#click-div-user").html(`By <a href="/profile/${result.data.name}">${result.data.name}</a>`)
         $(".click-div-desc").html(result.data.desc)
-        $(".click-div-share").attr("data-clipboard-text", "/tile/" + id)
+        $(".click-div-share").attr("data-clipboard-text", "sketchtiles.com/tile/" + id)
         $(".like-btn").attr("id", result.data._id)
         $(".likes-number").html(result.data.likes.likesNum)
         if (result.colour) $(".heart").css("color", "red")
@@ -109,10 +113,10 @@ $(document).ready(() => {
     let newComment = $(".post-comment").val()
     $(".post-comment").val("")
     if (newComment) {
-      $.post("/comment/" + id, { comment: newComment }, function (result, status) {
+      $.post("/comment/"+id, {comment: newComment}, function(result, status) {
         if (result) {
           let commentsString = ""
-          result.comments.forEach(function (comment) {
+          result.comments.forEach(function(comment) {
             if (comment.name == result.viewer) {
               commentsString += `<div class="comment-div"><a href="/profile/${comment.name}">${comment.name}</a>: <span>${comment.comment}</span> &nbsp;<i class="fas fa-trash delete-comment" title="Delete this comment"></i></div>\n`
             }
@@ -122,23 +126,23 @@ $(document).ready(() => {
           })
           $(".click-div-comments").html(commentsString)
         }
-        else location = "/login"
+        else location="/login"
       })
     }
   })
  
   $(".click-div-comments").on("click",".delete-comment",function () {
-    let sure = confirm("Are you sure you want to delete this comment?")
-    if (sure) {
+    let sure=confirm("Are you sure you want to delete this comment?")
+    if (sure){
       let id = $(".like-btn").attr("id")
-      $.post("/deletecomment/" + id, { comment: $(this).parent().children("span").html() }, function (result, status) {
+      $.post("/deletecomment/" + id, { comment: $(this).parent().children("span").html() }, function (result, status){
         let commentsString = ""
         result.comments.forEach(function (comment) {
           if (comment.name == result.viewer) {
             commentsString += `<div class="comment-div"><a href="/profile/${comment.name}">${comment.name}</a>: <span>${comment.comment}</span> &nbsp;<i class="fas fa-trash delete-comment" title="Delete this comment"></i></div>\n`
           }
           else {
-            commentsString += `<div class="comment-div"><a href="/profile/${comment.name}">${comment.name}</a>: ${comment.comment}</div>\n`
+            commentsString+=`<div class="comment-div"><a href="/profile/${comment.name}">${comment.name}</a>: ${comment.comment}</div>\n`
           }
         })
         $(".click-div-comments").html(commentsString)
@@ -152,13 +156,12 @@ $(document).ready(() => {
       location = "/tile/" + id
     }
     else {
-      $(".click-div").css("display", "flex")
       $.get("/thread/" + id, function (result, status) {
         $("#click-div-img").attr("src", src)
         $(".secondary-img").attr("src", src)
         $("#click-div-user").html(`By <a href="/profile/${result.data.name}">${result.data.name}</a>`)
         $(".click-div-desc").html(result.data.desc)
-        $(".click-div-share").attr("data-clipboard-text", "/tile/" + id)
+        $(".click-div-share").attr("data-clipboard-text", "sketchtiles.com/tile/" + id)
         $(".like-btn").attr("id", result.data._id)
         $(".likes-number").html(result.data.likes.likesNum)
         if (result.colour) $(".heart").css("color", "red")
@@ -173,6 +176,7 @@ $(document).ready(() => {
           }
         })
         $(".click-div-comments").html(commentsString)
+        $(".click-div").css("display", "flex")
       })
     }
   })
