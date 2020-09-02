@@ -61,25 +61,13 @@
             <div class="row">
                 <% if(recentPosts.length>11){ %>
                     <div class="column">
-                        <% for(let i=0; i<Math.ceil(recentPosts.length/4); i++){ %>
+                        <% for(let i=0; i<Math.ceil(recentPosts.length/2); i++){ %>
                             <img src="data:image/<%=recentPosts[i].img.contentType%>;base64,
                             <%=recentPosts[i].img.data.toString('base64')%>" style="width:100%" id="<%=recentPosts[i]._id%>" class="click-img">
                         <% } %>
                     </div>
                     <div class="column">
-                        <% for(let i=Math.ceil(recentPosts.length/4); i<Math.ceil(recentPosts.length/2); i++){ %>
-                            <img src="data:image/<%=recentPosts[i].img.contentType%>;base64,
-                            <%=recentPosts[i].img.data.toString('base64')%>" style="width:100%" id="<%=recentPosts[i]._id%>" class="click-img">
-                        <% } %>
-                    </div>
-                    <div class="column">
-                        <% for(let i=Math.ceil(recentPosts.length/2); i<Math.ceil(recentPosts.length/4*3); i++){ %>
-                            <img src="data:image/<%=recentPosts[i].img.contentType%>;base64,
-                            <%=recentPosts[i].img.data.toString('base64')%>" style="width:100%" id="<%=recentPosts[i]._id%>" class="click-img">
-                        <% } %>
-                    </div>
-                    <div class="column">
-                        <% for(let i=Math.ceil(recentPosts.length/4*3); i<recentPosts.length; i++){ %>
+                        <% for(let i=Math.ceil(recentPosts.length/2); i<recentPosts.length; i++){ %>
                             <img src="data:image/<%=recentPosts[i].img.contentType%>;base64,
                             <%=recentPosts[i].img.data.toString('base64')%>" style="width:100%" id="<%=recentPosts[i]._id%>" class="click-img">
                         <% } %>
