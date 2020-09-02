@@ -194,7 +194,7 @@ html{
     align-items: center;
     margin: 0;
     position: absolute;
-    top: 50%;
+    top: 54%;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
@@ -240,22 +240,64 @@ html{
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 2.5rem;
+    font-size: 2rem;
     vertical-align: -7px;
 }
 .insta a{
     text-decoration: none;
     color: inherit;
 }
-.insta {
+.insta, .profile-share{
     font-family: 'Work sans', cursive;
     color: rgba(255, 255, 255, 0.788);
     background-color: rgba(0, 0, 0, 0.43);
     text-align: center;
-    margin: 60px 0 10px;
-    font-size: 1.5rem;
+    margin: 25px 0 10px;
+    font-size: 1.25rem;
     border-radius: 10px;
     padding: 10px;
+}
+.profile-share{
+    position: relative;
+    font-weight: bold;
+}
+.profile-share:hover{
+    cursor: pointer;
+}
+.profile-share i{
+    background: linear-gradient(to left,rgb(118, 118, 255),orange);
+    color: #d3d3d3;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2rem;
+    vertical-align: -5px;
+}
+.prof-tooltip{
+    display: none;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    border-radius: 6px;
+    position: absolute;
+    left: 10%;
+    top: 100%;
+    z-index: 3;
+    width: 190px;
+    font-family: "Ubuntu";
+    font-size: 0.75rem;
+    font-weight: normal;
+}
+.prof-tooltip::after {
+    content: " ";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent black transparent;
 }
 .about{
     font-size: 1rem;
@@ -896,10 +938,26 @@ footer {
         font-size: 1.5rem;
     }
     .insta{
+        margin-top: 30px;
         font-size: 2rem;
+        padding: 20px;
     }
     .insta i{
-        vertical-align: top;
+        vertical-align: middle;
+        font-size: 3rem;
+    }
+    .profile-share{
+        font-size: 1.5rem;
+        padding: 20px;
+    }
+    .prof-tooltip{
+        left: 17%;
+        font-size: 1rem;
+        width: unset;
+        padding: 10px;
+    }
+    .profile-share i{
+        font-size: 2.25rem;
     }
     .gallery {
         display: grid;

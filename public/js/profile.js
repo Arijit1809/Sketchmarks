@@ -176,5 +176,12 @@ $(document).ready(function () {
     $(".new-post-close").click(function(){
         $(".add-post").fadeOut()
     })
+    $(".profile-share").click(function(){
+        $(".prof-tooltip").fadeIn().css("display","block")
+        setTimeout(function(){
+            $(".prof-tooltip").fadeOut()
+        }, 3000);
+    })
 })
 new ClipboardJS(".click-div-share")
+new ClipboardJS(".profile-share")

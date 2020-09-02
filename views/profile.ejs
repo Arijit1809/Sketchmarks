@@ -54,10 +54,7 @@
     <% } %>
     <div class="grid-container">
         <div class="profile">
-
             <div class="profile-inner">
-                <!-- <img src="./images/bg.jpg" class="pfp" alt="Profile Pic"> -->
-
                 <div class="pfp-container">
                     <% if(sameUser){ %>
                         <a href="/profilephoto" class="change-pfp"><i class="fas fa-edit"></i></a>
@@ -71,6 +68,10 @@
                 <h1><%= username %></h1>
                 <h2 class="about"><%= about %> </h2>
                 <h2 class="insta"><a href="http://www.instagram.com/<%=contact%>/" target="_blank"><i class="fab fa-instagram"></i> : <%=contact%></a></h2>
+                <div class="profile-share" data-clipboard-action="copy" data-clipboard-text="sketchtiles.com/profile/<%=username%>">
+                    <span class="prof-share-button" ><i class="far fa-share-square"></i></span> Share this user's profile
+                    <span class="prof-tooltip">Profile link copied to clipboard</span>
+                </div>
             </div>
 
         </div>

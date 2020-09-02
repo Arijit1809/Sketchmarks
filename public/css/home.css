@@ -343,8 +343,10 @@ body {
 }
 .posts-subheading{
     text-align: center;
-    margin: 40px 0 90px;
+    margin: 40px 0 70px;
     font-family: "Work Sans";
+    color: #d3d3d3;
+    font-size: 1.25rem;
 }
 .top-post-left, .top-post-right{
     margin: 30px 0;
@@ -431,7 +433,13 @@ body {
     text-align: right;
     padding: 32px;
 }
-
+.section-desc{
+    text-align: center;
+    font-family: "Work sans";
+    font-size: 1.25rem;
+    margin-bottom: 40px;
+    color: #d3d3d3;
+}
 .row {
     display: flex;
     flex-wrap: wrap;
@@ -1046,14 +1054,17 @@ footer {
         background-position: center;
     }
     .section-head1 {
-        font-size: 3.1rem;
+        font-size: 4rem;
         margin-top: 20px;
         padding: 0 150px 10px;
         background-size: 100%;
     }
+    .section-desc{
+        margin: 0 10px 40px;
+    }
     .posts-subheading{
-        font-size: 1rem;
-        margin-bottom: 70px;
+        font-size: 1.25rem;
+        margin: 20px 20px 40px;
     }
     .row{
         padding-bottom: 0px;
