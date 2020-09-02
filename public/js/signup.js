@@ -1,6 +1,5 @@
 let regex= /^[a-z0-9]+$/i
 $(document).ready(function(){
-    
     $("#username").keyup(function(){
         let username=$(this).val()
         $(".user-error").css("visibility","visible")

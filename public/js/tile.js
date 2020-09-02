@@ -1,4 +1,8 @@
 $(document).ready(()=>{
+    if (scrollY>20){
+        $(".navbar").addClass("sticky")
+        $(".nav-btm").css("bottom","0")
+    }
     let media=matchMedia("(max-width: 980px)")
     if(media.matches){
         $(".submit").css("bottom","70px")
