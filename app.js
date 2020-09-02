@@ -315,7 +315,7 @@ app.get("/deletepost/:postId",(req,res)=>{
                     else res.send(req.user.username)
                 })
             }
-            else res.send("You are not authorised to perform this action.")
+            else res.render("404")
         }
     })
 })
