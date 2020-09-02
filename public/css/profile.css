@@ -895,7 +895,7 @@ footer {
         font-size: 2rem;
     }
     .insta i{
-        font-size: 2.25rem;
+        vertical-align: middle;
     }
     .gallery {
         display: grid;
