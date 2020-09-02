@@ -215,7 +215,7 @@ app.get("/profile/:username_url", (req, res)=>{
                     }
                 })
             }
-            else res.send("404: Username not found")
+            else res.render("404")
         }
     })
 
@@ -322,7 +322,7 @@ app.get("/deletepost/:postId",(req,res)=>{
 
 app.get("/tile/:postId",(req,res)=>{
     Post.findById(req.params.postId,(err,result)=>{
-        if(err) res.send("404: Tile not found")
+        if(err) res.render("404")
         else{
             if(result){
                 let btncolour=false
@@ -357,7 +357,7 @@ app.get("/tile/:postId",(req,res)=>{
                     
             }
             else
-                res.send("404: Tile not found")
+                res.render("404")
         }
     })
 })
