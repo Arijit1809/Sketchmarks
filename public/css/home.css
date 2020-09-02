@@ -444,7 +444,7 @@ body {
 }
 
 .column {
-    flex: 25%;
+    flex: 50%;
     padding: 0 4px;
 }
 
@@ -995,13 +995,6 @@ footer {
 }
 /* Footer-end */
 
-@media screen and (max-width: 1100px) {
-    .column {
-        flex: 50%;
-        padding:0px 5px;
-    }
-}
-
 @media (max-width: 768px) {
 
     #land-name {
@@ -1228,7 +1221,6 @@ footer {
         padding: 100px 0;
     }
     .column{
-        flex:50%;
         padding:0px 1px;
     }
     .column img{
