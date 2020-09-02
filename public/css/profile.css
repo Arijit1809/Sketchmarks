@@ -171,9 +171,6 @@ html{
     background-color: brown;
     cursor: pointer;
 }
-.fas{
-    font-size: 2rem;
-}
 
 .grid-container {
     display: grid;
@@ -237,19 +234,22 @@ html{
     font-weight: 700;
     word-wrap: break-word;
 }
-.icono-instagram{
-    background: linear-gradient(to right,red,purple);
-    color: white;
-    opacity: 0.8;
-    vertical-align: -8px;
+.insta i{
+    background: linear-gradient(to left,red,rgb(212, 0, 255));
+    color: #d3d3d3;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2.5rem;
+    vertical-align: -7px;
 }
 .insta {
     font-family: 'Work sans', cursive;
     color: rgba(255, 255, 255, 0.788);
-    background-color: rgba(0, 0, 0, 0.171);
+    background-color: rgba(0, 0, 0, 0.43);
     text-align: center;
     margin: 60px 0 10px;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     border-radius: 10px;
     padding: 10px;
 }
@@ -893,6 +893,9 @@ footer {
     }
     .insta{
         font-size: 1.5rem;
+    }
+    .insta i{
+        font-size: 2.25rem;
     }
     .gallery {
         display: grid;
