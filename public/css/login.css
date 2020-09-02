@@ -165,7 +165,7 @@ input{
       padding-bottom: 20px;
     }
     .home i{
-      display: block;
+      display: none;
       font-size: 2rem;
       
     }
