@@ -501,5 +501,7 @@ app.post("/profilephoto",upload.single("pfp"),(req,res)=>{
     })
 })
 /****************************Post requests end****************************/
-
+app.use((req,res)=>{
+    res.status(404).render("404")
+})
 app.listen(80)
