@@ -378,10 +378,11 @@ footer {
   .text{
     background: rgba(0, 0, 0, 0.3);
     font-size: 1.25rem;
+    height: auto;
   }
   .name{
     font-family: 'Niconne', cursive;
-    font-size: 5rem;
+    font-size: 4.5rem;
   }
   .post{
     color: #d3d3d3e3;
