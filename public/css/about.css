@@ -379,6 +379,7 @@ footer {
     background: rgba(0, 0, 0, 0.3);
     font-size: 1.25rem;
     height: auto;
+    padding-bottom: 60px;
   }
   .name{
     font-family: 'Niconne', cursive;
@@ -391,6 +392,10 @@ footer {
   .iconbar{
     text-align: center;
     align-items: center;
+  }
+  .iconbar i{
+    font-size: 3rem;
+    margin: 0 40px;
   }
   .fab{
     font-size: 2rem;

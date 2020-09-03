@@ -223,6 +223,9 @@ html{
     color: white;
     border-radius: 50%;
 }
+.change-pfp i{
+    font-size: 3rem;
+}
 
 .profile h1 {
     font-family: 'Noto sans';
@@ -365,9 +368,6 @@ html{
     transition: ease-in-out 0.3s;
     cursor: pointer;
 }
-
-
-
 .title {
     padding-top: 90px;
     margin-bottom: 50px;
