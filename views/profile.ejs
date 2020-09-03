@@ -67,7 +67,13 @@
                 </div>
                 <h1><%= username %></h1>
                 <h2 class="about"><%= about %> </h2>
-                <h2 class="insta"><a href="http://www.instagram.com/<%=contact%>/" target="_blank"><i class="fab fa-instagram"></i> : <%=contact%></a></h2>
+                <h2 class="insta"><a
+                    <% if(contact.charAt(0)=='@'){ %>
+                        href="http://www.instagram.com/<%=contact.slice(1)%>/" 
+                    <% }else{ %> 
+                        href="http://www.instagram.com/<%=contact%>/"
+                    <% } %>
+                    target="_blank"><i class="fab fa-instagram"></i> : <%=contact%></a></h2>
                 <div class="profile-share" data-clipboard-action="copy" data-clipboard-text="sketchtiles.com/profile/<%=username%>">
                     <span class="prof-share-button" ><i class="far fa-share-square"></i></span>
                     <% if(sameUser){ %>
