@@ -390,7 +390,7 @@ app.get("/profilephoto",(req,res)=>{
 app.post("/signup", function (req, res) {
     let regex= /^[a-z0-9]+$/i
     username=req.body.username
-    if(!username.match(regex)){
+    if(!username.match(regex) || username.length<5){
         return res.redirect("/signup")
     }
     about=req.body.about
