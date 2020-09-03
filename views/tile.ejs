@@ -34,7 +34,7 @@
     </div>
     <div class="inner">
         <div class="main">
-            <a href="/profile/<%=tile.name%>" class="author">By <%=tile.name%></a>
+            <a href="/profile/<%=tile.name%>" class="author">By <span><%=tile.name%></span></a>
             <div class="tile">
                 <img src="data:image/<%=tile.img.contentType%>;base64,<%=tile.img.data.toString('base64')%>" id="<%=tile._id%>" class="tile-img">
 
@@ -64,7 +64,7 @@
                     <div class="click-div-comments">
                         <% tile.comments.forEach((comment)=>{ %>
                             <div class="comment">
-                                <a href="/profile/<%=comment.name%>" class="commenter"><%=comment.name%>:</a> <span><%=comment.comment%></span>&nbsp;
+                                <a href="/profile/<%=comment.name%>" class="commenter"><%=comment.name%></a>: <span><%=comment.comment%></span>&nbsp;
                                 <% if(comment.name==viewer){ %>
                                     <i class="fas fa-trash delete-comment" title="Delete this comment"></i>
                                 <% } %>

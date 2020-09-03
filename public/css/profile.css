@@ -232,7 +232,7 @@ html{
     text-shadow: 3px 3px 1px #6f4a8e;
     text-align: center;
     font-weight: 700;
-    word-wrap: break-word;
+    word-break: break-all;
 }
 .insta i{
     background: linear-gradient(to left,red,rgb(212, 0, 255));
@@ -256,6 +256,7 @@ html{
     font-size: 1.25rem;
     border-radius: 10px;
     padding: 10px;
+    word-break: break-all;
 }
 .profile-share{
     position: relative;
@@ -372,11 +373,14 @@ html{
     margin-bottom: 50px;
     align-content: center;
     font-family: 'Work sans', cursive;
-    letter-spacing: 5px;
+    letter-spacing: 3px;
     font-size: 2.5rem;
     z-index: 2;
     color: rgb(255, 255, 255);
     text-align: center;
+}
+.title span{
+    word-break: break-all;
 }
 .gallery {
     display: grid;
@@ -933,9 +937,11 @@ footer {
     }
     .profile h1{
         font-size: 5rem;
+        padding: 120px 20px 0;
     }
     .about{
         font-size: 1.5rem;
+        margin-bottom: 50px;
     }
     .insta{
         margin-top: 30px;
@@ -975,9 +981,6 @@ footer {
         border: 5px solid #ddd;
 
     }
-    .profile h1 {
-        padding-top: 120px;
-    }
 }
 
 @media (max-width: 768px) {
@@ -985,7 +988,7 @@ footer {
         background-size: auto;
     }
     .pfp-container{
-        margin-top:120px;
+        margin-top: 80px;
     }
     .click-div {
         flex-direction: column;
@@ -1045,7 +1048,6 @@ footer {
         min-height: 100vh;
         padding: 20px;
         color: white;
-        /* background-image: radial-gradient(rgba(26, 37, 193, 0.481), rgba(13, 69, 152, 0.536)); */
     }
     .profile-inner{
         position: unset;
@@ -1054,12 +1056,12 @@ footer {
         transform: unset;
     }
     .profile h1{
-        padding-top: 20px;
-        /* color: white; */
+        font-size: 4rem;
+        padding: 20px 20px 0;
     }
 
     .title{
-        padding: 50px 5px 0px;
+        padding: 50px 30px 0px;
     }
     footer {
         margin: 0px 0 70px;

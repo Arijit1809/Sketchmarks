@@ -167,7 +167,7 @@ $(document).ready(function () {
     $(".pfp-container").mouseleave(function(){
         $(".change-pfp").fadeOut(300)
     })
-    $(".icono-plusCircle").click(function(){
+    $(".add-nav").click(function(){
         $(".add-post").fadeIn().css("display","flex")
     })
     $(".add-postbtm").click(function(){

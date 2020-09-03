@@ -186,19 +186,36 @@ app.get("/profile/:username_url", (req, res)=>{
                 Post.find({name: username}).sort({$natural: -1}).exec((err,results)=>{
                     if(err) console.log(err)
                     else {
-                        if(req.isAuthenticated() && req.user.username==username)
-                            res.render("profile",{
-                                username: username,
-                                about: about,
-                                contact: contact,
-                                pfp: userPfp,
-                                works: results,
-                                loginDisplay: "none",
-                                signupDisplay: "none",
-                                logoutDisplay: "inline-block",
-                                profileDisplay: "inline-block",
-                                sameUser: true 
-                            })
+                        if(req.isAuthenticated()){
+                            if(req.user.username==username)
+                                res.render("profile",{
+                                    username: username,
+                                    about: about,
+                                    contact: contact,
+                                    pfp: userPfp,
+                                    works: results,
+                                    loginDisplay: "none",
+                                    signupDisplay: "none",
+                                    logoutDisplay: "inline-block",
+                                    profileDisplay: "inline-block",
+                                    sameUser: true,
+                                    viewer: req.user.username
+                                })
+                            else
+                                res.render("profile",{
+                                    username: username,
+                                    about: about,
+                                    contact: contact,
+                                    pfp: userPfp,
+                                    works: results,
+                                    loginDisplay: "none",
+                                    signupDisplay: "none",
+                                    logoutDisplay: "inline-block",
+                                    profileDisplay: "inline-block",
+                                    sameUser: false,
+                                    viewer: req.user.username
+                                })
+                        }
                         else
                             res.render("profile",{
                                 username: username,
@@ -210,7 +227,8 @@ app.get("/profile/:username_url", (req, res)=>{
                                 signupDisplay: "inline-block",
                                 logoutDisplay: "none",
                                 profileDisplay: "none",
-                                sameUser: false 
+                                sameUser: false,
+                                viewer: false
                             })
                     }
                 })

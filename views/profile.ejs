@@ -29,7 +29,7 @@
                 <a href="/about">Team</a>
                 <a href="/login" class="login" style="display: <%=loginDisplay%>;">Log In</a>
                 <a href="/signup" class="signup" style="display: <%=signupDisplay%>;">Sign Up</a>
-                <a href="/profile/<%=username%>" style="display: <%=profileDisplay%>;">Profile</a>
+                <a href="/profile/<%=viewer%>" style="display: <%=profileDisplay%>;">Profile</a>
                 <a href="/logout" class="logout" style="display: <%=logoutDisplay%>;">Log Out</a>
             </div>
         </div>
@@ -109,7 +109,7 @@
                 </div>
                 <span id="click-div-close">&#10060;</span>
             </div>
-            <div class="title"><%= username %>'s Art Gallery</div>
+            <div class="title"><span><%= username %></span>'s Art Gallery</div>
             <% if(works.length>0){ %>
                 <div class="row">
                     <div class="column">
@@ -154,13 +154,13 @@
     </div>
     <div class="nav-btm">
         <div class="profile-nav navbtm-icon">
-            <a <% if(username!="NA"){ %> href="/profile/<%=username%>" <% }else{ %> href="/login" <% } %>><i class="fas fa-user"></i></a>
+            <a <% if(viewer){ %> href="/profile/<%=viewer%>" <% }else{ %> href="/login" <% } %>><i class="fas fa-user"></i></a>
         </div>
         <div class="posts-nav navbtm-icon">
             <a href="/posts"><i class="fas fa-images"></i></a>
         </div>
         <div class="add-nav navbtm-icon">
-            <a href="/#posting"><i class="fas fa-plus"></i></a>
+            <a><i class="fas fa-plus"></i></a>
         </div>
         <div class="home-nav navbtm-icon">
             <a href="/"><i class="fas fa-home"></i></a>
