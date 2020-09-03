@@ -235,7 +235,6 @@ html{
     text-shadow: 3px 3px 1px #6f4a8e;
     text-align: center;
     font-weight: 700;
-    word-break: break-all;
 }
 .insta i{
     background: linear-gradient(to left,red,rgb(212, 0, 255));
@@ -909,6 +908,7 @@ footer {
     }
     .profile h1 {
         padding-top: 120px;
+        word-break: break-all;
     }
     .content {
         background-color: transparent;
