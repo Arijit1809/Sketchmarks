@@ -1001,6 +1001,9 @@ footer {
 /* Footer-end */
 
 @media (max-width: 768px) {
+    body{
+        background-color: black;
+    }
 
     #land-name {
         font-size: 6.5rem;
@@ -1204,6 +1207,9 @@ footer {
 }
 
 @media (max-width: 600px) {
+    .body{
+        background-color: black;
+    }
     .navbar-menu a{
         font-size: 20px;
     }
