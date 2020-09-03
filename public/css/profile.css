@@ -264,6 +264,7 @@ html{
 .profile-share{
     position: relative;
     font-weight: bold;
+    word-break: normal;
 }
 .profile-share:hover{
     cursor: pointer;
