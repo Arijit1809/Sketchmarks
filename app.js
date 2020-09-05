@@ -288,19 +288,24 @@ app.get("/likepost/:postId",(req,res)=>{
         Post.findById(req.params.postId,(err,result)=>{
             if(err) console.log(err)
             else{
-                let ind=result.likes.likers.indexOf(req.user.username)
-                let btncolour=false
-                if(ind>-1){
-                    result.likes.likesNum--
-                    result.likes.likers.splice(ind,1)
-                }
-                else{
-                    result.likes.likesNum++
-                    result.likes.likers.push(req.user.username)
-                    btncolour=true
-                }
-                result.save()
-                res.send({likes: result.likes.likesNum, colour:btncolour})
+                User.find({username: result.name},(err,op)=>{
+                    let ind=result.likes.likers.indexOf(req.user.username)
+                    let btncolour=false
+                    if(ind>-1){
+                        result.likes.likesNum--
+                        op.totalLikes--
+                        result.likes.likers.splice(ind,1)
+                    }
+                    else{
+                        result.likes.likesNum++
+                        op.totalLikes++
+                        result.likes.likers.push(req.user.username)
+                        btncolour=true
+                    }
+                    result.save()
+                    op.save()
+                    res.send({likes: result.likes.likesNum, colour:btncolour})
+                })
             }
         })
     }
