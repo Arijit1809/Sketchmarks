@@ -50,7 +50,7 @@ $(document).ready(function () {
                 $(".like-btn").attr("id",result.data._id)
                 $(".likes-number").html(result.data.likes.likesNum)
                 if (result.colour) $(".heart").css("color","red")
-                else $(".heart").css("color","white")
+                else $(".heart").css("color","grey")
                 let commentsString = ""
                 result.data.comments.forEach(function (comment) {
                     if (comment.name == result.viewer) {
@@ -85,7 +85,7 @@ $(document).ready(function () {
                 if(result.colour)
                     $(".heart").css("color","red")
                 else
-                    $(".heart").css("color","white")
+                    $(".heart").css("color","grey")
                 $(".likes-number").html(result.likes)
             } 
             else location="/login"

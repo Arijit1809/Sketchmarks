@@ -93,7 +93,6 @@ passport.deserializeUser(User.deserializeUser());
 
 
 /****************************Multer Settings****************************/
-// var dir = './tmp';
 if (!fs.existsSync("uploads")){
     fs.mkdirSync("uploads");
 }
@@ -288,7 +287,8 @@ app.get("/likepost/:postId",(req,res)=>{
         Post.findById(req.params.postId,(err,result)=>{
             if(err) console.log(err)
             else{
-                User.find({username: result.name},(err,op)=>{
+                User.findOne({username: result.name},(err,op)=>{
+                    if(err) return console.log(err)
                     let ind=result.likes.likers.indexOf(req.user.username)
                     let btncolour=false
                     if(ind>-1){
@@ -302,8 +302,8 @@ app.get("/likepost/:postId",(req,res)=>{
                         result.likes.likers.push(req.user.username)
                         btncolour=true
                     }
-                    result.save()
                     op.save()
+                    result.save()
                     res.send({likes: result.likes.likesNum, colour:btncolour})
                 })
             }
@@ -390,25 +390,6 @@ app.get("/profilephoto",(req,res)=>{
         res.render("profilephoto")
 })
 
-app.get("/esketit",(req,res)=>{
-    User.find({},(err,results)=>{
-        if(err) console.log(err)
-        else{
-            results.forEach((schemaUser)=>{
-                let ftotalLikes=0
-                Post.find({name: schemaUser.username},(err,userPosts)=>{
-                    if(err) return console.log(err)
-                    userPosts.forEach((userpost)=>{
-                        ftotalLikes+=userpost.likes.likesNum
-                    })
-                    schemaUser.totalLikes=ftotalLikes
-                    schemaUser.save()
-                })
-            })
-        }
-        res.redirect("/")
-    })
-})
 /****************************Get requests end****************************/
 
 /****************************Post Requests****************************/
