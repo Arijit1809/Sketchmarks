@@ -32,7 +32,6 @@ app.use(
     store: new MongoStore({ mongooseConnection: mongoose.connection })
   })
 );
-
 app.use(passport.initialize());
 app.use(passport.session());
 /****************************App settings end****************************/
@@ -42,27 +41,28 @@ app.use(passport.session());
 mongoose.connect("mongodb://localhost:27017/userDB", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  useFindAndModify: false
+  useFindAndModify: false,
+  useCreateIndex: true
 });
-mongoose.set("useCreateIndex", true);
 /****************************Mongo Server end****************************/
 
 
 /****************************User Schema****************************/
-const userSchema = new mongoose.Schema({
+const userSchema=new mongoose.Schema({
   username: String,
   password: String,
   pfp:{
       data: Buffer,
       contentType: String
   },
-  about:String,
-  contact : String
+  about: String,
+  contact: String,
+  totalLikes: Number
 });
 
 userSchema.plugin(passportLocalMongoose);
 
-const User = new mongoose.model("User", userSchema);
+const User=new mongoose.model("User", userSchema);
 /****************************User Schema end****************************/
 
 
@@ -282,7 +282,7 @@ app.get("/posts",function(req,res){
         }
     })
 })
-
+/*******************************************LIKEEESSSSSSS************/
 app.get("/likepost/:postId",(req,res)=>{
     if(req.isAuthenticated()){
         Post.findById(req.params.postId,(err,result)=>{
@@ -384,6 +384,26 @@ app.get("/profilephoto",(req,res)=>{
     if(req.isAuthenticated())
         res.render("profilephoto")
 })
+
+app.get("/esketit",(req,res)=>{
+    User.find({},(err,results)=>{
+        if(err) console.log(err)
+        else{
+            results.forEach((schemaUser)=>{
+                let ftotalLikes=0
+                Post.find({name: schemaUser.username},(err,userPosts)=>{
+                    if(err) return console.log(err)
+                    userPosts.forEach((userpost)=>{
+                        ftotalLikes+=userpost.likes.likesNum
+                    })
+                    schemaUser.totalLikes=ftotalLikes
+                    schemaUser.save()
+                })
+            })
+        }
+        res.redirect("/")
+    })
+})
 /****************************Get requests end****************************/
 
 /****************************Post Requests****************************/
@@ -402,7 +422,8 @@ app.post("/signup", function (req, res) {
         pfp:{
             data: fs.readFileSync(path.join(__dirname +"/Procfile")),
             contentType: "None"
-        }
+        },
+        totalLikes: 0
     }, req.body.password, function (err, user) {
         if (err) {
             console.log(err);
