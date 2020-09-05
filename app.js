@@ -281,7 +281,7 @@ app.get("/posts",function(req,res){
         }
     })
 })
-/*******************************************LIKEEESSSSSSS************/
+
 app.get("/likepost/:postId",(req,res)=>{
     if(req.isAuthenticated()){
         Post.findById(req.params.postId,(err,result)=>{
@@ -379,8 +379,7 @@ app.get("/tile/:postId",(req,res)=>{
                 })
                     
             }
-            else
-                res.render("404")
+            else res.render("404")
         }
     })
 })
