@@ -1199,9 +1199,10 @@ footer {
         margin-bottom: 20px;
     }
     .top-post-img:hover {
-        transform: scale(1);
+        box-shadow: 0 0 20px #d3d3d3;
         transition: ease-in-out 0.3s;
         cursor: pointer;
+        transform: scale(1);
     }
 
 }
