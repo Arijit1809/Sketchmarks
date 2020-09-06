@@ -465,6 +465,7 @@ body {
   transition: 0.2s ease-in-out;
 }
 .rank-a{
+    width: 75%;
     display: flex;
     flex-direction: column;
     align-items: center;
