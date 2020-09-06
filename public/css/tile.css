@@ -14,7 +14,7 @@ html {
 }
 body{
     /* background-color: #18191a; */
-    background-color: #181a2b;
+    /* background-color: #181a2b; */
     background-image: url(/img/tilebg.jpg);
     color: #000000;
 }
@@ -183,6 +183,15 @@ a{
 }
 .author span{
     text-decoration: underline;
+}
+.tilebg-img{
+    position: fixed;
+    width: 100vw;
+    height: auto;
+    min-height: 100vh;
+    filter: blur(10px);
+    z-index: -5;
+    top: 0;
 }
 /* Tile section */
 

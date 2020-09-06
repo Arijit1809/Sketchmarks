@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="/css/tile.css">
 </head>
 <body>
+    <img src="data:image/<%=tile.img.contentType%>;base64,<%=tile.img.data.toString('base64')%>" id="<%=tile._id%>"
+        class="tilebg-img">
     <nav class="navbar">
         <div class="inner">
             <a href="/" class="brand">Sketchtiles</a>
@@ -32,6 +34,7 @@
             <div class="double-bounce2"></div>
         </div>
     </div>
+    
     <div class="inner">
         <div class="main">
             <a href="/profile/<%=tile.name%>" class="author">By <span><%=tile.name%></span></a>
