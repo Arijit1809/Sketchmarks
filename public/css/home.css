@@ -311,8 +311,8 @@ body {
     /* background-image: url(/img/whitebg1.jpg); */
     /* background-position: center; */
     /* background-size: cover; */
-    background: linear-gradient(-90deg,rgb(107, 0, 107),#e84545bd);
-    padding: 100px 0;
+    background: linear-gradient(90deg,rgb(107, 0, 107),#e84545bd);
+    padding: 50px 0;
 }
 
 .section-head {
@@ -424,9 +424,61 @@ body {
 }
 /* Top posts end */
 
+/*Top Artists*/
+
+.top-artists{
+  /* padding: 100px 0;
+  background: linear-gradient(90deg,rgb(107, 0, 107),#e84545bd); */
+  background: linear-gradient(-90deg,rgb(107, 0, 107),#e84545bd);
+  padding: 50px 0;
+}
+
+.artists{
+  display: flex;
+  flex-direction: column;
+}
+
+.top3{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.top5{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.rank{
+  width: 350px;
+  height: 350px;
+  margin: 15px 15px;
+  background:rgba(0,0,0,0.8);;
+  font-family: "Ubuntu";
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.rank h1{
+  margin: 5px;
+  font-family: "Ubuntu";
+  position: relative;
+}
+.rank .pfp{
+  text-align: center;
+}
+.rank .pfp img{
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+}
+
+/*Top Artists end*/
+
 /* Posts  */
 .posts {
-    padding: 100px 0;
+    padding: 50px 0;
     background: linear-gradient(90deg,rgb(107, 0, 107),#e84545bd);
 }
 .header {
@@ -767,7 +819,7 @@ body {
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
-    padding: 100px 0;
+    padding: 50px 0;
 }
 
 #posting {
@@ -1233,9 +1285,8 @@ footer {
         padding:0px 1px;
     }
     .column img{
-        margin-top: 1px;
-        margin-bottom: 1px;
-        border-radius: 0px;
+        margin:3px;
+        border-radius: 5px;
     }
     .land-log-btn,.land-sign-btn{
         font-size: 1.5rem;
