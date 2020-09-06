@@ -32,7 +32,6 @@ app.use(
     store: new MongoStore({ mongooseConnection: mongoose.connection })
   })
 );
-
 app.use(passport.initialize());
 app.use(passport.session());
 /****************************App settings end****************************/
@@ -42,27 +41,28 @@ app.use(passport.session());
 mongoose.connect("mongodb://localhost:27017/userDB", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  useFindAndModify: false
+  useFindAndModify: false,
+  useCreateIndex: true
 });
-mongoose.set("useCreateIndex", true);
 /****************************Mongo Server end****************************/
 
 
 /****************************User Schema****************************/
-const userSchema = new mongoose.Schema({
+const userSchema=new mongoose.Schema({
   username: String,
   password: String,
   pfp:{
       data: Buffer,
       contentType: String
   },
-  about:String,
-  contact : String
+  about: String,
+  contact: String,
+  totalLikes: Number
 });
 
 userSchema.plugin(passportLocalMongoose);
 
-const User = new mongoose.model("User", userSchema);
+const User=new mongoose.model("User", userSchema);
 /****************************User Schema end****************************/
 
 
@@ -93,7 +93,6 @@ passport.deserializeUser(User.deserializeUser());
 
 
 /****************************Multer Settings****************************/
-// var dir = './tmp';
 if (!fs.existsSync("uploads")){
     fs.mkdirSync("uploads");
 }
@@ -135,27 +134,31 @@ app.get("/",(req,res)=>{
     Post.find({}).sort({$natural: -1}).limit(12).exec((err,results)=>{
         if(err) console.log(err)
         else{
-            Post.find({}).sort({"likes.likesNum": -1}).limit(5).exec((err,topPosts)=>{
-                if (req.user)
-                    res.render("index",{
-                        loginDisplay: "none",
-                        signupDisplay: "none",
-                        logoutDisplay: "inline-block",
-                        profileDisplay: "inline-block",
-                        username: req.user.username,
-                        recentPosts: results,
-                        topPosts: topPosts
-                    })
-                else
-                    res.render("index",{
-                        loginDisplay: "inline-block",
-                        signupDisplay: "inline-block",
-                        logoutDisplay: "none",
-                        profileDisplay: "none",
-                        username: "NA",
-                        recentPosts: results,
-                        topPosts: topPosts
-                    })
+            Post.find({}).sort({"likes.likesNum": -1}).limit(5).exec((er,topPosts)=>{
+                User.find({}).sort({totalLikes: -1}).limit(5).exec((e,topArtists)=>{
+                    if (req.isAuthenticated())
+                        res.render("index",{
+                            loginDisplay: "none",
+                            signupDisplay: "none",
+                            logoutDisplay: "inline-block",
+                            profileDisplay: "inline-block",
+                            username: req.user.username,
+                            recentPosts: results,
+                            topPosts: topPosts,
+                            topArtists: topArtists
+                        })
+                    else
+                        res.render("index",{
+                            loginDisplay: "inline-block",
+                            signupDisplay: "inline-block",
+                            logoutDisplay: "none",
+                            profileDisplay: "none",
+                            username: "NA",
+                            recentPosts: results,
+                            topPosts: topPosts,
+                            topArtists: topArtists
+                        })
+                })
             })
         }
     })
@@ -186,19 +189,36 @@ app.get("/profile/:username_url", (req, res)=>{
                 Post.find({name: username}).sort({$natural: -1}).exec((err,results)=>{
                     if(err) console.log(err)
                     else {
-                        if(req.isAuthenticated() && req.user.username==username)
-                            res.render("profile",{
-                                username: username,
-                                about: about,
-                                contact: contact,
-                                pfp: userPfp,
-                                works: results,
-                                loginDisplay: "none",
-                                signupDisplay: "none",
-                                logoutDisplay: "inline-block",
-                                profileDisplay: "inline-block",
-                                sameUser: true 
-                            })
+                        if(req.isAuthenticated()){
+                            if(req.user.username==username)
+                                res.render("profile",{
+                                    username: username,
+                                    about: about,
+                                    contact: contact,
+                                    pfp: userPfp,
+                                    works: results,
+                                    loginDisplay: "none",
+                                    signupDisplay: "none",
+                                    logoutDisplay: "inline-block",
+                                    profileDisplay: "inline-block",
+                                    sameUser: true,
+                                    viewer: req.user.username
+                                })
+                            else
+                                res.render("profile",{
+                                    username: username,
+                                    about: about,
+                                    contact: contact,
+                                    pfp: userPfp,
+                                    works: results,
+                                    loginDisplay: "none",
+                                    signupDisplay: "none",
+                                    logoutDisplay: "inline-block",
+                                    profileDisplay: "inline-block",
+                                    sameUser: false,
+                                    viewer: req.user.username
+                                })
+                        }
                         else
                             res.render("profile",{
                                 username: username,
@@ -210,12 +230,13 @@ app.get("/profile/:username_url", (req, res)=>{
                                 signupDisplay: "inline-block",
                                 logoutDisplay: "none",
                                 profileDisplay: "none",
-                                sameUser: false 
+                                sameUser: false,
+                                viewer: false
                             })
                     }
                 })
             }
-            else res.send("404: Username not found")
+            else res.render("404")
         }
     })
 
@@ -270,19 +291,25 @@ app.get("/likepost/:postId",(req,res)=>{
         Post.findById(req.params.postId,(err,result)=>{
             if(err) console.log(err)
             else{
-                let ind=result.likes.likers.indexOf(req.user.username)
-                let btncolour=false
-                if(ind>-1){
-                    result.likes.likesNum--
-                    result.likes.likers.splice(ind,1)
-                }
-                else{
-                    result.likes.likesNum++
-                    result.likes.likers.push(req.user.username)
-                    btncolour=true
-                }
-                result.save()
-                res.send({likes: result.likes.likesNum, colour:btncolour})
+                User.findOne({username: result.name},(err,op)=>{
+                    if(err) return console.log(err)
+                    let ind=result.likes.likers.indexOf(req.user.username)
+                    let btncolour=false
+                    if(ind>-1){
+                        result.likes.likesNum--
+                        op.totalLikes--
+                        result.likes.likers.splice(ind,1)
+                    }
+                    else{
+                        result.likes.likesNum++
+                        op.totalLikes++
+                        result.likes.likers.push(req.user.username)
+                        btncolour=true
+                    }
+                    op.save()
+                    result.save()
+                    res.send({likes: result.likes.likesNum, colour:btncolour})
+                })
             }
         })
     }
@@ -315,14 +342,14 @@ app.get("/deletepost/:postId",(req,res)=>{
                     else res.send(req.user.username)
                 })
             }
-            else res.send("You are not authorised to perform this action.")
+            else res.render("404")
         }
     })
 })
 
 app.get("/tile/:postId",(req,res)=>{
     Post.findById(req.params.postId,(err,result)=>{
-        if(err) res.send("404: Tile not found")
+        if(err) res.render("404")
         else{
             if(result){
                 let btncolour=false
@@ -356,8 +383,7 @@ app.get("/tile/:postId",(req,res)=>{
                 })
                     
             }
-            else
-                res.send("404: Tile not found")
+            else res.render("404")
         }
     })
 })
@@ -366,14 +392,18 @@ app.get("/profilephoto",(req,res)=>{
     if(req.isAuthenticated())
         res.render("profilephoto")
 })
+
 /****************************Get requests end****************************/
 
 /****************************Post Requests****************************/
 app.post("/signup", function (req, res) {
+    let regex= /^[a-z0-9]+$/i
     username=req.body.username
+    if(!username.match(regex) || username.length<5){
+        return res.redirect("/signup")
+    }
     about=req.body.about
     contact=req.body.contact
-
     User.register({
         username: req.body.username,
         about : req.body.about,
@@ -381,7 +411,8 @@ app.post("/signup", function (req, res) {
         pfp:{
             data: fs.readFileSync(path.join(__dirname +"/Procfile")),
             contentType: "None"
-        }
+        },
+        totalLikes: 0
     }, req.body.password, function (err, user) {
         if (err) {
             console.log(err);
@@ -501,5 +532,7 @@ app.post("/profilephoto",upload.single("pfp"),(req,res)=>{
     })
 })
 /****************************Post requests end****************************/
-
+app.use((req,res)=>{
+    res.status(404).render("404")
+})
 app.listen(80)

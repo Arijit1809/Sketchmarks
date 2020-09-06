@@ -194,7 +194,7 @@ html{
     align-items: center;
     margin: 0;
     position: absolute;
-    top: 50%;
+    top: 54%;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
@@ -223,6 +223,9 @@ html{
     color: white;
     border-radius: 50%;
 }
+.change-pfp i{
+    font-size: 3rem;
+}
 
 .profile h1 {
     font-family: 'Noto sans';
@@ -232,7 +235,7 @@ html{
     text-shadow: 3px 3px 1px #6f4a8e;
     text-align: center;
     font-weight: 700;
-    word-wrap: break-word;
+    word-break: break-all;
 }
 .insta i{
     background: linear-gradient(to left,red,rgb(212, 0, 255));
@@ -240,22 +243,66 @@ html{
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 2.5rem;
+    font-size: 2rem;
     vertical-align: -7px;
 }
 .insta a{
     text-decoration: none;
     color: inherit;
 }
-.insta {
+.insta, .profile-share{
     font-family: 'Work sans', cursive;
     color: rgba(255, 255, 255, 0.788);
     background-color: rgba(0, 0, 0, 0.43);
     text-align: center;
-    margin: 60px 0 10px;
-    font-size: 1.5rem;
+    margin: 25px 0 10px;
+    font-size: 1.25rem;
     border-radius: 10px;
     padding: 10px;
+    word-break: break-all;
+}
+.profile-share{
+    position: relative;
+    font-weight: bold;
+    word-break: normal;
+}
+.profile-share:hover{
+    cursor: pointer;
+}
+.profile-share i{
+    background: linear-gradient(to left,rgb(118, 118, 255),orange);
+    color: #d3d3d3;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2rem;
+    vertical-align: -5px;
+}
+.prof-tooltip{
+    display: none;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    border-radius: 6px;
+    position: absolute;
+    left: 10%;
+    top: 100%;
+    z-index: 3;
+    width: 190px;
+    font-family: "Ubuntu";
+    font-size: 0.75rem;
+    font-weight: normal;
+}
+.prof-tooltip::after {
+    content: " ";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent black transparent;
 }
 .about{
     font-size: 1rem;
@@ -322,19 +369,19 @@ html{
     transition: ease-in-out 0.3s;
     cursor: pointer;
 }
-
-
-
 .title {
     padding-top: 90px;
     margin-bottom: 50px;
     align-content: center;
     font-family: 'Work sans', cursive;
-    letter-spacing: 5px;
+    letter-spacing: 3px;
     font-size: 2.5rem;
     z-index: 2;
     color: rgb(255, 255, 255);
     text-align: center;
+}
+.title span{
+    word-break: break-all;
 }
 .gallery {
     display: grid;
@@ -862,6 +909,7 @@ footer {
     }
     .profile h1 {
         padding-top: 120px;
+        word-break: break-all;
     }
     .content {
         background-color: transparent;
@@ -891,15 +939,33 @@ footer {
     }
     .profile h1{
         font-size: 5rem;
+        padding: 120px 20px 0;
     }
     .about{
         font-size: 1.5rem;
+        margin-bottom: 50px;
     }
     .insta{
+        margin-top: 30px;
         font-size: 2rem;
+        padding: 20px;
     }
     .insta i{
-        vertical-align: top;
+        vertical-align: middle;
+        font-size: 3rem;
+    }
+    .profile-share{
+        font-size: 1.5rem;
+        padding: 20px;
+    }
+    .prof-tooltip{
+        left: 17%;
+        font-size: 1rem;
+        width: unset;
+        padding: 10px;
+    }
+    .profile-share i{
+        font-size: 2.25rem;
     }
     .gallery {
         display: grid;
@@ -917,9 +983,6 @@ footer {
         border: 5px solid #ddd;
 
     }
-    .profile h1 {
-        padding-top: 120px;
-    }
 }
 
 @media (max-width: 768px) {
@@ -927,7 +990,7 @@ footer {
         background-size: auto;
     }
     .pfp-container{
-        margin-top:120px;
+        margin-top: 80px;
     }
     .click-div {
         flex-direction: column;
@@ -987,7 +1050,6 @@ footer {
         min-height: 100vh;
         padding: 20px;
         color: white;
-        /* background-image: radial-gradient(rgba(26, 37, 193, 0.481), rgba(13, 69, 152, 0.536)); */
     }
     .profile-inner{
         position: unset;
@@ -996,12 +1058,12 @@ footer {
         transform: unset;
     }
     .profile h1{
-        padding-top: 20px;
-        /* color: white; */
+        font-size: 4rem;
+        padding: 20px 20px 0;
     }
 
     .title{
-        padding: 50px 5px 0px;
+        padding: 50px 30px 0px;
     }
     footer {
         margin: 0px 0 70px;

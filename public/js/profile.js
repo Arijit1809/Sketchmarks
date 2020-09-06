@@ -50,7 +50,7 @@ $(document).ready(function () {
                 $(".like-btn").attr("id",result.data._id)
                 $(".likes-number").html(result.data.likes.likesNum)
                 if (result.colour) $(".heart").css("color","red")
-                else $(".heart").css("color","white")
+                else $(".heart").css("color","grey")
                 let commentsString = ""
                 result.data.comments.forEach(function (comment) {
                     if (comment.name == result.viewer) {
@@ -85,7 +85,7 @@ $(document).ready(function () {
                 if(result.colour)
                     $(".heart").css("color","red")
                 else
-                    $(".heart").css("color","white")
+                    $(".heart").css("color","grey")
                 $(".likes-number").html(result.likes)
             } 
             else location="/login"
@@ -167,7 +167,7 @@ $(document).ready(function () {
     $(".pfp-container").mouseleave(function(){
         $(".change-pfp").fadeOut(300)
     })
-    $(".icono-plusCircle").click(function(){
+    $(".add-nav").click(function(){
         $(".add-post").fadeIn().css("display","flex")
     })
     $(".add-postbtm").click(function(){
@@ -176,5 +176,12 @@ $(document).ready(function () {
     $(".new-post-close").click(function(){
         $(".add-post").fadeOut()
     })
+    $(".profile-share").click(function(){
+        $(".prof-tooltip").fadeIn().css("display","block")
+        setTimeout(function(){
+            $(".prof-tooltip").fadeOut()
+        }, 3000);
+    })
 })
 new ClipboardJS(".click-div-share")
+new ClipboardJS(".profile-share")

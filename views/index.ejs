@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sketchtiles</title>
-    <link href="https://fonts.googleapis.com/css2?family=Alata&family=Alice&family=Eczar:wght@600&display=swap&family=Pacifico&display=swap&family=Dancing+Script:wght@700&display=swap&family=Ubuntu:wght@500&display=swap&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alata&family=Alice&family=Eczar:wght@600&display=swap&family=Pacifico&display=swap&family=Dancing+Script:wght@700&display=swap&family=Ubuntu:wght@500&display=swap&family=Great+Vibes&display=swap&family=Work+Sans&display=swap" rel="stylesheet">
     <link rel="icon" href="/img/fav.png" type="image/x-icon"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
     <link rel="shortcut icon" href="/img/fav.png" type="image/x-icon"/>
@@ -49,7 +49,7 @@
             </div>
         </div>
     </section>
-    
+
     <section class="web-desc">
         <div class="inner">
             <div class="web-desc-main">
@@ -61,7 +61,7 @@
             </div>&nbsp; <!--Dont remove-->
         </div>
     </section>
-    
+
     <section class="posts">
         <div class="spinner">
             <div class="loader">
@@ -71,7 +71,8 @@
         </div>
         <div class="inner" >
             <h1 class="section-head" id="post-title">Recent Tiles</h1>
-            <div class="click-div">    
+            <h2 class="section-desc">Click or tap on an image to open the tile associated with it. You can like, comment and share a post via its tile.</h2>
+            <div class="click-div">
                 <img src="" alt="" id="click-div-img">
                 <div class="click-div-secondary">
                     <img src="" class="secondary-img">
@@ -80,7 +81,7 @@
                     <div id="click-div-user"></div>
                     <div class="click-div-desc"></div>
                     <div class="click-div-likes">
-                        <span class="like-btn"><i class="fas fa-heart heart" ></i></span>
+                        <span class="like-btn"><i class="fas fa-heart heart"></i></span>
                         <span class="likes-number"></span>
                         <span class="share-container">
                             <span class="click-div-share" title="Share this post" data-clipboard-action="copy" data-clipboard-text=""><i class="fas fa-share-square"></i></span>
@@ -93,17 +94,8 @@
                         <button class="post-submit" title="Post comment"><i class="fas fa-comment" id="comment-icon"></i></button>
                     </div>
                 </div>
-
                 <span id="click-div-close">&#10060;</span>
             </div>
-            <!-- Header -->
-            <!-- <div class="header" id="myHeader">
-                <h3 class="ncolumns">Columns :</h3>
-                <button class="btn" onclick="two()">2</button>
-                <button class="btn active" onclick="four()">4</button>
-            </div> -->
-
-            <!-- Photo Grid -->
             <div class="row">
                 <% if(recentPosts.length>11){ %>
                     <div class="column">
@@ -131,10 +123,72 @@
 
         </div>
     </section>
-    
+
+    <section class="top-artists">
+      <div class="inner">
+        <h1 class="section-head" id="tiles">Top Artists</h1>
+        <h2 class="section-desc">Visit a user's profile by clicking or tapping on the corresponding card.</h2>
+        <div class="artists">
+            <% if(topArtists.length>4){ %>
+                <div class="top3">
+                    <% for(let i=0; i<3; i++){ %>
+                        <div class="rank">
+                            <a class="rank-a" href="/profile/<%=topArtists[i].username%>">
+                                <h1>#<%=i+1%></h1>
+                                <div class="pfp">
+                                    <% if(topArtists[i].pfp.contentType=="None"){ %>
+                                        <img src="/img/pfp.jpg">
+                                    <% }else{ %>
+                                        <img src="data:image/<%=topArtists[i].pfp.contentType%>;base64, <%=topArtists[i].pfp.data.toString('base64')%>">
+                                    <% } %>
+                                </div>
+                                <div class="top-artist-name"><%=topArtists[i].username%></div>
+                                <div class="total-likes">Total <i class="fas fa-heart art-heart"></i> : <%=topArtists[i].totalLikes%></div>
+                            </a>
+                            <a class="insta" 
+                                <% if(topArtists[i].contact.charAt(0)=='@'){ %>
+                                    href="http://www.instagram.com/<%=topArtists[i].contact.slice(1)%>/" 
+                                <% }else{ %> 
+                                    href="http://www.instagram.com/<%=topArtists[i].contact%>/"
+                                <% } %>
+                            target="_blank"><i class="fab fa-instagram"></i> : <%=topArtists[i].contact%></a>
+                        </div>
+                    <% } %>
+                </div>
+                <div class="top5">
+                <% for(let i=3; i<5; i++){ %>
+                    <div class="rank">
+                        <a class="rank-a" href="/profile/<%=topArtists[i].username%>">
+                            <h1>#<%=i+1%></h1>
+                            <div class="pfp">
+                                <% if(topArtists[i].pfp.contentType=="None"){ %>
+                                    <img src="/img/pfp.jpg">
+                                <% }else{ %>
+                                    <img src="data:image/<%=topArtists[i].pfp.contentType%>;base64, <%=topArtists[i].pfp.data.toString('base64')%>">
+                                <% } %>
+                            </div>
+                            <div class="top-artist-name"><%=topArtists[i].username%></div>
+                            <div class="total-likes">Total <i class="fas fa-heart art-heart"></i> : <%=topArtists[i].totalLikes%></div>
+                        </a>
+                        <a class="insta" 
+                            <% if(topArtists[i].contact.charAt(0)=='@'){ %>
+                                href="http://www.instagram.com/<%=topArtists[i].contact.slice(1)%>/" 
+                            <% }else{ %> 
+                                href="http://www.instagram.com/<%=topArtists[i].contact%>/"
+                            <% } %>
+                        target="_blank"><i class="fab fa-instagram"></i> : <%=topArtists[i].contact%></a>
+                    </div>
+                <% } %>
+                </div>
+            <% } %>
+        </div>
+      </div>
+    </section>
+
     <section class="top-posts">
         <div class="inner">
             <h1 class="section-head" id="tiles">Top Tiles</h1>
+            <h2 class="section-desc">Reminder that you can open the tile of an image by clicking or tapping on it.</h2>
             <% if(topPosts.length>4){ %>
             <div class="top-post-left">
                 <img src="data:image/<%=topPosts[0].img.contentType%>;base64,<%=topPosts[0].img.data.toString('base64')%>" id="<%=topPosts[0]._id%>" class="top-post-img">
@@ -269,7 +323,7 @@
             <% } %>
         </div>
     </section>
-    
+
     <section class="submit">
         <div class="inner">
           <h1  id="posting">Make a tile</h1>
@@ -285,11 +339,11 @@
           </div>
         </div>
     </section>
-    
+
     <footer>
         <div class="inner">
             <div class="foot-text">
-                &copy;Sketchtiles
+                &copy; Sketchtiles
             </div>
             <div class="icons">
                 Made with ❤️ by Shrutanten, Arijit and Shubham

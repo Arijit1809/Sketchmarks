@@ -311,8 +311,8 @@ body {
     /* background-image: url(/img/whitebg1.jpg); */
     /* background-position: center; */
     /* background-size: cover; */
-    background: linear-gradient(-90deg,rgb(107, 0, 107),#e84545bd);
-    padding: 100px 0;
+    background: linear-gradient(90deg,rgb(107, 0, 107),#e84545bd);
+    padding: 50px 0;
 }
 
 .section-head {
@@ -343,8 +343,10 @@ body {
 }
 .posts-subheading{
     text-align: center;
-    margin: 40px 0 90px;
+    margin: 40px 0 70px;
     font-family: "Work Sans";
+    color: #d3d3d3;
+    font-size: 1.25rem;
 }
 .top-post-left, .top-post-right{
     margin: 30px 0;
@@ -422,16 +424,128 @@ body {
 }
 /* Top posts end */
 
+/*Top Artists*/
+
+.top-artists{
+  /* padding: 100px 0;
+  background: linear-gradient(90deg,rgb(107, 0, 107),#e84545bd); */
+  background: linear-gradient(-90deg,rgb(107, 0, 107),#e84545bd);
+  padding: 50px 0;
+}
+
+.artists{
+  display: flex;
+  flex-direction: column;
+}
+
+.top3{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.top5{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.rank{
+  width: 33%;
+  /* height: 350px; */
+  margin: 15px;
+  background:rgba(0,0,0,0.6);;
+  font-family: "Ubuntu";
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  transition: 0.2s ease-in-out;
+}
+.rank-a{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+}
+.rank:hover{
+    box-shadow: 0 0 40px #d3d3d3;
+    cursor: pointer;
+}
+.rank h1{
+  margin: 5px;
+  font-family: "Ubuntu";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 2.1rem;
+}
+.rank .pfp img{
+    margin-top: 20px;    
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+}
+.top-artist-name{
+    margin: 20px 0 30px;
+    font-size: 2.5rem;
+    word-break: break-all;
+    max-width: 75%;
+    text-align: center;
+}
+.total-likes{
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    font-family: "Work sans";
+    margin-bottom: 10px;
+}
+.art-heart{
+    color: red;
+}
+.insta{
+    font-family: 'Work sans', cursive;
+    color: rgba(255, 255, 255, 0.788);
+    background-color: rgba(255, 255, 255, 0.199);
+    text-align: center;
+    margin: 10px 0 25px;
+    font-size: 1.25rem;
+    border-radius: 10px;
+    padding: 10px;
+    word-break: break-all;
+    text-decoration: none;
+    max-width: 75%;
+}
+.insta i{
+    background: linear-gradient(to left,red,rgb(212, 0, 255));
+    color: #d3d3d3;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2rem;
+    vertical-align: -7px;
+}
+/*Top Artists end*/
+
 /* Posts  */
 .posts {
-    padding: 100px 0;
+    padding: 50px 0;
     background: linear-gradient(90deg,rgb(107, 0, 107),#e84545bd);
 }
 .header {
     text-align: right;
     padding: 32px;
 }
-
+.section-desc{
+    text-align: center;
+    font-family: "Work sans";
+    font-size: 1.25rem;
+    margin-bottom: 40px;
+    color: #d3d3d3;
+}
 .row {
     display: flex;
     flex-wrap: wrap;
@@ -759,7 +873,7 @@ body {
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
-    padding: 100px 0;
+    padding: 50px 0;
 }
 
 #posting {
@@ -989,10 +1103,19 @@ footer {
     .nav-btm {
         display: flex;
     }
+    .rank{
+        width: unset;
+    }
+    .top3, .top5{
+        flex-direction: column;
+    }
 }
 /* Footer-end */
 
 @media (max-width: 768px) {
+    body{
+        background-color: black;
+    }
 
     #land-name {
         font-size: 6.5rem;
@@ -1046,14 +1169,17 @@ footer {
         background-position: center;
     }
     .section-head1 {
-        font-size: 3.1rem;
+        font-size: 4rem;
         margin-top: 20px;
         padding: 0 150px 10px;
         background-size: 100%;
     }
+    .section-desc{
+        margin: 0 10px 40px;
+    }
     .posts-subheading{
-        font-size: 1rem;
-        margin-bottom: 70px;
+        font-size: 1.25rem;
+        margin: 20px 20px 40px;
     }
     .row{
         padding-bottom: 0px;
@@ -1185,14 +1311,18 @@ footer {
         margin-bottom: 20px;
     }
     .top-post-img:hover {
-        transform: scale(1);
+        box-shadow: 0 0 20px #d3d3d3;
         transition: ease-in-out 0.3s;
         cursor: pointer;
+        transform: scale(1);
     }
 
 }
 
 @media (max-width: 600px) {
+    .body{
+        background-color: black;
+    }
     .navbar-menu a{
         font-size: 20px;
     }
@@ -1216,9 +1346,8 @@ footer {
         padding:0px 1px;
     }
     .column img{
-        margin-top: 1px;
-        margin-bottom: 1px;
-        border-radius: 0px;
+        margin:3px;
+        border-radius: 5px;
     }
     .land-log-btn,.land-sign-btn{
         font-size: 1.5rem;

@@ -1,0 +1,161 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+body{
+    background: linear-gradient(90deg,#b83b5e,#6a2c70,#125c79,#c26e4a);
+}
+.inner{
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    background-color: transparent;
+    width: 100%;
+    padding: 30px 0;
+    top: 0;
+    z-index: 2;
+    transition: .3s linear;
+    font-family: 'Ubuntu';
+}
+.navbar .inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.brand {
+    color: white;
+    font-size: 1.25rem;
+    text-decoration: none;
+    transition: linear .2s;
+}
+.navbar-menu a {
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+    font-weight: 500;
+    margin-left: 30px;
+    transition: .2s linear;
+    text-decoration: none;
+}
+
+.navbar-menu a:hover {
+    color: #ffffff !important;
+}
+.sticky {
+    background-color: black;
+    padding: 10px 0;
+}
+
+.sticky .navbar-menu a {
+    color: white;
+}
+
+.sticky .menu-toggler span {
+    background-color: white;
+}
+/* Navbar end */
+
+/* Main */
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.heading{
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    margin-right: 3rem;
+    font-size: 10rem;
+    color: red;
+    text-shadow: 4px 4px 1px black, 0 0 20px red;
+    background-color: rgba(255, 166, 0, 0.295);
+    padding: 0 30px;
+    border-radius: 10px;
+}
+.flex div{
+    text-align: center;
+}
+.desc{
+    font-family: "Alice";
+    color: rgba(0, 0, 0, 0.815);
+    font-size: 5rem;
+    margin-bottom: 50px;
+}
+.desc-text{
+    font-size: 2rem;
+    font-family: "Work sans";
+    color: rgba(0, 0, 0, 0.733);
+    margin-bottom: 50px;
+}
+.home{
+    font-size: 2rem;
+    color: #d3d3d3;
+    font-family: "Ubuntu";
+}
+.home:hover{
+    color: white;
+}
+/* Navbar end */
+
+/* Footer */
+
+footer{
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+}
+.foot-text{
+    color: #d3d3d3;
+    text-align: center;
+    margin: 20px 0;
+    font-size: 1.5rem;
+    font-family: "Alata";
+}
+.icons{
+    color: #d3d3d3;
+    text-align: center;
+    font-family: "Ubuntu";
+}
+/* Footer end */
+
+@media (max-width: 768px){
+    body{
+        background: linear-gradient(90deg,#b83838,#6a2c70);
+    }
+    .navbar{
+        padding: 10px;
+    }
+    .inner{
+        padding: 0 40px;
+    }
+    .main{
+        display: unset;
+    }
+    .flex{
+        margin: 70px;
+        display: unset;
+    }
+    .heading{
+        font-size: 6rem;
+        margin: 100px 0 50px;
+    }
+    .desc-text{
+        font-size: 1.75rem;
+    }
+    footer{
+        position: static;
+        margin: 80px 0 30px;
+    }
+}

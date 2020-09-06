@@ -29,7 +29,7 @@
                 <a href="/about">Team</a>
                 <a href="/login" class="login" style="display: <%=loginDisplay%>;">Log In</a>
                 <a href="/signup" class="signup" style="display: <%=signupDisplay%>;">Sign Up</a>
-                <a href="/profile/<%=username%>" style="display: <%=profileDisplay%>;">Profile</a>
+                <a href="/profile/<%=viewer%>" style="display: <%=profileDisplay%>;">Profile</a>
                 <a href="/logout" class="logout" style="display: <%=logoutDisplay%>;">Log Out</a>
             </div>
         </div>
@@ -54,10 +54,7 @@
     <% } %>
     <div class="grid-container">
         <div class="profile">
-
             <div class="profile-inner">
-                <!-- <img src="./images/bg.jpg" class="pfp" alt="Profile Pic"> -->
-
                 <div class="pfp-container">
                     <% if(sameUser){ %>
                         <a href="/profilephoto" class="change-pfp"><i class="fas fa-edit"></i></a>
@@ -70,7 +67,22 @@
                 </div>
                 <h1><%= username %></h1>
                 <h2 class="about"><%= about %> </h2>
-                <h2 class="insta"><a href="http://www.instagram.com/<%=contact%>/" target="_blank"><i class="fab fa-instagram"></i> : <%=contact%></a></h2>
+                <h2 class="insta"><a
+                    <% if(contact.charAt(0)=='@'){ %>
+                        href="http://www.instagram.com/<%=contact.slice(1)%>/" 
+                    <% }else{ %> 
+                        href="http://www.instagram.com/<%=contact%>/"
+                    <% } %>
+                    target="_blank"><i class="fab fa-instagram"></i> : <%=contact%></a></h2>
+                <div class="profile-share" data-clipboard-action="copy" data-clipboard-text="sketchtiles.com/profile/<%=username%>">
+                    <span class="prof-share-button" ><i class="far fa-share-square"></i></span>
+                    <% if(sameUser){ %>
+                        Share your profile
+                    <% }else{ %>
+                        Share this user's profile
+                    <% } %>
+                    <span class="prof-tooltip">Profile link copied to clipboard</span>
+                </div>
             </div>
 
         </div>
@@ -108,7 +120,7 @@
                 </div>
                 <span id="click-div-close">&#10060;</span>
             </div>
-            <div class="title"><%= username %>'s Art Gallery</div>
+            <div class="title"><span><%= username %></span>'s Art Gallery</div>
             <% if(works.length>0){ %>
                 <div class="row">
                     <div class="column">
@@ -153,13 +165,13 @@
     </div>
     <div class="nav-btm">
         <div class="profile-nav navbtm-icon">
-            <a <% if(username!="NA"){ %> href="/profile/<%=username%>" <% }else{ %> href="/login" <% } %>><i class="fas fa-user"></i></a>
+            <a <% if(viewer){ %> href="/profile/<%=viewer%>" <% }else{ %> href="/login" <% } %>><i class="fas fa-user"></i></a>
         </div>
         <div class="posts-nav navbtm-icon">
             <a href="/posts"><i class="fas fa-images"></i></a>
         </div>
         <div class="add-nav navbtm-icon">
-            <a href="/#posting"><i class="fas fa-plus"></i></a>
+            <a><i class="fas fa-plus"></i></a>
         </div>
         <div class="home-nav navbtm-icon">
             <a href="/"><i class="fas fa-home"></i></a>

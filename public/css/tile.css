@@ -179,6 +179,10 @@ a{
     margin: 40px auto;
     color: white;
     display: block;
+    text-decoration: none;
+}
+.author span{
+    text-decoration: underline;
 }
 /* Tile section */
 
@@ -242,8 +246,6 @@ a{
     padding: 20px 10px;
     background-color: rgba(0, 0, 0, 0.52);
     border-radius: 10px;
-}
-.comment span{
     font-size: 1.3rem;
 }
 .commenter{
