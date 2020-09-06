@@ -127,44 +127,57 @@
     <section class="top-artists">
       <div class="inner">
           <h1 class="section-head" id="tiles">Top Artists</h1>
+          <h2 class="section-desc">Visit a user's profile by clicking or tapping on the corresponding card.</h2>
           <div class="artists">
             <div class="top3">
-              <div class="rank">
-                  <h1>1.</h1>
-                  <div class="pfp">
-                    <img src="../img/pfp.jpg" alt="">
-                  </div>
-              </div>
-              <div class="rank">
-                <h1>2.</h1>
-                <div class="pfp">
-                  <img src="../img/pfp.jpg" alt="">
-                </div>
-
-              </div>
-              <div class="rank">
-                <h1>3.</h1>
-                <div class="pfp">
-                  <img src="../img/pfp.jpg" alt="">
-                </div>
-
-              </div>
+                <% for(let i=0; i<3; i++){ %>
+                    <div class="rank">
+                        <a class="rank-a" href="/profile/<%=topArtists[i].username%>">
+                            <h1>#<%=i+1%></h1>
+                            <div class="pfp">
+                                <% if(topArtists[i].pfp.contentType=="None"){ %>
+                                    <img src="/img/pfp.jpg">
+                                <% }else{ %>
+                                    <img src="data:image/<%=topArtists[i].pfp.contentType%>;base64, <%=topArtists[i].pfp.data.toString('base64')%>">
+                                <% } %>
+                            </div>
+                            <div class="top-artist-name"><%=topArtists[i].username%></div>
+                            <div class="total-likes">Total <i class="fas fa-heart art-heart"></i> : <%=topArtists[i].totalLikes%></div>
+                        </a>
+                        <a class="insta" 
+                            <% if(topArtists[i].contact.charAt(0)=='@'){ %>
+                                href="http://www.instagram.com/<%=topArtists[i].contact.slice(1)%>/" 
+                            <% }else{ %> 
+                                href="http://www.instagram.com/<%=topArtists[i].contact%>/"
+                            <% } %>
+                        target="_blank"><i class="fab fa-instagram"></i> : <%=topArtists[i].contact%></a>
+                    </div>
+                <% } %>
             </div>
             <div class="top5">
-              <div class="rank">
-                <h1>4.</h1>
-                <div class="pfp">
-                  <img src="../img/pfp.jpg" alt="">
+            <% for(let i=3; i<5; i++){ %>
+                <div class="rank">
+                    <a class="rank-a" href="/profile/<%=topArtists[i].username%>">
+                        <h1>#<%=i+1%></h1>
+                        <div class="pfp">
+                            <% if(topArtists[i].pfp.contentType=="None"){ %>
+                                <img src="/img/pfp.jpg">
+                            <% }else{ %>
+                                <img src="data:image/<%=topArtists[i].pfp.contentType%>;base64, <%=topArtists[i].pfp.data.toString('base64')%>">
+                            <% } %>
+                        </div>
+                        <div class="top-artist-name"><%=topArtists[i].username%></div>
+                        <div class="total-likes">Total <i class="fas fa-heart art-heart"></i> : <%=topArtists[i].totalLikes%></div>
+                    </a>
+                    <a class="insta" 
+                        <% if(topArtists[i].contact.charAt(0)=='@'){ %>
+                            href="http://www.instagram.com/<%=topArtists[i].contact.slice(1)%>/" 
+                        <% }else{ %> 
+                            href="http://www.instagram.com/<%=topArtists[i].contact%>/"
+                        <% } %>
+                    target="_blank"><i class="fab fa-instagram"></i> : <%=topArtists[i].contact%></a>
                 </div>
-
-              </div>
-              <div class="rank">
-                <h1>5.</h1>
-                <div class="pfp">
-                  <img src="../img/pfp.jpg" alt="">
-                </div>
-
-              </div>
+            <% } %>
             </div>
           </div>
       </div>

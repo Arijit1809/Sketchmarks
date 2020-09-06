@@ -451,29 +451,82 @@ body {
 }
 
 .rank{
-  width: 350px;
-  height: 350px;
-  margin: 15px 15px;
-  background:rgba(0,0,0,0.8);;
+  width: 33%;
+  /* height: 350px; */
+  margin: 15px;
+  background:rgba(0,0,0,0.6);;
   font-family: "Ubuntu";
   border-radius: 10px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  transition: 0.2s ease-in-out;
+}
+.rank-a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+}
+.rank:hover{
+    box-shadow: 0 0 40px #d3d3d3;
+    cursor: pointer;
 }
 .rank h1{
   margin: 5px;
   font-family: "Ubuntu";
-  position: relative;
-}
-.rank .pfp{
-  text-align: center;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 2.1rem;
 }
 .rank .pfp img{
-  width: 200px;
-  height: 200px;
-  border-radius: 100px;
+    margin-top: 20px;    
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
 }
-
+.top-artist-name{
+    margin: 20px 0 30px;
+    font-size: 2.5rem;
+    word-break: break-all;
+    max-width: 75%;
+    text-align: center;
+}
+.total-likes{
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    font-family: "Work sans";
+    margin-bottom: 10px;
+}
+.art-heart{
+    color: red;
+}
+.insta{
+    font-family: 'Work sans', cursive;
+    color: rgba(255, 255, 255, 0.788);
+    background-color: rgba(255, 255, 255, 0.199);
+    text-align: center;
+    margin: 10px 0 25px;
+    font-size: 1.25rem;
+    border-radius: 10px;
+    padding: 10px;
+    word-break: break-all;
+    text-decoration: none;
+    max-width: 75%;
+}
+.insta i{
+    background: linear-gradient(to left,red,rgb(212, 0, 255));
+    color: #d3d3d3;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2rem;
+    vertical-align: -7px;
+}
 /*Top Artists end*/
 
 /* Posts  */
@@ -1048,6 +1101,12 @@ footer {
     }
     .nav-btm {
         display: flex;
+    }
+    .rank{
+        width: unset;
+    }
+    .top3, .top5{
+        flex-direction: column;
     }
 }
 /* Footer-end */

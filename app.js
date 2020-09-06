@@ -134,27 +134,31 @@ app.get("/",(req,res)=>{
     Post.find({}).sort({$natural: -1}).limit(12).exec((err,results)=>{
         if(err) console.log(err)
         else{
-            Post.find({}).sort({"likes.likesNum": -1}).limit(5).exec((err,topPosts)=>{
-                if (req.user)
-                    res.render("index",{
-                        loginDisplay: "none",
-                        signupDisplay: "none",
-                        logoutDisplay: "inline-block",
-                        profileDisplay: "inline-block",
-                        username: req.user.username,
-                        recentPosts: results,
-                        topPosts: topPosts
-                    })
-                else
-                    res.render("index",{
-                        loginDisplay: "inline-block",
-                        signupDisplay: "inline-block",
-                        logoutDisplay: "none",
-                        profileDisplay: "none",
-                        username: "NA",
-                        recentPosts: results,
-                        topPosts: topPosts
-                    })
+            Post.find({}).sort({"likes.likesNum": -1}).limit(5).exec((er,topPosts)=>{
+                User.find({}).sort({totalLikes: -1}).limit(5).exec((e,topArtists)=>{
+                    if (req.isAuthenticated())
+                        res.render("index",{
+                            loginDisplay: "none",
+                            signupDisplay: "none",
+                            logoutDisplay: "inline-block",
+                            profileDisplay: "inline-block",
+                            username: req.user.username,
+                            recentPosts: results,
+                            topPosts: topPosts,
+                            topArtists: topArtists
+                        })
+                    else
+                        res.render("index",{
+                            loginDisplay: "inline-block",
+                            signupDisplay: "inline-block",
+                            logoutDisplay: "none",
+                            profileDisplay: "none",
+                            username: "NA",
+                            recentPosts: results,
+                            topPosts: topPosts,
+                            topArtists: topArtists
+                        })
+                })
             })
         }
     })
